@@ -8,9 +8,12 @@
   flex-direction: column;
   float: left;
   padding-top: 1px;
+  padding: 8px 4px 1px 9px;
   width: 320px;
   visibility: visible;
   font-family: Verdana,"Open Sans",Arial,"Helvetica Neue",Helvetica,sans-serif;
+  font-size: 12px;
+  line-height: 17px;
   
 }
 

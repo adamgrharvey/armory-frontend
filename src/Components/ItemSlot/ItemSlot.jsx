@@ -21,7 +21,7 @@ export default function ItemSlot(props) {
           if (res.status === 200) {
             setItem(res.data);
             //console.log(res);
-            console.log('itemData', item);
+            console.log('itemData', res.data);
             resolve(res.data);
           }
         })
@@ -37,7 +37,8 @@ export default function ItemSlot(props) {
   }, [])
 
 
-  const statsArray = function(arr, isOnEquipStat) {
+  const statsArray = function(item, isOnEquipStat) {
+    let arr = item.stats
     let statsArr = [];
 
     if (!isOnEquipStat) {
@@ -84,7 +85,10 @@ export default function ItemSlot(props) {
         <p>{item.preview_item.weapon.dps.display_string ? item.preview_item.weapon.dps.display_string : {}}</p>
       </div>
       <div className='itemrow statrow'>
-        {item.preview_item.stats ? (statsArray(item.preview_item.stats, false).map(stat => <div className='itemrow'>{stat.display.display_string}</div>)) : {}}
+        {item.preview_item.stats ? (statsArray(item.preview_item, false).map(stat => <div className='itemrow'>{stat.display.display_string}</div>)) : {}}
+      </div>
+      <div className='itemrow'>
+        {item.preview_item.durability.display_string ? item.preview_item.durability.display_string : {}}
       </div>
     </div>
     :
