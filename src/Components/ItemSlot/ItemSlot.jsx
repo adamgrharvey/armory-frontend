@@ -20,6 +20,7 @@ export default function ItemSlot(props) {
           // if server returns 200 (success)
           if (res.status === 200) {
             setItem(res.data);
+            //console.log(res);
             console.log('itemData', item);
             resolve(res.data);
           }
@@ -36,27 +37,34 @@ export default function ItemSlot(props) {
   }, [])
 
   return (
-    <div>
+    item.name ?
+    <div className='ItemSlot'>
       <div>
-        <p>{item.name}</p>
+        <p>{item.name ? item.name : {}}</p>
       </div>
       <div>
-        <p>Item Level {item.level}</p>
+        <p>Item Level {item.level ? item.level : {}}</p>
       </div>
       <div>
-        <p>{item.preview_item.binding.name}</p>
+        <p>{item.preview_item.binding.name ? item.preview_item.binding.name : {}}</p>
       </div>
       <div>
-        <p>{item.name}</p>
+        <p>{item.preview_item.unique_equipped ? item.preview_item.unique_equipped: {}}</p>
       </div>
       <div>
-        <p>{item.name}</p>
+        <div>{item.inventory_type.name ? item.inventory_type.name : {}}</div>
+        <div>{item.preview_item.item_subclass.name ? item.preview_item.item_subclass.name : {}}</div>
       </div>
       <div>
-        <p>{item.name}</p>
+        <p>{item.preview_item.weapon.damage.display_string}</p>
+        <p></p>
       </div>
     </div>
-
+    :
+    <div>
+      no item
+    </div>
+    
   );
 
 }
