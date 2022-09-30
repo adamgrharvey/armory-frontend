@@ -37,65 +37,81 @@ export default function ItemSlot(props) {
   }, [])
 
 
-  const statsArray = function(item, isOnEquipStat) {
-    let arr = item.stats
-    let statsArr = [];
+  const statsArray = function (item, isOnEquipStat) {
+    let stats = item.stats
+    let spells = item.spells
+    let outArr = [];
 
     if (!isOnEquipStat) {
-      for (let i = 0; i < arr.length; i++) {
-        if (!arr[i].is_equip_bonus) {
-          statsArr.push(arr[i])
+      for (let i = 0; i < stats.length; i++) {
+        if (!stats[i].is_equip_bonus) {
+          outArr.push(stats[i].display.display_string)
         }
       }
-      return statsArr
+      return outArr
     } else {
-      for (let i = 0; i < arr.length; i++) {
-        if (arr[i].is_equip_bonus) {
-          statsArr.push(arr[i])
+      for (let i = 0; i < stats.length; i++) {
+        if (stats[i].is_equip_bonus) {
+          outArr.push(stats[i].display.display_string)
         }
       }
-      return statsArr
+      for (let i = 0; i < spells.length; i++) {
+        outArr.push(spells[i].description)
+      }
+      return outArr
     }
   }
 
   return (
     item.name ?
-    <div className='ItemSlot'>
-      <div className='itemrow'>
-        <p>{item.name ? item.name : {}}</p>
+      <div className='ItemSlot'>
+        <div className='itemrow'>
+          <p>{item.name ? item.name : {}}</p>
+        </div>
+        <div className='itemrow'>
+          <p>Item Level {item.level ? item.level : {}}</p>
+        </div>
+        <div className='itemrow'>
+          <p>{item.preview_item.binding.name ? item.preview_item.binding.name : {}}</p>
+        </div>
+        <div className='itemrow'>
+          <p>{item.preview_item.unique_equipped ? item.preview_item.unique_equipped : {}}</p>
+        </div>
+        <div className='itemrow'>
+          <div>{item.inventory_type.name ? item.inventory_type.name : {}}</div>
+          <div>{item.preview_item.item_subclass.name ? item.preview_item.item_subclass.name : {}}</div>
+        </div>
+        <div className='itemrow'>
+          <div>{item.preview_item.weapon.damage.display_string ? item.preview_item.weapon.damage.display_string : {}}</div>
+          <div>{item.preview_item.weapon.attack_speed.display_string ? item.preview_item.weapon.attack_speed.display_string : {}}</div>
+        </div>
+        <div className='itemrow'>
+          <p>{item.preview_item.weapon.dps.display_string ? item.preview_item.weapon.dps.display_string : {}}</p>
+        </div>
+        <div className='itemrow statrow'>
+          {item.preview_item.stats ? (statsArray(item.preview_item, false).map(stat => <div className='itemrow'>{stat}</div>)) : {}}
+        </div>
+        <div className='itemrow'>
+          {item.preview_item.durability.display_string ? item.preview_item.durability.display_string : {}}
+        </div>
+        <div className='itemrow'>
+          {item.preview_item.requirements.playable_classes.display_string ? item.preview_item.requirements.playable_classes.display_string : {}}
+        </div>
+        <div className='itemrow'>
+          {item.preview_item.requirements.level.display_string ? item.preview_item.requirements.level.display_string : {}}
+        </div>
+        <div className='itemrow statrow'>
+          {item.preview_item.stats ? (statsArray(item.preview_item, true).map(stat => <div className='itemrow'>{stat}</div>)) : {}}
+        </div>
+        <div className='itemrow'>
+          {item.preview_item.set.display_string ? item.preview_item.set.display_string : {}}
+        </div>
       </div>
-      <div className='itemrow'>
-        <p>Item Level {item.level ? item.level : {}}</p>
+      :
+      <div>
+        no item
       </div>
-      <div className='itemrow'>
-        <p>{item.preview_item.binding.name ? item.preview_item.binding.name : {}}</p>
-      </div>
-      <div className='itemrow'>
-        <p>{item.preview_item.unique_equipped ? item.preview_item.unique_equipped : {}}</p>
-      </div>
-      <div className='itemrow'>
-        <div>{item.inventory_type.name ? item.inventory_type.name : {}}</div>
-        <div>{item.preview_item.item_subclass.name ? item.preview_item.item_subclass.name : {}}</div>
-      </div>
-      <div className='itemrow'>
-        <div>{item.preview_item.weapon.damage.display_string ? item.preview_item.weapon.damage.display_string : {}}</div>
-        <div>{item.preview_item.weapon.attack_speed.display_string ? item.preview_item.weapon.attack_speed.display_string : {}}</div>
-      </div>
-      <div className='itemrow'>
-        <p>{item.preview_item.weapon.dps.display_string ? item.preview_item.weapon.dps.display_string : {}}</p>
-      </div>
-      <div className='itemrow statrow'>
-        {item.preview_item.stats ? (statsArray(item.preview_item, false).map(stat => <div className='itemrow'>{stat.display.display_string}</div>)) : {}}
-      </div>
-      <div className='itemrow'>
-        {item.preview_item.durability.display_string ? item.preview_item.durability.display_string : {}}
-      </div>
-    </div>
-    :
-    <div>
-      no item
-    </div>
-    
+
   );
 
 }
