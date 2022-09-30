@@ -37,14 +37,24 @@ export default function ItemSlot(props) {
   }, [])
 
 
-  const statsArray = function(arr) {
-    let nonEquipStats = [];
-    for (let i = 0; i < arr.length; i++) {
-      if (!arr[i].is_equip_bonus) {
-        nonEquipStats.push(arr[i])
+  const statsArray = function(arr, isOnEquipStat) {
+    let statsArr = [];
+
+    if (!isOnEquipStat) {
+      for (let i = 0; i < arr.length; i++) {
+        if (!arr[i].is_equip_bonus) {
+          statsArr.push(arr[i])
+        }
       }
+      return statsArr
+    } else {
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i].is_equip_bonus) {
+          statsArr.push(arr[i])
+        }
+      }
+      return statsArr
     }
-    return nonEquipStats
   }
 
   return (
@@ -74,7 +84,7 @@ export default function ItemSlot(props) {
         <p>{item.preview_item.weapon.dps.display_string ? item.preview_item.weapon.dps.display_string : {}}</p>
       </div>
       <div className='itemrow statrow'>
-        {item.preview_item.stats ? (statsArray(item.preview_item.stats).map(stat => <div className='itemrow'>{stat.display.display_string}</div>)) : {}}
+        {item.preview_item.stats ? (statsArray(item.preview_item.stats, false).map(stat => <div className='itemrow'>{stat.display.display_string}</div>)) : {}}
       </div>
     </div>
     :
