@@ -39,25 +39,28 @@ export default function ItemSlot(props) {
   return (
     item.name ?
     <div className='ItemSlot'>
-      <div>
+      <div className='itemrow'>
         <p>{item.name ? item.name : {}}</p>
       </div>
-      <div>
+      <div className='itemrow'>
         <p>Item Level {item.level ? item.level : {}}</p>
       </div>
-      <div>
+      <div className='itemrow'>
         <p>{item.preview_item.binding.name ? item.preview_item.binding.name : {}}</p>
       </div>
-      <div>
-        <p>{item.preview_item.unique_equipped ? item.preview_item.unique_equipped: {}}</p>
+      <div className='itemrow'>
+        <p>{item.preview_item.unique_equipped ? item.preview_item.unique_equipped : {}}</p>
       </div>
-      <div>
+      <div className='itemrow'>
         <div>{item.inventory_type.name ? item.inventory_type.name : {}}</div>
         <div>{item.preview_item.item_subclass.name ? item.preview_item.item_subclass.name : {}}</div>
       </div>
-      <div>
-        <p>{item.preview_item.weapon.damage.display_string}</p>
-        <p></p>
+      <div className='itemrow'>
+        <div>{item.preview_item.weapon.damage.display_string ? item.preview_item.weapon.damage.display_string : {}}</div>
+        <div>{item.preview_item.weapon.attack_speed.display_string ? item.preview_item.weapon.attack_speed.display_string : {}}</div>
+      </div>
+      <div className='itemrow'>
+        <p>{item.preview_item.weapon.dps.display_string ? item.preview_item.weapon.dps.display_string : {}}</p>
       </div>
     </div>
     :
