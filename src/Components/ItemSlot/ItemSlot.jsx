@@ -62,6 +62,9 @@ export default function ItemSlot(props) {
       <div className='itemrow'>
         <p>{item.preview_item.weapon.dps.display_string ? item.preview_item.weapon.dps.display_string : {}}</p>
       </div>
+      <div className='itemrow'>
+        {item.preview_item.stats ? (item.preview_item.stats.map(stat => <div className='itemrow'>{stat.display.display_string}</div>)) : {}}
+      </div>
     </div>
     :
     <div>
