@@ -20,7 +20,7 @@ function App() {
       setUpdated(true)
     }
     if (updated) {
-      getItemData(32837, accessToken, setItem);
+      getItemData(28440, accessToken, setItem);
       setUpdated(false);
     }
     

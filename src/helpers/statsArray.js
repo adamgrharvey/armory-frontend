@@ -16,9 +16,13 @@ export default function statsArray (item, isOnEquipStat) {
         outArr.push(stats[i].display.display_string)
       }
     }
-    for (let i = 0; i < spells.length; i++) {
-      outArr.push(spells[i].description)
+    if (spells) {
+      for (let i = 0; i < spells.length; i++) {
+        outArr.push(spells[i].description)
+      }
+
     }
+
     return outArr
   }
 }

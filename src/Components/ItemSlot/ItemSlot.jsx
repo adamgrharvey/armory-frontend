@@ -23,29 +23,29 @@ export default function ItemSlot(props) {
           <div>{props.item.preview_item.item_subclass.name ? props.item.preview_item.item_subclass.name : {}}</div>
         </div>
         <div className='itemrow'>
-          <div>{props.item.preview_item.weapon.damage.display_string ? props.item.preview_item.weapon.damage.display_string : {}}</div>
-          <div>{props.item.preview_item.weapon.attack_speed.display_string ? props.item.preview_item.weapon.attack_speed.display_string : {}}</div>
+          <div>{props.item.preview_item.weapon ? props.item.preview_item.weapon.damage.display_string : {}}</div>
+          <div>{props.item.preview_item.weapon ? props.item.preview_item.weapon.attack_speed.display_string : {}}</div>
         </div>
         <div className='itemrow'>
-          <p>{props.item.preview_item.weapon.dps.display_string ? props.item.preview_item.weapon.dps.display_string : {}}</p>
+          <p>{props.item.preview_item.weapon ? props.item.preview_item.weapon.dps.display_string : {}}</p>
         </div>
         <div className='itemrow statrow'>
           {props.item.preview_item.stats ? (statsArray(props.item.preview_item, false).map(stat => <div className='itemrow'>{stat}</div>)) : {}}
         </div>
         <div className='itemrow'>
-          {props.item.preview_item.durability.display_string ? props.item.preview_item.durability.display_string : {}}
+          {props.item.preview_item.durability ? props.item.preview_item.durability.display_string : {}}
         </div>
         <div className='itemrow'>
-          {props.item.preview_item.requirements.playable_classes.display_string ? props.item.preview_item.requirements.playable_classes.display_string : {}}
+          {props.item.preview_item.requirements.playable_classes ? props.item.preview_item.requirements.playable_classes.display_string : {}}
         </div>
         <div className='itemrow'>
-          {props.item.preview_item.requirements.level.display_string ? props.item.preview_item.requirements.level.display_string : {}}
+          {props.item.preview_item.requirements.level ? props.item.preview_item.requirements.level.display_string : {}}
         </div>
         <div className='itemrow statrow'>
           {props.item.preview_item.stats ? (statsArray(props.item.preview_item, true).map(stat => <div className='itemrow'>{stat}</div>)) : {}}
         </div>
         <div className='itemrow'>
-          {props.item.preview_item.set.display_string ? props.item.preview_item.set.display_string : {}}
+          {props.item.preview_item.set ? props.item.preview_item.set.display_string : {}}
         </div>
       </div>
       :
