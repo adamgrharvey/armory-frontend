@@ -24,7 +24,6 @@ export default function ItemSlot(props) {
       },
     })
       .then((res) => {
-        console.log(res)
         setAccessToken(res.data.access_token);
       })
       .catch((err) => {
