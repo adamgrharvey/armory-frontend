@@ -1,35 +1,16 @@
 import React from 'react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import getAccessToken from '../../helpers/getAccessToken';
 
 export default function ItemSlot(props) {
 
   let BNET_ID = "cbeac907587149f08732abd74d2b73f8"
   let BNET_SECRET = "UvGoljFYvvQNhQgOw37mQs0yzjXqIGzC"
   const [accessToken, setAccessToken] = useState("");
+  const [updated, setUpdated] = useState(true)
   const [item, setItem] = useState({});
 
-  //curl -u cbeac907587149f08732abd74d2b73f8:UvGoljFYvvQNhQgOw37mQs0yzjXqIGzC} -d grant_type=client_credentials https://oauth.battle.net/token
-  function getAccessToken(clientID, clientSecret) {
-    const queryString = require('query-string');
-    
-    axios.post('https://oauth.battle.net/token', queryString.stringify({ 'grant_type': 'client_credentials' }), {
-      headers: {
-        'content-type': 'application/x-www-form-urlencoded',
-      },
-      auth:
-      {
-        username: clientID,
-        password: clientSecret
-      },
-    })
-      .then((res) => {
-        setAccessToken(res.data.access_token);
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }
 
 
   function sendRequest(accessToken) {
@@ -58,10 +39,15 @@ export default function ItemSlot(props) {
 
   useEffect(() => {
     if (accessToken === "") {
-      getAccessToken(BNET_ID, BNET_SECRET)
+      getAccessToken(BNET_ID, BNET_SECRET, setAccessToken)
+      setUpdated(true)
     }
-    sendRequest(accessToken);
-  }, [])
+    if (updated) {
+      sendRequest(accessToken);
+      setUpdated(false);
+    }
+    
+  }, [updated])
 
 
   const statsArray = function (item, isOnEquipStat) {
