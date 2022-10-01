@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import getAccessToken from '../../helpers/getAccessToken';
+import getItemData from '../../helpers/getItemData';
 
 export default function ItemSlot(props) {
 
@@ -12,38 +13,13 @@ export default function ItemSlot(props) {
   const [item, setItem] = useState({});
 
 
-
-  function sendRequest(accessToken) {
-    return new Promise((resolve, reject) => {
-      axios
-        .get(`https://us.api.blizzard.com/data/wow/item/${props.item}?namespace=static-classic-us&locale=en_US&access_token=${accessToken}`, {
-          headers: {
-            'content-type': 'application/json',
-          },
-        })
-        .then((res) => {
-          // if server returns 200 (success)
-          if (res.status === 200) {
-            setItem(res.data);
-            //console.log(res);
-            console.log('itemData', res.data);
-            resolve(res.data);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-          reject(err);
-        });
-    });
-  }
-
   useEffect(() => {
     if (accessToken === "") {
       getAccessToken(BNET_ID, BNET_SECRET, setAccessToken)
       setUpdated(true)
     }
     if (updated) {
-      sendRequest(accessToken);
+      getItemData(props.item, accessToken);
       setUpdated(false);
     }
     
