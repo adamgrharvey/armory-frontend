@@ -20,7 +20,7 @@ export default function ItemSlot(props) {
       setUpdated(true)
     }
     if (updated) {
-      getItemData(props.item, accessToken);
+      getItemData(props.item, accessToken, setItem);
       setUpdated(false);
     }
     
