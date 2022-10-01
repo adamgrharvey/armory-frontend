@@ -14,7 +14,6 @@ export default function getItemData(itemID, accessToken, setItem) {
         // if server returns 200 (success)
         if (res.status === 200) {
           setItem(res.data);
-          //console.log(res);
           console.log('itemData', res.data);
           resolve(res.data);
         }
