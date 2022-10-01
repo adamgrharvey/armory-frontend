@@ -4,14 +4,39 @@ import { useEffect, useState } from 'react';
 
 export default function ItemSlot(props) {
 
-  let clientID = "cbeac907587149f08732abd74d2b73f8"
-  let clientSecret = "UvGoljFYvvQNhQgOw37mQs0yzjXqIGzC"
+  let BNET_ID = "cbeac907587149f08732abd74d2b73f8"
+  let BNET_SECRET = "UvGoljFYvvQNhQgOw37mQs0yzjXqIGzC"
+  const [accessToken, setAccessToken] = useState("");
   const [item, setItem] = useState({});
 
-  function sendRequest() {
+  //curl -u cbeac907587149f08732abd74d2b73f8:UvGoljFYvvQNhQgOw37mQs0yzjXqIGzC} -d grant_type=client_credentials https://oauth.battle.net/token
+  function getAccessToken(clientID, clientSecret) {
+    const queryString = require('query-string');
+    
+    axios.post('https://oauth.battle.net/token', queryString.stringify({ 'grant_type': 'client_credentials' }), {
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      auth:
+      {
+        username: clientID,
+        password: clientSecret
+      },
+    })
+      .then((res) => {
+        console.log(res)
+        setAccessToken(res.data.access_token);
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
+
+  function sendRequest(accessToken) {
     return new Promise((resolve, reject) => {
       axios
-        .get(`https://us.api.blizzard.com/data/wow/item/${props.item}?namespace=static-classic-us&locale=en_US&access_token=USpabAYi6p09Uw1fdoJ7hw2z0JkR3GFwWH`, {
+        .get(`https://us.api.blizzard.com/data/wow/item/${props.item}?namespace=static-classic-us&locale=en_US&access_token=${accessToken}`, {
           headers: {
             'content-type': 'application/json',
           },
@@ -33,7 +58,10 @@ export default function ItemSlot(props) {
   }
 
   useEffect(() => {
-    sendRequest()
+    if (accessToken === "") {
+      getAccessToken(BNET_ID, BNET_SECRET)
+    }
+    sendRequest(accessToken);
   }, [])
 
 
