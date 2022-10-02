@@ -68,9 +68,9 @@ function App() {
       setUpdated(true)
     }
     if (updated) {
-      for (let i = 0; i < Subspace.length; i++) {
+      for (const [i,item] of Subspace.entries()) {
        // setCharacter({...character, ...{[i]: getItemData(Subspace[i], accessToken)}});
-       getItemData(Subspace[i], accessToken)
+       getItemData(item, accessToken)
         .then(res => {
           //console.log(res);
           setCharacter(prev => ({...prev, ...{[i]: res}}));

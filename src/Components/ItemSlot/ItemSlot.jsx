@@ -30,7 +30,7 @@ export default function ItemSlot(props) {
           <p>{props.item.preview_item.weapon ? props.item.preview_item.weapon.dps.display_string : {}}</p>
         </div>
         <div className='itemrow statrow'>
-          {props.item.preview_item.stats ? (statsArray(props.item.preview_item, false).map(stat => <div className='itemrow'>{stat}</div>)) : {}}
+          {props.item.preview_item.stats ? (statsArray(props.item.preview_item, false).map((stat,index) => <div key={index} className='itemrow'>{stat}</div>)) : {}}
         </div>
         <div className='itemrow'>
           {props.item.preview_item.durability ? props.item.preview_item.durability.display_string : {}}
@@ -42,7 +42,7 @@ export default function ItemSlot(props) {
           {props.item.preview_item.requirements.level ? props.item.preview_item.requirements.level.display_string : {}}
         </div>
         <div className='itemrow statrow'>
-          {props.item.preview_item.stats ? (statsArray(props.item.preview_item, true).map(stat => <div className='itemrow'>{stat}</div>)) : {}}
+          {props.item.preview_item.stats ? (statsArray(props.item.preview_item, true).map((stat,index) => <div key={index} className='itemrow'>{stat}</div>)) : {}}
         </div>
         <div className='itemrow'>
           {props.item.preview_item.set ? props.item.preview_item.set.display_string : {}}
