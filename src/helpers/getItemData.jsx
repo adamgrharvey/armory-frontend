@@ -14,7 +14,7 @@ export default function getItemData(itemID, accessToken) {
         // if server returns 200 (success)
         if (res.status === 200) {
           //console.log('itemData', res.data.preview_item);
-          resolve(res.data.preview_item);
+          resolve(res.data);
         }
       })
       .catch((err) => {
