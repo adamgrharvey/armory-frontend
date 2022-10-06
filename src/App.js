@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import getAccessToken from './helpers/getAccessToken';
 import getItemData from './helpers/getItemData';
 import getItemMedia from './helpers/getItemMedia';
+import ItemSlot from './components/ItemSlot';
 
 /*
     "item:32235:3003:32409:32220:0:0:0:0:70:0:0:0:0:0:0:0:0:", -- [1]
@@ -94,9 +95,7 @@ function App() {
   return (
     <div className="App">
       <Tooltip item={glaive} />
-      <div>
-        <img src={test.assets[0].value} />
-      </div>
+      <ItemSlot />
     </div>
   );
 }
