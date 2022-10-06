@@ -1,11 +1,11 @@
 import React from 'react';
 import statsArray from '../../helpers/statsArray';
 
-export default function ItemSlot(props) {
+export default function Tooltip(props) {
 
   return (
     props.item.name ?
-      <div className='ItemSlot'>
+      <div className='Tooltip'>
         <div className='itemrow'>
           <p>{props.item.name ? props.item.name : {}}</p>
         </div>

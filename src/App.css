@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.ItemSlot {
+.Tooltip {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
