@@ -95,7 +95,7 @@ function App() {
   return (
     <div className="App">
       <Tooltip item={glaive} />
-      <ItemSlot />
+      <ItemSlot slotID={1}/>
     </div>
   );
 }
