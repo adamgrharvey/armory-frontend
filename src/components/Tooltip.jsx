@@ -8,50 +8,52 @@ export default function Tooltip(props) {
   const { accessToken, setAccessToken } = useContext(AccessTokenContext);
 
   return (
-    props.item.name ?
+    props.item ?
       <div className='Tooltip'>
-        <div className='itemrow'>
-          <p>{props.item.name ? props.item.name : {}}</p>
-        </div>
-        <div className='itemrow'>
-          <p>Item Level {props.item.level ? props.item.level : {}}</p>
-        </div>
-        <div className='itemrow'>
-          <p>{props.item.preview_item.binding.name ? props.item.preview_item.binding.name : {}}</p>
-        </div>
-        <div className='itemrow'>
-          <p>{props.item.preview_item.unique_equipped ? props.item.preview_item.unique_equipped : {}}</p>
-        </div>
-        <div className='itemrow'>
-          <div>{props.item.inventory_type.name ? props.item.inventory_type.name : {}}</div>
-          <div>{props.item.preview_item.item_subclass.name ? props.item.preview_item.item_subclass.name : {}}</div>
-        </div>
-        <div className='itemrow'>
-          <div>{props.item.preview_item.weapon ? props.item.preview_item.weapon.damage.display_string : {}}</div>
-          <div>{props.item.preview_item.weapon ? props.item.preview_item.weapon.attack_speed.display_string : {}}</div>
-        </div>
-        <div className='itemrow'>
-          <p>{props.item.preview_item.weapon ? props.item.preview_item.weapon.dps.display_string : {}}</p>
-        </div>
-        <div className='itemrow statrow'>
-          {props.item.preview_item.stats ? (statsArray(props.item.preview_item, false).map((stat,index) => <div key={index} className='itemrow'>{stat}</div>)) : {}}
-        </div>
-        <div className='itemrow'>
-          {props.item.preview_item.durability ? props.item.preview_item.durability.display_string : {}}
-        </div>
-        <div className='itemrow'>
-          {props.item.preview_item.requirements.playable_classes ? props.item.preview_item.requirements.playable_classes.display_string : {}}
-        </div>
-        <div className='itemrow'>
-          {props.item.preview_item.requirements.level ? props.item.preview_item.requirements.level.display_string : {}}
-        </div>
-        <div className='itemrow statrow'>
-          {props.item.preview_item.stats ? (statsArray(props.item.preview_item, true).map((stat,index) => <div key={index} className='itemrow'>{stat}</div>)) : {}}
-        </div>
-        <div className='itemrow'>
-          {props.item.preview_item.set ? props.item.preview_item.set.display_string : {}}
-        </div>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <b>
+                          {props.item.name}
+                        </b>
+                      </td>
+                      <th>
+
+                      </th>
+                    </tr>
+                  </tbody>
+                </table>
+                <span>
+                  <br />
+                  Item Level {props.item.level}
+                </span>
+                <br />
+                {props.item.preview_item.binding.name}
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        {props.item.inventory_type.name}
+                      </td>
+                      <th>
+                        <span>
+                          {props.item.item_subclass.name}
+                        </span>
+                      </th>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+
       :
       <div>
         no item
