@@ -17,36 +17,38 @@ import emptyTabard from '../images/EmptySlots/inventoryslot_tabard.jpg'
 import emptyTrinket from '../images/EmptySlots/inventoryslot_trinket.jpg'
 import emptyWaist from '../images/EmptySlots/inventoryslot_waist.jpg'
 import emptyWrists from '../images/EmptySlots/inventoryslot_wrists.jpg'
-import getAccessToken from '../helpers/getAccessToken';
+import { AccessTokenContext } from '../helpers/Context';
+import { useContext } from 'react';
 
 export default function ItemSlot(props) {
-let slotID = props.slotID;
-let quality = props.quality;
-let itemID = props.itemID;
-if (itemID) {
+  const { accessToken, setAccessToken } = useContext(AccessTokenContext);
+  let slotID = props.slotID;
+  let quality = props.quality;
+  let itemID = props.itemID;
+  if (itemID) {
 
-}
-let slotIDs = {
-  1: "head",
-  2: "neck",
-  3: "shoulder",
-  4: "shirt",
-  5: "chest",
-  6: "waist",
-  7: "legs",
-  8: "feet",
-  9: "wrists",
-  10: "hands",
-  11: "finger",
-  12: "finger",
-  13: "trinket",
-  14: "trinket",
-  15: "chest",
-  16: "mainhand",
-  17: "offhand",
-  18: "ranged",
-  19: "tabard"
-};
+  }
+  let slotIDs = {
+    1: "head",
+    2: "neck",
+    3: "shoulder",
+    4: "shirt",
+    5: "chest",
+    6: "waist",
+    7: "legs",
+    8: "feet",
+    9: "wrists",
+    10: "hands",
+    11: "finger",
+    12: "finger",
+    13: "trinket",
+    14: "trinket",
+    15: "chest",
+    16: "mainhand",
+    17: "offhand",
+    18: "ranged",
+    19: "tabard"
+  };
 
   return (
     <img src={require(`../images/EmptySlots/inventoryslot_${slotIDs[slotID]}.jpg`)} />

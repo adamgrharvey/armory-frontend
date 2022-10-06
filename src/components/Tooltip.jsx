@@ -1,7 +1,11 @@
 import React from 'react';
 import statsArray from '../helpers/statsArray';
+import { AccessTokenContext } from '../helpers/Context';
+import { useContext } from 'react';
 
 export default function Tooltip(props) {
+
+  const { accessToken, setAccessToken } = useContext(AccessTokenContext);
 
   return (
     props.item.name ?

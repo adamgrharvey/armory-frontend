@@ -1,11 +1,13 @@
 import './App.css';
 import Tooltip from './components/Tooltip';
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext, createContext } from 'react';
 import getAccessToken from './helpers/getAccessToken';
 import getItemData from './helpers/getItemData';
 import getItemMedia from './helpers/getItemMedia';
 import ItemSlot from './components/ItemSlot';
+
+import { AccessTokenContext } from '.helpers/Context';
 
 /*
     "item:32235:3003:32409:32220:0:0:0:0:70:0:0:0:0:0:0:0:0:", -- [1]
@@ -93,10 +95,12 @@ function App() {
 
 
   return (
-    <div className="App">
-      <Tooltip item={glaive} />
-      <ItemSlot slotID={1}/>
-    </div>
+    <AccessTokenContext.Provider value={{accessToken, setAccessToken}}>
+      <div className="App">
+        <Tooltip item={glaive} />
+        <ItemSlot slotID={1} />
+      </div>
+    </AccessTokenContext.Provider>
   );
 }
 
