@@ -16,6 +16,18 @@
   line-height: 17px;
   justify-content: space-between;
 
+
+}
+
+.Table {
+  width: 100%;
+  display: inline-table;
+  vertical-align: inherit
+}
+
+.InlineTable {
+  display: inline-table;
+  vertical-align: inherit;
 }
 
 .ItemSlot {
@@ -23,6 +35,7 @@
   flex-direction: row;
   align-items: flex-start;
 }
+
 .ItemSlot.ItemDetails {
   display: flex;
   flex-direction: column;

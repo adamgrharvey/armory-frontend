@@ -10,48 +10,18 @@ export default function Tooltip(props) {
   return (
     props.item ?
       <div className='Tooltip'>
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <b>
-                          {props.item.name}
-                        </b>
-                      </td>
-                      <th>
-
-                      </th>
-                    </tr>
-                  </tbody>
-                </table>
-                <span>
-                  <br />
-                  Item Level {props.item.level}
-                </span>
-                <br />
-                {props.item.preview_item.binding.name}
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>
-                        {props.item.inventory_type.name}
-                      </td>
-                      <th>
-                        <span>
-                          {props.item.item_subclass.name}
-                        </span>
-                      </th>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <b className='itemrow'>{props.item.name}</b>
+        <p className='itemrow'>Item Level {props.item.level}</p>
+        <p className='itemrow'>{props.item.preview_item.binding.name}</p>
+        <div className='itemrow'>
+          <p>
+            {props.item.preview_item.inventory_type.name}
+          </p>
+          <p>
+            {props.item.preview_item.item_subclass.name}
+          </p>
+        </div>
+        
       </div>
 
       :
