@@ -7,7 +7,7 @@ import getItemData from './helpers/getItemData';
 import getItemMedia from './helpers/getItemMedia';
 import ItemSlot from './components/ItemSlot';
 
-import { AccessTokenContext } from '.helpers/Context';
+import { AccessTokenContext } from './helpers/Context';
 
 /*
     "item:32235:3003:32409:32220:0:0:0:0:70:0:0:0:0:0:0:0:0:", -- [1]
@@ -98,7 +98,7 @@ function App() {
     <AccessTokenContext.Provider value={{accessToken, setAccessToken}}>
       <div className="App">
         <Tooltip item={glaive} />
-        <ItemSlot slotID={1} />
+        <ItemSlot slotID={1} itemID={32235} />
       </div>
     </AccessTokenContext.Provider>
   );

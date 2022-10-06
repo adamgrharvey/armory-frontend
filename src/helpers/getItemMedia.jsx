@@ -13,8 +13,8 @@ export default function getItemMedia(itemID, accessToken) {
       .then((res) => {
         // if server returns 200 (success)
         if (res.status === 200) {
-          console.log('item media', res.data);
-          resolve(res.data);
+          //console.log('item media', res.data.assets[0].value);
+          resolve(res.data.assets[0].value);
         }
       })
       .catch((err) => {

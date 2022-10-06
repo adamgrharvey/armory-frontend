@@ -17,17 +17,23 @@ import emptyTabard from '../images/EmptySlots/inventoryslot_tabard.jpg'
 import emptyTrinket from '../images/EmptySlots/inventoryslot_trinket.jpg'
 import emptyWaist from '../images/EmptySlots/inventoryslot_waist.jpg'
 import emptyWrists from '../images/EmptySlots/inventoryslot_wrists.jpg'
+
+import getItemMedia from '../helpers/getItemMedia';
+
 import { AccessTokenContext } from '../helpers/Context';
 import { useContext } from 'react';
 
 export default function ItemSlot(props) {
   const { accessToken, setAccessToken } = useContext(AccessTokenContext);
+  const [itemMedia, setItemMedia] = useState("");
   let slotID = props.slotID;
   let quality = props.quality;
   let itemID = props.itemID;
   if (itemID) {
+    getItemMedia(itemID, accessToken).then(res => setItemMedia(res))
 
   }
+
   let slotIDs = {
     1: "head",
     2: "neck",
@@ -51,6 +57,9 @@ export default function ItemSlot(props) {
   };
 
   return (
-    <img src={require(`../images/EmptySlots/inventoryslot_${slotIDs[slotID]}.jpg`)} />
+    <div>
+      {itemID ? <img src={itemMedia} /> : <img src={require(`../images/EmptySlots/inventoryslot_${slotIDs[slotID]}.jpg`)} />}
+    </div>
+    
   )
 }
