@@ -17,25 +17,25 @@
 
 }
 
-.ItemSlot {
+.ItemSlotIcon {
   height: 62px;
   width: 62px;
   border-radius: 4px !important;
   outline: 1.3px solid;
 }
-.ItemSlot.Legendary {
+.ItemSlotIcon.Legendary {
   outline-color: #ff8000;
 }
-.ItemSlot.Epic {
+.ItemSlotIcon.Epic {
   outline-color: #a335ee;
 }
-.ItemSlot.Rare {
+.ItemSlotIcon.Rare {
   outline-color: #0070dd;
 }
-.ItemSlot.Uncommon {
+.ItemSlotIcon.Uncommon {
   outline-color: #1eff00;
 }
-.ItemSlot.Common {
+.ItemSlotIcon.Common {
   outline-color: #9d9d9d;
 }
 

@@ -56,7 +56,7 @@ export default function ItemSlot(props) {
 
   return (
     <div >
-      {props.item ? <img src={itemMedia} alt={props.slotID} className={`ItemSlot ${props.item.preview_item.quality.name}`}/> : <img src={require(`../images/EmptySlots/inventoryslot_${slotIDs[props.slotID]}.jpg`)} alt={props.slotID} className='ItemSlot Common'/>}
+      {props.item ? <img src={itemMedia} alt={props.slotID} className={`ItemSlotIcon ${props.item.preview_item.quality.name}`}/> : <img src={require(`../images/EmptySlots/inventoryslot_${slotIDs[props.slotID]}.jpg`)} alt={props.slotID} className='ItemSlotIcon Common'/>}
     </div>
     
   )
