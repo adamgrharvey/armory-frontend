@@ -1,5 +1,5 @@
 import React from 'react';
-import statsArray from '../../helpers/statsArray';
+import statsArray from '../helpers/statsArray';
 
 export default function Tooltip(props) {
 

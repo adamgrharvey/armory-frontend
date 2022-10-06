@@ -1,5 +1,5 @@
 import './App.css';
-import Tooltip from './components/Tooltip/Tooltip';
+import Tooltip from './components/Tooltip';
 import React from 'react';
 import { useEffect, useState } from 'react';
 import getAccessToken from './helpers/getAccessToken';
