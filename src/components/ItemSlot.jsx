@@ -26,11 +26,9 @@ import { useContext } from 'react';
 export default function ItemSlot(props) {
   const { accessToken, setAccessToken } = useContext(AccessTokenContext);
   const [itemMedia, setItemMedia] = useState("");
-  let slotID = props.slotID;
-  let quality = props.quality;
-  let itemID = props.itemID;
-  if (itemID) {
-    getItemMedia(itemID, accessToken).then(res => setItemMedia(res))
+ // let quality = props.item.preview_item.quality.name;
+  if (props.item && props.item) {
+    getItemMedia(props.item.id, accessToken).then(res => setItemMedia(res))
 
   }
 
@@ -57,8 +55,8 @@ export default function ItemSlot(props) {
   };
 
   return (
-    <div>
-      {itemID ? <img src={itemMedia} /> : <img src={require(`../images/EmptySlots/inventoryslot_${slotIDs[slotID]}.jpg`)} />}
+    <div >
+      {props.item ? <img src={itemMedia} alt={props.slotID} className={`ItemSlot ${props.item.preview_item.quality.name}`}/> : <img src={require(`../images/EmptySlots/inventoryslot_${slotIDs[props.slotID]}.jpg`)} alt={props.slotID} className='ItemSlot Common'/>}
     </div>
     
   )

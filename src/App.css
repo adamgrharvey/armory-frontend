@@ -11,17 +11,41 @@
   padding: 8px 4px 1px 9px;
   width: 320px;
   visibility: visible;
-  font-family: Verdana,"Open Sans",Arial,"Helvetica Neue",Helvetica,sans-serif;
+  font-family: Verdana, "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 12px;
   line-height: 17px;
-  
+
 }
+
+.ItemSlot {
+  height: 62px;
+  width: 62px;
+  border-radius: 4px !important;
+  outline: 1.3px solid;
+}
+.ItemSlot.Legendary {
+  outline-color: #ff8000;
+}
+.ItemSlot.Epic {
+  outline-color: #a335ee;
+}
+.ItemSlot.Rare {
+  outline-color: #0070dd;
+}
+.ItemSlot.Uncommon {
+  outline-color: #1eff00;
+}
+.ItemSlot.Common {
+  outline-color: #9d9d9d;
+}
+
 
 .itemrow {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 .statrow {
   flex-direction: column;
 }

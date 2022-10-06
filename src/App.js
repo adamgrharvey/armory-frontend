@@ -41,7 +41,6 @@ function App() {
   const [item, setItem] = useState({});
   const [character, setCharacter] = useState({});
   const [glaive, setGlaive] = useState({});
-  const [test, setTest] = useState();
   let Subspace = [32235, 35135, 34195, 2105, 34397, 34558, 31029, 34575, 34448, 34370, 32266, 34887, 37865, 34472, 41592, 34329, 35095, 34349, 23705];
   let slotIDs = {
     0: "AMMO",
@@ -82,7 +81,6 @@ function App() {
           })
       }
       getItemData(32837, accessToken).then(res => setGlaive(res))
-      getItemMedia(32837, accessToken).then(res => setTest(res))
       console.log();
       setUpdated(false);
     }
@@ -95,10 +93,10 @@ function App() {
 
 
   return (
-    <AccessTokenContext.Provider value={{accessToken, setAccessToken}}>
+    <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>
       <div className="App">
+        <ItemSlot slotID={1} item={character[0]} />
         <Tooltip item={glaive} />
-        <ItemSlot slotID={1} itemID={32235} />
       </div>
     </AccessTokenContext.Provider>
   );
