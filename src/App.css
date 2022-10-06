@@ -17,25 +17,64 @@
 
 }
 
+.ItemSlot {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.ItemSlot.ItemDetails.Legendary {
+  color: #ff8000
+}
+
+.ItemSlot.ItemDetails.Epic {
+  color: #a335ee;
+}
+
+.ItemSlot.ItemDetails.Rare {
+  color: #0070dd;
+}
+
+.ItemSlot.ItemDetails.Uncommon {
+  color: #1eff00;
+}
+
+.ItemSlot.ItemDetails.Common {
+  color: #fff;
+}
+
+.ItemSlot.ItemDetails.Poor {
+  color: #9d9d9d;
+}
+
 .ItemSlotIcon {
   height: 62px;
   width: 62px;
   border-radius: 4px !important;
   outline: 1.3px solid;
 }
+
 .ItemSlotIcon.Legendary {
   outline-color: #ff8000;
 }
+
 .ItemSlotIcon.Epic {
   outline-color: #a335ee;
 }
+
 .ItemSlotIcon.Rare {
   outline-color: #0070dd;
 }
+
 .ItemSlotIcon.Uncommon {
   outline-color: #1eff00;
 }
+
 .ItemSlotIcon.Common {
+  outline-color: #fff
+}
+
+.ItemSlotIcon.Poor {
   outline-color: #9d9d9d;
 }
 

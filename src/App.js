@@ -95,7 +95,7 @@ function App() {
   return (
     <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>
       <div className="App">
-        <ItemSlot slotID={1} item={character[5]} />
+        <ItemSlot slotID={1} item={character[0]} />
         <Tooltip item={glaive} />
       </div>
     </AccessTokenContext.Provider>
