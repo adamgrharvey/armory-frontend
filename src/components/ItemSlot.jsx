@@ -60,7 +60,7 @@ export default function ItemSlot(props) {
       <div className='ItemSlot'>
         <img src={itemMedia} alt={props.slotID} className={`ItemSlotIcon ${props.item.preview_item.quality.name}`} />
         <div className={`ItemSlot ItemDetails ${props.item.preview_item.quality.name}`} >
-          <p>{props.item.name}</p>
+          {props.item.name}
         </div>
       </div>
     </div>

@@ -22,6 +22,11 @@
   flex-direction: row;
   align-items: flex-start;
 }
+.ItemSlot.ItemDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
 .ItemSlot.ItemDetails.Legendary {
   color: #ff8000
@@ -52,6 +57,7 @@
   width: 62px;
   border-radius: 4px !important;
   outline: 1.3px solid;
+  margin-right: 5px;
 }
 
 .ItemSlotIcon.Legendary {
