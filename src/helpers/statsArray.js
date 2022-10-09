@@ -1,6 +1,6 @@
 export default function statsArray (item, isOnEquipStat) {
-  let stats = item.stats
-  let spells = item.spells
+  let stats = item.preview_item.stats ? item.preview_item.stats : [];
+  let spells = item.preview_item.spells ? item.preview_item.spells : [];
   let outArr = [];
 
   if (!isOnEquipStat) {
@@ -9,6 +9,7 @@ export default function statsArray (item, isOnEquipStat) {
         outArr.push(stats[i].display.display_string)
       }
     }
+    console.log('outArr', outArr);
     return outArr
   } else {
     for (let i = 0; i < stats.length; i++) {
@@ -22,7 +23,7 @@ export default function statsArray (item, isOnEquipStat) {
       }
 
     }
-
+    console.log('outArr', outArr);
     return outArr
   }
 }
