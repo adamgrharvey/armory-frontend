@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import statsArray from '../helpers/statsArray';
 import { AccessTokenContext } from '../helpers/Context';
 import { useContext } from 'react';
 import getPlayableClasses from '../helpers/getPlayableClasses';
+import getItemNameFromID from '../helpers/getItemNameFromID';
 
 export default function Tooltip(props) {
 
@@ -12,8 +13,11 @@ export default function Tooltip(props) {
     props.item ?
       <div className='Tooltip'>
         <b className={`itemrow ItemSlot ItemDetails ${props.item.preview_item.quality.name}`}>{props.item.name}</b>
-        <div className='itemrow itemlevel'>Item Level {props.item.level}</div>
+        <div className='itemrow itemlevelORset'>Item Level {props.item.level}</div>
+        {/*start of binding type */}
         <div className='itemrow'>{props.item.preview_item.binding ? props.item.preview_item.binding.name : ""}</div>
+        {/*start of uniqueness */}
+        <div className='itemrow'>{props.item.preview_item.unique_equipped ? props.item.preview_item.unique_equipped : ""}</div>
         <div className='itemrow'>
           <div>
             {props.item.preview_item.inventory_type.name}
@@ -48,15 +52,41 @@ export default function Tooltip(props) {
         <div className='itemrow classes'>
           {props.item.preview_item.requirements && props.item.preview_item.requirements.playable_classes ?
             getPlayableClasses(props.item)
-             : ""}
+            : ""}
         </div>
         <div className='itemrow'>
           {props.item.preview_item.requirements && props.item.preview_item.requirements.level ? props.item.preview_item.requirements.level.display_string : ""}
         </div>
+        {/*start of equip stats */}
         <div className='itemrow statrow equipstats'>
           {props.item.preview_item.stats ? statsArray(props.item, true).map((stat, i) => <div className='itemrow' key={i}>{stat}</div>) : ""}
         </div>
+        {/*start of SET bonuses */}
+        <div>
+          {props.item.preview_item.set ?
+            <Fragment>
+              <div className='itemrow itemlevelORset'>
 
+                <Fragment>
+                  <br />
+                  {props.item.preview_item.set.display_string}
+                </Fragment>
+              </div>
+              <div className='itemrow setrow setitems'>
+                {props.item.preview_item.set.items.map((item) =>
+                  <div className='itemrow'>{item.item.name}</div>
+                )}
+              </div>
+              <br />
+              <div className='itemrow setrow'>
+                {props.item.preview_item.set.effects.map((effect) =>
+                  <div className='itemrow'>{effect.display_string}</div>
+                )}
+              </div>
+            </Fragment>
+            : ""}
+
+        </div>
       </div>
 
       :

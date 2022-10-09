@@ -41,7 +41,7 @@ function App() {
   const [item, setItem] = useState({});
   const [character, setCharacter] = useState({});
   const [glaive, setGlaive] = useState({});
-  let Subspace = [32235, 35135, 34195, 2105, 34397, 34558, 31029, 34575, 34448, 34370, 32266, 34887, 37865, 34472, 41592, 49623, 35095, 34349, 23705];
+  let Subspace = [32235, 35135, 34195, 2105, 34397, 34558, 31029, 34575, 34448, 34370, 32266, 34887, 37865, 34472, 41592, 32837, 35095, 34349, 23705];
   let slotIDs = {
     0: "AMMO",
     1: "HEAD",
@@ -76,12 +76,13 @@ function App() {
         // setCharacter({...character, ...{[i]: getItemData(Subspace[i], accessToken)}});
         getItemData(item, accessToken)
           .then(res => {
-            //console.log(res);
             setCharacter(prev => ({ ...prev, ...{ [i]: res } }));
           })
+          .catch(err => {
+            console.log(err);
+          });
       }
       getItemData(32837, accessToken).then(res => setGlaive(res))
-      console.log();
       setUpdated(false);
     }
 

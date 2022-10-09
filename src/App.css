@@ -153,9 +153,10 @@
 }
 
 
-.itemrow.itemlevel {
+.itemrow.itemlevelORset {
   color: #ffd100
 }
+
 
 .itemrow.statrow {
   flex-direction: column;
@@ -163,6 +164,15 @@
 }
 .itemrow.statrow.equipstats {
   color: #1eff00
+}
+
+.itemrow.setrow {
+  flex-direction: column;
+  align-items: flex-start;
+  color: #9d9d9d;
+}
+.itemrow.setrow.setitems {
+  padding-left: 0.6em;
 }
 
 .App-logo {
