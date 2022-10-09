@@ -110,45 +110,45 @@
   justify-content: flex-start;
 }
 
-.DeathKnight {
+.c6 {
   color: #C41E3A;
   justify-content: flex-start;
 }
-.DemonHunter {
+.c12 {
   color: #A330C9;
   justify-content: flex-start;
 }
-.Druid {
+.c11 {
   color: #FF7C0A;
 }
-.Evoker {
+.c13 {
   color: #33937F;
 }
-.Hunter {
+.c3 {
   color: #AAD372;
 }
-.Mage {
+.c8 {
   color: #3FC7EB;
 }
-.Monk {
+.c10 {
   color: #00FF98;
 }
-.Paladin {
+.c2 {
   color: #F48CBA;
 }
-.Priest {
+.c5 {
   color: #FFFFFF;
 }
-.Rogue {
+.c4 {
   color: #FFF468;
 }
-.Shaman {
+.c7 {
   color: #0070dd;
 }
-.Warlock {
+.c9 {
   color: #8788EE;
 }
-.Warrior {
+.c1 {
   color: #C69B6D;
 }
 

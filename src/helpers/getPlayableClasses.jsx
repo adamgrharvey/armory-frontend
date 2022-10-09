@@ -7,7 +7,7 @@ export default function getPlayableClasses(item) {
 
   for (const wowClass of classArr) {
     outString = reactStringReplace(outString, wowClass.name, (match) => (
-      <span key={wowClass.id} className={`${wowClass.name}`}>{"\u00a0" + match}</span>
+      <span key={wowClass.id} className={`c${wowClass.id}`}>{"\u00a0" + match}</span>
     ))
   }
 
