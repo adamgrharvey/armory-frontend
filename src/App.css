@@ -98,6 +98,30 @@
   outline-color: #9d9d9d;
 }
 
+.moneygold {
+  padding-right: 13px;
+  background: no-repeat right center;
+  background-image: url(./images/Money/money-gold.gif);
+}
+
+.moneysilver {
+  padding-right: 13px;
+  background: no-repeat right center;
+  background-image: url(./images/Money/money-silver.gif);
+}
+
+.moneycopper {
+  padding-right: 13px;
+  background: no-repeat right center;
+  background-image: url(./images/Money/money-copper.gif);
+}
+
+.money {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-align: left;
+}
 
 .itemrow {
   display: flex;
@@ -114,40 +138,52 @@
   color: #C41E3A;
   justify-content: flex-start;
 }
+
 .c12 {
   color: #A330C9;
   justify-content: flex-start;
 }
+
 .c11 {
   color: #FF7C0A;
 }
+
 .c13 {
   color: #33937F;
 }
+
 .c3 {
   color: #AAD372;
 }
+
 .c8 {
   color: #3FC7EB;
 }
+
 .c10 {
   color: #00FF98;
 }
+
 .c2 {
   color: #F48CBA;
 }
+
 .c5 {
   color: #FFFFFF;
 }
+
 .c4 {
   color: #FFF468;
 }
+
 .c7 {
   color: #0070dd;
 }
+
 .c9 {
   color: #8788EE;
 }
+
 .c1 {
   color: #C69B6D;
 }
@@ -162,6 +198,7 @@
   flex-direction: column;
   align-items: flex-start;
 }
+
 .itemrow.statrow.equipstats {
   color: #1eff00
 }
@@ -171,6 +208,7 @@
   align-items: flex-start;
   color: #9d9d9d;
 }
+
 .itemrow.setrow.setitems {
   padding-left: 0.6em;
 }

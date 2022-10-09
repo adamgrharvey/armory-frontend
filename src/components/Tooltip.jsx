@@ -3,7 +3,7 @@ import statsArray from '../helpers/statsArray';
 import { AccessTokenContext } from '../helpers/Context';
 import { useContext } from 'react';
 import getPlayableClasses from '../helpers/getPlayableClasses';
-import getItemNameFromID from '../helpers/getItemNameFromID';
+import formatSellPrice from '../helpers/formatSellPrice';
 
 export default function Tooltip(props) {
 
@@ -25,7 +25,7 @@ export default function Tooltip(props) {
           </div>
           <div>
             {/* dont show subclass for Back, Trinket, Finger, Neck, or Shirt. */}
-            {(props.item.preview_item.inventory_type.name != "Back" && props.item.preview_item.inventory_type.name != "Trinket" && props.item.preview_item.inventory_type.name != "Finger" && props.item.preview_item.inventory_type.name != "Neck" && props.item.preview_item.inventory_type.name != "Shirt") ? props.item.preview_item.item_subclass.name : ""}
+            {(props.item.preview_item.inventory_type.name !== "Back" && props.item.preview_item.inventory_type.name !== "Trinket" && props.item.preview_item.inventory_type.name !== "Finger" && props.item.preview_item.inventory_type.name !== "Neck" && props.item.preview_item.inventory_type.name !== "Shirt") ? props.item.preview_item.item_subclass.name : ""}
           </div>
         </div>
         {/*start of weapon details if its a weapon */}
@@ -92,7 +92,7 @@ export default function Tooltip(props) {
         </div>
         {/*Start of vendor price */}
         <div>
-          <div className='itemrow'>{props.item.sell_price > 0 ? props.item.preview_item.unique_equipped : ""}</div>
+          <div className='money'>{props.item.sell_price > 0 ? formatSellPrice(props.item.sell_price) : ""}</div>
         </div>
       </div>
       :
