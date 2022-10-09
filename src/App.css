@@ -104,8 +104,54 @@
   flex-direction: row;
   justify-content: space-between;
   text-align: left;
-  
 }
+
+.itemrow.classes {
+  justify-content: flex-start;
+}
+
+.DeathKnight {
+  color: #C41E3A;
+  justify-content: flex-start;
+}
+.DemonHunter {
+  color: #A330C9;
+  justify-content: flex-start;
+}
+.Druid {
+  color: #FF7C0A;
+}
+.Evoker {
+  color: #33937F;
+}
+.Hunter {
+  color: #AAD372;
+}
+.Mage {
+  color: #3FC7EB;
+}
+.Monk {
+  color: #00FF98;
+}
+.Paladin {
+  color: #F48CBA;
+}
+.Priest {
+  color: #FFFFFF;
+}
+.Rogue {
+  color: #FFF468;
+}
+.Shaman {
+  color: #0070dd;
+}
+.Warlock {
+  color: #8788EE;
+}
+.Warrior {
+  color: #C69B6D;
+}
+
 
 .itemrow.itemlevel {
   color: #ffd100

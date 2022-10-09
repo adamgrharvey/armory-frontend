@@ -9,7 +9,6 @@ export default function statsArray (item, isOnEquipStat) {
         outArr.push(stats[i].display.display_string)
       }
     }
-    console.log('outArr', outArr);
     return outArr
   } else {
     for (let i = 0; i < stats.length; i++) {
@@ -23,7 +22,6 @@ export default function statsArray (item, isOnEquipStat) {
       }
 
     }
-    console.log('outArr', outArr);
     return outArr
   }
 }
