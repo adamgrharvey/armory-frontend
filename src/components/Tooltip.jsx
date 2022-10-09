@@ -18,12 +18,14 @@ export default function Tooltip(props) {
         <div className='itemrow'>{props.item.preview_item.binding ? props.item.preview_item.binding.name : ""}</div>
         {/*start of uniqueness */}
         <div className='itemrow'>{props.item.preview_item.unique_equipped ? props.item.preview_item.unique_equipped : ""}</div>
+        {/*start of armor type */}
         <div className='itemrow'>
           <div>
             {props.item.preview_item.inventory_type.name}
           </div>
           <div>
-            {props.item.preview_item.item_subclass.name}
+            {/* dont show subclass for Back, Trinket, Finger, Neck, or Shirt. */}
+            {(props.item.preview_item.inventory_type.name != "Back" && props.item.preview_item.inventory_type.name != "Trinket" && props.item.preview_item.inventory_type.name != "Finger" && props.item.preview_item.inventory_type.name != "Neck" && props.item.preview_item.inventory_type.name != "Shirt") ? props.item.preview_item.item_subclass.name : ""}
           </div>
         </div>
         {/*start of weapon details if its a weapon */}
@@ -86,9 +88,13 @@ export default function Tooltip(props) {
             </Fragment>
             : ""}
 
+          {/*END of SET bonuses */}
+        </div>
+        {/*Start of vendor price */}
+        <div>
+          <div className='itemrow'>{props.item.sell_price > 0 ? props.item.preview_item.unique_equipped : ""}</div>
         </div>
       </div>
-
       :
       <div>
         no item
