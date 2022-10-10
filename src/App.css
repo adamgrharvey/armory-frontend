@@ -7,17 +7,44 @@
   justify-content: flex-start;
   flex-direction: column;
   float: left;
-  padding-top: 1px;
-  padding: 8px 4px 1px 9px;
-  width: 320px;
+  width: 310px;
   visibility: visible;
   font-family: Verdana, "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 12px;
   line-height: 17px;
   justify-content: space-between;
 
-
 }
+.TooltipSpace {
+  width: 10px;
+  background-image: url(./images/tooltip.png);
+  background-position: top right;
+}
+
+.Separator {
+  display: flex;
+  flex-direction: row;
+}
+
+.TooltipTop {
+  padding-left: 10px;
+  padding-top: 10px;
+  background-image: url(./images/tooltip.png);
+  background-position: top left;
+}
+.TooltipBottom {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  background-image: url(./images/tooltip.png);
+  background-position: bottom left;
+}
+.TooltipBottomRight {
+  background-image: url(./images/tooltip.png);
+  background-position: bottom right;
+  width: 320px;
+}
+
 
 .Table {
   width: 100%;
