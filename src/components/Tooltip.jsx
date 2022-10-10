@@ -24,8 +24,8 @@ export default function Tooltip(props) {
             {props.item.preview_item.inventory_type.name}
           </div>
           <div>
-            {/* dont show subclass for Back, Trinket, Finger, Neck, or Shirt. */}
-            {(props.item.preview_item.inventory_type.name !== "Back" && props.item.preview_item.inventory_type.name !== "Trinket" && props.item.preview_item.inventory_type.name !== "Finger" && props.item.preview_item.inventory_type.name !== "Neck" && props.item.preview_item.inventory_type.name !== "Shirt") ? props.item.preview_item.item_subclass.name : ""}
+            {/* dont show subclass for Back, Trinket, Thrown, Finger, Neck, or Shirt. */}
+            {(props.item.preview_item.inventory_type.name !== "Back" && props.item.preview_item.inventory_type.name !== "Trinket" && props.item.preview_item.inventory_type.name !== "Finger" && props.item.preview_item.inventory_type.name !== "Neck" && props.item.preview_item.inventory_type.name !== "Shirt" && props.item.preview_item.inventory_type.name !== "Thrown") ? props.item.preview_item.item_subclass.name : ""}
           </div>
         </div>
         {/*start of weapon details if its a weapon */}
