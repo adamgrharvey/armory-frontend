@@ -134,22 +134,22 @@
 }
 
 .moneygold {
-  padding-right: 15px;
-  padding-top: 20px;
+  padding-right: 14px;
+  padding-top: 18px;
   background: no-repeat right center;
   background-image: url(./images/Money/money-gold.gif);
 }
 
 .moneysilver {
-  padding-right: 15px;
-  padding-top: 20px;
+  padding-right: 14px;
+  padding-top: 18px;
   background: no-repeat right center;
   background-image: url(./images/Money/money-silver.gif);
 }
 
 .moneycopper {
-  padding-right: 15px;
-  padding-top: 20px;
+  padding-right: 14px;
+  padding-top: 18px;
   background: no-repeat right center;
   background-image: url(./images/Money/money-copper.gif);
 }
