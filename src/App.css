@@ -15,10 +15,16 @@
   justify-content: space-between;
 
 }
-.TooltipSpace {
+.TooltipSpaceTR {
   width: 10px;
   background-image: url(./images/tooltip.png);
   background-position: top right;
+}
+
+.TooltipSpaceBR {
+  width: 10px;
+  background-image: url(./images/tooltip.png);
+  background-position: Bottom right;
 }
 
 .Separator {
@@ -29,6 +35,7 @@
 .TooltipTop {
   padding-left: 10px;
   padding-top: 10px;
+  width: 310px;
   background-image: url(./images/tooltip.png);
   background-position: top left;
 }
@@ -36,6 +43,7 @@
   padding-left: 10px;
   padding-bottom: 10px;
   padding-right: 10px;
+  width: 310px;
   background-image: url(./images/tooltip.png);
   background-position: bottom left;
 }
@@ -148,6 +156,7 @@
   flex-direction: row;
   justify-content: flex-start;
   text-align: left;
+  width: 100%;
 }
 
 .itemrow {
