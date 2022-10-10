@@ -56,7 +56,7 @@ export default function ItemSlot(props) {
 
   return (
     props.item ?
-    <div>
+    <div onMouseEnter={() => {props.onMouseEvent(true, props.item)}} onMouseLeave={() => {props.onMouseEvent(false, props.item)}}>
       <div className='ItemSlot'>
         <img src={itemMedia} alt={props.slotID} className={`ItemSlotIcon ${props.item.preview_item.quality.name}`} />
         <div className={`ItemSlot ItemDetails ${props.item.preview_item.quality.name}`} >

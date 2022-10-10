@@ -37,7 +37,8 @@ function App() {
   let BNET_ID = "cbeac907587149f08732abd74d2b73f8"
   let BNET_SECRET = "UvGoljFYvvQNhQgOw37mQs0yzjXqIGzC"
   const [accessToken, setAccessToken] = useState("");
-  const [updated, setUpdated] = useState(false)
+  const [updated, setUpdated] = useState(false);
+  const [show, setShow] = useState(false);
   const [item, setItem] = useState({});
   const [character, setCharacter] = useState({});
   const [glaive, setGlaive] = useState({});
@@ -92,15 +93,20 @@ function App() {
     console.log(character);
   }, [character])
 
+  const setTooltip = function(show, item) {
+    setShow(show);
+    setItem(item);
+  }
+
 
   return (
     <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>
       <div className="App">
-        <ItemSlot slotID={1} item={character[0]} />
-        <ItemSlot slotID={2} item={character[1]} />
-        <ItemSlot slotID={3} item={character[2]} />
-        <ItemSlot slotID={4} item={character[3]} />
-        <Tooltip item={character[15]} />
+        <ItemSlot onMouseEvent={setTooltip} slotID={1} item={character[0]} />
+        <ItemSlot onMouseEvent={setTooltip} slotID={2} item={character[1]} />
+        <ItemSlot onMouseEvent={setTooltip} slotID={3} item={character[2]} />
+        <ItemSlot onMouseEvent={setTooltip} slotID={4} item={character[3]} />
+        {show && <Tooltip item={item} />}
       </div>
     </AccessTokenContext.Provider>
   );
