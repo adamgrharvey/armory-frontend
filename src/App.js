@@ -84,6 +84,25 @@ function App() {
     [setMouseX, setMouseY]
   )
 
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
+
+  function getWindowSize() {
+    const {innerWidth, innerHeight} = window;
+    return {innerWidth, innerHeight};
+  }
+
 
   useEffect(() => {
     if (accessToken === "") {
@@ -116,6 +135,12 @@ function App() {
     setItem(item);
   }
   
+  const locationData = {
+    mouseX: mouseX,
+    mouseY: mouseY,
+    innerWidth: windowSize.innerWidth,
+    innerHeight: windowSize.innerHeight
+  };
 
   return (
     <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>
@@ -124,7 +149,7 @@ function App() {
         <ItemSlot onMouseEvent={setTooltip} slotID={2} item={character[1]} />
         <ItemSlot onMouseEvent={setTooltip} slotID={3} item={character[2]} />
         <ItemSlot onMouseEvent={setTooltip} slotID={4} item={character[3]} />
-        {show && <Tooltip mouseX={mouseX} mouseY={mouseY} item={item} />}
+        {show && <Tooltip locationData={locationData} item={item} />}
       </div>
     </AccessTokenContext.Provider>
   );

@@ -11,8 +11,8 @@ export default function Tooltip(props) {
 
   let STYLE = {
     position: 'absolute',
-    left: `${props.mouseX+8}px`,
-    top: `${props.mouseY-100 > 0 ? props.mouseY-100 : 0}px`,
+    left: `${props.locationData.mouseX+8 < props.locationData.innerWidth-320 ? props.locationData.mouseX+8 : props.locationData.innerWidth-320}px`,
+    top: `${props.locationData.mouseY-100 > 10 ? props.locationData.mouseY-100 : 10}px`,
   }
 
   return (
