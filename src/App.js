@@ -1,10 +1,9 @@
 import './App.css';
 import Tooltip from './components/Tooltip';
 import React from 'react';
-import { useEffect, useState, useContext, createContext } from 'react';
+import { useEffect, useState, useContext, createContext, useRef } from 'react';
 import getAccessToken from './helpers/getAccessToken';
 import getItemData from './helpers/getItemData';
-import getItemMedia from './helpers/getItemMedia';
 import ItemSlot from './components/ItemSlot';
 
 import { AccessTokenContext } from './helpers/Context';
@@ -134,6 +133,10 @@ function App() {
     setShow(show);
     setItem(item);
   }
+
+  useEffect(() => {
+    console.log(Array.from(document.getElementsByClassName('Tooltip')));
+  }, [show])
   
   const locationData = {
     mouseX: mouseX,
@@ -149,6 +152,14 @@ function App() {
         <ItemSlot onMouseEvent={setTooltip} slotID={2} item={character[1]} />
         <ItemSlot onMouseEvent={setTooltip} slotID={3} item={character[2]} />
         <ItemSlot onMouseEvent={setTooltip} slotID={4} item={character[3]} />
+        <ItemSlot onMouseEvent={setTooltip} slotID={5} item={character[4]} />
+        <ItemSlot onMouseEvent={setTooltip} slotID={6} item={character[5]} />
+        <ItemSlot onMouseEvent={setTooltip} slotID={7} item={character[6]} />
+        <ItemSlot onMouseEvent={setTooltip} slotID={8} item={character[7]} />
+        <ItemSlot onMouseEvent={setTooltip} slotID={9} item={character[8]} />
+        <ItemSlot onMouseEvent={setTooltip} slotID={10} item={character[9]} />
+        <ItemSlot onMouseEvent={setTooltip} slotID={11} item={character[10]} />
+        <ItemSlot onMouseEvent={setTooltip} slotID={12} item={character[11]} />
         {show && <Tooltip locationData={locationData} item={item} />}
       </div>
     </AccessTokenContext.Provider>
