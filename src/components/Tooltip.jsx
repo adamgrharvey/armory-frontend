@@ -9,9 +9,15 @@ export default function Tooltip(props) {
 
   const { accessToken, setAccessToken } = useContext(AccessTokenContext);
 
+  let STYLE = {
+    position: 'absolute',
+    left: `${props.mouseX+8}px`,
+    top: `${props.mouseY-100 > 0 ? props.mouseY-100 : 0}px`,
+  }
+
   return (
     props.item ?
-      <div className='Tooltip'>
+      <div style={STYLE} className='Tooltip'>
         <div className='Separator'>
           <div className='TooltipTop'>
             <b className={`itemrow ItemSlot ItemDetails ${props.item.preview_item.quality.name}`}>{props.item.name}</b>

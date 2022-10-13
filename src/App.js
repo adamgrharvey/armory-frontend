@@ -66,6 +66,24 @@ function App() {
     19: "TABARD"
   };
 
+  const [mouseX, setMouseX] = useState()
+  const [mouseY, setMouseY] = useState()
+  useEffect(
+    () => {
+      const update = (e) => {
+        setMouseX(e.x)
+        setMouseY(e.y)
+      }
+      window.addEventListener('mousemove', update)
+      window.addEventListener('touchmove', update)
+      return () => {
+        window.removeEventListener('mousemove', update)
+        window.removeEventListener('touchmove', update)
+      }
+    },
+    [setMouseX, setMouseY]
+  )
+
 
   useEffect(() => {
     if (accessToken === "") {
@@ -97,7 +115,7 @@ function App() {
     setShow(show);
     setItem(item);
   }
-
+  
 
   return (
     <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>
@@ -106,7 +124,7 @@ function App() {
         <ItemSlot onMouseEvent={setTooltip} slotID={2} item={character[1]} />
         <ItemSlot onMouseEvent={setTooltip} slotID={3} item={character[2]} />
         <ItemSlot onMouseEvent={setTooltip} slotID={4} item={character[3]} />
-        {show && <Tooltip item={item} />}
+        {show && <Tooltip mouseX={mouseX} mouseY={mouseY} item={item} />}
       </div>
     </AccessTokenContext.Provider>
   );

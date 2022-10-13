@@ -54,6 +54,8 @@ export default function ItemSlot(props) {
     19: "tabard"
   };
 
+
+
   return (
     props.item ?
     <div onMouseEnter={() => {props.onMouseEvent(true, props.item)}} onMouseLeave={() => {props.onMouseEvent(false, props.item)}}>
