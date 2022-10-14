@@ -26,8 +26,8 @@ export default function Tooltip(props) {
       <div style={STYLE} className='Tooltip'>
         <div className='Separator'>
           <div className='TooltipTop'>
-            <b className={`itemrow ItemSlot ItemDetails ${props.item.preview_item.quality.name}`}>{props.item.name}</b>
-            <div className='itemrow itemlevelORset'>Item Level {props.item.level}</div>
+            <b className={`itemrow ItemDetails ${props.item.preview_item.quality.name}`}>{props.item.name}</b>
+            <div className={`itemrow itemlevelORset ${props.item.preview_item.quality.name}`}>Item Level {props.item.level}</div>
             {/*start of binding type */}
             <div className='itemrow'>{props.item.preview_item.binding ? props.item.preview_item.binding.name : ""}</div>
             {/*start of uniqueness */}

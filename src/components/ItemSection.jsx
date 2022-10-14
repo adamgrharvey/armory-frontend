@@ -26,6 +26,7 @@ export default function ItemSection(props) {
     19: "TABARD"
   };
 
+  // how to divide up the armory sides
   let left = [1, 2, 3, 15, 5, 4, 19, 9];
   let bottom = [16, 17, 18];
   let right = [10, 6, 7, 8, 11, 12, 13, 14];
@@ -41,14 +42,12 @@ export default function ItemSection(props) {
 
   }, [])
 
-
-
   let keys = Object.keys(props.character);
 
   return (
-    <div>
+    <div className='ItemSection'>
       {section.map((i) =>
-        <ItemSlot key={i} onMouseEvent={props.setTooltip} slotID={i} item={props.character[i-1]} />)}
+        <ItemSlot section={props.section} key={`ItemSlot${slotIDs[i]}`} onMouseEvent={props.setTooltip} slotID={i} item={props.character[i-1]} />)}
     </div>
   )
 }

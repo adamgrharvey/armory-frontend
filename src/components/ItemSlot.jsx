@@ -59,7 +59,7 @@ export default function ItemSlot(props) {
   return (
     props.item ?
     <div onMouseOver={() => {props.onMouseEvent(true, props.item)}} onMouseLeave={() => {props.onMouseEvent(false, props.item)}}>
-      <div className='ItemSlot'>
+      <div className={`ItemSlot ${props.section}`}>
         <img src={itemMedia} alt={props.slotID} className={`ItemSlotIcon ${props.item.preview_item.quality.name}`} />
         <div className={`ItemSlot ItemDetails ${props.item.preview_item.quality.name}`} >
           {props.item.name}
@@ -67,7 +67,7 @@ export default function ItemSlot(props) {
       </div>
     </div>
     :
-    <div className='ItemSlot'>
+    <div className={`ItemSlot ${props.section}`}>
       <img src={require(`../images/EmptySlots/inventoryslot_${slotIDs[props.slotID]}.jpg`)} alt={props.slotID} className='ItemSlotIcon Common' />
       {slotIDs[props.slotID].charAt(0).toUpperCase() + slotIDs[props.slotID].slice(1)}
     </div>

@@ -53,6 +53,12 @@
   width: 320px;
 }
 
+.Paperdoll {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
 
 .Table {
   width: 100%;
@@ -65,10 +71,23 @@
   vertical-align: inherit;
 }
 
+
+
+.ItemSection {
+  width: 50%
+}
+
 .ItemSlot {
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
+  margin: 10px;
+}
+
+.ItemSlot.left {
+  flex-direction: row;
+}
+.ItemSlot.right {
+  flex-direction: row-reverse;
 }
 
 .ItemSlot.ItemDetails {
@@ -100,6 +119,31 @@
 .ItemSlot.ItemDetails.Poor {
   color: #9d9d9d;
 }
+
+.itemrow.ItemDetails.Legendary {
+  color: #ff8000
+}
+
+.itemrow.ItemDetails.Epic {
+  color: #a335ee;
+}
+
+.itemrow.ItemDetails.Rare {
+  color: #0070dd;
+}
+
+.itemrow.ItemDetails.Uncommon {
+  color: #1eff00;
+}
+
+.itemrow.ItemDetails.Common {
+  color: #fff;
+}
+
+.itemrow.ItemDetails.Poor {
+  color: #9d9d9d;
+}
+
 
 .ItemSlotIcon {
   height: 62px;

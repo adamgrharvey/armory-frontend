@@ -98,8 +98,8 @@ function App() {
   }, []);
 
   function getWindowSize() {
-    const {innerWidth, innerHeight} = window;
-    return {innerWidth, innerHeight};
+    const { innerWidth, innerHeight } = window;
+    return { innerWidth, innerHeight };
   }
 
 
@@ -129,11 +129,11 @@ function App() {
     console.log(character);
   }, [character])
 
-  const setTooltip = function(show, item) {
+  const setTooltip = function (show, item) {
     setShow(show);
     setItem(item);
   }
-  
+
   const locationData = {
     mouseX: mouseX,
     mouseY: mouseY,
@@ -143,9 +143,12 @@ function App() {
 
   return (
     <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>
-      <div className="App"> 
-        <ItemSection section={"left"} character={character} setTooltip={setTooltip} />
-        {show && <Tooltip locationData={locationData} item={item} />}
+      <div className="App">
+        <div className='Paperdoll'>
+          <ItemSection section={"left"} character={character} setTooltip={setTooltip} />
+          <ItemSection section={"right"} character={character} setTooltip={setTooltip} />
+          {show && <Tooltip locationData={locationData} item={item} />}
+        </div>
       </div>
     </AccessTokenContext.Provider>
   );
