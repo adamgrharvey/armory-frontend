@@ -7,6 +7,7 @@ import getItemData from './helpers/getItemData';
 import ItemSlot from './components/ItemSlot';
 
 import { AccessTokenContext } from './helpers/Context';
+import ItemSection from './components/ItemSection';
 
 /*
     "item:32235:3003:32409:32220:0:0:0:0:70:0:0:0:0:0:0:0:0:", -- [1]
@@ -43,7 +44,6 @@ function App() {
   const [glaive, setGlaive] = useState({});
   let Subspace = [32235, 35135, 34195, 2105, 34397, 34558, 31029, 34575, 34448, 34370, 32266, 34887, 37865, 34472, 41592, 32837, 35095, 34349, 23705];
   let slotIDs = {
-    0: "AMMO",
     1: "HEAD",
     2: "NECK",
     3: "SHOULDER",
@@ -133,10 +133,6 @@ function App() {
     setShow(show);
     setItem(item);
   }
-
-  useEffect(() => {
-    console.log(Array.from(document.getElementsByClassName('Tooltip')));
-  }, [show])
   
   const locationData = {
     mouseX: mouseX,
@@ -147,19 +143,8 @@ function App() {
 
   return (
     <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>
-      <div className="App">
-        <ItemSlot onMouseEvent={setTooltip} slotID={1} item={character[0]} />
-        <ItemSlot onMouseEvent={setTooltip} slotID={2} item={character[1]} />
-        <ItemSlot onMouseEvent={setTooltip} slotID={3} item={character[2]} />
-        <ItemSlot onMouseEvent={setTooltip} slotID={4} item={character[3]} />
-        <ItemSlot onMouseEvent={setTooltip} slotID={5} item={character[4]} />
-        <ItemSlot onMouseEvent={setTooltip} slotID={6} item={character[5]} />
-        <ItemSlot onMouseEvent={setTooltip} slotID={7} item={character[6]} />
-        <ItemSlot onMouseEvent={setTooltip} slotID={8} item={character[7]} />
-        <ItemSlot onMouseEvent={setTooltip} slotID={9} item={character[8]} />
-        <ItemSlot onMouseEvent={setTooltip} slotID={10} item={character[9]} />
-        <ItemSlot onMouseEvent={setTooltip} slotID={11} item={character[10]} />
-        <ItemSlot onMouseEvent={setTooltip} slotID={12} item={character[11]} />
+      <div className="App"> 
+        <ItemSection section={"left"} character={character} setTooltip={setTooltip} />
         {show && <Tooltip locationData={locationData} item={item} />}
       </div>
     </AccessTokenContext.Provider>
