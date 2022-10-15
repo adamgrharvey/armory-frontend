@@ -59,6 +59,12 @@
   justify-content: space-between;
 }
 
+.Paperdoll.bottom {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+}
+
 
 .Table {
   width: 100%;
@@ -73,9 +79,27 @@
 
 
 
-.ItemSection {
+.ItemSection.left {
+  display: flex;
+  flex-direction: column;
   width: 50%
 }
+.ItemSection.right {
+  display: flex;
+  flex-direction: column;
+  width: 50%
+}
+.ItemSection.bottomLeft {
+  display: flex;
+  flex-direction: column;
+  width: 50%
+}
+.ItemSection.bottomRight {
+  display: flex;
+  flex-direction: column;
+  width: 50%
+}
+
 
 .ItemSlot {
   display: flex;
@@ -88,6 +112,13 @@
 }
 .ItemSlot.right {
   flex-direction: row-reverse;
+}
+
+.ItemSlot.bottomLeft {
+  flex-direction: row-reverse;
+}
+.ItemSlot.bottomRight {
+  flex-direction: row;
 }
 
 .ItemSlot.ItemDetails {

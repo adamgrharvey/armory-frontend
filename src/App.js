@@ -147,8 +147,12 @@ function App() {
         <div className='Paperdoll'>
           <ItemSection section={"left"} character={character} setTooltip={setTooltip} />
           <ItemSection section={"right"} character={character} setTooltip={setTooltip} />
-          {show && <Tooltip locationData={locationData} item={item} />}
         </div>
+        <div className='Paperdoll bottom'>
+          <ItemSection section={"bottomLeft"} character={character} setTooltip={setTooltip} />
+          <ItemSection section={"bottomRight"} character={character} setTooltip={setTooltip} />
+        </div>
+        {show && <Tooltip locationData={locationData} item={item} />}
       </div>
     </AccessTokenContext.Provider>
   );

@@ -28,15 +28,17 @@ export default function ItemSection(props) {
 
   // how to divide up the armory sides
   let left = [1, 2, 3, 15, 5, 4, 19, 9];
-  let bottom = [16, 17, 18];
+  let bottomLeft = [16, 18];
   let right = [10, 6, 7, 8, 11, 12, 13, 14];
+  let bottomRight = [17];
 
   const [section, setSection] = useState([]);
 
   useEffect(() => {
     switch (true) {
       case props.section === 'left': setSection(left); break;
-      case props.section === 'bottom': setSection(bottom); break;
+      case props.section === 'bottomLeft': setSection(bottomLeft); break;
+      case props.section === 'bottomRight': setSection(bottomRight); break;
       case props.section === 'right': setSection(right); break;
     }
 
@@ -45,7 +47,7 @@ export default function ItemSection(props) {
   let keys = Object.keys(props.character);
 
   return (
-    <div className='ItemSection'>
+    <div className={`ItemSection ${props.section}`}>
       {section.map((i) =>
         <ItemSlot section={props.section} key={`ItemSlot${slotIDs[i]}`} onMouseEvent={props.setTooltip} slotID={i} item={props.character[i-1]} />)}
     </div>
