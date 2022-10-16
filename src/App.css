@@ -125,6 +125,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  font: 14px "Open Sans",Arial,"Helvetica Neue",Helvetica,sans-serif;
+  font-weight: 600;
 }
 
 .ItemSlot.ItemDetails.Legendary {
