@@ -68,7 +68,7 @@ export default function ItemSlot(props) {
     </div>
     :
     <div className={`ItemSlot ${props.section}`}>
-      <img src={require(`../images/EmptySlots/inventoryslot_${slotIDs[props.slotID]}.jpg`)} alt={props.slotID} className='ItemSlotIcon Common' />
+      <img src={require(`../images/EmptySlots/inventoryslot_${slotIDs[props.slotID]}.jpg`)} alt={props.slotID} className='ItemSlotIcon Poor' />
       {slotIDs[props.slotID].charAt(0).toUpperCase() + slotIDs[props.slotID].slice(1)}
     </div>
 
