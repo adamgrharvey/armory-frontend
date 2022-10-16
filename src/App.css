@@ -53,15 +53,20 @@
   width: 320px;
 }
 
+.CompletePaperdoll {
+  display: flex;
+  flex-direction: column;
+  max-width: 732px;
+  justify-content: space-between;
+}
+
 .Paperdoll {
   display: flex;
-  width: 50%;
   justify-content: space-between;
 }
 
 .Paperdoll.bottom {
   display: flex;
-  width: 50%;
   justify-content: space-around;
 }
 
@@ -127,22 +132,39 @@
   align-items: flex-start;
   font: 14px "Open Sans",Arial,"Helvetica Neue",Helvetica,sans-serif;
   font-weight: 600;
+  flex-wrap: wrap;
+  text-align: left;
+}
+.ItemSlot.ItemDetails:hover {
+  color: #fff;
 }
 
 .ItemSlot.ItemDetails.Legendary {
   color: #ff8000
 }
+.ItemSlot.ItemDetails.Legendary:hover {
+  color: #fff;
+}
 
 .ItemSlot.ItemDetails.Epic {
   color: #a335ee;
+}
+.ItemSlot.ItemDetails.Epic:hover {
+  color: #fff;
 }
 
 .ItemSlot.ItemDetails.Rare {
   color: #0070dd;
 }
+.ItemSlot.ItemDetails.Rare:hover {
+  color: #fff;
+}
 
 .ItemSlot.ItemDetails.Uncommon {
   color: #1eff00;
+}
+.ItemSlot.ItemDetails.Uncommon:hover {
+  color: #fff;
 }
 
 .ItemSlot.ItemDetails.Common {
@@ -151,6 +173,9 @@
 
 .ItemSlot.ItemDetails.Poor {
   color: #9d9d9d;
+}
+.ItemSlot.ItemDetails.Poor:hover {
+  color: #fff;
 }
 
 .itemrow.ItemDetails.Legendary {

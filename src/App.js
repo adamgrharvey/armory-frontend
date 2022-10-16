@@ -144,7 +144,7 @@ function App() {
   return (
     <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>
       <div className="App">
-        <div>
+        <div className='CompletePaperdoll'>
           <div className='Paperdoll'>
             <ItemSection section={"left"} character={character} setTooltip={setTooltip} />
             <ItemSection section={"right"} character={character} setTooltip={setTooltip} />
