@@ -111,6 +111,8 @@
   align-items: flex-start;
   margin: 8px;
   color: #9d9d9d;
+  font: 14px "Open Sans",Arial,"Helvetica Neue",Helvetica,sans-serif;
+  font-weight: 600;
 }
 
 .ItemSlot.left {
