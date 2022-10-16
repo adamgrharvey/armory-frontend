@@ -104,7 +104,7 @@
 .ItemSlot {
   display: flex;
   align-items: flex-start;
-  margin: 10px;
+  margin: 8px;
 }
 
 .ItemSlot.left {
@@ -177,8 +177,8 @@
 
 
 .ItemSlotIcon {
-  height: 62px;
-  width: 62px;
+  height: 56px;
+  width: 56px;
   border-radius: 4px !important;
   outline: 1.3px solid;
   margin-right: 5px;
