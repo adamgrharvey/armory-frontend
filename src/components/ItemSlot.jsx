@@ -27,7 +27,7 @@ export default function ItemSlot(props) {
   const { accessToken, setAccessToken } = useContext(AccessTokenContext);
   const [itemMedia, setItemMedia] = useState("");
   // let quality = props.item.preview_item.quality.name;
-  if (props.item && props.item) {
+  if (props.item && itemMedia === "") {
     getItemMedia(props.item.id, accessToken).then(res => setItemMedia(res))
 
   }
@@ -59,7 +59,7 @@ export default function ItemSlot(props) {
   return (
     props.item ?
     <div >
-      <div className={`ItemSlot ${props.section}`}>
+      <div onMouseOver={() => {props.onMouseEvent(true, props.item)}} onMouseLeave={() => {props.onMouseEvent(false, props.item)}} className={`ItemSlot ${props.section}`}>
         <img src={itemMedia} alt={props.slotID} className={`ItemSlotIcon ${props.item.preview_item.quality.name}`} />
         <div onMouseOver={() => {props.onMouseEvent(true, props.item)}} onMouseLeave={() => {props.onMouseEvent(false, props.item)}} className={`ItemSlot ItemDetails ${props.item.preview_item.quality.name}`} >
           {props.item.name}
