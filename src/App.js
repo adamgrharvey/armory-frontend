@@ -42,7 +42,7 @@ function App() {
   const [item, setItem] = useState({});
   const [character, setCharacter] = useState({});
   const [glaive, setGlaive] = useState({});
-  let Subspace = [32235, 35135, 34195, null, 34397, 34558, 31029, 34575, 34448, 34370, 32266, 34887, 37865, 34472, 41592, 32837, 35095, 34349, 23705];
+  let Subspace = [39561, 40065, 40502, 2105, 39558, 40205, 37644, 34575, 34448, 39560, 40586, 37642, 44253, 40684, 42068, 39714, 40386, 39296, 43156];
   let slotIDs = {
     1: "HEAD",
     2: "NECK",

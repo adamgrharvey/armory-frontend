@@ -58,6 +58,9 @@
   flex-direction: column;
   max-width: 732px;
   justify-content: space-between;
+  margin-left:25%;
+  margin-right:25%;
+  margin-top: 100px;
 }
 
 .Paperdoll {
@@ -87,22 +90,26 @@
 .ItemSection.left {
   display: flex;
   flex-direction: column;
-  width: 50%
+  width: 40%;
+  text-align: left;
 }
 .ItemSection.right {
   display: flex;
   flex-direction: column;
-  width: 50%
+  width: 40%;
+  text-align: right;
 }
 .ItemSection.bottomLeft {
   display: flex;
   flex-direction: column;
-  width: 50%
+  width: 40%;
+  text-align: right;
 }
 .ItemSection.bottomRight {
   display: flex;
   flex-direction: column;
-  width: 50%
+  width: 40%;
+  text-align: left;
 }
 
 
@@ -117,16 +124,20 @@
 
 .ItemSlot.left {
   flex-direction: row;
+  text-align: left;
 }
 .ItemSlot.right {
   flex-direction: row-reverse;
+  text-align: right;
 }
 
 .ItemSlot.bottomLeft {
   flex-direction: row-reverse;
+  text-align: right;
 }
 .ItemSlot.bottomRight {
   flex-direction: row;
+  text-align: left;
 }
 
 .ItemSlot.ItemDetails {
@@ -136,7 +147,8 @@
   font: 14px "Open Sans",Arial,"Helvetica Neue",Helvetica,sans-serif;
   font-weight: 600;
   flex-wrap: wrap;
-  text-align: left;
+  margin-top: 0px;
+
 }
 .ItemSlot.ItemDetails:hover {
   color: #fff;
