@@ -44,7 +44,7 @@ export default function Tooltip(props) {
             </div>
             {/*start of weapon details if its a weapon */}
             <div>
-              {props.item.preview_item.weapon ? <div className='itemrow'>
+              {props.item.preview_item.weapon ? <div className='itemrow white'>
                 <div>
                   {props.item.preview_item.weapon.damage.display_string}
                 </div>
