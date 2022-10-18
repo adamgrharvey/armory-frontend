@@ -1,16 +1,14 @@
 import React from 'react';
 
 export default function getAverageItemLevel(character) {
-  console.log(character);
   let keys = Object.keys(character);
   let sum = 0;
   let itemCount = keys.length;
 
   for (const key of keys) {
-    if (key < 20)
+    if (key < 20 && key !== 3 && key !== 18)
     sum += character[key].level;
-    console.log(sum);
   }
 
-  return sum / itemCount;
+  return Math.round(sum / itemCount);
 }

@@ -44,7 +44,6 @@ function App() {
   const [character, setCharacter] = useState({
     name: '',
     title: '',
-    avgILVL: null,
     inventory: {}
   });
   const [glaive, setGlaive] = useState({});
@@ -116,6 +115,7 @@ function App() {
     }
     if (updated) {
       let inventory = {};
+      let test = 0;
       for (const [i, item] of Subspace.entries()) {
         getItemData(item, accessToken)
           .then(res => {
@@ -151,7 +151,7 @@ function App() {
     <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>
       <div className="App">
         <div>
-          <p>{character.avgILVL}</p>
+          <p>{getAverageItemLevel(character.inventory)}</p>
         </div>
         <div className='CompletePaperdoll'>
           <div className='Paperdoll'>
