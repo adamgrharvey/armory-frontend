@@ -8,6 +8,7 @@ import ItemSlot from './components/ItemSlot';
 
 import { AccessTokenContext } from './helpers/Context';
 import ItemSection from './components/ItemSection';
+import getAverageItemLevel from './helpers/getAverageItemLevel';
 
 /*
     "item:32235:3003:32409:32220:0:0:0:0:70:0:0:0:0:0:0:0:0:", -- [1]
@@ -40,7 +41,12 @@ function App() {
   const [updated, setUpdated] = useState(false);
   const [show, setShow] = useState(false);
   const [item, setItem] = useState({});
-  const [character, setCharacter] = useState({});
+  const [character, setCharacter] = useState({
+    name: '',
+    title: '',
+    avgILVL: null,
+    inventory: {}
+  });
   const [glaive, setGlaive] = useState({});
   let Subspace = [39561, 40065, 40502, 2105, 39558, 40205, 37644, 34575, 34448, 39560, 40586, 37642, 44253, 40684, 42068, 39714, 40386, 39296, 43156];
   let slotIDs = {
@@ -109,20 +115,20 @@ function App() {
       setUpdated(true)
     }
     if (updated) {
+      let inventory = {};
       for (const [i, item] of Subspace.entries()) {
-        // setCharacter({...character, ...{[i]: getItemData(Subspace[i], accessToken)}});
         getItemData(item, accessToken)
           .then(res => {
-            setCharacter(prev => ({ ...prev, ...{ [i]: res } }));
+            inventory[i] = res;
           })
           .catch(err => {
             console.log(err);
           });
       }
+      setCharacter(prev => ({...prev, inventory}))
       getItemData(32837, accessToken).then(res => setGlaive(res))
       setUpdated(false);
     }
-
   }, [accessToken])
 
   useEffect(() => {
@@ -144,14 +150,17 @@ function App() {
   return (
     <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>
       <div className="App">
+        <div>
+          <p>{character.avgILVL}</p>
+        </div>
         <div className='CompletePaperdoll'>
           <div className='Paperdoll'>
-            <ItemSection section={"left"} character={character} setTooltip={setTooltip} />
-            <ItemSection section={"right"} character={character} setTooltip={setTooltip} />
+            <ItemSection section={"left"} character={character.inventory} setTooltip={setTooltip} />
+            <ItemSection section={"right"} character={character.inventory} setTooltip={setTooltip} />
           </div>
           <div className='Paperdoll bottom'>
-            <ItemSection section={"bottomLeft"} character={character} setTooltip={setTooltip} />
-            <ItemSection section={"bottomRight"} character={character} setTooltip={setTooltip} />
+            <ItemSection section={"bottomLeft"} character={character.inventory} setTooltip={setTooltip} />
+            <ItemSection section={"bottomRight"} character={character.inventory} setTooltip={setTooltip} />
           </div>
           {show && <Tooltip locationData={locationData} item={item} />}
         </div>
