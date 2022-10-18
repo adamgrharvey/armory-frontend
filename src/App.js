@@ -115,7 +115,6 @@ function App() {
     }
     if (updated) {
       let inventory = {};
-      let test = 0;
       for (const [i, item] of Subspace.entries()) {
         getItemData(item, accessToken)
           .then(res => {
