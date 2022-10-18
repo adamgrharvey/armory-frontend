@@ -9,6 +9,7 @@ import ItemSlot from './components/ItemSlot';
 import { AccessTokenContext } from './helpers/Context';
 import ItemSection from './components/ItemSection';
 import getAverageItemLevel from './helpers/getAverageItemLevel';
+import isTitleAfter from './helpers/isTitleAfter';
 
 /*
     "item:32235:3003:32409:32220:0:0:0:0:70:0:0:0:0:0:0:0:0:", -- [1]
@@ -43,7 +44,7 @@ function App() {
   const [item, setItem] = useState({});
   const [character, setCharacter] = useState({
     name: '',
-    title: '',
+    title: 'the Insane',
     inventory: {}
   });
   const [glaive, setGlaive] = useState({});
@@ -150,6 +151,7 @@ function App() {
     <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>
       <div className="App">
         <div>
+          
           <p>{getAverageItemLevel(character.inventory)}</p>
         </div>
         <div className='CompletePaperdoll'>
