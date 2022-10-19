@@ -27,11 +27,11 @@
   margin-right: 20px;
 }
 
-.Logo-horde {
+.Logo-HORDE {
   background-image: url(./images/Character/Logo-horde.2a80e0466e51d85c8cf60336e16fe8b8.png);
 }
 
-.Logo-alliance {
+.Logo-ALLIANCE {
   background-image: url(./images/Character/Logo-alliance.bb36e70f5f690a5fc510ed03e80aa259.png);
 }
 
@@ -43,7 +43,7 @@
 
 }
 .CharacterHeader-info {
-  
+
 }
 
 .CharacterHeader-ilvl {

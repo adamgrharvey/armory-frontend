@@ -46,6 +46,7 @@ function App() {
     name: 'Subspace',
     title: 'the Insane',
     wowClass: 'ROGUE',
+    faction: 'HORDE',
     inventory: {}
   });
   const [glaive, setGlaive] = useState({});
@@ -153,34 +154,30 @@ function App() {
       <div className="App">
         <div>
           <div>
-            {isTitleAfter(character.title) ?
-              <div className='CharacterHeader-character'>
-                <div className='Logo Logo-horde'></div>
-                <div>
-                  <div className={`CharacterHeader-name CharacterHeader--${character.wowClass}`}>
-                    {character.name}
+            <div className='CharacterHeader-character'>
+              <div className={`Logo Logo-${character.faction}`}></div>
+              <div>
+                {isTitleAfter(character.title) ?
+                  <div>
+                    <div className={`CharacterHeader-name CharacterHeader--${character.wowClass}`}>
+                      {character.name}
+                    </div>
+                    <div className='CharacterHeader-title'>
+                      {character.title}
+                    </div>
                   </div>
-                  <div className='CharacterHeader-title'>
-                    {character.title}
-                  </div>
-
-                </div>
-
+                  :
+                  <div>
+                    <div className='CharacterHeader-title'>
+                      {character.title}
+                    </div>
+                    <div className={`CharacterHeader-name CharacterHeader--${character.wowClass}`}>
+                      {character.name}
+                    </div>
+                  </div>}
               </div>
-              :
-              <div className='CharacterHeader-character'>
-                <div className='Logo Logo-horde'></div>
-                <div>
-                  <div className='CharacterHeader-title'>
-                    {character.title}
-                  </div>
-                  <div className={`CharacterHeader-name CharacterHeader--${character.wowClass}`}>
-                    {character.name}
-                  </div>
-                </div>
 
-              </div>
-            }
+            </div>
           </div>
           <p className='CharacterHeader-ilvl'>{getAverageItemLevel(character.inventory)} ILVL</p>
         </div>
@@ -196,7 +193,7 @@ function App() {
           {show && <Tooltip locationData={locationData} item={item} />}
         </div>
       </div>
-    </AccessTokenContext.Provider>
+    </AccessTokenContext.Provider >
   );
 }
 
