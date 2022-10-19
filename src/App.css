@@ -14,8 +14,62 @@
   font-size: 12px;
   line-height: 17px;
   justify-content: space-between;
+}
+
+.Logo {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  width: 50px;
+  height: 70px;
+  margin-right: 20px;
+}
+
+.Logo-horde {
+  background-image: url(./images/Character/Logo-horde.2a80e0466e51d85c8cf60336e16fe8b8.png);
+}
+
+.Logo-alliance {
+  background-image: url(./images/Character/Logo-alliance.bb36e70f5f690a5fc510ed03e80aa259.png);
+}
+
+.CharacterHeader-character {
+  display: flex;
+  padding-right: 20px;
+  margin-right: 20px;
+  border-right: 1px solid hsla(0, 0%, 100%, .2);
 
 }
+.CharacterHeader-info {
+  
+}
+
+.CharacterHeader-ilvl {
+  color: #f8b700;
+}
+
+.CharacterHeader-name {
+  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 2.2395rem;
+  line-height: 1.5;
+  line-height: 1em;
+  text-align: left;
+}
+
+.CharacterHeader-name.CharacterHeader--ROGUE {
+  color: rgb(255, 244, 98);
+}
+
+.CharacterHeader-title {
+  color: rgb(232, 230, 227);
+  text-shadow: rgb(0 0 0 / 0%) 0px 0px 1px, rgb(0 0 0 / 80%) 0px 1px 2px;
+  font-size: 1.224rem;
+  text-align: left;
+}
+
 .TooltipSpaceTR {
   width: 10px;
   background-image: url(./images/tooltip.png);
@@ -40,6 +94,7 @@
   background-image: url(./images/tooltip.png);
   background-position: top left;
 }
+
 .TooltipBottom {
   padding-left: 10px;
   padding-bottom: 10px;
@@ -48,6 +103,7 @@
   background-image: url(./images/tooltip.png);
   background-position: bottom left;
 }
+
 .TooltipBottomRight {
   background-image: url(./images/tooltip.png);
   background-position: bottom right;
@@ -59,8 +115,8 @@
   flex-direction: column;
   max-width: 732px;
   justify-content: space-between;
-  margin-left:25%;
-  margin-right:25%;
+  margin-left: 25%;
+  margin-right: 25%;
   margin-top: 100px;
 }
 
@@ -94,18 +150,21 @@
   width: 40%;
   text-align: left;
 }
+
 .ItemSection.right {
   display: flex;
   flex-direction: column;
   width: 40%;
   text-align: right;
 }
+
 .ItemSection.bottomLeft {
   display: flex;
   flex-direction: column;
   width: 40%;
   text-align: right;
 }
+
 .ItemSection.bottomRight {
   display: flex;
   flex-direction: column;
@@ -119,7 +178,7 @@
   align-items: flex-start;
   margin: 8px;
   color: #9d9d9d;
-  font: 14px "Open Sans",Arial,"Helvetica Neue",Helvetica,sans-serif;
+  font: 14px "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 600;
 }
 
@@ -127,6 +186,7 @@
   flex-direction: row;
   text-align: left;
 }
+
 .ItemSlot.right {
   flex-direction: row-reverse;
   text-align: right;
@@ -136,6 +196,7 @@
   flex-direction: row-reverse;
   text-align: right;
 }
+
 .ItemSlot.bottomRight {
   flex-direction: row;
   text-align: left;
@@ -145,12 +206,13 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font: 14px "Open Sans",Arial,"Helvetica Neue",Helvetica,sans-serif;
+  font: 14px "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 600;
   flex-wrap: wrap;
   margin-top: 0px;
 
 }
+
 .ItemSlot.ItemDetails:hover {
   color: #fff;
 }
@@ -158,6 +220,7 @@
 .ItemSlot.ItemDetails.Legendary {
   color: #ff8000
 }
+
 .ItemSlot.ItemDetails.Legendary:hover {
   color: #fff;
 }
@@ -165,6 +228,7 @@
 .ItemSlot.ItemDetails.Epic {
   color: #a335ee;
 }
+
 .ItemSlot.ItemDetails.Epic:hover {
   color: #fff;
 }
@@ -172,6 +236,7 @@
 .ItemSlot.ItemDetails.Rare {
   color: #0070dd;
 }
+
 .ItemSlot.ItemDetails.Rare:hover {
   color: #fff;
 }
@@ -179,6 +244,7 @@
 .ItemSlot.ItemDetails.Uncommon {
   color: #1eff00;
 }
+
 .ItemSlot.ItemDetails.Uncommon:hover {
   color: #fff;
 }
@@ -190,6 +256,7 @@
 .ItemSlot.ItemDetails.Poor {
   color: #9d9d9d;
 }
+
 .ItemSlot.ItemDetails.Poor:hover {
   color: #fff;
 }
@@ -226,6 +293,7 @@
   outline: 1.3px solid;
   margin-right: 5px;
 }
+
 .ItemSlotIcon:hover {
   box-shadow: 0 0 20px #9ecaed;
 }
@@ -233,6 +301,7 @@
 .ItemSlotIcon.Legendary {
   outline-color: #ff8000;
 }
+
 .ItemSlotIcon.Legendary:hover {
   box-shadow: 0 0 20px #ff8000;
   transition: box-shadow 0.45s ease-in-out;
@@ -241,6 +310,7 @@
 .ItemSlotIcon.Epic {
   outline-color: #a335ee;
 }
+
 .ItemSlotIcon.Epic:hover {
   box-shadow: 0 0 20px #a335ee;
   transition: box-shadow 0.45s ease-in-out;
@@ -249,6 +319,7 @@
 .ItemSlotIcon.Rare {
   outline-color: #0070dd;
 }
+
 .ItemSlotIcon.Rare:hover {
   box-shadow: 0 0 20px #0070dd;
   transition: box-shadow 0.45s ease-in-out;
@@ -257,6 +328,7 @@
 .ItemSlotIcon.Uncommon {
   outline-color: #1eff00;
 }
+
 .ItemSlotIcon.Uncommon:hover {
   box-shadow: 0 0 20px #1eff00;
   transition: box-shadow 0.45s ease-in-out;
@@ -265,6 +337,7 @@
 .ItemSlotIcon.Common {
   outline-color: #fff
 }
+
 .ItemSlotIcon.Common:hover {
   box-shadow: 0 0 20px #fff;
   transition: box-shadow 0.45s ease-in-out;
@@ -273,6 +346,7 @@
 .ItemSlotIcon.Poor {
   outline-color: #9d9d9d;
 }
+
 .ItemSlotIcon.Poor:hover {
   box-shadow: 0 0 20px #9d9d9d;
   transition: box-shadow 0.45s ease-in-out;

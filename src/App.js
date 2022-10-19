@@ -43,8 +43,9 @@ function App() {
   const [show, setShow] = useState(false);
   const [item, setItem] = useState({});
   const [character, setCharacter] = useState({
-    name: '',
+    name: 'Subspace',
     title: 'the Insane',
+    wowClass: 'ROGUE',
     inventory: {}
   });
   const [glaive, setGlaive] = useState({});
@@ -125,7 +126,7 @@ function App() {
             console.log(err);
           });
       }
-      setCharacter(prev => ({...prev, inventory}))
+      setCharacter(prev => ({ ...prev, inventory }))
       getItemData(32837, accessToken).then(res => setGlaive(res))
       setUpdated(false);
     }
@@ -151,8 +152,37 @@ function App() {
     <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>
       <div className="App">
         <div>
-          
-          <p>{getAverageItemLevel(character.inventory)}</p>
+          <div>
+            {isTitleAfter(character.title) ?
+              <div className='CharacterHeader-character'>
+                <div className='Logo Logo-horde'></div>
+                <div>
+                  <div className={`CharacterHeader-name CharacterHeader--${character.wowClass}`}>
+                    {character.name}
+                  </div>
+                  <div className='CharacterHeader-title'>
+                    {character.title}
+                  </div>
+
+                </div>
+
+              </div>
+              :
+              <div className='CharacterHeader-character'>
+                <div className='Logo Logo-horde'></div>
+                <div>
+                  <div className='CharacterHeader-title'>
+                    {character.title}
+                  </div>
+                  <div className={`CharacterHeader-name CharacterHeader--${character.wowClass}`}>
+                    {character.name}
+                  </div>
+                </div>
+
+              </div>
+            }
+          </div>
+          <p className='CharacterHeader-ilvl'>{getAverageItemLevel(character.inventory)} ILVL</p>
         </div>
         <div className='CompletePaperdoll'>
           <div className='Paperdoll'>
