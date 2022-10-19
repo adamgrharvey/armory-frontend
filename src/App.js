@@ -10,6 +10,7 @@ import { AccessTokenContext } from './helpers/Context';
 import ItemSection from './components/ItemSection';
 import getAverageItemLevel from './helpers/getAverageItemLevel';
 import isTitleAfter from './helpers/isTitleAfter';
+import CharacterHeader from './components/CharacterHeader';
 
 /*
     "item:32235:3003:32409:32220:0:0:0:0:70:0:0:0:0:0:0:0:0:", -- [1]
@@ -152,35 +153,7 @@ function App() {
   return (
     <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>
       <div className="App">
-        <div>
-          <div>
-            <div className='CharacterHeader-character'>
-              <div className={`Logo Logo-${character.faction}`}></div>
-              <div>
-                {isTitleAfter(character.title) ?
-                  <div>
-                    <div className={`CharacterHeader-name CharacterHeader--${character.wowClass}`}>
-                      {character.name}
-                    </div>
-                    <div className='CharacterHeader-title'>
-                      {character.title}
-                    </div>
-                  </div>
-                  :
-                  <div>
-                    <div className='CharacterHeader-title'>
-                      {character.title}
-                    </div>
-                    <div className={`CharacterHeader-name CharacterHeader--${character.wowClass}`}>
-                      {character.name}
-                    </div>
-                  </div>}
-              </div>
-
-            </div>
-          </div>
-          <p className='CharacterHeader-ilvl'>{getAverageItemLevel(character.inventory)} ILVL</p>
-        </div>
+        <CharacterHeader character={character}/>
         <div className='CompletePaperdoll'>
           <div className='Paperdoll'>
             <ItemSection section={"left"} character={character.inventory} setTooltip={setTooltip} />
