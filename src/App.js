@@ -44,10 +44,11 @@ function App() {
   const [show, setShow] = useState(false);
   const [item, setItem] = useState({});
   const [character, setCharacter] = useState({
-    name: 'Subspace',
+    name: 'Testchar',
     title: 'the Insane',
     wowClass: 'ROGUE',
     faction: 'HORDE',
+    achPoints: 9001,
     inventory: {}
   });
   const [glaive, setGlaive] = useState({});
@@ -153,17 +154,19 @@ function App() {
   return (
     <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>
       <div className="App">
-        <CharacterHeader character={character}/>
-        <div className='CompletePaperdoll'>
-          <div className='Paperdoll'>
-            <ItemSection section={"left"} character={character.inventory} setTooltip={setTooltip} />
-            <ItemSection section={"right"} character={character.inventory} setTooltip={setTooltip} />
+        <div className='Character'>
+          <CharacterHeader character={character} />
+          <div className='CompletePaperdoll'>
+            <div className='Paperdoll'>
+              <ItemSection section={"left"} character={character.inventory} setTooltip={setTooltip} />
+              <ItemSection section={"right"} character={character.inventory} setTooltip={setTooltip} />
+            </div>
+            <div className='Paperdoll bottom'>
+              <ItemSection section={"bottomLeft"} character={character.inventory} setTooltip={setTooltip} />
+              <ItemSection section={"bottomRight"} character={character.inventory} setTooltip={setTooltip} />
+            </div>
+            {show && <Tooltip locationData={locationData} item={item} />}
           </div>
-          <div className='Paperdoll bottom'>
-            <ItemSection section={"bottomLeft"} character={character.inventory} setTooltip={setTooltip} />
-            <ItemSection section={"bottomRight"} character={character.inventory} setTooltip={setTooltip} />
-          </div>
-          {show && <Tooltip locationData={locationData} item={item} />}
         </div>
       </div>
     </AccessTokenContext.Provider >

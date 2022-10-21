@@ -16,6 +16,7 @@
   justify-content: space-between;
 }
 
+
 .Logo {
   background-repeat: no-repeat;
   background-size: 100%;
@@ -35,19 +36,55 @@
   background-image: url(./images/Character/Logo-alliance.bb36e70f5f690a5fc510ed03e80aa259.png);
 }
 
+.CharacterHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.Character {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .CharacterHeader-character {
+  text-rendering: optimizeLegibility;
   display: flex;
   padding-right: 20px;
   margin-right: 20px;
   border-right: 1px solid hsla(0, 0%, 100%, .2);
 
 }
-.CharacterHeader-info {
 
+.CharacterHeader-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #f8b700;
+}
+.CharacterHeader-info-entry {
+  display: flex;
+  flex-direction: row;
+  color: #f8b700;
+  font-size: large;
+  text-align: top;
+  margin-right: 10px;
+  vertical-align: middle;
 }
 
+.CharacterHeader.info.icon {
+  display: inline-block;
+  fill: #f8b700;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+
 .CharacterHeader-ilvl {
-  color: #f8b700;
+  margin-left: 2px;
 }
 
 .CharacterHeader-name {
@@ -66,7 +103,7 @@
 .CharacterHeader-title {
   color: rgb(232, 230, 227);
   text-shadow: rgb(0 0 0 / 0%) 0px 0px 1px, rgb(0 0 0 / 80%) 0px 1px 2px;
-  font-size: 1.224rem;
+  font-size: 1.221rem;
   text-align: left;
 }
 
@@ -117,7 +154,7 @@
   justify-content: space-between;
   margin-left: 25%;
   margin-right: 25%;
-  margin-top: 100px;
+  margin-top: 20px;
 }
 
 .Paperdoll {
