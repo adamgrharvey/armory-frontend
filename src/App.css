@@ -341,7 +341,7 @@
 
 .ItemSlotIcon.Legendary:hover {
   box-shadow: 0 0 20px #ff8000;
-  transition: box-shadow 0.45s ease-in-out;
+  transition: box-shadow 0.15s ease;
 }
 
 .ItemSlotIcon.Epic {
@@ -350,7 +350,7 @@
 
 .ItemSlotIcon.Epic:hover {
   box-shadow: 0 0 20px #a335ee;
-  transition: box-shadow 0.45s ease-in-out;
+  transition: box-shadow 0.15s ease;
 }
 
 .ItemSlotIcon.Rare {
@@ -359,7 +359,7 @@
 
 .ItemSlotIcon.Rare:hover {
   box-shadow: 0 0 20px #0070dd;
-  transition: box-shadow 0.45s ease-in-out;
+  transition: box-shadow 0.15s ease;
 }
 
 .ItemSlotIcon.Uncommon {
@@ -368,7 +368,7 @@
 
 .ItemSlotIcon.Uncommon:hover {
   box-shadow: 0 0 20px #1eff00;
-  transition: box-shadow 0.45s ease-in-out;
+  transition: box-shadow 0.15s ease;
 }
 
 .ItemSlotIcon.Common {
@@ -377,7 +377,7 @@
 
 .ItemSlotIcon.Common:hover {
   box-shadow: 0 0 20px #fff;
-  transition: box-shadow 0.45s ease-in-out;
+  transition: box-shadow 0.15s ease;
 }
 
 .ItemSlotIcon.Poor {
@@ -386,7 +386,7 @@
 
 .ItemSlotIcon.Poor:hover {
   box-shadow: 0 0 20px #9d9d9d;
-  transition: box-shadow 0.45s ease-in-out;
+  transition: box-shadow 0.15s ease;
 }
 
 .moneygold {
