@@ -2,10 +2,10 @@ import './App.css';
 import Tooltip from './components/Tooltip';
 import React from 'react';
 import { useEffect, useState, useContext, createContext, useRef } from 'react';
+
 import getAccessToken from './helpers/getAccessToken';
 import getItemData from './helpers/getItemData';
 import ItemSlot from './components/ItemSlot';
-
 import { AccessTokenContext } from './helpers/Context';
 import ItemSection from './components/ItemSection';
 import getAverageItemLevel from './helpers/getAverageItemLevel';
