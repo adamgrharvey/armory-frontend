@@ -10,25 +10,6 @@ export default function readCharacterString(characterString) {
 
   let itemArr = characterString.split(".");
 
-  let itemIDs = {
-    itemID: 0,
-    enchantID: 0,
-    gem1ID: 0,
-    gem2ID: 0,
-    gem3ID: 0,
-    gem4ID: 0,
-    suffixID: 0,
-    uniqueID: 0,
-    charLevel: 0,
-    specializationID: 0,
-    upgradeID: 0,
-    instanceDifficultyID: 0,
-    numBonusIDs: 0,
-    bonus1ID: 0,
-    bonus2ID: 0,
-    upgradeValue: 0
-  }
-
   let slotIDs = {
     1: { slot: "HEAD" },
     2: { slot: "NECK" },
