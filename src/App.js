@@ -2,7 +2,7 @@ import './App.css';
 import Tooltip from './components/Tooltip';
 import React from 'react';
 import { useEffect, useState, useContext, createContext, useRef } from 'react';
-import { BrowserRouter } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { render } from "react-dom";
 import getAccessToken from './helpers/getAccessToken';
 import getItemData from './helpers/getItemData';
@@ -101,7 +101,7 @@ function App() {
       for (const item of keys) {
         getItemData(charac[item].item.itemID, accessToken)
           .then(res => {
-            inventory[item-1] = res;
+            inventory[item - 1] = res;
           })
           .catch(err => {
             console.log(err);
@@ -129,7 +129,9 @@ function App() {
     <BrowserRouter>
       <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>
         <div className="App">
-          <Character character={character} locationData={locationData} />
+          <Routes>
+            <Route path="/character/:region/:server/:characterName" element={<Character character={character} locationData={locationData} />} />
+          </Routes>
         </div>
       </AccessTokenContext.Provider >
     </BrowserRouter>
