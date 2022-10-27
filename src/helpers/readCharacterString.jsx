@@ -27,9 +27,9 @@ export default function readCharacterString(characterString) {
   };
 
   for (let i = 1; i <= 19; i++) {
-    slotIDs[i].item = translateItemSegment(itemArr[i-1])
+    slotIDs[i].item = translateItemSegment(itemArr[i - 1])
   }
-console.log(slotIDs);
+  return (slotIDs);
 }
 
 const translateItemSegment = function (itemSegment) {
