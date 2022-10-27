@@ -1,9 +1,12 @@
 import React from 'react';
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useEffect, useState, useContext } from 'react';
+import axios from 'axios';
+import MoonLoader from 'react-spinners/MoonLoader';
+
 import CharacterHeader from './CharacterHeader';
 import ItemSection from './ItemSection';
 import Tooltip from './Tooltip';
-import { useEffect, useState, useContext} from 'react';
 
 import getAccessToken from '../helpers/getAccessToken';
 import getItemData from '../helpers/getItemData';
@@ -11,10 +14,13 @@ import readCharacterString from '../helpers/readCharacterString';
 import { AccessTokenContext } from '../helpers/Context';
 
 export default function Character(props) {
+  let backendURL = "http://localhost:3000";
   const [show, setShow] = useState(false);
   const [item, setItem] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [characterExists, setCharacterExists] = useState(false);
   const { accessToken, setAccessToken } = useContext(AccessTokenContext);
-  const {region, server, characterName} = useParams();
+  const { region, server, characterName } = useParams();
   const setTooltip = function (show, item) {
     setShow(show);
     setItem(item);
@@ -33,6 +39,41 @@ export default function Character(props) {
 
   const [mouseX, setMouseX] = useState()
   const [mouseY, setMouseY] = useState()
+
+  function getCharacterData() {
+    return new Promise((resolve, reject) => {
+      axios
+        .get(`${backendURL}/character/${region}/${server}/${characterName}`, {
+          headers: {
+            'content-type': 'application/json',
+          },
+        })
+        .then((res) => {
+          // if server returns 200 (success)
+          if (res.status === 200) {
+            //console.log(res);
+            if (res.data && res.data.character_string) {
+              let characterString = res.data.character_string;
+              setCharacter(prev => ({ ...prev, characterString }))
+              setCharacterExists(true);
+              return res;
+            }
+          }
+        })
+        .then((res) => {
+          setLoading(false);
+          resolve(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+          reject(err);
+        });
+    });
+  }
+  useEffect(() => {
+    console.log('test');
+  })
+
   useEffect(
     () => {
       const update = (e) => {
@@ -52,6 +93,7 @@ export default function Character(props) {
   const [windowSize, setWindowSize] = useState(getWindowSize());
 
   useEffect(() => {
+
     function handleWindowResize() {
       setWindowSize(getWindowSize());
     }
@@ -63,6 +105,12 @@ export default function Character(props) {
     };
 
   }, []);
+
+  useEffect(() => {
+    if (loading) {
+      getCharacterData()
+    }
+  }, [loading])
 
   function getWindowSize() {
     const { innerWidth, innerHeight } = window;
@@ -76,7 +124,7 @@ export default function Character(props) {
     }
     if (accessToken !== "") {
       let inventory = {};
-      let charac = readCharacterString("40499:3817:41398:42702:0:0:0:0:80:0:0:0:0:0:0:0:0:.44664:0:40003:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.40502:3808:40003:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.2105:0:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.40495:3832:40003:40053:0:0:0:0:80:0:0:0:0:0:0:0:0:.40205:0:40003:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.44011:3823:40003:39910:0:0:0:0:80:0:0:0:0:0:0:0:0:.34575:3606:40003:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.34448:3845:40003:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.40496:3604:40053:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.40717:0:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.37642:0:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.44253:0:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.40684:0:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.40721:3730:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.39714:3789:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.40386:3789:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.39296:0:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.43156:0:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.")
+      let charac = readCharacterString(character.characterString)
       let keys = Object.keys(charac)
       for (const item of keys) {
         getItemData(charac[item].item.itemID, accessToken)
@@ -92,8 +140,10 @@ export default function Character(props) {
   }, [accessToken])
 
   useEffect(() => {
-    console.log(character);
-  }, [character])
+    if (!loading) {
+      console.log(character);
+    }
+  }, [loading])
 
 
 
@@ -104,11 +154,12 @@ export default function Character(props) {
     innerHeight: windowSize.innerHeight
   };
 
-  
+
 
 
   return (
-      <div className='Character'>
+    <div>
+      {loading ? (<MoonLoader color={'#5118a7'} width={'50%'} height={8} />) : (characterExists ? (<div className='Character'>
         <CharacterHeader character={character} />
         <div className='CompletePaperdoll'>
           <div className='Paperdoll'>
@@ -121,6 +172,8 @@ export default function Character(props) {
           </div>
           {show && <Tooltip locationData={locationData} item={item} />}
         </div>
-      </div>
+      </div>) : (<div> Character does not exist </div>))}
+
+    </div>
   )
 }

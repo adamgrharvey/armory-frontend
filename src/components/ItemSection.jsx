@@ -44,8 +44,6 @@ export default function ItemSection(props) {
 
   }, [])
 
-  let keys = Object.keys(props.character);
-
   return (
     <div className={`ItemSection ${props.section}`}>
       {section.map((i) =>

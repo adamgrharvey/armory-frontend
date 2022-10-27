@@ -1,13 +1,9 @@
 import React, { Fragment } from 'react';
 import statsArray from '../helpers/statsArray';
-import { AccessTokenContext } from '../helpers/Context';
-import { useContext } from 'react';
 import getPlayableClasses from '../helpers/getPlayableClasses';
 import formatSellPrice from '../helpers/formatSellPrice';
 
 export default function Tooltip(props) {
-
-  const { accessToken, setAccessToken } = useContext(AccessTokenContext);
 
   let STYLE = {
     position: 'absolute',
@@ -100,14 +96,14 @@ export default function Tooltip(props) {
                     </Fragment>
                   </div>
                   <div className='itemrow setrow setitems'>
-                    {props.item.preview_item.set.items.map((item) =>
-                      <div className='itemrow'>{item.item.name}</div>
+                    {props.item.preview_item.set.items.map((item, i) =>
+                      <div className='itemrow' key={i}>{item.item.name}</div>
                     )}
                   </div>
                   <br />
                   <div className='itemrow setrow'>
-                    {props.item.preview_item.set.effects.map((effect) =>
-                      <div className='itemrow'>{effect.display_string}</div>
+                    {props.item.preview_item.set.effects.map((effect, i) =>
+                      <div className='itemrow' key={i}>{effect.display_string}</div>
                     )}
                   </div>
                 </Fragment>

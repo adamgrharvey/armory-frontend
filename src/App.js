@@ -1,14 +1,9 @@
 import './App.css';
 import React from 'react';
-import { useEffect, useState, useContext, createContext, useRef } from 'react';
+import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { render } from "react-dom";
-
-import getAccessToken from './helpers/getAccessToken';
-import getItemData from './helpers/getItemData';
 import { AccessTokenContext } from './helpers/Context';
-import readCharacterString from './helpers/readCharacterString';
-
 import Character from './components/Character';
 
 /*
@@ -37,7 +32,7 @@ import Character from './components/Character';
 
 function App() {
   const [accessToken, setAccessToken] = useState("");
-  let url = "";
+  let frontendURL = "";
  
 
   return (
@@ -45,7 +40,7 @@ function App() {
       <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>
         <div className="App">
           <Routes>
-            <Route path={`${url}/character/:region/:server/:characterName`} element={<Character />} />
+            <Route path={`${frontendURL}/character/:region/:server/:characterName`} element={<Character />} />
           </Routes>
         </div>
       </AccessTokenContext.Provider >

@@ -1,4 +1,3 @@
-import React from 'react';
 
 export default function getAverageItemLevel(character) {
   let keys = Object.keys(character);
