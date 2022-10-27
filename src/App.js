@@ -4,16 +4,11 @@ import React from 'react';
 import { useEffect, useState, useContext, createContext, useRef } from 'react';
 import { BrowserRouter } from "react-router-dom"
 import { render } from "react-dom";
-
 import getAccessToken from './helpers/getAccessToken';
 import getItemData from './helpers/getItemData';
-import ItemSlot from './components/ItemSlot';
 import { AccessTokenContext } from './helpers/Context';
-import ItemSection from './components/ItemSection';
-import getAverageItemLevel from './helpers/getAverageItemLevel';
-import isTitleAfter from './helpers/isTitleAfter';
-import CharacterHeader from './components/CharacterHeader';
 import readCharacterString from './helpers/readCharacterString';
+
 import Character from './components/Character';
 
 /*
