@@ -1,9 +1,9 @@
 import './App.css';
-import Tooltip from './components/Tooltip';
 import React from 'react';
 import { useEffect, useState, useContext, createContext, useRef } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { render } from "react-dom";
+
 import getAccessToken from './helpers/getAccessToken';
 import getItemData from './helpers/getItemData';
 import { AccessTokenContext } from './helpers/Context';
@@ -36,101 +36,16 @@ import Character from './components/Character';
 
 
 function App() {
-  let BNET_ID = "cbeac907587149f08732abd74d2b73f8"
-  let BNET_SECRET = "UvGoljFYvvQNhQgOw37mQs0yzjXqIGzC"
   const [accessToken, setAccessToken] = useState("");
-  const [updated, setUpdated] = useState(false);
-
-  const [character, setCharacter] = useState({
-    name: 'Testchar',
-    title: 'the Insane',
-    wowClass: 'ROGUE',
-    faction: 'HORDE',
-    achPoints: 9001,
-    inventory: {}
-  });
-
-  const [mouseX, setMouseX] = useState()
-  const [mouseY, setMouseY] = useState()
-  useEffect(
-    () => {
-      const update = (e) => {
-        setMouseX(e.x)
-        setMouseY(e.y)
-      }
-      window.addEventListener('mousemove', update)
-      window.addEventListener('touchmove', update)
-      return () => {
-        window.removeEventListener('mousemove', update)
-        window.removeEventListener('touchmove', update)
-      }
-    },
-    [setMouseX, setMouseY]
-  )
-
-  const [windowSize, setWindowSize] = useState(getWindowSize());
-
-  useEffect(() => {
-    function handleWindowResize() {
-      setWindowSize(getWindowSize());
-    }
-
-    window.addEventListener('resize', handleWindowResize);
-
-    return () => {
-      window.removeEventListener('resize', handleWindowResize);
-    };
-
-  }, []);
-
-  function getWindowSize() {
-    const { innerWidth, innerHeight } = window;
-    return { innerWidth, innerHeight };
-  }
-
-
-  useEffect(() => {
-    if (accessToken === "") {
-      getAccessToken(BNET_ID, BNET_SECRET, setAccessToken)
-      setUpdated(true)
-    }
-    if (updated) {
-      let inventory = {};
-      let charac = readCharacterString("40499:3817:41398:42702:0:0:0:0:80:0:0:0:0:0:0:0:0:.44664:0:40003:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.40502:3808:40003:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.2105:0:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.40495:3832:40003:40053:0:0:0:0:80:0:0:0:0:0:0:0:0:.40205:0:40003:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.44011:3823:40003:39910:0:0:0:0:80:0:0:0:0:0:0:0:0:.34575:3606:40003:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.34448:3845:40003:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.40496:3604:40053:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.40717:0:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.37642:0:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.44253:0:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.40684:0:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.40721:3730:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.39714:3789:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.40386:3789:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.39296:0:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.43156:0:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.")
-      let keys = Object.keys(charac)
-      for (const item of keys) {
-        getItemData(charac[item].item.itemID, accessToken)
-          .then(res => {
-            inventory[item - 1] = res;
-          })
-          .catch(err => {
-            console.log(err);
-          });
-      }
-      setCharacter(prev => ({ ...prev, inventory }))
-      setUpdated(false);
-    }
-  }, [accessToken])
-
-  useEffect(() => {
-    console.log(character);
-  }, [character])
-
-
-
-  const locationData = {
-    mouseX: mouseX,
-    mouseY: mouseY,
-    innerWidth: windowSize.innerWidth,
-    innerHeight: windowSize.innerHeight
-  };
+  let url = "";
+ 
 
   return (
     <BrowserRouter>
       <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>
         <div className="App">
           <Routes>
-            <Route path="/character/:region/:server/:characterName" element={<Character character={character} locationData={locationData} />} />
+            <Route path={`${url}/character/:region/:server/:characterName`} element={<Character />} />
           </Routes>
         </div>
       </AccessTokenContext.Provider >
