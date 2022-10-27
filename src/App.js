@@ -2,6 +2,8 @@ import './App.css';
 import Tooltip from './components/Tooltip';
 import React from 'react';
 import { useEffect, useState, useContext, createContext, useRef } from 'react';
+import { BrowserRouter } from "react-router-dom"
+import { render } from "react-dom";
 
 import getAccessToken from './helpers/getAccessToken';
 import getItemData from './helpers/getItemData';
@@ -11,6 +13,7 @@ import ItemSection from './components/ItemSection';
 import getAverageItemLevel from './helpers/getAverageItemLevel';
 import isTitleAfter from './helpers/isTitleAfter';
 import CharacterHeader from './components/CharacterHeader';
+import readCharacterString from './helpers/readCharacterString';
 
 /*
     "item:32235:3003:32409:32220:0:0:0:0:70:0:0:0:0:0:0:0:0:", -- [1]
@@ -54,25 +57,25 @@ function App() {
   const [glaive, setGlaive] = useState({});
   let Subspace = [39561, 40065, 40502, 2105, 39558, 40205, 37644, 34575, 34448, 39560, 40586, 37642, 44253, 40684, 42068, 39714, 40386, 39296, 43156];
   let slotIDs = {
-    1: "HEAD",
-    2: "NECK",
-    3: "SHOULDER",
-    4: "BODY",
-    5: "CHEST",
-    6: "WAIST",
-    7: "LEGS",
-    8: "FEET",
-    9: "WRIST",
-    10: "HAND",
-    11: "FINGER1",
-    12: "FINGER2",
-    13: "TRINKET1",
-    14: "TRINKET2",
-    15: "CLOAK",
-    16: "MAINHAND",
-    17: "OFFHAND",
-    18: "RANGED",
-    19: "TABARD"
+    1: {slot: "HEAD"},
+    2: {slot: "NECK"},
+    3: {slot: "SHOULDER"},
+    4: {slot: "BODY"},
+    5: {slot: "CHEST"},
+    6: {slot: "WAIST"},
+    7: {slot: "LEGS"},
+    8: {slot: "FEET"},
+    9: {slot: "WRIST"},
+    10: {slot: "HAND"},
+    11: {slot: "FINGER1"},
+    12: {slot: "FINGER2"},
+    13: {slot: "TRINKET1"},
+    14: {slot: "TRINKET2"},
+    15: {slot: "CLOAK"},
+    16: {slot: "MAINHAND"},
+    17: {slot: "OFFHAND"},
+    18: {slot: "RANGED"},
+    19: {slot: "TABARD"}
   };
 
   const [mouseX, setMouseX] = useState()
@@ -101,10 +104,12 @@ function App() {
     }
 
     window.addEventListener('resize', handleWindowResize);
+    readCharacterString("40499:3817:41398:42702:0:0:0:0:80:0:0:0:0:0:0:0:0:.44664:0:40003:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.40502:3808:40003:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.2105:0:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.40495:3832:40003:40053:0:0:0:0:80:0:0:0:0:0:0:0:0:.40205:0:40003:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.44011:3823:40003:39910:0:0:0:0:80:0:0:0:0:0:0:0:0:.34575:3606:40003:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.34448:3845:40003:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.40496:3604:40053:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.40717:0:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.37642:0:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.44253:0:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.40684:0:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.40721:3730:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.39714:3789:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.40386:3789:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.39296:0:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.43156:0:0:0:0:0:0:0:80:0:0:0:0:0:0:0:0:.")
 
     return () => {
       window.removeEventListener('resize', handleWindowResize);
     };
+
   }, []);
 
   function getWindowSize() {
@@ -152,24 +157,27 @@ function App() {
   };
 
   return (
-    <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>
-      <div className="App">
-        <div className='Character'>
-          <CharacterHeader character={character} />
-          <div className='CompletePaperdoll'>
-            <div className='Paperdoll'>
-              <ItemSection section={"left"} character={character.inventory} setTooltip={setTooltip} />
-              <ItemSection section={"right"} character={character.inventory} setTooltip={setTooltip} />
+    <BrowserRouter>
+      <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>
+        <div className="App">
+          <div className='Character'>
+            <CharacterHeader character={character} />
+            <div className='CompletePaperdoll'>
+              <div className='Paperdoll'>
+                <ItemSection section={"left"} character={character.inventory} setTooltip={setTooltip} />
+                <ItemSection section={"right"} character={character.inventory} setTooltip={setTooltip} />
+              </div>
+              <div className='Paperdoll bottom'>
+                <ItemSection section={"bottomLeft"} character={character.inventory} setTooltip={setTooltip} />
+                <ItemSection section={"bottomRight"} character={character.inventory} setTooltip={setTooltip} />
+              </div>
+              {show && <Tooltip locationData={locationData} item={item} />}
             </div>
-            <div className='Paperdoll bottom'>
-              <ItemSection section={"bottomLeft"} character={character.inventory} setTooltip={setTooltip} />
-              <ItemSection section={"bottomRight"} character={character.inventory} setTooltip={setTooltip} />
-            </div>
-            {show && <Tooltip locationData={locationData} item={item} />}
           </div>
         </div>
-      </div>
-    </AccessTokenContext.Provider >
+      </AccessTokenContext.Provider >
+    </BrowserRouter>
+
   );
 }
 
