@@ -33,14 +33,14 @@ import Character from './components/Character';
 function App() {
   const [accessToken, setAccessToken] = useState("");
   let frontendURL = "";
- 
+
 
   return (
     <BrowserRouter>
       <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>
         <div className="App">
           <Routes>
-            <Route path={`${frontendURL}/character/:region/:server/:characterName`} element={<Character />} />
+            <Route exact path={`${frontendURL}/character/:region/:server/:characterName`} element={<Character />} />
           </Routes>
         </div>
       </AccessTokenContext.Provider >

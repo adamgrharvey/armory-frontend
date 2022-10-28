@@ -1,6 +1,11 @@
 .App {
-  text-align: center;
   background-color: #131516;
+}
+
+.Loader {
+  display: flex;
+  justify-content: center;
+  padding-top: 200px;
 }
 
 .Tooltip {

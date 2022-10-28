@@ -12,6 +12,7 @@ import getAccessToken from '../helpers/getAccessToken';
 import getItemData from '../helpers/getItemData';
 import readCharacterString from '../helpers/readCharacterString';
 import { AccessTokenContext } from '../helpers/Context';
+import ItemSections from './ItemSections';
 
 export default function Character(props) {
   let backendURL = "http://localhost:3000";
@@ -61,8 +62,11 @@ export default function Character(props) {
           }
         })
         .then((res) => {
-          setLoading(false);
-          resolve(res.data);
+          setTimeout(() => {
+            setLoading(false);
+            resolve(res);
+          }, 500)
+
         })
         .catch((err) => {
           console.log(err);
@@ -70,9 +74,6 @@ export default function Character(props) {
         });
     });
   }
-  useEffect(() => {
-    console.log('test');
-  })
 
   useEffect(
     () => {
@@ -159,17 +160,11 @@ export default function Character(props) {
 
   return (
     <div>
-      {loading ? (<MoonLoader color={'#5118a7'} width={'50%'} height={8} />) : (characterExists ? (<div className='Character'>
+      {loading ? (<div className='Loader'><MoonLoader color={'#5118a7'} width={'50%'} height={8} />
+      </div>) : (characterExists ? (<div className='Character'>
         <CharacterHeader character={character} />
         <div className='CompletePaperdoll'>
-          <div className='Paperdoll'>
-            <ItemSection section={"left"} character={character.inventory} setTooltip={setTooltip} />
-            <ItemSection section={"right"} character={character.inventory} setTooltip={setTooltip} />
-          </div>
-          <div className='Paperdoll bottom'>
-            <ItemSection section={"bottomLeft"} character={character.inventory} setTooltip={setTooltip} />
-            <ItemSection section={"bottomRight"} character={character.inventory} setTooltip={setTooltip} />
-          </div>
+          <ItemSections setLoading={setLoading} setTooltip={setTooltip} character={character} />
           {show && <Tooltip locationData={locationData} item={item} />}
         </div>
       </div>) : (<div> Character does not exist </div>))}
