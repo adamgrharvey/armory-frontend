@@ -33,11 +33,6 @@ export default function Character(props) {
   let BNET_SECRET = "UvGoljFYvvQNhQgOw37mQs0yzjXqIGzC"
 
   const [character, setCharacter] = useState({
-    name: 'Testchar',
-    title: 'the Insane',
-    wowClass: 'ROGUE',
-    faction: 'HORDE',
-    achPoints: 9001,
     inventory: {}
   });
 
@@ -101,9 +96,8 @@ export default function Character(props) {
             console.log(res);
             if (res.data && res.data.character_string) {
               let characterString = characterStringSplitter(res.data.character_string)
-              let wowClass = classIDtoName(res.data.class_id);
-              let name = res.data.name[0].toUpperCase() + res.data.name.substring(1).toLowerCase()
-              setCharacter(prev => ({ ...prev, name, wowClass, characterString }))
+              let name = characterString.miscInfo.name[0].toUpperCase() + characterString.miscInfo.name.substring(1).toLowerCase()
+              setCharacter(prev => ({ ...prev, name, characterString }))
               setCharacterExists(true);
               return res;
             }
