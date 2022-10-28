@@ -7,6 +7,9 @@ import getFactionFromRace from "./getFactionFromRace";
 export default function characterStringSplitter(characterString) {
   let [itemString, miscString, statisticString] = characterString.split("!");
   let miscArray = miscString.split(".");
+  if (miscArray[3] === "null") {
+    miscArray[3] = null;
+  }
   let miscInfo = {
     name: miscArray[0],
     title: miscArray[3],
