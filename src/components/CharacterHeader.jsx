@@ -28,7 +28,7 @@ export default function CharacterHeader(props) {
                 <div className='CharacterHeader-title'>
                   {props.character.title}
                 </div>
-                <div className={`CharacterHeader-name CharacterHeader ${props.character.wowClass}`}>
+                <div className={`CharacterHeader-name CharacterHeader--${props.character.wowClass}`}>
                   {props.character.name}
                 </div>
               </div>

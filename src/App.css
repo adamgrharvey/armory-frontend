@@ -105,6 +105,7 @@
   color: rgb(255, 244, 98);
 }
 
+
 .CharacterHeader-title {
   color: rgb(232, 230, 227);
   text-shadow: rgb(0 0 0 / 0%) 0px 0px 1px, rgb(0 0 0 / 80%) 0px 1px 2px;
@@ -443,53 +444,92 @@
   color: #C41E3A;
   justify-content: flex-start;
 }
+.CharacterHeader-name.CharacterHeader--DEATHKNIGHT {
+  color: #C41E3A;
+}
 
 .c12 {
   color: #A330C9;
   justify-content: flex-start;
 }
+.CharacterHeader-name.CharacterHeader--DEMONHUNTER {
+  color: #A330C9;
+}
 
 .c11 {
+  color: #FF7C0A;
+}
+.CharacterHeader-name.CharacterHeader--DRUID {
   color: #FF7C0A;
 }
 
 .c13 {
   color: #33937F;
 }
+.CharacterHeader-name.CharacterHeader--EVOKER {
+  color: #33937F;
+}
 
 .c3 {
+  color: #AAD372;
+}
+.CharacterHeader-name.CharacterHeader--HUNTER {
   color: #AAD372;
 }
 
 .c8 {
   color: #3FC7EB;
 }
+.CharacterHeader-name.CharacterHeader--MAGE {
+  color: #3FC7EB;
+}
 
 .c10 {
+  color: #00FF98;
+}
+.CharacterHeader-name.CharacterHeader--MONK {
   color: #00FF98;
 }
 
 .c2 {
   color: #F48CBA;
 }
+.CharacterHeader-name.CharacterHeader--PALADIN {
+  color: #F48CBA;
+}
 
 .c5 {
+  color: #FFFFFF;
+}
+.CharacterHeader-name.CharacterHeader--PRIEST {
   color: #FFFFFF;
 }
 
 .c4 {
   color: #FFF468;
 }
+.CharacterHeader-name.CharacterHeader--ROGUE {
+  color: #FFF468;
+}
 
 .c7 {
+  color: #0070dd;
+}
+.CharacterHeader-name.CharacterHeader--SHAMAN {
   color: #0070dd;
 }
 
 .c9 {
   color: #8788EE;
 }
+.CharacterHeader-name.CharacterHeader--WARLOCK {
+  color: #8788EE;
+}
 
 .c1 {
+  color: #C69B6D;
+}
+.CharacterHeader-name.CharacterHeader--WARRIOR {
   color: #C69B6D;
 }
 
