@@ -11,7 +11,7 @@ import ItemSections from './ItemSections';
 
 import getAccessToken from '../helpers/getAccessToken';
 import getItemData from '../helpers/getItemData';
-import readCharacterString from '../helpers/readCharacterString';
+import readItemString from '../helpers/readItemString';
 import { AccessTokenContext } from '../helpers/Context';
 import classIDtoName from '../helpers/classIDtoName';
 import characterStringSplitter from '../helpers/characterStringSplitter';
@@ -124,7 +124,7 @@ export default function Character(props) {
     }
     if (accessToken !== "") {
       let inventory = {};
-      let charac = readCharacterString(character.characterString.itemString)
+      let charac = readItemString(character.characterString.itemString)
       let keys = Object.keys(charac)
       for (const item of keys) {
         if (charac[item].item) {

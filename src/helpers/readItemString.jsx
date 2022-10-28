@@ -1,6 +1,6 @@
-export default function readCharacterString(characterString) {
+export default function readItemString(itemString) {
 
-  let itemArr = characterString.split(".");
+  let itemArr = itemString.split(".");
 
   let slotIDs = {
     1: { slot: "HEAD" },
