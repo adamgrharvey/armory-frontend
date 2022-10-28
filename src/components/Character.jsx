@@ -132,13 +132,16 @@ export default function Character(props) {
       let charac = readCharacterString(character.characterString)
       let keys = Object.keys(charac)
       for (const item of keys) {
-        getItemData(charac[item].item.itemID, accessToken)
+        if (charac[item].item) {
+          getItemData(charac[item].item.itemID, accessToken)
           .then(res => {
             inventory[item - 1] = res;
           })
           .catch(err => {
             console.log(err);
           });
+        }
+
       }
       setCharacter(prev => ({ ...prev, inventory }))
     }
