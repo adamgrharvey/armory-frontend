@@ -14,6 +14,7 @@ import getItemData from '../helpers/getItemData';
 import readCharacterString from '../helpers/readCharacterString';
 import { AccessTokenContext } from '../helpers/Context';
 import classIDtoName from '../helpers/classIDtoName';
+import characterStringSplitter from '../helpers/characterStringSplitter';
 
 
 export default function Character(props) {
@@ -42,42 +43,6 @@ export default function Character(props) {
 
   const [mouseX, setMouseX] = useState()
   const [mouseY, setMouseY] = useState()
-
-  function getCharacterData() {
-    return new Promise((resolve, reject) => {
-      axios
-        .get(`${backendURL}/character/${region}/${server}/${characterName}`, {
-          headers: {
-            'content-type': 'application/json',
-          },
-        })
-        .then((res) => {
-          // if server returns 200 (success)
-          if (res.status === 200) {
-            console.log(res);
-            if (res.data && res.data.character_string) {
-              let characterString = res.data.character_string;
-              let wowClass = classIDtoName(res.data.class_id);
-              let name = res.data.name[0].toUpperCase() + res.data.name.substring(1).toLowerCase()
-              setCharacter(prev => ({ ...prev, name, wowClass, characterString }))
-              setCharacterExists(true);
-              return res;
-            }
-          }
-        })
-        .then((res) => {
-          setTimeout(() => {
-            setLoading(false);
-            resolve(res);
-          }, 500)
-
-        })
-        .catch((err) => {
-          console.log(err);
-          reject(err);
-        });
-    });
-  }
 
   useEffect(
     () => {
@@ -122,6 +87,42 @@ export default function Character(props) {
     return { innerWidth, innerHeight };
   }
 
+  function getCharacterData() {
+    return new Promise((resolve, reject) => {
+      axios
+        .get(`${backendURL}/character/${region}/${server}/${characterName}`, {
+          headers: {
+            'content-type': 'application/json',
+          },
+        })
+        .then((res) => {
+          // if server returns 200 (success)
+          if (res.status === 200) {
+            console.log(res);
+            if (res.data && res.data.character_string) {
+              let characterString = characterStringSplitter(res.data.character_string)
+              let wowClass = classIDtoName(res.data.class_id);
+              let name = res.data.name[0].toUpperCase() + res.data.name.substring(1).toLowerCase()
+              setCharacter(prev => ({ ...prev, name, wowClass, characterString }))
+              setCharacterExists(true);
+              return res;
+            }
+          }
+        })
+        .then((res) => {
+          setTimeout(() => {
+            setLoading(false);
+            resolve(res);
+          }, 500)
+
+        })
+        .catch((err) => {
+          console.log(err);
+          reject(err);
+        });
+    });
+  }
+
 
   useEffect(() => {
     if (accessToken === "") {
@@ -129,7 +130,7 @@ export default function Character(props) {
     }
     if (accessToken !== "") {
       let inventory = {};
-      let charac = readCharacterString(character.characterString)
+      let charac = readCharacterString(character.characterString.itemString)
       let keys = Object.keys(charac)
       for (const item of keys) {
         if (charac[item].item) {

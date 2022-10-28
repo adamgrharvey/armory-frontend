@@ -11,24 +11,24 @@ export default function CharacterHeader(props) {
     <div className='CharacterHeader'>
       <div>
         <div className='CharacterHeader-character'>
-          <div className={`Logo Logo-${props.character.faction}`}></div>
+          <div className={`Logo Logo-${props.character.characterString.miscInfo.faction}`}></div>
           <div>
             {/* start of title diff*/}
-            {isTitleAfter(props.character.title) ?
+            {isTitleAfter(props.character.characterString.miscInfo.title) ?
               <div>
-                <div className={`CharacterHeader-name CharacterHeader--${props.character.wowClass}`}>
+                <div className={`CharacterHeader-name CharacterHeader--${props.character.characterString.miscInfo.wowClass}`}>
                   {props.character.name}
                 </div>
                 <div className='CharacterHeader-title'>
-                  {props.character.title}
+                  {props.character.characterString.miscInfo.title}
                 </div>
               </div>
               :
               <div>
                 <div className='CharacterHeader-title'>
-                  {props.character.title}
+                  {props.character.characterString.miscInfo.title}
                 </div>
-                <div className={`CharacterHeader-name CharacterHeader--${props.character.wowClass}`}>
+                <div className={`CharacterHeader-name CharacterHeader--${props.character.characterString.miscInfo.wowClass}`}>
                   {props.character.name}
                 </div>
               </div>
@@ -51,7 +51,7 @@ export default function CharacterHeader(props) {
             <AchShield height={16} width={16} fill={"#f8b700"} />
           </div>
           <div className='CharacterHeader-ilvl'>
-            {props.character.achPoints}
+            {props.character.characterString.miscInfo.achPoints}
           </div>
         </div>
       </div>
