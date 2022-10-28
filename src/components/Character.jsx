@@ -7,12 +7,14 @@ import MoonLoader from 'react-spinners/MoonLoader';
 import CharacterHeader from './CharacterHeader';
 import ItemSection from './ItemSection';
 import Tooltip from './Tooltip';
+import ItemSections from './ItemSections';
 
 import getAccessToken from '../helpers/getAccessToken';
 import getItemData from '../helpers/getItemData';
 import readCharacterString from '../helpers/readCharacterString';
 import { AccessTokenContext } from '../helpers/Context';
-import ItemSections from './ItemSections';
+import classIDtoName from '../helpers/classIDtoName';
+
 
 export default function Character(props) {
   let backendURL = "http://localhost:3000";
@@ -52,10 +54,11 @@ export default function Character(props) {
         .then((res) => {
           // if server returns 200 (success)
           if (res.status === 200) {
-            //console.log(res);
+            console.log(res);
             if (res.data && res.data.character_string) {
               let characterString = res.data.character_string;
-              setCharacter(prev => ({ ...prev, characterString }))
+              let wowClass = classIDtoName(res.data.class_id);
+              setCharacter(prev => ({ ...prev, wowClass, characterString }))
               setCharacterExists(true);
               return res;
             }
