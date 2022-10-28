@@ -7,9 +7,12 @@ import getFactionFromRace from "./getFactionFromRace";
 export default function characterStringSplitter(characterString) {
   let [itemString, miscString, statisticString] = characterString.split("!");
   let miscArray = miscString.split(".");
+  statisticStringSplitter(statisticString);
+
   if (miscArray[3] === "null") {
     miscArray[3] = null;
   }
+
   let miscInfo = {
     name: miscArray[0],
     title: miscArray[3],
@@ -22,5 +25,37 @@ export default function characterStringSplitter(characterString) {
     miscInfo: miscInfo,
     statisticString: statisticString
   }
+
+}
+
+const hexToDecimal = hex => parseInt(hex, 16);
+
+function statisticStringSplitter(statisticString) {
+  let statisticsArr = statisticString.split(".");
+  let statistics = {}
+
+
+  for (const stat of statisticsArr) {
+    let [statisticID, statisticValues] = stat.split(":");
+    if (statisticID != "") {
+      if (statisticValues && statisticValues.includes("_")) {
+        let [statisticValue, dateCompleted] = statisticValues.split("_");
+        if (statisticValue) {
+          statisticValue = statisticValue.trim();
+        }
+        statistics[hexToDecimal(statisticID)] = { value: statisticValue, dateCompleted: dateCompleted }
+      } else {
+        let statisticValue = statisticValues;
+        if (statisticValue) {
+          statisticValue = statisticValue.trim();
+        }
+        statistics[hexToDecimal(statisticID)] = { value: statisticValue, dateCompleted: null };
+      }
+    }
+    // statisticsObj[hexToDecimal(statisticID)] = {value: null, dataCompleted: null};
+
+  }
+
+  console.log(statistics);
 
 }

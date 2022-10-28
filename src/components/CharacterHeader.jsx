@@ -13,7 +13,7 @@ export default function CharacterHeader(props) {
         <div className='CharacterHeader-character'>
           <div className={`Logo Logo-${props.character.characterString.miscInfo.faction}`}></div>
           <div>
-            {/* start of title diff*/}
+            {/* start of title div*/}
             {isTitleAfter(props.character.characterString.miscInfo.title) || props.character.characterString.miscInfo.title === null ?
               <div>
                 <div className={`CharacterHeader-name CharacterHeader--${props.character.characterString.miscInfo.wowClass}`}>
@@ -33,7 +33,7 @@ export default function CharacterHeader(props) {
                 </div>
               </div>
             }
-            {/*end of title diff */}
+            {/*end of title div */}
           </div>
         </div>
       </div>
