@@ -58,7 +58,8 @@ export default function Character(props) {
             if (res.data && res.data.character_string) {
               let characterString = res.data.character_string;
               let wowClass = classIDtoName(res.data.class_id);
-              setCharacter(prev => ({ ...prev, wowClass, characterString }))
+              let name = res.data.name[0].toUpperCase() + res.data.name.substring(1).toLowerCase()
+              setCharacter(prev => ({ ...prev, name, wowClass, characterString }))
               setCharacterExists(true);
               return res;
             }
