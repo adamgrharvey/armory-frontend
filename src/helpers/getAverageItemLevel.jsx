@@ -9,5 +9,5 @@ export default function getAverageItemLevel(character) {
     sum += character[key].level;
   }
 
-  return Math.round(sum / itemCount);
+  return Math.round(sum / (itemCount-2));
 }
