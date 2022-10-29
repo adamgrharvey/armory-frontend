@@ -17,12 +17,18 @@ export default function characterStringSplitter(characterString) {
 
   let miscInfo = {
     name: miscArray[0],
+    server: miscArray[1],
+    region: miscArray[2],
     title: miscArray[3],
+    wowRace: miscArray[6],
+    level: Number(miscArray[7]),
+    wowClassID: Number(miscArray[4]),
     wowClass: classIDtoName(miscArray[4]),
     faction: getFactionFromRace(miscArray[6]),
     achPoints: Number(miscArray[5]),
   }
   return {
+    characterString: characterString,
     itemString: itemString,
     miscInfo: miscInfo,
     statisticString: statisticString,

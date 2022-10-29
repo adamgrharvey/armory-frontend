@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { render } from "react-dom";
 import { AccessTokenContext } from './helpers/Context';
 import Character from './components/Character';
+import Submit from './components/Submit';
 
 /*
     "item:32235:3003:32409:32220:0:0:0:0:70:0:0:0:0:0:0:0:0:", -- [1]
@@ -41,6 +42,7 @@ function App() {
         <div className="App">
           <Routes>
             <Route exact path={`${frontendURL}/character/:region/:server/:characterName`} element={<Character />} />
+            <Route path={`${frontendURL}/submit`} element={<Submit />}/>
           </Routes>
         </div>
       </AccessTokenContext.Provider >
