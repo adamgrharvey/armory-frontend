@@ -95,9 +95,9 @@ export default function Character(props) {
           if (res.status === 200) {
             console.log(res);
             if (res.data && res.data.character_string) {
-              let characterString = characterStringSplitter(res.data.character_string)
-              let name = characterString.miscInfo.name[0].toUpperCase() + characterString.miscInfo.name.substring(1).toLowerCase()
-              setCharacter(prev => ({ ...prev, name, characterString }))
+              let characterData = characterStringSplitter(res.data.character_string)
+              let name = characterData.miscInfo.name[0].toUpperCase() + characterData.miscInfo.name.substring(1).toLowerCase()
+              setCharacter(prev => ({ ...prev, name, characterData }))
               setCharacterExists(true);
               return res;
             }
@@ -124,7 +124,7 @@ export default function Character(props) {
     }
     if (accessToken !== "") {
       let inventory = {};
-      let charac = readItemString(character.characterString.itemString)
+      let charac = readItemString(character.characterData.itemString)
       let keys = Object.keys(charac)
       for (const item of keys) {
         if (charac[item].item) {

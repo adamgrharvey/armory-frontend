@@ -46,13 +46,13 @@ function statisticStringSplitter(statisticString) {
         if (statisticValue) {
           statisticValue = statisticValue.trim();
         }
-        statistics[hexToDecimal(statisticID)] = { value: statisticValue, dateCompleted: dateCompleted }
+        statistics[hexToDecimal(statisticID)] = { stat_id: hexToDecimal(statisticID), value: statisticValue, dateCompleted: dateCompleted }
       } else {
         let statisticValue = statisticValues;
         if (statisticValue) {
           statisticValue = statisticValue.trim();
         }
-        statistics[hexToDecimal(statisticID)] = { value: statisticValue, dateCompleted: null };
+        statistics[hexToDecimal(statisticID)] = { stat_id: hexToDecimal(statisticID), value: statisticValue, dateCompleted: null };
       }
     }
     // statisticsObj[hexToDecimal(statisticID)] = {value: null, dataCompleted: null};
