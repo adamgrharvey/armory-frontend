@@ -1,70 +1,98 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/adamgrharvey/armory-frontend">
+    <img src="./src/images/Project/Armory.jpg" alt="Logo" width="300" height="180">
+  </a>
 
-## Available Scripts
+<h3 align="center">Classic Armory</h3>
 
-In the project directory, you can run:
+  <p align="center">
+    An Unofficial Armory made for WoW Classic.
+    <br />
+  </p>
+</div>
+</details>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## About The Project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+Classic Armory is a database for Characters that play World of Warcraft: Classic. It is a work in progress, and is currently in the beta stage of development.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+My goal is to create a place where people can upload their characters and view that characters data and statistics, as well as everyone elses characters!
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Built With
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* [![React][React.js]][React-url]
+* ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+* ![SQLite3](https://img.shields.io/badge/sqlite3-%230F80CC.svg?style=for-the-badge&logo=sqlite&logoColor=003B57)
+* ![Rails](https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
+* ![Axios](https://img.shields.io/static/v1?style=for-the-badge&message=Axios&color=5A29E4&logo=Axios&logoColor=FFFFFF&label=)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To get a local copy up and running follow these simple example steps.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Clone the FRONTEND repo
+   ```sh
+   git clone https://github.com/adamgrharvey/armory-frontend
+   ```
+2. Install NPM packages in the root directory
+   ```sh
+   npm install
+   npm run start
+   ```
+3. In a separate directory, Clone the BACKEND repo
+   ```sh
+   git clone https://github.com/adamgrharvey/Armory-backend
+   ```
+4. Change into `Armory` directory and install Gems
+   ```sh
+    cd Armory
+    bundle install
+    ```
+5. Create database and start server
+    ```sh
+      rails db:setup
+      rails server
+    ```
+6. Open `localhost:3001` in your browser
 
-## Learn More
+7. *Optional*: Install the ClassicArmory WoW Addon [https://github.com/adamgrharvey/ClassicArmory] to export your character data, and submit it to the site! 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributing
 
-### Code Splitting
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
-### Analyzing the Bundle Size
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+<!-- MARKDOWN LINKS & IMAGES -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
