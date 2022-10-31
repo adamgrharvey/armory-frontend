@@ -1,4 +1,4 @@
-export default function readItemString(itemString) {
+export default function readItemString(itemString, setCharLoading) {
 
   let itemArr = itemString.split(".");
 
@@ -26,6 +26,12 @@ export default function readItemString(itemString) {
 
   for (let i = 1; i <= 19; i++) {
     slotIDs[i].item = translateItemSegment(itemArr[i - 1])
+    let temp = {}
+    temp[i] = true;
+    setCharLoading((prev) => 
+      ({...prev, ...temp})
+      
+    );
   }
   return (slotIDs);
 }

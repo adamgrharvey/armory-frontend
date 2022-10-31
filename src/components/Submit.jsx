@@ -34,7 +34,7 @@ export default function Submit(props) {
           // if server returns 200 (success)
           if (res.status === 200) {
             console.log(res);
-            navigate(`${frontendURL}/character/${submissionData.region}/${submissionData.server}/${submissionData.name}`);
+            navigate(`${frontendURL}/character/${res.data.region}/${res.data.server}/${res.data.name}`);
           }
           resolve(res.data);
         })

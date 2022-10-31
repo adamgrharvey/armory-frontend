@@ -3,7 +3,7 @@ import getItemData from "./getItemData";
 
 export default function itemStringToObject(itemString, accessToken, setCharLoading) {
   let inventory = {}
-  let charac = readItemString(itemString)
+  let charac = readItemString(itemString, setCharLoading)
   let keys = Object.keys(charac)
   for (const item of keys) {
     if (charac[item].item) {
