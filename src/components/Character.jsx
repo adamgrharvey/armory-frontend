@@ -98,7 +98,6 @@ export default function Character(props) {
               setLoading(false);
               resolve(res);
             }
-            //console.log(res);
             if (res.data && res.data.character_string) {
               resolve(res);
             } else {
@@ -116,10 +115,12 @@ export default function Character(props) {
   useEffect(() => {
     if (loading) {
       getCharacterData().then((res) => {
-        let characterData = characterStringSplitter(res.data.character_string)
-        let name = characterData.miscInfo.name[0].toUpperCase() + characterData.miscInfo.name.substring(1).toLowerCase()
-        setCharacter(prev => ({ ...prev, name, characterData }))
-        setCharacterExists(true);
+        if (res.data && res.data.character_string) {
+          let characterData = characterStringSplitter(res.data.character_string)
+          let name = characterData.miscInfo.name[0].toUpperCase() + characterData.miscInfo.name.substring(1).toLowerCase()
+          setCharacter(prev => ({ ...prev, name, characterData }))
+          setCharacterExists(true);
+        }
       })
     }
   }, [loading])
@@ -136,8 +137,10 @@ export default function Character(props) {
       getAccessToken(BNET_ID, BNET_SECRET, setAccessToken)
     }
     if (accessToken !== "") {
-      let inventory = itemStringToObject(character.characterData.itemString, accessToken, setCharLoading)
-      setCharacter(prev => ({ ...prev, inventory }))
+      if (characterExists) {
+        let inventory = itemStringToObject(character.characterData.itemString, accessToken, setCharLoading)
+        setCharacter(prev => ({ ...prev, inventory }))
+      }
     }
   }, [accessToken])
 
