@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default function getItemMedia(itemID, accessToken) {
+export default function getItemMedia(itemID, accessToken, setCharLoading, slotID) {
 
 
   return new Promise((resolve, reject) => {

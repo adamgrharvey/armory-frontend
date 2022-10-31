@@ -4,6 +4,7 @@ import { useState } from 'react';
 import ItemSlot from './ItemSlot';
 
 export default function ItemSection(props) {
+  
   let slotIDs = {
     1: "HEAD",
     2: "NECK",
@@ -47,7 +48,7 @@ export default function ItemSection(props) {
   return (
     <div className={`ItemSection ${props.section}`}>
       {section.map((i) =>
-        <ItemSlot section={props.section} key={`ItemSlot${slotIDs[i]}`} onMouseEvent={props.setTooltip} slotID={i} item={props.character[i-1]} />)}
+        <ItemSlot section={props.section} setCharLoading={props.setCharLoading} key={`ItemSlot${slotIDs[i]}`} onMouseEvent={props.setTooltip} slotID={i} item={props.character[i-1]} />)}
     </div>
   )
 }

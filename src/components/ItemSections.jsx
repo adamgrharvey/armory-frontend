@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
 import { useLayoutEffect } from 'react';
 import ItemSection from './ItemSection';
+import MoonLoader from 'react-spinners/MoonLoader';
 
 export default function ItemSections(props) {
 
-useLayoutEffect(() => {
-  props.setLoading(false);
-}, [])
 
   return (
     <div>
       <div className='Paperdoll'>
-        <ItemSection section={"left"} character={props.character.inventory} setTooltip={props.setTooltip} />
-        <ItemSection section={"right"} character={props.character.inventory} setTooltip={props.setTooltip} />
+        <ItemSection section={"left"} setCharLoading={props.setCharLoading} character={props.character.inventory} setTooltip={props.setTooltip} />
+        <ItemSection section={"right"} setCharLoading={props.setCharLoading} character={props.character.inventory} setTooltip={props.setTooltip} />
       </div>
       <div className='Paperdoll bottom'>
-        <ItemSection section={"bottomLeft"} character={props.character.inventory} setTooltip={props.setTooltip} />
-        <ItemSection section={"bottomRight"} character={props.character.inventory} setTooltip={props.setTooltip} />
+        <ItemSection section={"bottomLeft"} setCharLoading={props.setCharLoading} character={props.character.inventory} setTooltip={props.setTooltip} />
+        <ItemSection section={"bottomRight"} setCharLoading={props.setCharLoading} character={props.character.inventory} setTooltip={props.setTooltip} />
       </div>
     </div>
   )

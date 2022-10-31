@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default function getItemData(itemID, accessToken) {
+export default function getItemData(itemID, accessToken, setCharLoading, item) {
 
 
   return new Promise((resolve, reject) => {
@@ -13,6 +13,12 @@ export default function getItemData(itemID, accessToken) {
       .then((res) => {
         // if server returns 200 (success)
         if (res.status === 200) {
+          let temp = {}
+          temp[item] = true;
+          setCharLoading((prev) => 
+            ({...prev, ...temp})
+            
+          );
           //console.log('itemData', res.data.preview_item);
           resolve(res.data);
         }

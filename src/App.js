@@ -34,8 +34,6 @@ import Submit from './components/Submit';
 function App() {
   const [accessToken, setAccessToken] = useState("");
   let frontendURL = "";
-
-
   return (
     <BrowserRouter>
       <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>

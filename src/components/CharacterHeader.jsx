@@ -6,6 +6,10 @@ import { ReactComponent as ILVLSword } from '../images/Character/swords.01e57e65
 
 export default function CharacterHeader(props) {
 
+  if (props.loading) {
+    return null
+  }
+
 
   return (
     <div className='CharacterHeader'>

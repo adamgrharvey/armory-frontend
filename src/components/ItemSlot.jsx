@@ -10,8 +10,7 @@ export default function ItemSlot(props) {
   const [itemMedia, setItemMedia] = useState("");
   // let quality = props.item.preview_item.quality.name;
   if (props.item && itemMedia === "") {
-    getItemMedia(props.item.id, accessToken).then(res => setItemMedia(res))
-
+    getItemMedia(props.item.id, accessToken, props.setCharLoading, props.slotID).then(res => setItemMedia(res))
   }
 
   let slotIDs = {
