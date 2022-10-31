@@ -9,7 +9,7 @@
 <h3 align="center">Classic Armory</h3>
 
   <p align="center">
-    An Unofficial Armory made for WoW Classic.
+    An Unofficial Armory forged for WoW Classic.
     <br />
   </p>
 </div>
