@@ -10,7 +10,7 @@ export default function Submit(props) {
   const navigate = useNavigate();
 
   function sendRequest(characterString) {
-  
+
 
     let characterData = characterStringSplitter(characterString);
 
@@ -22,7 +22,7 @@ export default function Submit(props) {
       class_id: characterData.miscInfo.wowClassID,
       level: characterData.miscInfo.level
     }
-  
+
     const postRequest = new Promise((resolve, reject) => {
       axios
         .post(`${backendURL}/submit`, submissionData, {
@@ -35,6 +35,7 @@ export default function Submit(props) {
           if (res.status === 200) {
             console.log(res);
             navigate(`${frontendURL}/character/${res.data.region}/${res.data.server}/${res.data.name}`);
+
           }
           resolve(res.data);
         })

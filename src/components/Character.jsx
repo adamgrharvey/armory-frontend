@@ -137,13 +137,13 @@ export default function Character(props) {
     if (accessToken === "") {
       getAccessToken(BNET_ID, BNET_SECRET, setAccessToken)
     }
-    if (accessToken !== "") {
+    if (accessToken !== "" && Object.values(charLoading).includes(false)) {
       if (characterExists) {
         let inventory = itemStringToObject(character.characterData.itemString, accessToken, setCharLoading)
         setCharacter(prev => ({ ...prev, inventory }))
       }
     }
-  }, [accessToken])
+  }, [accessToken, loading, characterExists])
 
 
   useEffect(() => {
@@ -175,7 +175,7 @@ export default function Character(props) {
         (<div className='Character'>
           <CharacterHeader loading={loading} character={character} />
           <div className='CompletePaperdoll'>
-            <ItemSections loading={loading} setLoading={setLoading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />
+            <ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />
             {show && <Tooltip locationData={locationData} item={item} />}
           </div>
         </div>)}

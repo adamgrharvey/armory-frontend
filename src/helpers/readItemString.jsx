@@ -26,6 +26,8 @@ export default function readItemString(itemString, setCharLoading) {
 
   for (let i = 1; i <= 19; i++) {
     slotIDs[i].item = translateItemSegment(itemArr[i - 1])
+
+    // mark each slot as 'loaded'
     let temp = {}
     temp[i] = true;
     setCharLoading((prev) => 
