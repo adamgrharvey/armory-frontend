@@ -2,18 +2,18 @@ import React from 'react';
 import axios from 'axios';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import characterStringSplitter from '../helpers/characterStringSplitter';
+import parseSubmissionData from '../helpers/backend/parseSubmissionData';
+import submitStatisticData from '../helpers/backend/submitStatisticData';
 export default function Submit(props) {
   let backendURL = "http://localhost:3000";
   let frontendURL = "";
   const [characterString, setCharacterString] = useState("");
   const navigate = useNavigate();
 
-  function sendRequest(characterString) {
+  function submitCharacterData(characterString) {
 
 
-    let characterData = characterStringSplitter(characterString);
-
+    let characterData = parseSubmissionData(characterString);
     let submissionData = {
       name: characterData.miscInfo.name,
       server: characterData.miscInfo.server,
@@ -23,7 +23,20 @@ export default function Submit(props) {
       level: characterData.miscInfo.level
     }
 
-    const postRequest = new Promise((resolve, reject) => {
+
+    submitCharacterString(submissionData)
+      .then(
+        submitStatisticData(characterData)
+          .then(
+            navigate(`${frontendURL}/character/${submissionData.region}/${submissionData.server}/${submissionData.name}`)
+          ))
+
+  }
+
+  function submitCharacterString(submissionData) {
+
+
+    return new Promise((resolve, reject) => {
       axios
         .post(`${backendURL}/submit`, submissionData, {
           headers: {
@@ -34,10 +47,9 @@ export default function Submit(props) {
           // if server returns 200 (success)
           if (res.status === 200) {
             console.log(res);
-            navigate(`${frontendURL}/character/${submissionData.region}/${submissionData.server}/${submissionData.name}`);
-
+            //
           }
-          resolve(res.data);
+          resolve(res);
         })
         .catch((err) => {
           console.log(err);
@@ -45,6 +57,8 @@ export default function Submit(props) {
         });
     });
   }
+
+
 
 
   return (
@@ -61,7 +75,7 @@ export default function Submit(props) {
       />
       <button
         onClick={() => {
-          sendRequest(characterString);
+          submitCharacterData(characterString);
         }}
 
       />

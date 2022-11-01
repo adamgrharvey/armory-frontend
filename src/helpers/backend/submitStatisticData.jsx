@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default function sendRequest(characterData) {
+export default function submitStatisticData(characterData) {
   let backendURL = "http://localhost:3000";
   let stats = [];
   let character = {name: characterData.miscInfo.name, server: characterData.miscInfo.server, region: characterData.miscInfo.region}
@@ -18,7 +18,7 @@ export default function sendRequest(characterData) {
   console.log({character, stats});
   
 
-  const postRequest = new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     axios
       .post(`${backendURL}/character-statistic`, {character, stats}, {
         headers: {
@@ -28,9 +28,8 @@ export default function sendRequest(characterData) {
       .then((res) => {
         // if server returns 200 (success)
         if (res.status === 200) {
-          console.log(res);
+          resolve(res);
         }
-        resolve(res.data);
       })
       .catch((err) => {
         console.log(err);

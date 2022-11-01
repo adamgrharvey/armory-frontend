@@ -9,15 +9,15 @@ import ItemSection from './ItemSection';
 import Tooltip from './Tooltip';
 import ItemSections from './ItemSections';
 
-import getAccessToken from '../helpers/getAccessToken';
-import getItemData from '../helpers/getItemData';
+import getAccessToken from '../helpers/blizzardAPI/getAccessToken';
+import getItemData from '../helpers/blizzardAPI/getItemData';
 import readItemString from '../helpers/readItemString';
 import { AccessTokenContext } from '../helpers/Context';
 import classIDtoName from '../helpers/classIDtoName';
 import characterStringSplitter from '../helpers/characterStringSplitter';
 import itemStringToObject from '../helpers/itemStringToObject';
-import getStatisticsData from '../helpers/getStatisticsData';
-import submitStatisticData from '../helpers/submitStatisticData';
+import getStatisticsData from '../helpers/backend/getStatisticsData';
+import submitStatisticData from '../helpers/backend/submitStatisticData';
 
 
 export default function Character(props) {
@@ -145,7 +145,7 @@ export default function Character(props) {
   useEffect(() => {
     if (!loading && character.inventory[0]) {
       console.log(character);
-      submitStatisticData(character.characterData);
+     // submitStatisticData(character.characterData);
       
     }
   }, [loading])

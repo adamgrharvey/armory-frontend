@@ -1,5 +1,5 @@
 import readItemString from "./readItemString";
-import getItemData from "./getItemData";
+import getItemData from "./blizzardAPI/getItemData";
 
 export default function itemStringToObject(itemString, accessToken, setCharLoading, setCharacter) {
   let inventory = {}

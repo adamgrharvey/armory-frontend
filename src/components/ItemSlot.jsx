@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import getItemMedia from '../helpers/getItemMedia';
+import getItemMedia from '../helpers/blizzardAPI/getItemMedia';
 
 import { AccessTokenContext } from '../helpers/Context';
 import { useContext } from 'react';
