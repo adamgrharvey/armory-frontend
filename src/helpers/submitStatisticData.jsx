@@ -6,6 +6,7 @@ export default function sendRequest(characterData) {
   let character = {name: characterData.miscInfo.name, server: characterData.miscInfo.server, region: characterData.miscInfo.region}
   let values = Object.values(characterData.statistics);
   for (const stat of values) {
+    // ensure the data exists. if value not a string, it breaks. if value is a '%', that stat doesnt actually exist.
     if ((typeof stat.value) === 'string' && stat.value !== '%')
     if (stats.length === 0) {
       stats.push({...stat})
