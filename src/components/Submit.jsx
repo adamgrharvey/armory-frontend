@@ -25,11 +25,24 @@ export default function Submit(props) {
 
 
     submitCharacterString(submissionData)
-      .then(
-        submitStatisticData(characterData)
-          .then(
-            navigate(`${frontendURL}/character/${submissionData.region}/${submissionData.server}/${submissionData.name}`)
-          ))
+      .then((res) => {
+        console.log(res);
+        if (res.status === 200)
+          submitStatisticData(characterData)
+            .then((res) => {
+              console.log(res);
+              if (res.status === 200)
+                navigate(`${frontendURL}/character/${submissionData.region}/${submissionData.server}/${submissionData.name}`);
+            })
+            .catch(err => {
+              console.log(err);
+            })
+      })
+      .catch(err => {
+        console.log(err);
+      })
+
+
 
   }
 
@@ -46,10 +59,13 @@ export default function Submit(props) {
         .then((res) => {
           // if server returns 200 (success)
           if (res.status === 200) {
+            resolve(res);
             console.log(res);
             //
+          } else {
+            reject(res);
           }
-          resolve(res);
+
         })
         .catch((err) => {
           console.log(err);
