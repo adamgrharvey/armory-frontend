@@ -6,9 +6,10 @@ import classIDtoName from "./classIDtoName";
 import getFactionFromRace from "./getFactionFromRace";
 
 
-export default function characterStringSplitter(characterString, setCharacter) {
+export default function characterStringSplitter(characterString, setCharacter, setCharacterExists, allStats) {
   let [itemString, miscString, statisticString] = characterString.split("!");
   let miscArray = miscString.split(".");
+  setCharacterExists(true);
   statisticStringSplitter(statisticString);
 
   if (miscArray[3] === "null") {
@@ -33,7 +34,7 @@ export default function characterStringSplitter(characterString, setCharacter) {
     itemString: itemString,
     miscInfo: miscInfo,
     statisticString: statisticString,
-    statistics: statisticStringSplitter(statisticString)
+    statistics: {...statisticStringSplitter(statisticString), ...allStats}
   }
 
   setCharacter((prev) => (

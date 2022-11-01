@@ -16,6 +16,7 @@ import { AccessTokenContext } from '../helpers/Context';
 import classIDtoName from '../helpers/classIDtoName';
 import characterStringSplitter from '../helpers/characterStringSplitter';
 import itemStringToObject from '../helpers/itemStringToObject';
+import getStatisticsData from '../helpers/getStatisticsData';
 
 
 export default function Character(props) {
@@ -99,11 +100,7 @@ export default function Character(props) {
               setLoading(false);
               resolve(res);
             }
-            if (res.data && res.data.character_string) {
-              resolve(res);
-            } else {
-              resolve(res);
-            }
+            resolve(res);
           }
         })
         .catch((err) => {
@@ -115,15 +112,15 @@ export default function Character(props) {
 
   useEffect(() => {
     if (loading && !characterExists) {
-
-      getCharacterData().then((res) => {
-        if (!character.characterData && res.data && res.data.character_string) {
-          setCharacterExists(true);
-          characterStringSplitter(res.data.character_string, setCharacter)
+      Promise.all([getStatisticsData(), getCharacterData()]).then((res) => {
+        console.log(res);
+        if (!character.characterData && res[1].data && res[1].data.character_string) {
+          characterStringSplitter(res[1].data.character_string, setCharacter, setCharacterExists, res[0])
         }
       })
+
     }
-  }, [loading])
+  }, [loading, character, characterExists])
 
   useEffect(() => {
     if (!Object.values(charLoading).includes(false)) {
@@ -138,8 +135,7 @@ export default function Character(props) {
     }
     if (accessToken !== "" && Object.values(charLoading).includes(false)) {
       if (characterExists) {
-        let inventory = itemStringToObject(character.characterData.itemString, accessToken, setCharLoading)
-        setCharacter(prev => ({ ...prev, inventory }))
+        itemStringToObject(character.characterData.itemString, accessToken, setCharLoading, setCharacter)
       }
     }
   }, [accessToken, loading, characterExists])
@@ -149,7 +145,7 @@ export default function Character(props) {
     if (!loading && character.inventory[0]) {
       console.log(character);
     }
-  }, [loading])
+  }, [loading, character])
 
 
 

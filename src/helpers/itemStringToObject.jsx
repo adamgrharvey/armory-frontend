@@ -1,7 +1,7 @@
 import readItemString from "./readItemString";
 import getItemData from "./getItemData";
 
-export default function itemStringToObject(itemString, accessToken, setCharLoading) {
+export default function itemStringToObject(itemString, accessToken, setCharLoading, setCharacter) {
   let inventory = {}
   let charac = readItemString(itemString, setCharLoading)
   let keys = Object.keys(charac)
@@ -17,5 +17,6 @@ export default function itemStringToObject(itemString, accessToken, setCharLoadi
     }
 
   }
-  return inventory
+  setCharacter(prev => ({ ...prev, inventory }))
+  return;
 }
