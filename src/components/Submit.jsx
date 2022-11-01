@@ -4,7 +4,9 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import parseSubmissionData from '../helpers/backend/parseSubmissionData';
 import submitStatisticData from '../helpers/backend/submitStatisticData';
+import MoonLoader from 'react-spinners/MoonLoader';
 export default function Submit(props) {
+  const [loading, setLoading] = useState(false);
   let backendURL = "http://localhost:3000";
   let frontendURL = "";
   const [characterString, setCharacterString] = useState("");
@@ -79,22 +81,28 @@ export default function Submit(props) {
 
   return (
     <div>
-      <label>
-        Character String
-      </label>
-      <input
-        value={characterString}
-        placeholder={"Armory Addon string goes here..."}
-        onChange={(event) => {
-          setCharacterString(event.target.value);
-        }}
-      />
-      <button
-        onClick={() => {
-          submitCharacterData(characterString);
-        }}
+      {loading ? (<div className='Loader'>
+        <MoonLoader color={'#5118a7'} width={'50%'} height={8} />
+      </div>) : <div>
+        <label>
+          Character String
+        </label>
+        <input
+          value={characterString}
+          placeholder={"Armory Addon string goes here..."}
+          onChange={(event) => {
+            setCharacterString(event.target.value);
+          }}
+        />
+        <button
+          onClick={() => {
+            setLoading(true);
+            submitCharacterData(characterString);
+          }}
 
-      />
+        />
+      </div>}
+
     </div>
   )
 }
