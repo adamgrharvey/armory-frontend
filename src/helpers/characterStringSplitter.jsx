@@ -6,7 +6,7 @@ import classIDtoName from "./classIDtoName";
 import getFactionFromRace from "./getFactionFromRace";
 
 
-export default function characterStringSplitter(characterString) {
+export default function characterStringSplitter(characterString, setCharacter) {
   let [itemString, miscString, statisticString] = characterString.split("!");
   let miscArray = miscString.split(".");
   statisticStringSplitter(statisticString);
@@ -27,13 +27,18 @@ export default function characterStringSplitter(characterString) {
     faction: getFactionFromRace(miscArray[6]),
     achPoints: Number(miscArray[5]),
   }
-  return {
+  let characterData =  {
+    name: miscInfo.name[0].toUpperCase() + miscInfo.name.substring(1).toLowerCase(),
     characterString: characterString,
     itemString: itemString,
     miscInfo: miscInfo,
     statisticString: statisticString,
     statistics: statisticStringSplitter(statisticString)
   }
+
+  setCharacter((prev) => (
+    {...prev, characterData}
+  ))
 
 }
 

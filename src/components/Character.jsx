@@ -119,10 +119,7 @@ export default function Character(props) {
       getCharacterData().then((res) => {
         if (!character.characterData && res.data && res.data.character_string) {
           setCharacterExists(true);
-          let characterData = characterStringSplitter(res.data.character_string)
-          let name = characterData.miscInfo.name[0].toUpperCase() + characterData.miscInfo.name.substring(1).toLowerCase()
-          setCharacter(prev => ({ ...prev, name, characterData }))
-          
+          characterStringSplitter(res.data.character_string, setCharacter)
         }
       })
     }
