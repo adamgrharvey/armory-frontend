@@ -98,9 +98,9 @@ export default function Character(props) {
           if (res.status === 200) {
             if (res.data == null) {
               setLoading(false);
-              resolve(res);
+              resolve(res.data);
             }
-            resolve(res);
+            resolve(res.data);
           }
         })
         .catch((err) => {
@@ -112,10 +112,10 @@ export default function Character(props) {
 
   useEffect(() => {
     if (loading && !characterExists) {
-      Promise.all([getStatisticsData(), getCharacterData()]).then((res) => {
-        console.log(res);
-        if (!character.characterData && res[1].data && res[1].data.character_string) {
-          characterStringSplitter(res[1].data.character_string, setCharacter, setCharacterExists, res[0])
+      Promise.all([getStatisticsData(), getCharacterData()]).then((results) => {
+        if (!character.characterData && results[1] && results[1].character_string) {
+         // console.log(results);
+          characterStringSplitter(results[1].character_string, setCharacter, setCharacterExists, results[0])
         }
       })
 

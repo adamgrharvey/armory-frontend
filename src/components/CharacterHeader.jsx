@@ -21,7 +21,7 @@ export default function CharacterHeader(props) {
             {isTitleAfter(props.character.characterData.miscInfo.title) || props.character.characterData.miscInfo.title === null ?
               <div>
                 <div className={`CharacterHeader-name CharacterHeader--${props.character.characterData.miscInfo.wowClass}`}>
-                  {props.character.name}
+                  {props.character.characterData.name}
                 </div>
                 <div className='CharacterHeader-title'>
                   {props.character.characterData.miscInfo.title}
@@ -33,7 +33,7 @@ export default function CharacterHeader(props) {
                   {props.character.characterData.miscInfo.title}
                 </div>
                 <div className={`CharacterHeader-name CharacterHeader--${props.character.characterData.miscInfo.wowClass}`}>
-                  {props.character.name}
+                  {props.character.characterData.name}
                 </div>
               </div>
             }
