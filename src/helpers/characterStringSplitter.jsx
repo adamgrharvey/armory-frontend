@@ -5,7 +5,7 @@
 import classIDtoName from "./classIDtoName";
 import formatCharStats from "./formatCharStats";
 import getFactionFromRace from "./getFactionFromRace";
-
+import submitStatisticData from "./submitStatisticData";
 
 export default function characterStringSplitter(characterString, setCharacter, setCharacterExists, allStats) {
   let [itemString, miscString, statisticString] = characterString.split("!");
@@ -36,8 +36,9 @@ export default function characterStringSplitter(characterString, setCharacter, s
     itemString: itemString,
     miscInfo: miscInfo,
     statisticString: statisticString,
-    statistics: {...charStats, ...allStats}
+    statistics: charStats
   }
+
 
   setCharacter((prev) => (
     {...prev, characterData}

@@ -17,6 +17,7 @@ import classIDtoName from '../helpers/classIDtoName';
 import characterStringSplitter from '../helpers/characterStringSplitter';
 import itemStringToObject from '../helpers/itemStringToObject';
 import getStatisticsData from '../helpers/getStatisticsData';
+import submitStatisticData from '../helpers/submitStatisticData';
 
 
 export default function Character(props) {
@@ -144,8 +145,10 @@ export default function Character(props) {
   useEffect(() => {
     if (!loading && character.inventory[0]) {
       console.log(character);
+      submitStatisticData(character.characterData);
+      
     }
-  }, [loading, character])
+  }, [loading])
 
 
 
