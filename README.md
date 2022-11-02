@@ -37,8 +37,6 @@ My goal is to create a place where people can upload their characters and view t
 
 
 
-
-
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
