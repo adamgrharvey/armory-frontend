@@ -81,27 +81,43 @@ export default function Submit(props) {
 
   return (
     <div>
-      {loading ? (<div className='Loader'>
-        <MoonLoader color={'#5118a7'} width={'50%'} height={8} />
-      </div>) : <div>
-        <label>
-          Character String
-        </label>
-        <input
-          value={characterString}
-          placeholder={"Armory Addon string goes here..."}
-          onChange={(event) => {
-            setCharacterString(event.target.value);
-          }}
-        />
-        <button
-          onClick={() => {
-            setLoading(true);
-            submitCharacterData(characterString);
-          }}
+      {loading ? (
+        <div className='Submit'>
+          <div className='Loader'>
+            <MoonLoader color={'#5118a7'} width={'50%'} height={8} />
+          </div>
+          <div className='SubmissionText'>
+            Uploading your character...
+          </div>
 
-        />
-      </div>}
+        </div>
+      )
+        :
+        <div className='Submit'>
+          <label className='SubmissionText'>
+            Character String
+          </label>
+          <div>
+            <input
+              value={characterString}
+              placeholder={"Armory Addon string goes here..."}
+              onChange={(event) => {
+                setCharacterString(event.target.value);
+              }}
+            />
+            <button className='SubmissionButton'
+              onClick={() => {
+
+                if (characterString != "") {
+                  setLoading(true);
+                  submitCharacterData(characterString);
+                }
+
+              }}
+
+            /></div>
+
+        </div>}
 
     </div>
   )
