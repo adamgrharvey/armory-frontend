@@ -25,7 +25,7 @@ My goal is to create a place where people can upload their characters and view t
 
 ## Examples
 
-[StandardView](https://github.com/adamgrharvey/armory-frontend/blob/master/src/images/Project/Armory_example.png)
+!['Character-view'](https://github.com/adamgrharvey/armory-frontend/blob/master/src/images/Project/Armory_example.png)
 
 
 ### Built With
