@@ -3,6 +3,7 @@
 */
 import classIDtoName from "../classIDtoName";
 import getFactionFromRace from "../getFactionFromRace";
+import standardizeRealmName from "./standardizeRealmName";
 
 export default function characterStringSplitter(characterString) {
   let [itemString, miscString, statisticString] = characterString.split("!");
@@ -15,7 +16,7 @@ export default function characterStringSplitter(characterString) {
 
   let miscInfo = {
     name: miscArray[0],
-    server: miscArray[1],
+    server: standardizeRealmName(miscArray[1]),
     region: miscArray[2],
     title: miscArray[3],
     wowRace: miscArray[6],
