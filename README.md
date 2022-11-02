@@ -23,11 +23,6 @@ Classic Armory is a database for Characters that play World of Warcraft: Classic
 
 My goal is to create a place where people can upload their characters and view that characters data and statistics, as well as everyone elses characters!
 
-## Examples
-
-!['Character-view'](https://github.com/adamgrharvey/armory-frontend/blob/master/src/images/Project/Armory_example.png)
-
-
 ### Built With
 
 * [![React][React.js]][React-url]
@@ -35,6 +30,10 @@ My goal is to create a place where people can upload their characters and view t
 * ![Rails](https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
 * ![SQLite3](https://img.shields.io/badge/sqlite3-%230F80CC.svg?style=for-the-badge&logo=sqlite&logoColor=white)
 * ![Axios](https://img.shields.io/static/v1?style=for-the-badge&message=Axios&color=5A29E4&logo=Axios&logoColor=FFFFFF&label=)
+
+## Examples
+
+!['Character-view'](https://github.com/adamgrharvey/armory-frontend/blob/master/src/images/Project/Armory_example.png)
 
 
 
