@@ -14,31 +14,29 @@ export default function CharacterHeader(props) {
   return (
     <div className='CharacterHeader'>
       <div>
-        <div className='CharacterHeader-character'>
+        <div className='CharacterHeader-nameTitle'>
           <div className={`Logo Logo-${props.character.characterData.miscInfo.faction}`}></div>
-          <div>
-            {/* start of title div*/}
-            {isTitleAfter(props.character.characterData.miscInfo.title) || props.character.characterData.miscInfo.title === null ?
-              <div>
-                <div className={`CharacterHeader-name CharacterHeader--${props.character.characterData.miscInfo.wowClass}`}>
-                  {props.character.characterData.name}
-                </div>
-                <div className='CharacterHeader-title'>
-                  {props.character.characterData.miscInfo.title}
-                </div>
+          {/* start of title div*/}
+          {isTitleAfter(props.character.characterData.miscInfo.title) || props.character.characterData.miscInfo.title === null ?
+            <div className='CharacterHeader-nameArea'>
+              <div className={`CharacterHeader-name CharacterHeader--${props.character.characterData.miscInfo.wowClass}`}>
+                {props.character.characterData.name}
               </div>
-              :
-              <div>
-                <div className='CharacterHeader-title'>
-                  {props.character.characterData.miscInfo.title}
-                </div>
-                <div className={`CharacterHeader-name CharacterHeader--${props.character.characterData.miscInfo.wowClass}`}>
-                  {props.character.characterData.name}
-                </div>
+              <div className='CharacterHeader-title'>
+                {props.character.characterData.miscInfo.title}
               </div>
-            }
-            {/*end of title div */}
-          </div>
+            </div>
+            :
+            <div>
+              <div className='CharacterHeader-title'>
+                {props.character.characterData.miscInfo.title}
+              </div>
+              <div className={`CharacterHeader-name CharacterHeader--${props.character.characterData.miscInfo.wowClass}`}>
+                {props.character.characterData.name}
+              </div>
+            </div>
+          }
+          {/*end of title div */}
         </div>
       </div>
       <div className='CharacterHeader-info'>

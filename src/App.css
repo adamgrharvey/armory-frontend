@@ -2,6 +2,10 @@
   background-color: #131516;
 }
 
+html {
+  font-size: 12px;
+}
+
 .Loader {
   display: flex;
   justify-content: center;
@@ -12,6 +16,7 @@
   display: flex;
   color: white;
 }
+
 .SubmissionButton {
   width: 18px;
   height: 18px;
@@ -63,13 +68,14 @@
   align-items: center;
   margin-top: 30px;
 }
+
 .Character {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.CharacterHeader-character {
+.CharacterHeader-nameTitle {
   text-rendering: optimizeLegibility;
   display: flex;
   padding-right: 20px;
@@ -84,6 +90,7 @@
   align-items: center;
   color: #f8b700;
 }
+
 .CharacterHeader-info-entry {
   display: flex;
   flex-direction: row;
@@ -108,6 +115,12 @@
   margin-left: 2px;
 }
 
+.CharacterHeader-nameArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .CharacterHeader-name {
   font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
   font-weight: 700;
@@ -125,8 +138,32 @@
 .CharacterHeader-title {
   color: rgb(232, 230, 227);
   text-shadow: rgb(0 0 0 / 0%) 0px 0px 1px, rgb(0 0 0 / 80%) 0px 1px 2px;
-  font-size: 1.221rem;
+  font-size: 1.08rem;
+  line-height: 1.5;
   text-align: left;
+  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  max-width: 350px;
+}
+
+@media (min-width: 720px) {
+  .CharacterHeader-title {
+    font-size: 1.224rem;
+  }
+
+  .CharacterHeader-name {
+    font-size: 2.5381rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .CharacterHeader-title {
+    font-size: 1.44rem;
+  }
+
+  .CharacterHeader-name {
+    font-size: 2.986rem;
+  }
 }
 
 .TooltipSpaceTR {
@@ -460,6 +497,7 @@
   color: #C41E3A;
   justify-content: flex-start;
 }
+
 .CharacterHeader-name.CharacterHeader--DEATHKNIGHT {
   color: #C41E3A;
 }
@@ -468,6 +506,7 @@
   color: #A330C9;
   justify-content: flex-start;
 }
+
 .CharacterHeader-name.CharacterHeader--DEMONHUNTER {
   color: #A330C9;
 }
@@ -475,6 +514,7 @@
 .c11 {
   color: #FF7C0A;
 }
+
 .CharacterHeader-name.CharacterHeader--DRUID {
   color: #FF7C0A;
 }
@@ -482,6 +522,7 @@
 .c13 {
   color: #33937F;
 }
+
 .CharacterHeader-name.CharacterHeader--EVOKER {
   color: #33937F;
 }
@@ -489,6 +530,7 @@
 .c3 {
   color: #AAD372;
 }
+
 .CharacterHeader-name.CharacterHeader--HUNTER {
   color: #AAD372;
 }
@@ -496,6 +538,7 @@
 .c8 {
   color: #3FC7EB;
 }
+
 .CharacterHeader-name.CharacterHeader--MAGE {
   color: #3FC7EB;
 }
@@ -503,6 +546,7 @@
 .c10 {
   color: #00FF98;
 }
+
 .CharacterHeader-name.CharacterHeader--MONK {
   color: #00FF98;
 }
@@ -510,6 +554,7 @@
 .c2 {
   color: #F48CBA;
 }
+
 .CharacterHeader-name.CharacterHeader--PALADIN {
   color: #F48CBA;
 }
@@ -517,6 +562,7 @@
 .c5 {
   color: #FFFFFF;
 }
+
 .CharacterHeader-name.CharacterHeader--PRIEST {
   color: #FFFFFF;
 }
@@ -524,6 +570,7 @@
 .c4 {
   color: #FFF468;
 }
+
 .CharacterHeader-name.CharacterHeader--ROGUE {
   color: #FFF468;
 }
@@ -531,6 +578,7 @@
 .c7 {
   color: #0070dd;
 }
+
 .CharacterHeader-name.CharacterHeader--SHAMAN {
   color: #0070dd;
 }
@@ -538,6 +586,7 @@
 .c9 {
   color: #8788EE;
 }
+
 .CharacterHeader-name.CharacterHeader--WARLOCK {
   color: #8788EE;
 }
@@ -545,6 +594,7 @@
 .c1 {
   color: #C69B6D;
 }
+
 .CharacterHeader-name.CharacterHeader--WARRIOR {
   color: #C69B6D;
 }
@@ -592,7 +642,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 12px;
   color: #131516;
 }
 
