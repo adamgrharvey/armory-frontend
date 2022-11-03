@@ -98,7 +98,6 @@ export default function Character(props) {
           // if server returns 200 (success)
           if (res.status === 200) {
             if (res.data == null) {
-              setLoading(false);
               resolve(res.data);
             }
             resolve(res.data);
@@ -114,9 +113,13 @@ export default function Character(props) {
   useEffect(() => {
     if (loading && !characterExists) {
       Promise.all([getStatisticsData(), getCharacterData()]).then((results) => {
+        
         if (!character.characterData && results[1] && results[1].character_string) {
          // console.log(results);
-          characterStringSplitter(results[1].character_string, setCharacter, setCharacterExists, results[0])
+          characterStringSplitter(results[1].character_string, setCharacter, setCharacterExists, results[0], setLoading)
+        } else {
+          setLoading(false);
+          setCharacterExists(false);
         }
       })
 

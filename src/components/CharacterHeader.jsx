@@ -5,6 +5,7 @@ import { ReactComponent as AchShield } from '../images/Character/achievement-shi
 import { ReactComponent as ILVLSword } from '../images/Character/swords.01e57e65afe77495544524c74b7cd100.svg'
 
 export default function CharacterHeader(props) {
+  let iLvl = getAverageItemLevel(props.character.inventory);
 
   if (props.loading) {
     return null
@@ -45,7 +46,7 @@ export default function CharacterHeader(props) {
             <ILVLSword height={16} width={16} fill={"#f8b700"} />
           </div>
           <div className='CharacterHeader-ilvl'>
-            {getAverageItemLevel(props.character.inventory)} ILVL
+            {iLvl} ILVL
           </div>
         </div>
         <div className='CharacterHeader-info-entry'>
