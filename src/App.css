@@ -71,8 +71,10 @@ html {
 
 .Character {
   display: flex;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
   flex-direction: column;
-  align-items: center;
 }
 
 .CharacterHeader-nameTitle {
@@ -132,6 +134,13 @@ html {
 
 .CharacterHeader-name.CharacterHeader--ROGUE {
   color: rgb(255, 244, 98);
+}
+
+.Divider {
+  margin-top: 40px!important;
+  border-bottom: 1px solid hsla(0, 0%, 100%, .2);
+  width: 100%;
+  position: relative;
 }
 
 
@@ -209,10 +218,7 @@ html {
 .CompletePaperdoll {
   display: flex;
   flex-direction: column;
-  max-width: 732px;
   justify-content: space-between;
-  margin-left: 25%;
-  margin-right: 25%;
   margin-top: 20px;
 }
 
@@ -272,7 +278,7 @@ html {
 .ItemSlot {
   display: flex;
   align-items: flex-start;
-  margin: 8px;
+  margin: 16px;
   color: #9d9d9d;
   font: 14px "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 600;

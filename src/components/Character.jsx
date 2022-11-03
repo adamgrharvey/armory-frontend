@@ -172,6 +172,7 @@ export default function Character(props) {
       {(!loading && characterExists) &&
         (<div className='Character'>
           <CharacterHeader loading={loading} character={character} />
+          <div className='Divider' />
           <div className='CompletePaperdoll'>
             <ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />
             {show && <Tooltip locationData={locationData} item={item} />}

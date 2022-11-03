@@ -35,7 +35,7 @@ export default function ItemSlot(props) {
     19: "tabard"
   };
 
-
+//<a href={`https://www.wowhead.com/item=${props.item.id}`} data-wowhead="domain=classic"><img src={itemMedia} alt={props.slotID} className={`ItemSlotIcon ${props.item.preview_item.quality.name}`} /></a>
 
   return (
     props.item ?
