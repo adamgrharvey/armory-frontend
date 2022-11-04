@@ -3,24 +3,20 @@ import axios from "axios";
 export default function submitStatisticData(characterData) {
   let backendURL = "http://localhost:3000";
   let stats = [];
-  let character = {name: characterData.miscInfo.name, server: characterData.miscInfo.server, region: characterData.miscInfo.region}
+  let character = { name: characterData.miscInfo.name, server: characterData.miscInfo.server, region: characterData.miscInfo.region }
   let values = Object.values(characterData.statistics);
   for (const stat of values) {
     // ensure the data exists. if value not a string, it breaks. if value is a '%', that stat doesnt actually exist.
-    if ((typeof stat.value) === 'string' && stat.value !== '%')
-    if (stats.length === 0) {
-      stats.push({...stat})
-    } else {
-      stats.push({...stat})
+    if ((typeof stat.value) === 'string' && stat.value !== '%') {
+      stats.push({ ...stat })
     }
-
   }
-  console.log({character, stats});
-  
+  console.log({ character, stats });
+
 
   return new Promise((resolve, reject) => {
     axios
-      .post(`${backendURL}/character-statistic`, {character, stats}, {
+      .post(`${backendURL}/character-statistic`, { character, stats }, {
         headers: {
           'content-type': 'application/json',
         },

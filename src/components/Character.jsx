@@ -18,6 +18,7 @@ import characterStringSplitter from '../helpers/characterStringSplitter';
 import itemStringToObject from '../helpers/itemStringToObject';
 import getStatisticsData from '../helpers/backend/getStatisticsData';
 import submitStatisticData from '../helpers/backend/submitStatisticData';
+import getCharacterStatistics from '../helpers/backend/getCharacterStatistics';
 
 
 export default function Character(props) {
@@ -112,16 +113,19 @@ export default function Character(props) {
 
   useEffect(() => {
     if (loading && !characterExists) {
-      Promise.all([getStatisticsData(), getCharacterData()]).then((results) => {
-        
-        if (!character.characterData && results[1] && results[1].character_string) {
-         // console.log(results);
-          characterStringSplitter(results[1].character_string, setCharacter, setCharacterExists, results[0], setLoading)
+      Promise.all([getCharacterData()]).then((results) => {
+
+        if (!character.characterData && results[0] && results[0].character_string) {
+          // console.log(results);
+          characterStringSplitter(results[0].character_string, setCharacter, setCharacterExists, setLoading)
         } else {
           setLoading(false);
           setCharacterExists(false);
         }
       })
+        .then(() => {
+          
+        })
 
     }
   }, [loading, character, characterExists])
@@ -131,6 +135,16 @@ export default function Character(props) {
       setLoading(false);
     }
   }, [charLoading])
+
+  useEffect(() => {
+    if (character.characterData && character.characterData.miscInfo) {
+      getCharacterStatistics(character.characterData.miscInfo.region, character.characterData.miscInfo.server, character.characterData.miscInfo.name)
+          .then((res) => {
+            console.log(res);
+          })
+    }
+
+  }, [character])
 
 
   useEffect(() => {
@@ -148,8 +162,8 @@ export default function Character(props) {
   useEffect(() => {
     if (!loading && character.inventory[0]) {
       console.log(character);
-     // submitStatisticData(character.characterData);
-      
+      // submitStatisticData(character.characterData);
+
     }
   }, [loading])
 
@@ -161,8 +175,6 @@ export default function Character(props) {
     innerWidth: windowSize.innerWidth,
     innerHeight: windowSize.innerHeight
   };
-
-
 
 
   return (
