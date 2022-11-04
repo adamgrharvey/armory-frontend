@@ -180,6 +180,7 @@ export default function Character(props) {
             <ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />
             {show && <Tooltip locationData={locationData} item={item} />}
           </div>
+          <div className='Divider' />
         </div>)}
 
     </div>

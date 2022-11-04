@@ -71,9 +71,9 @@ html {
 
 .Character {
   display: flex;
-  margin-left: 10%;
-  margin-right: 10%;
-  width: 80%;
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 70%;
   flex-direction: column;
 }
 
@@ -225,11 +225,15 @@ html {
 .Paperdoll {
   display: flex;
   justify-content: space-between;
+  margin-left: 8%;
+  margin-right: 8%;
 }
 
 .Paperdoll.bottom {
   display: flex;
   justify-content: space-around;
+  margin-left: 30%;
+  margin-right: 30%;
 }
 
 
@@ -278,7 +282,7 @@ html {
 .ItemSlot {
   display: flex;
   align-items: flex-start;
-  margin: 16px;
+  margin: 15px;
   color: #9d9d9d;
   font: 14px "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 600;
