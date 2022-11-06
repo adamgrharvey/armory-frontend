@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import getAchievementMedia from "../blizzardAPI/getAchievementMedia";
 export default function getCharacterStatistics(region, server, name) {
 
   let backendURL = "http://localhost:3000";
@@ -14,7 +14,11 @@ export default function getCharacterStatistics(region, server, name) {
           //console.log(res);
           // if server returns 200 (success)
           if (res.status === 200) {
-            resolve(res.data);
+            getAchievementMedia(res.data).then(result => {
+              console.log(result);
+              resolve(res.data);
+            })
+            
           } else {
             console.log(res);
             reject(res);

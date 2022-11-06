@@ -19,6 +19,7 @@ import itemStringToObject from '../helpers/itemStringToObject';
 import getStatisticsData from '../helpers/backend/getStatisticsData';
 import submitStatisticData from '../helpers/backend/submitStatisticData';
 import getCharacterStatistics from '../helpers/backend/getCharacterStatistics';
+import getAchievementMedia from '../helpers/blizzardAPI/getAchievementMedia';
 
 
 export default function Character(props) {
@@ -123,9 +124,6 @@ export default function Character(props) {
           setCharacterExists(false);
         }
       })
-        .then(() => {
-          
-        })
 
     }
   }, [loading, character, characterExists])
@@ -133,15 +131,18 @@ export default function Character(props) {
   useEffect(() => {
     if (!Object.values(charLoading).includes(false)) {
       setLoading(false);
+      console.log(character);
     }
   }, [charLoading])
 
   useEffect(() => {
     if (character.characterData && character.characterData.miscInfo) {
       getCharacterStatistics(character.characterData.miscInfo.region, character.characterData.miscInfo.server, character.characterData.miscInfo.name)
-          .then((res) => {
-            console.log(res);
-          })
+        .then((res) => {
+          if (accessToken) {
+            
+          }
+        })
     }
 
   }, [character])

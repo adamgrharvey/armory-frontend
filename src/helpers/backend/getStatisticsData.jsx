@@ -14,6 +14,7 @@ export default function getStatisticsData() {
           //console.log(res);
           // if server returns 200 (success)
           if (res.status === 200) {
+            
             resolve(res.data);
           } else {
             console.log(res);
