@@ -1,24 +1,64 @@
 .Achievement {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   color: white;
+  width: 540px;
+  text-align: center;
+  background-image: url(../images/Achievement/UI-Achievement-Parchment-Horizontal.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 11px;
+  border: 2px solid rgba(94, 9, 9, 0.637);
+  border-radius: 4px;
+}
+.Achievement:hover {
+  border: 2px solid rgba(207, 224, 46, 0.993);
 }
 
 .AchNameDesc {
   display: flex;
   flex-direction: column;
+  width: 100%;
+
+}
+
+.Media {
+  position: relative;
+
+}
+
+.MediaBorder {
+  position: absolute;
+  object-position: left top;
+  scale: 125%;
+}
+
+.AchName {
+  font-size: 19px;
+  height: 30px;
+  width: 100%;
+  font-family: 'Arial', sans-serif;
+  font-weight: 500;
+  background: url(../images/Achievement/UI-Achievement-Title.png);
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+
 }
 
 .AchPointsDate {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .Points {
   position: absolute;
+  font-size: 14px;
   right: 45%;
-  left: 38%;
-  bottom: 37%;
+  left: 35%;
+  bottom: 47%;
 }
 
 .AchShield {

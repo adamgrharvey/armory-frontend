@@ -13,10 +13,17 @@ export default function Achievement(props) {
   return (
     props.achievement ?
       <div className='Achievement'>
-        <img src={ach.image_url} />
-        <div>
-          <div className='AchNameDesc'>
-            {ach.name}
+        <div className='Media'>
+          <img src={ach.image_url} />
+        </div>
+        <div className='MediaBorder'>
+          <img src={require(`../../images/Achievement/UI-Achievement-IconFrame.png`)} />
+        </div>
+        <div className='AchNameDesc'>
+          <div>
+            <div className='AchName'>
+              {ach.name}
+            </div>
           </div>
           <div>
             {ach.description}
@@ -27,21 +34,19 @@ export default function Achievement(props) {
 
         </div>
         <div className='AchPointsDate'>
-          <div>
-            {formatAchievementDate(ach.date_completed)}
-          </div>
           <div className='AchShield'>
             <div>
               {(!ach.is_statistic) && ach.points === 0 ? <img src={require(`../../images/Achievement/Achievement_feat_icon.webp`)} /> : <img src={require(`../../images/Achievement/Achievement_icon.webp`)} />
               }
+              <div className='Points'>
+                {ach.points}
+              </div>
             </div>
-            <div className='Points'>
-              {ach.points}
+            <div>
+              {formatAchievementDate(ach.date_completed)}
             </div>
           </div>
-
         </div>
-
       </div>
       :
       <div>
