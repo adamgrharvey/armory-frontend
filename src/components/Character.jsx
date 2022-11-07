@@ -20,6 +20,7 @@ import getStatisticsData from '../helpers/backend/getStatisticsData';
 import submitStatisticData from '../helpers/backend/submitStatisticData';
 import getCharacterStatistics from '../helpers/backend/getCharacterStatistics';
 import getAchievementMedia from '../helpers/blizzardAPI/getAchievementMedia';
+import Achievements from './Achievements/Achievements';
 
 
 export default function Character(props) {
@@ -129,19 +130,14 @@ export default function Character(props) {
   }, [loading, character, characterExists])
 
   useEffect(() => {
-    if (!Object.values(charLoading).includes(false)) {
+    if (!Object.values(charLoading).includes(false) && charLoading) {
       setLoading(false);
       console.log(character);
     }
   }, [charLoading])
 
   useEffect(() => {
-    if (character.characterData && character.characterData.miscInfo) {
-      getCharacterStatistics(character.characterData.miscInfo.region, character.characterData.miscInfo.server, character.characterData.miscInfo.name)
-        .then((res) => {
-          console.log(res);
-        })
-    }
+
 
   }, [character])
 
@@ -188,6 +184,7 @@ export default function Character(props) {
       {(!loading && characterExists) &&
         (<div className='Character'>
           <CharacterHeader loading={loading} character={character} />
+          <Achievements character={character}/>
           <div className='Divider' />
           <div className='CompletePaperdoll'>
             <ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />

@@ -55,11 +55,11 @@ html {
 }
 
 .Logo-HORDE {
-  background-image: url(./images/Character/Logo-horde.2a80e0466e51d85c8cf60336e16fe8b8.png);
+  background-image: url(../images/Character/Logo-horde.2a80e0466e51d85c8cf60336e16fe8b8.png);
 }
 
 .Logo-ALLIANCE {
-  background-image: url(./images/Character/Logo-alliance.bb36e70f5f690a5fc510ed03e80aa259.png);
+  background-image: url(../images/Character/Logo-alliance.bb36e70f5f690a5fc510ed03e80aa259.png);
 }
 
 .CharacterHeader {
@@ -177,13 +177,13 @@ html {
 
 .TooltipSpaceTR {
   width: 10px;
-  background-image: url(./images/tooltip.png);
+  background-image: url(../images/tooltip.png);
   background-position: top right;
 }
 
 .TooltipSpaceBR {
   width: 10px;
-  background-image: url(./images/tooltip.png);
+  background-image: url(../images/tooltip.png);
   background-position: Bottom right;
 }
 
@@ -196,7 +196,7 @@ html {
   padding-left: 10px;
   padding-top: 10px;
   width: 310px;
-  background-image: url(./images/tooltip.png);
+  background-image: url(../images/tooltip.png);
   background-position: top left;
 }
 
@@ -205,12 +205,12 @@ html {
   padding-bottom: 10px;
   padding-right: 10px;
   width: 310px;
-  background-image: url(./images/tooltip.png);
+  background-image: url(../images/tooltip.png);
   background-position: bottom left;
 }
 
 .TooltipBottomRight {
-  background-image: url(./images/tooltip.png);
+  background-image: url(../images/tooltip.png);
   background-position: bottom right;
   width: 320px;
 }
@@ -462,21 +462,21 @@ html {
   padding-right: 14px;
   padding-top: 18px;
   background: no-repeat right center;
-  background-image: url(./images/Money/money-gold.gif);
+  background-image: url(../images/Money/money-gold.gif);
 }
 
 .moneysilver {
   padding-right: 14px;
   padding-top: 18px;
   background: no-repeat right center;
-  background-image: url(./images/Money/money-silver.gif);
+  background-image: url(../images/Money/money-silver.gif);
 }
 
 .moneycopper {
   padding-right: 14px;
   padding-top: 18px;
   background: no-repeat right center;
-  background-image: url(./images/Money/money-copper.gif);
+  background-image: url(../images/Money/money-copper.gif);
 }
 
 .money {

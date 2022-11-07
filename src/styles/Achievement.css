@@ -1,0 +1,26 @@
+.Achievement {
+  display: flex;
+  flex-direction: row;
+  color: white;
+}
+
+.AchNameDesc {
+  display: flex;
+  flex-direction: column;
+}
+
+.AchPointsDate {
+  display: flex;
+  flex-direction: row;
+}
+
+.Points {
+  position: absolute;
+  right: 45%;
+  left: 38%;
+  bottom: 37%;
+}
+
+.AchShield {
+  position: relative;
+}
