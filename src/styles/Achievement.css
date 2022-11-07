@@ -10,11 +10,11 @@
   background-repeat: no-repeat;
   background-size: 100%;
   padding: 11px;
-  border: 2px solid rgba(94, 9, 9, 0.637);
+  border: 2px solid rgba(178, 38, 13, 1);
   border-radius: 4px;
 }
 .Achievement:hover {
-  border: 2px solid rgba(207, 224, 46, 0.993);
+  border: 2px solid rgba(255, 172, 32, 1);
 }
 
 .AchNameDesc {
