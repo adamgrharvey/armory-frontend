@@ -31,7 +31,8 @@ export default function Achievement(props) {
           </div>
           <div className='AchShield'>
             <div>
-              <img src={require(`../../images/Achievement/Achievement_icon.webp`)} />
+              {(!ach.is_statistic) && ach.points === 0 ? <img src={require(`../../images/Achievement/Achievement_feat_icon.webp`)} /> : <img src={require(`../../images/Achievement/Achievement_icon.webp`)} />
+              }
             </div>
             <div className='Points'>
               {ach.points}
