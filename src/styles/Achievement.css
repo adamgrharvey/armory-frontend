@@ -13,6 +13,7 @@
   border: 2px solid rgba(178, 38, 13, 1);
   border-radius: 4px;
 }
+
 .Achievement:hover {
   border: 2px solid rgba(255, 172, 32, 1);
 }
@@ -21,6 +22,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  opacity: 1;
 
 }
 
@@ -35,16 +37,22 @@
   scale: 125%;
 }
 
+.test {
+  opacity: 0.4;
+  max-width: 540px;
+  position: absolute;
+  max-height: 22px;
+  overflow: hidden;
+}
+
 .AchName {
   font-size: 19px;
+  opacity: 1;
   height: 30px;
   width: 100%;
   font-family: 'Arial', sans-serif;
   font-weight: 500;
-  background: url(../images/Achievement/UI-Achievement-Title.png);
-  background-repeat: no-repeat;
-  background-position: 50% 0;
-  background-size: cover;
+
 
 }
 

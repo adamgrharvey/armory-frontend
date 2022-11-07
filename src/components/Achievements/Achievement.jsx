@@ -13,6 +13,10 @@ export default function Achievement(props) {
   return (
     props.achievement ?
       <div className='Achievement'>
+        <div className='test'>
+          <img src={require(`../../images/Achievement/UI-Achievement-Title.png`)} />
+        </div>
+
         <div className='Media'>
           <img src={ach.image_url} />
         </div>
@@ -21,6 +25,7 @@ export default function Achievement(props) {
         </div>
         <div className='AchNameDesc'>
           <div>
+
             <div className='AchName'>
               {ach.name}
             </div>
