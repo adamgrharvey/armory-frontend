@@ -13,6 +13,25 @@ export default function Achievement(props) {
   return (
     props.achievement ?
       <div className='Achievement'>
+        <div className='AchTitleBackground'>
+          <img src={require(`../../images/Achievement/UI-Achievement-Title.png`)} />
+        </div>
+        <div className='TsunamiTop'>
+          <img src={require(`../../images/Achievement/UI-Achievement-Tsunami-Horizontal.png`)} />
+        </div>
+        <div className='TsunamiBottom'>
+          <img src={require(`../../images/Achievement/UI-Achievement-Tsunami-Horizontal.png`)} />
+        </div>
+      </div>
+      :
+      <div>
+
+      </div>
+  )
+}
+
+/*
+<div className='Achievement'>
         <div className='test'>
           <img src={require(`../../images/Achievement/UI-Achievement-Title.png`)} />
         </div>
@@ -53,9 +72,4 @@ export default function Achievement(props) {
           </div>
         </div>
       </div>
-      :
-      <div>
-
-      </div>
-  )
-}
+*/

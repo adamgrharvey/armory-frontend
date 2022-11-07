@@ -1,15 +1,13 @@
 .Achievement {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   color: white;
+  position: relative;
   width: 540px;
+  height: 90px;
   text-align: center;
   background-image: url(../images/Achievement/UI-Achievement-Parchment-Horizontal.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
-  padding: 11px;
   border: 2px solid rgba(178, 38, 13, 1);
   border-radius: 4px;
 }
@@ -26,24 +24,43 @@
 
 }
 
+.AchTitleBackground {
+  opacity: 0.69;
+  max-width: 512px;
+  height: 21px;
+  overflow: hidden;
+
+}
+
+.TsunamiTop {
+  position: relative;
+  bottom: 7.5px;
+  max-width: 540px;
+  opacity: 0.2;
+  transform: rotate(180deg);
+}
+.TsunamiBottom {
+  max-width: 540px;
+  position: relative;
+  top: 37px;
+  opacity: 0.3;
+}
+
 .Media {
   position: relative;
 
 }
 
 .MediaBorder {
-  position: absolute;
-  object-position: left top;
+  position: relative;
+  overflow: hidden;
+  bottom: 17px;
   scale: 125%;
+  width: 70px;
+  height: 70px;
 }
 
-.test {
-  opacity: 0.4;
-  max-width: 540px;
-  position: absolute;
-  max-height: 22px;
-  overflow: hidden;
-}
+
 
 .AchName {
   font-size: 19px;
