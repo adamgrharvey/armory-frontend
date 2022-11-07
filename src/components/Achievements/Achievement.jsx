@@ -1,5 +1,6 @@
 import '../../styles/Achievement.css';
 import React from 'react';
+import formatAchievementDate from '../../helpers/formatAchievementDate';
 
 export default function Achievement(props) {
 
@@ -27,7 +28,7 @@ export default function Achievement(props) {
         </div>
         <div className='AchPointsDate'>
           <div>
-            {ach.date_completed}
+            {formatAchievementDate(ach.date_completed)}
           </div>
           <div className='AchShield'>
             <div>
