@@ -14,10 +14,7 @@ export default function getCharacterStatistics(region, server, name) {
           //console.log(res);
           // if server returns 200 (success)
           if (res.status === 200) {
-            getAchievementMedia(res.data).then(result => {
-              console.log(result);
-              resolve(res.data);
-            })
+            resolve(res.data);
             
           } else {
             console.log(res);

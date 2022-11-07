@@ -2,15 +2,16 @@ import axios from "axios";
 
 export default function getAchievementMedia(achievements, accessToken) {
 
+  console.log(achievements);
   return new Promise((resolve, reject) => {
     let tempArr = []
     // console.log(achievements);
-    for (let i = 0; i < 10; i++) {
-      getRequest(achievements[i].id).then((res) => {
-        tempArr.push({ link: res, id: i });
-      })
-      //
-
+    for (let i = 0; i < achievements.length; i++) {
+      if (!achievements[i].is_statistic) {
+        getRequest(achievements[i].id).then((res) => {
+          tempArr.push({ link: res, id: achievements[i].id });
+        })
+      }
     }
 
     resolve(tempArr)

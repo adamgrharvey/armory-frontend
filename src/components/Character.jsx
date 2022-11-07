@@ -139,13 +139,13 @@ export default function Character(props) {
     if (character.characterData && character.characterData.miscInfo) {
       getCharacterStatistics(character.characterData.miscInfo.region, character.characterData.miscInfo.server, character.characterData.miscInfo.name)
         .then((res) => {
-          if (accessToken) {
-            
-          }
+          console.log(res);
         })
     }
 
   }, [character])
+
+  
 
 
   useEffect(() => {
