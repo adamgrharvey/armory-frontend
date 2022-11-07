@@ -23,7 +23,9 @@ export default function Achievements(props) {
 
   return (
     <div>
-      <Achievement achievement={achievements[0]}/>
+      <Achievement achievement={achievements[9]}/>
+      <Achievement achievement={achievements[3]}/>
+      <Achievement achievement={achievements[91]}/>
     </div>
 
   )

@@ -1,31 +1,62 @@
 .Achievement {
+  width: 540px;
+  height: 84px;
+  position: relative;
+  font-family: 'Friz Quadrata Std', sans-serif;
+  border: 1px solid rgb(133, 28, 9);
+  border-radius: 4px;
+  margin: 3px;
+}
+
+
+.AchievementBackground {
   color: white;
   position: relative;
   width: 540px;
-  height: 90px;
+  height: 84px;
   text-align: center;
   background-image: url(../images/Achievement/UI-Achievement-Parchment-Horizontal.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
-  border: 2px solid rgba(178, 38, 13, 1);
-  border-radius: 4px;
+
 }
 
 .Achievement:hover {
-  border: 2px solid rgba(255, 172, 32, 1);
+  border: 1px solid rgb(247, 166, 26);
 }
 
-.AchNameDesc {
-  display: flex;
-  flex-direction: column;
+.AchData {
   width: 100%;
-  opacity: 1;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
+.MediaBorder {
+  position: relative;
+  scale: 115%;
+  bottom: 65px;
+  right: 5px;
+}
+
+
+.AchNameDesc {
+  position: relative;
+  display: flex;
+  text-align: center;
+  width: 360px;
+  flex-direction: column;
+  opacity: 1;
+  color: white;
 }
 
 .AchTitleBackground {
-  opacity: 0.69;
+  opacity: 0.85;
   max-width: 512px;
   height: 21px;
   overflow: hidden;
@@ -42,50 +73,67 @@
 .TsunamiBottom {
   max-width: 540px;
   position: relative;
-  top: 37px;
+  top: 31px;
   opacity: 0.3;
+}
+.Reward {
+  max-width: 540px;
+  align-items: center;
+  position: absolute;
+  top: 72px;
+  left: 80px;
+  opacity: 1;
 }
 
 .Media {
   position: relative;
-
+  top: 10px;
+  left: 10px;
+  width: 90px;
 }
-
-.MediaBorder {
-  position: relative;
-  overflow: hidden;
-  bottom: 17px;
-  scale: 125%;
-  width: 70px;
-  height: 70px;
-}
-
-
 
 .AchName {
-  font-size: 19px;
+  font-size: 16px;
+  position: relative;
   opacity: 1;
   height: 30px;
   width: 100%;
-  font-family: 'Arial', sans-serif;
-  font-weight: 500;
+  top: 1px;
+  font-weight: 100;
+  text-shadow: 0.7px 0.7px #000000;
+}
 
-
+.AchDesc {
+  
+  color: #000000;
 }
 
 .AchPointsDate {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 90px;
+  position: relative;
+  left: 10px;
+  text-align: center;
+  
+}
+.Date {
+  position: relative;
+  color: rgb(255, 251, 32);
+  font-size: 11px;
+  bottom: 10px;
+  letter-spacing: 0.6px;
 }
 
 .Points {
-  position: absolute;
+  position: relative;
   font-size: 14px;
-  right: 45%;
-  left: 35%;
-  bottom: 47%;
+  bottom: 33px;
+  color: white;
 }
 
 .AchShield {
   position: relative;
+  top: 6px;
 }
