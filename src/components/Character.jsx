@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from "react-router-dom";
+import { useParams, Route, Routes } from "react-router-dom";
 import { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import MoonLoader from 'react-spinners/MoonLoader';
@@ -24,6 +24,7 @@ import Achievements from './Achievements/Achievements';
 
 
 export default function Character(props) {
+
   const { accessToken, setAccessToken } = useContext(AccessTokenContext);
   let backendURL = "http://localhost:3000";
   const [show, setShow] = useState(false);
@@ -141,7 +142,7 @@ export default function Character(props) {
 
   }, [character])
 
-  
+
 
 
   useEffect(() => {
@@ -191,8 +192,9 @@ export default function Character(props) {
           </div>
           <div className='Divider' />
         </div>)}
-
     </div>
+
+
   )
 }
 

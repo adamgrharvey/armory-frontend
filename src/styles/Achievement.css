@@ -77,6 +77,31 @@
   color: white;
 }
 
+.AchName {
+  font-size: 15px;
+  position: relative;
+  opacity: 1;
+  height: 24px;
+  width: 100%;
+  top: 1px;
+  font-weight: 100;
+  text-shadow: 0.7px 0.7px #000000;
+  text-overflow: ellipsis;
+  overflow: hidden; 
+  white-space: nowrap;
+  letter-spacing: 0.4px;
+}
+
+.AchName.NotEarned {
+  color: rgb(177, 172, 172);
+}
+
+.AchDesc {
+  position: relative;
+  color: #000000;
+  height: 50px;
+}
+
 .AchTitleBackground {
   opacity: 0.85;
   max-width: 512px;
@@ -117,6 +142,11 @@
   white-space: nowrap;
 
 }
+.RewardText.NotEarned {
+  color: rgb(177, 172, 172);
+
+}
+
 
 .Media {
   position: relative;
@@ -129,29 +159,7 @@
   filter: saturate(20%);
 }
 
-.AchName {
-  font-size: 16px;
-  position: relative;
-  opacity: 1;
-  height: 24px;
-  width: 100%;
-  top: 1px;
-  font-weight: 100;
-  text-shadow: 0.7px 0.7px #000000;
-  text-overflow: ellipsis;
-  overflow: hidden; 
-  white-space: nowrap;
-}
 
-.AchName.NotEarned {
-  color: rgb(177, 172, 172);
-}
-
-.AchDesc {
-  position: relative;
-  color: #000000;
-  height: 50px;
-}
 
 .AchPointsDate {
   display: flex;

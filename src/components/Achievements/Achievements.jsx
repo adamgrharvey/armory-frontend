@@ -1,30 +1,27 @@
 import '../../styles/Achievement.css';
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import Achievement from './Achievement';
 import getCharacterStatistics from '../../helpers/backend/getCharacterStatistics';
 import { useEffect, useState } from 'react';
 
 export default function Achievements(props) {
-
+  let params = useParams();
   const [achievements, setAchievements] = useState([])
 
   useEffect(() => {
-    if (props.character.characterData && props.character.characterData.miscInfo) {
-      getCharacterStatistics(props.character.characterData.miscInfo.region, props.character.characterData.miscInfo.server, props.character.characterData.miscInfo.name)
-        .then((res) => {
-          setAchievements(res);
-          console.log(res);
-        })
-    }
+    getCharacterStatistics(params.region, params.server, params.characterName)
+      .then((res) => {
+        setAchievements(res);
+        console.log(res);
+      })
   }, [])
-
-
 
 
   return (
     <div>
-      {achievements.map((i) => 
-        <Achievement achievement={i} key={i.id}/>
+      {achievements.map((i) =>
+        <Achievement achievement={i} key={i.id} />
       )}
     </div>
 

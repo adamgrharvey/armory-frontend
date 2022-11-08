@@ -116,7 +116,7 @@ export default function Achievement(props) {
               <div className='AchDesc'>
                 {ach.description}
               </div>
-              <div className='RewardText'>
+              <div className='RewardText NotEarned'>
                 {ach.reward_text}
               </div>
             </div>
