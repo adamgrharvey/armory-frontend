@@ -24,7 +24,7 @@ export default function Achievements(props) {
   return (
     <div>
       {achievements.map((i) => 
-        <Achievement achievement={i} />
+        <Achievement achievement={i} key={i.id}/>
       )}
     </div>
 

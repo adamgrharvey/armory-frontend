@@ -6,6 +6,7 @@
   border: 1px solid rgb(133, 28, 9);
   border-radius: 4px;
   margin: 3px;
+
 }
 
 
@@ -103,6 +104,10 @@
 .RewardText {
   position: relative;
   top: 3px;
+  text-overflow: ellipsis;
+  overflow: hidden; 
+  white-space: nowrap;
+
 }
 
 .Media {
@@ -125,6 +130,9 @@
   top: 1px;
   font-weight: 100;
   text-shadow: 0.7px 0.7px #000000;
+  text-overflow: ellipsis;
+  overflow: hidden; 
+  white-space: nowrap;
 }
 
 .AchName.NotEarned {

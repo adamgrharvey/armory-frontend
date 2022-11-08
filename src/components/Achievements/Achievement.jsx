@@ -7,6 +7,7 @@ export default function Achievement(props) {
   let ach = props.achievement;
 
   return (
+    // is this complete?
     (ach && !ach.is_statistic && ach.date_completed) ?
       <div className='Achievement'>
 
@@ -76,8 +77,8 @@ export default function Achievement(props) {
           </div>
         </div>
       </div>
-
-      : (ach && !ach.is_statistic && !ach.date_completed) ?
+      // not complete
+      : (ach && !ach.is_statistic && !ach.date_completed && !ach.name.includes("Realm First") && ach.points !== 0) ?
         <div className='Achievement'>
 
           <div className='AchievementBackgroundNotEarned'>
