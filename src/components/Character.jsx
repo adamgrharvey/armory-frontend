@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Route, Routes } from "react-router-dom";
+import { useParams, Route, Routes, Link } from "react-router-dom";
 import { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import MoonLoader from 'react-spinners/MoonLoader';
@@ -185,6 +185,10 @@ export default function Character(props) {
       {(!loading && characterExists) &&
         (<div className='Character'>
           <CharacterHeader loading={loading} character={character} />
+          <div className='CharacterNav'>
+          <a class='CharacterNav-item IsSelected' href={`${characterName}`}>Character</a>
+            <a class='CharacterNav-item' href={`${characterName}/achievements`}>ACHIEVEMENTS</a>
+          </div>
           <div className='Divider' />
           <div className='CompletePaperdoll'>
             <ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />
