@@ -6,7 +6,15 @@
   border: 1px solid rgb(133, 28, 9);
   border-radius: 4px;
   margin: 3px;
-
+}
+.Achievement.notEarned {
+  width: 540px;
+  height: 84px;
+  position: relative;
+  font-family: 'Friz Quadrata Std', sans-serif;
+  border: 1px solid rgb(59, 59, 59);
+  border-radius: 4px;
+  margin: 3px;
 }
 
 

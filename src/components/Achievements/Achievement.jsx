@@ -79,7 +79,7 @@ export default function Achievement(props) {
       </div>
       // not complete
       : (ach && !ach.is_statistic && !ach.date_completed && !ach.name.includes("Realm First") && ach.points !== 0) ?
-        <div className='Achievement'>
+        <div className='Achievement notEarned'>
 
           <div className='AchievementBackgroundNotEarned'>
             <div className='AchTitleBackground NotEarned'>
