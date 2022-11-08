@@ -184,7 +184,6 @@ export default function Character(props) {
       {(!loading && characterExists) &&
         (<div className='Character'>
           <CharacterHeader loading={loading} character={character} />
-          <Achievements character={character}/>
           <div className='Divider' />
           <div className='CompletePaperdoll'>
             <ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />
@@ -196,3 +195,5 @@ export default function Character(props) {
     </div>
   )
 }
+
+//<Achievements character={character}/>
