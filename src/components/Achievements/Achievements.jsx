@@ -23,10 +23,14 @@ export default function Achievements(props) {
 
   return (
     <div>
-      <Achievement achievement={achievements[9]}/>
-      <Achievement achievement={achievements[3]}/>
-      <Achievement achievement={achievements[91]}/>
+      {achievements.map((i) => 
+        <Achievement achievement={i} />
+      )}
     </div>
 
   )
 }
+
+//      <Achievement achievement={achievements[9]}/>
+/* <Achievement achievement={achievements[3]}/>
+<Achievement achievement={achievements[91]}/> */

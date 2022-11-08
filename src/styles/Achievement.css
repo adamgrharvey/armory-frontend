@@ -22,6 +22,19 @@
 
 }
 
+.AchievementBackgroundNotEarned {
+  color: white;
+  position: relative;
+  width: 540px;
+  height: 84px;
+  text-align: center;
+  background-image: url(../images/Achievement/UI-Achievement-Parchment-Horizontal-Desaturated.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+}
+
 .Achievement:hover {
   border: 1px solid rgb(247, 166, 26);
 }
@@ -70,19 +83,26 @@
   opacity: 0.2;
   transform: rotate(180deg);
 }
+
 .TsunamiBottom {
   max-width: 540px;
   position: relative;
   top: 31px;
   opacity: 0.3;
 }
+
 .Reward {
   max-width: 540px;
   align-items: center;
   position: absolute;
+  scale: 110%;
   top: 72px;
-  left: 80px;
+  left: 100px;
   opacity: 1;
+}
+.RewardText {
+  position: relative;
+  top: 3px;
 }
 
 .Media {
@@ -92,20 +112,29 @@
   width: 90px;
 }
 
+.NotEarned {
+  filter: saturate(20%);
+}
+
 .AchName {
   font-size: 16px;
   position: relative;
   opacity: 1;
-  height: 30px;
+  height: 24px;
   width: 100%;
   top: 1px;
   font-weight: 100;
   text-shadow: 0.7px 0.7px #000000;
 }
 
+.AchName.NotEarned {
+  color: rgb(177, 172, 172);
+}
+
 .AchDesc {
-  
+  position: relative;
   color: #000000;
+  height: 50px;
 }
 
 .AchPointsDate {
@@ -116,13 +145,22 @@
   position: relative;
   left: 10px;
   text-align: center;
-  
+
 }
+
 .Date {
   position: relative;
   color: rgb(255, 251, 32);
   font-size: 11px;
-  bottom: 10px;
+  bottom: 16px;
+  letter-spacing: 0.6px;
+}
+
+.Date.feat {
+  position: relative;
+  color: rgb(255, 251, 32);
+  font-size: 11px;
+  bottom: 0px;
   letter-spacing: 0.6px;
 }
 
@@ -136,4 +174,7 @@
 .AchShield {
   position: relative;
   top: 6px;
+}
+.AchShield.NotEarned {
+  filter: saturate(0%) brightness(60%);
 }

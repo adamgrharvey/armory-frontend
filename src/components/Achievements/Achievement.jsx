@@ -7,7 +7,7 @@ export default function Achievement(props) {
   let ach = props.achievement;
 
   return (
-    props.achievement ?
+    (ach && !ach.is_statistic && ach.date_completed) ?
       <div className='Achievement'>
 
         <div className='AchievementBackground'>
@@ -45,31 +45,100 @@ export default function Achievement(props) {
             <div className='AchDesc'>
               {ach.description}
             </div>
-            <div>
+            <div className='RewardText'>
               {ach.reward_text}
             </div>
           </div>
           <div className='AchPointsDate'>
             <div>
               <div className='AchShield'>
-                {(!ach.is_statistic) && ach.points === 0 ? <img src={require(`../../images/Achievement/Achievement_feat_icon.webp`)} /> : <img src={require(`../../images/Achievement/Achievement_icon.webp`)} />
+                {
+                  (!ach.is_statistic) && ach.points === 0 ?
+                    <div>
+                      <img src={require(`../../images/Achievement/Achievement_feat_icon.webp`)} />
+                      <div className='Date feat'>
+                        {formatAchievementDate(ach.date_completed)}
+                      </div>
+                    </div>
+                    :
+                    <div>
+                      <img src={require(`../../images/Achievement/Achievement_icon.webp`)} />
+                      <div className='Points'>
+                        {ach.points}
+                      </div>
+                      <div className='Date'>
+                        {formatAchievementDate(ach.date_completed)}
+                      </div>
+                    </div>
                 }
-                <div className='Points'>
-                  {ach.points}
-                </div>
-              </div>
-              <div className='Date'>
-                {formatAchievementDate(ach.date_completed)}
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      :
-      <div>
+      : (ach && !ach.is_statistic && !ach.date_completed) ?
+        <div className='Achievement'>
 
-      </div>
+          <div className='AchievementBackgroundNotEarned'>
+            <div className='AchTitleBackground NotEarned'>
+              <img src={require(`../../images/Achievement/UI-Achievement-Title.png`)} />
+            </div>
+            <div className='TsunamiTop'>
+              <img src={require(`../../images/Achievement/UI-Achievement-Tsunami-Horizontal.png`)} />
+            </div>
+            {
+              ach.reward_text !== "" &&
+              <div className='Reward NotEarned'>
+                <img src={require(`../../images/Achievement/UI-Achievement-Reward-Background.png`)} />
+              </div>
+            }
+            <div className='TsunamiBottom'>
+              <img src={require(`../../images/Achievement/UI-Achievement-Tsunami-Horizontal.png`)} />
+            </div>
+          </div>
+
+          <div className='AchData'>
+
+            <div className='Media NotEarned'>
+              <img src={ach.image_url} />
+              <div className='MediaBorder'>
+                <img src={require(`../../images/Achievement/UI-Achievement-IconFrame.png`)} />
+              </div>
+            </div>
+            <div className='AchNameDesc'>
+              <div>
+                <div className='AchName NotEarned'>
+                  {ach.name}
+                </div>
+              </div>
+              <div className='AchDesc'>
+                {ach.description}
+              </div>
+              <div className='RewardText'>
+                {ach.reward_text}
+              </div>
+            </div>
+            <div className='AchPointsDate'>
+              <div>
+                <div className='AchShield NotEarned'>
+                  {(!ach.is_statistic) && ach.points === 0 ? <img src={require(`../../images/Achievement/Achievement_feat_icon.webp`)} /> :
+                    <div>
+                      <img src={require(`../../images/Achievement/Achievement_icon.webp`)} />
+                      <div className='Points'>
+                        {ach.points}
+                      </div>
+                    </div>
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        :
+        <div>
+
+        </div>
   )
 }
 
