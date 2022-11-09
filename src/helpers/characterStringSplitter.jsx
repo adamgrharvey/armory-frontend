@@ -10,7 +10,10 @@ import submitStatisticData from "./backend/submitStatisticData";
 export default function characterStringSplitter(characterString, setCharacter, setCharacterExists, setLoading) {
   let [itemString, miscString, statisticString] = characterString.split("!");
   let miscArray = miscString.split(".");
-  setCharacterExists(true);
+  if (setCharacterExists) {
+    setCharacterExists(true);
+  }
+  
   let charStats = statisticStringSplitter(statisticString);
 
   if (miscArray[3] === "null") {
@@ -29,7 +32,7 @@ export default function characterStringSplitter(characterString, setCharacter, s
     faction: getFactionFromRace(miscArray[6]),
     achPoints: Number(miscArray[5]),
   }
-  let characterData =  {
+  let characterData = {
     name: miscInfo.name[0].toUpperCase() + miscInfo.name.substring(1).toLowerCase(),
     characterString: characterString,
     itemString: itemString,
@@ -40,9 +43,12 @@ export default function characterStringSplitter(characterString, setCharacter, s
 
 
   setCharacter((prev) => (
-    {...prev, characterData}
+    { ...prev, characterData }
   ))
-  setLoading(false);
+  if (setLoading) {
+    setLoading(true);
+  }
+  
 
 }
 

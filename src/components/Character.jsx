@@ -21,6 +21,7 @@ import submitStatisticData from '../helpers/backend/submitStatisticData';
 import getCharacterStatistics from '../helpers/backend/getCharacterStatistics';
 import getAchievementMedia from '../helpers/blizzardAPI/getAchievementMedia';
 import Achievements from './Achievements/Achievements';
+import getCharacterData from '../helpers/backend/getCharacterData';
 
 
 export default function Character(props) {
@@ -31,6 +32,15 @@ export default function Character(props) {
   const [item, setItem] = useState({});
   const [loading, setLoading] = useState(true);
   const [characterExists, setCharacterExists] = useState(false);
+  const [navItem, setNavItem] = useState(
+    
+    {
+      selected: "Character",
+      charHighlight: "IsSelected",
+      achHighlight: ""
+
+    });
+
 
   const { region, server, characterName } = useParams();
   const [charLoading, setCharLoading] = useState({
@@ -89,37 +99,14 @@ export default function Character(props) {
     return { innerWidth, innerHeight };
   }
 
-  function getCharacterData() {
-    return new Promise((resolve, reject) => {
-      axios
-        .get(`${backendURL}/character/${region}/${server}/${characterName}`, {
-          headers: {
-            'content-type': 'application/json',
-          },
-        })
-        .then((res) => {
-          console.log(res);
-          // if server returns 200 (success)
-          if (res.status === 200) {
-            if (res.data == null) {
-              resolve(res.data);
-            }
-            resolve(res.data);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-          reject(err);
-        });
-    });
-  }
+
 
   useEffect(() => {
     if (loading && !characterExists) {
-      Promise.all([getCharacterData()]).then((results) => {
+      Promise.all([getCharacterData(region, server, characterName)]).then((results) => {
 
         if (!character.characterData && results[0] && results[0].character_string) {
-          // console.log(results);
+          console.log(results);
           characterStringSplitter(results[0].character_string, setCharacter, setCharacterExists, setLoading)
         } else {
           setLoading(false);
@@ -137,13 +124,6 @@ export default function Character(props) {
     }
   }, [charLoading])
 
-  useEffect(() => {
-
-
-  }, [character])
-
-
-
 
   useEffect(() => {
     if (accessToken === "") {
@@ -160,10 +140,10 @@ export default function Character(props) {
   useEffect(() => {
     if (!loading && character.inventory[0]) {
       console.log(character);
-      // submitStatisticData(character.characterData);
 
     }
   }, [loading])
+
 
 
 
@@ -173,7 +153,6 @@ export default function Character(props) {
     innerWidth: windowSize.innerWidth,
     innerHeight: windowSize.innerHeight
   };
-
 
   return (
     <div>
@@ -186,15 +165,28 @@ export default function Character(props) {
         (<div className='Character'>
           <CharacterHeader loading={loading} character={character} />
           <div className='CharacterNav'>
-          <a class='CharacterNav-item IsSelected' href={`${characterName}`}>Character</a>
-            <a class='CharacterNav-item' href={`${characterName}/achievements`}>ACHIEVEMENTS</a>
+            <button onClick={() => {
+              setNavItem({
+                selected: "Character", charHighlight: "IsSelected",
+                achHighlight: ""
+              })
+            }} className={`CharacterNav-item ${navItem.charHighlight}`}>Character</button>
+            <button onClick={() => {
+              setNavItem({
+                selected: "Achievements", charHighlight: "",
+                achHighlight: "IsSelected"
+              })
+            }} className={`CharacterNav-item ${navItem.achHighlight}`}>ACHIEVEMENTS</button>
           </div>
           <div className='Divider' />
           <div className='CompletePaperdoll'>
-            <ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />
+
+            {navItem.selected === "Character" && (<ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />)}
+
+            {navItem.selected === "Achievements" && (<Achievements />)}
+
             {show && <Tooltip locationData={locationData} item={item} />}
           </div>
-          <div className='Divider' />
         </div>)}
     </div>
 

@@ -41,8 +41,6 @@ function App() {
         <div className="App">
           <Routes>
             <Route exact path={`${frontendURL}/character/:region/:server/:characterName/`} element={<Character />} />
-            <Route exact path={`${frontendURL}/character/:region/:server/:characterName/achievements`} element={<Achievements />}/>
-            <Route exact path={`${frontendURL}/character/:region/:server/:characterName/achievements/:category`} element={<Achievements />}/>
             <Route path={`${frontendURL}/submit`} element={<Submit />}/>
           </Routes>
         </div>

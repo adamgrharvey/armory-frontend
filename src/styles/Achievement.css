@@ -17,6 +17,12 @@
   margin: 3px;
 }
 
+.AchievementList {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: fit-content;
+  
+}
 
 .AchievementBackground {
   color: white;
