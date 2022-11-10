@@ -1,0 +1,168 @@
+.SpecBox {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  height: 130px;
+  border-radius: 5px;
+  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+
+}
+
+.SpecNameCount {
+  display: flex;
+  flex-direction: column;
+}
+
+.Selected {
+  border: 2px solid rgb(247, 166, 26);
+}
+
+.DEATHKNIGHT-Blood {
+  background-position: center;
+  background-image: url(../images/Specs/DeathKnightBlood-TopLeft.png);
+}
+
+.DEATHKNIGHT-Frost {
+  background-position: center;
+  background-image: url(../images/Specs/DeathKnightFrost-TopLeft.png);
+}
+
+.DEATHKNIGHT-Unholy {
+  background-position: center;
+  background-image: url(../images/Specs/DeathKnightUnholy-TopLeft.png);
+}
+
+.DRUID-Feral {
+  background-position: center;
+  background-image: url(../images/Specs/DruidFeralCombat-TopLeft.png);
+}
+
+.DRUID-Restoration {
+  background-position: center;
+  background-image: url(../images/Specs/DruidRestoration-TopLeft.png);
+}
+
+.DRUID-Balance {
+  background-position: center;
+  background-image: url(../images/Specs/DruidBalance-TopLeft.png);
+}
+
+.HUNTER-Marksmanship {
+  background-position: center;
+  background-image: url(../images/Specs/HunterMarksmanship-TopLeft.png);
+}
+
+.HUNTER-BeastMastery {
+  background-position: center;
+  background-image: url(../images/Specs/HunterBeastMastery-TopLeft.png);
+}
+
+.HUNTER-Survival {
+  background-position: center;
+  background-image: url(../images/Specs/HunterSurvival-TopLeft.png);
+}
+
+.MAGE-Arcane {
+  background-position: center;
+  background-image: url(../images/Specs/MageArcane-TopLeft.png);
+}
+
+.MAGE-Fire {
+  background-position: center;
+  background-image: url(../images/Specs/MageFire-TopLeft.png);
+}
+
+.MAGE-Frost {
+  background-position: center;
+  background-image: url(../images/Specs/MageFrost-TopLeft.png);
+}
+
+.PALADIN-Retribution {
+  background-position: center;
+  background-image: url(../images/Specs/PALADINCOMBAT-TOPLEFT.png);
+}
+
+.PALADIN-Holy {
+  background-position: center;
+  background-image: url(../images/Specs/PALADINHOLY-TOPLEFT.png);
+}
+
+.PALADIN-Protection {
+  background-position: center;
+  background-image: url(../images/Specs/PALADINPROTECTION-TOPLEFT.png);
+}
+
+.PRIEST-Discipline {
+  background-position: center;
+  background-image: url(../images/Specs/PriestDiscipline-TopLeft.png);
+}
+
+.PRIEST-Holy {
+  background-position: center;
+  background-image: url(../images/Specs/PriestHoly-TopLeft.png);
+}
+
+.PRIEST-Shadow {
+  background-position: center;
+  background-image: url(../images/Specs/PriestShadow-TopLeft.png);
+}
+
+.ROGUE-Assassination {
+  background-position: center;
+  background-image: url(../images/Specs/RogueAssassination-TopLeft.png);
+}
+
+.ROGUE-Combat {
+  background-position: center;
+  background-image: url(../images/Specs/RogueCombat-TopLeft.png);
+}
+
+.ROGUE-Subtlety {
+  background-position: center;
+  background-image: url(../images/Specs/RogueSubtlety-TopLeft.png);
+}
+
+.SHAMAN-Elemental {
+  background-position: center;
+  background-image: url(../images/Specs/ShamanElementalCombat-TopLeft.png);
+}
+
+.SHAMAN-Enhancement {
+  background-position: center;
+  background-image: url(../images/Specs/ShamanEnhancement-TopLeft.png);
+}
+
+.SHAMAN-Restoration {
+  background-position: center;
+  background-image: url(../images/Specs/ShamanRestoration-TopLeft.png);
+}
+
+.WARLOCK-Affliction {
+  background-position: center;
+  background-image: url(../images/Specs/WarlockCurses-TopLeft.png);
+}
+
+.WARLOCK-Demonology {
+  background-position: center;
+  background-image: url(../images/Specs/WarlockSummoning-TopLeft.png);
+}
+
+.WARLOCK-Destruction {
+  background-position: center;
+  background-image: url(../images/Specs/WarlockDestruction-TopLeft.png);
+}
+
+.WARRIOR-Arms {
+  background-position: center;
+  background-image: url(../images/Specs/WarriorArm-TopLeft.png);
+}
+
+.WARRIOR-Fury {
+  background-position: center;
+  background-image: url(../images/Specs/WarriorFury-TopLeft.png);
+}
+
+.WARRIOR-Protection {
+  background-position: center;
+  background-image: url(../images/Specs/WarriorProtection-TopLeft.png);
+}

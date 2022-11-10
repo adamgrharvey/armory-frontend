@@ -1,4 +1,7 @@
 import './styles/App.css';
+import './styles/Achievement.css';
+import './styles/AchievementsPage.css';
+import './styles/Specialization.css';
 import React from 'react';
 import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom"

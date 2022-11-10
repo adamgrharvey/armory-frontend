@@ -23,6 +23,7 @@ import getAchievementMedia from '../helpers/blizzardAPI/getAchievementMedia';
 import Achievements from './Achievements/Achievements';
 import getCharacterData from '../helpers/backend/getCharacterData';
 import Talents from './Talents';
+import Specialization from './Specialization';
 
 export default function Character(props) {
   const { accessToken, setAccessToken } = useContext(AccessTokenContext);
@@ -188,6 +189,7 @@ export default function Character(props) {
             {navItem.selected === "Achievements" && (<Achievements />)}
 
             <div className='Divider' />
+            <Specialization />
             <Talents />
 
             {show && <Tooltip locationData={locationData} item={item} />}

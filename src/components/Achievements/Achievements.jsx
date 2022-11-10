@@ -1,6 +1,4 @@
-import '../../styles/Achievement.css';
-import '../../styles/AchievementsPage.css';
-import '../../styles/App.css';
+
 import React, { Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import Achievement from './Achievement';

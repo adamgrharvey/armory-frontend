@@ -8,7 +8,7 @@ import getFactionFromRace from "./getFactionFromRace";
 import submitStatisticData from "./backend/submitStatisticData";
 
 export default function characterStringSplitter(characterString, setCharacter, setCharacterExists, setLoading) {
-  let [itemString, miscString, statisticString] = characterString.split("!");
+  let [itemString, miscString, primarySpecString, secondarySpecString, activeSpec, statisticString] = characterString.split("!");
   let miscArray = miscString.split(".");
   if (setCharacterExists) {
     setCharacterExists(true);
@@ -35,6 +35,9 @@ export default function characterStringSplitter(characterString, setCharacter, s
   let characterData = {
     name: miscInfo.name[0].toUpperCase() + miscInfo.name.substring(1).toLowerCase(),
     characterString: characterString,
+    primarySpecString: primarySpecString,
+    secondarySpecString: secondarySpecString,
+    activeSpec: activeSpec,
     itemString: itemString,
     miscInfo: miscInfo,
     statisticString: statisticString,
