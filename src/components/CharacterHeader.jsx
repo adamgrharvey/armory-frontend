@@ -40,22 +40,27 @@ export default function CharacterHeader(props) {
           {/*end of title div */}
         </div>
       </div>
-      <div className='CharacterHeader-info'>
-        <div className='CharacterHeader-info-entry'>
-          <div className='CharacterHeader.info.icon'>
-            <ILVLSword height={16} width={16} fill={"#f8b700"} />
+      <div>
+        <div className='CharacterHeader-info'>
+          <div className='CharacterHeader-info-entry'>
+            <div className='CharacterHeader.info.icon'>
+              <ILVLSword height={16} width={16} fill={"#f8b700"} />
+            </div>
+            <div className='CharacterHeader-ilvl'>
+              {iLvl} ILVL
+            </div>
           </div>
-          <div className='CharacterHeader-ilvl'>
-            {iLvl} ILVL
+          <div className='CharacterHeader-info-entry'>
+            <div className='CharacterHeader.info.icon'>
+              <AchShield height={16} width={16} fill={"#f8b700"} />
+            </div>
+            <div className='CharacterHeader-ilvl'>
+              {props.character.characterData.miscInfo.achPoints}
+            </div>
           </div>
         </div>
-        <div className='CharacterHeader-info-entry'>
-          <div className='CharacterHeader.info.icon'>
-            <AchShield height={16} width={16} fill={"#f8b700"} />
-          </div>
-          <div className='CharacterHeader-ilvl'>
-            {props.character.characterData.miscInfo.achPoints}
-          </div>
+        <div className='CharacterHeader-info-chardetails'>
+        {`${props.character.characterData.miscInfo.level} ${props.character.characterData.miscInfo.wowRace} ${props.character.characterData.miscInfo.wowClass.charAt(0) + props.character.characterData.miscInfo.wowClass.substring(1).toLowerCase()} | ${props.character.characterData.miscInfo.server}`}
         </div>
       </div>
     </div>

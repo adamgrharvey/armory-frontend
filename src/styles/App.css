@@ -103,6 +103,16 @@ html {
   vertical-align: middle;
 }
 
+.CharacterHeader-info-chardetails {
+  display: flex;
+  flex-direction: row;
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  text-align: top;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
 .CharacterHeader.info.icon {
   display: inline-block;
   fill: #f8b700;
@@ -132,12 +142,13 @@ html {
   text-align: left;
 }
 
+
 .CharacterHeader-name.CharacterHeader--ROGUE {
   color: rgb(255, 244, 98);
 }
 
 .Divider {
-  margin-top: 40px !important;
+  margin-top: 15px !important;
   border-bottom: 1px solid hsla(0, 0%, 100%, .2);
   width: 100%;
   position: relative;

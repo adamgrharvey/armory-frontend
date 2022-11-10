@@ -22,6 +22,7 @@ import getCharacterStatistics from '../helpers/backend/getCharacterStatistics';
 import getAchievementMedia from '../helpers/blizzardAPI/getAchievementMedia';
 import Achievements from './Achievements/Achievements';
 import getCharacterData from '../helpers/backend/getCharacterData';
+import Talents from './Talents';
 
 
 export default function Character(props) {
@@ -33,7 +34,7 @@ export default function Character(props) {
   const [loading, setLoading] = useState(true);
   const [characterExists, setCharacterExists] = useState(false);
   const [navItem, setNavItem] = useState(
-    
+
     {
       selected: "Character",
       charHighlight: "IsSelected",
@@ -179,6 +180,8 @@ export default function Character(props) {
             }} className={`CharacterNav-item ${navItem.achHighlight}`}>ACHIEVEMENTS</button>
           </div>
           <div className='Divider' />
+          <Talents />
+          <div className='Divider' />
           <div className='CompletePaperdoll'>
 
             {navItem.selected === "Character" && (<ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />)}
@@ -187,6 +190,8 @@ export default function Character(props) {
 
             {show && <Tooltip locationData={locationData} item={item} />}
           </div>
+          
+
         </div>)}
     </div>
 
