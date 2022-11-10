@@ -193,8 +193,8 @@ export default function Character(props) {
               </Helmet>
               <ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />
               <div className='Divider' />
-              <Specialization />
-              <Talents wowClass={`${character.characterData.miscInfo.wowClass.charAt(0).toLowerCase() + character.characterData.miscInfo.wowClass.substring(1).toLowerCase()}`} talents={character.characterData.primarySpecString} />
+              <Specialization wowClass={character.characterData.miscInfo.wowClass} spec={character.characterData.secondarySpecString}/>
+              <Talents wowClass={`${character.characterData.miscInfo.wowClass.charAt(0).toLowerCase() + character.characterData.miscInfo.wowClass.substring(1).toLowerCase()}`} talents={character.characterData.secondarySpecString} />
             </div>
           )}
 
