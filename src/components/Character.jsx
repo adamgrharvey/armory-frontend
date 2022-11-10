@@ -3,7 +3,7 @@ import { useParams, Route, Routes, Link } from "react-router-dom";
 import { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import MoonLoader from 'react-spinners/MoonLoader';
-
+import { Helmet } from "react-helmet";
 import CharacterHeader from './CharacterHeader';
 import ItemSection from './ItemSection';
 import Tooltip from './Tooltip';
@@ -24,9 +24,7 @@ import Achievements from './Achievements/Achievements';
 import getCharacterData from '../helpers/backend/getCharacterData';
 import Talents from './Talents';
 
-
 export default function Character(props) {
-
   const { accessToken, setAccessToken } = useContext(AccessTokenContext);
   let backendURL = "http://localhost:3000";
   const [show, setShow] = useState(false);
@@ -79,7 +77,11 @@ export default function Character(props) {
 
   const [windowSize, setWindowSize] = useState(getWindowSize());
 
+
+
   useEffect(() => {
+
+
 
     function handleWindowResize() {
       setWindowSize(getWindowSize());
@@ -92,7 +94,6 @@ export default function Character(props) {
     };
 
   }, []);
-
 
 
   function getWindowSize() {
@@ -180,17 +181,21 @@ export default function Character(props) {
             }} className={`CharacterNav-item ${navItem.achHighlight}`}>ACHIEVEMENTS</button>
           </div>
           <div className='Divider' />
-          <Talents />
-          <div className='Divider' />
           <div className='CompletePaperdoll'>
 
             {navItem.selected === "Character" && (<ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />)}
 
             {navItem.selected === "Achievements" && (<Achievements />)}
 
+            <div className='Divider' />
+            <Talents />
+
             {show && <Tooltip locationData={locationData} item={item} />}
           </div>
-          
+          <Helmet>
+            <script>{`const whTooltips = {colorLinks: true, iconizeLinks: true, renameLinks: true }`}</script>
+            <script src="https://wow.zamimg.com/js/tooltips.js"></script>
+          </Helmet>
 
         </div>)}
     </div>
