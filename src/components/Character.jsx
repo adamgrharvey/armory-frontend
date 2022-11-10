@@ -182,22 +182,25 @@ export default function Character(props) {
             }} className={`CharacterNav-item ${navItem.achHighlight}`}>ACHIEVEMENTS</button>
           </div>
           <div className='Divider' />
-          <div className='CompletePaperdoll'>
 
-            {navItem.selected === "Character" && (<ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />)}
 
-            {navItem.selected === "Achievements" && (<Achievements />)}
+          {navItem.selected === "Character" && (
+            <div className='CompletePaperdoll'>
+              {show && <Tooltip locationData={locationData} item={item} />}
+              <Helmet>
+                <script>{`const whTooltips = {colorLinks: true, iconizeLinks: true, renameLinks: true }`}</script>
+                <script src="https://wow.zamimg.com/js/tooltips.js"></script>
+              </Helmet>
+              <ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />
+              <div className='Divider' />
+              <Specialization />
+              <Talents wowClass={`${character.characterData.miscInfo.wowClass.charAt(0).toLowerCase() + character.characterData.miscInfo.wowClass.substring(1).toLowerCase()}`} talents={character.characterData.primarySpecString} />
+            </div>
+          )}
 
-            <div className='Divider' />
-            <Specialization />
-            <Talents />
+          {navItem.selected === "Achievements" && (<Achievements />)}
 
-            {show && <Tooltip locationData={locationData} item={item} />}
-          </div>
-          <Helmet>
-            <script>{`const whTooltips = {colorLinks: true, iconizeLinks: true, renameLinks: true }`}</script>
-            <script src="https://wow.zamimg.com/js/tooltips.js"></script>
-          </Helmet>
+          
 
         </div>)}
     </div>
