@@ -8,8 +8,8 @@
   font-size: 18px;
   line-height: 1em;
   font-weight: 700;
-  margin: 15px;
-  text-shadow: 1.2px 1.2px #000000;
+  margin: 20px;
+  margin-top: 25px;
   
 
 }
@@ -31,6 +31,7 @@
   flex-direction: column;
   margin-top: 10px;
   margin-left: 10px;
+  text-shadow: 1.4px 1.4px #000000;
 }
 
 .ctc-tree-header {
