@@ -1,14 +1,15 @@
 .SpecBox {
   display: flex;
   flex-direction: row;
-  width: 200px;
-  height: 130px;
+  min-width: 100%;
+  height: 150px;
   border-radius: 5px;
   font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
-  font-size: larger;
+  font-size: 18px;
+  line-height: 1em;
   font-weight: 700;
-  color: #f8b700;
   margin: 15px;
+  text-shadow: 1.2px 1.2px #000000;
   
 
 }
@@ -18,10 +19,18 @@
   justify-content: center;
 }
 
+.SpecIconandName {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
 .SpecNameCount {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
+  margin-left: 10px;
 }
 
 .ctc-tree-header {
@@ -38,13 +47,14 @@
   height: auto;
   width: 100%;
   min-width: 744px;
+  margin: 5px;
 }
 
 .none-talents {
   display: none;
   height: auto;
   width: 100%;
-  min-width: 744px;
+  
 }
 
 .Spec {
@@ -357,4 +367,110 @@
 .Spec-WARRIOR-Protection {
   background-position: center;
   background-image: url(../images/Specs/ProtectionWarrior.jpg);
+}
+
+.c6 {
+  color: #C41E3A;
+  justify-content: flex-start;
+}
+
+.CharacterHeader--DEATHKNIGHT {
+  color: #C41E3A;
+}
+
+.c12 {
+  color: #A330C9;
+  justify-content: flex-start;
+}
+
+.CharacterHeader--DEMONHUNTER {
+  color: #A330C9;
+}
+
+.c11 {
+  color: #FF7C0A;
+}
+
+.CharacterHeader--DRUID {
+  color: #FF7C0A;
+}
+
+.c13 {
+  color: #33937F;
+}
+
+.CharacterHeader--EVOKER {
+  color: #33937F;
+}
+
+.c3 {
+  color: #AAD372;
+}
+
+.CharacterHeader--HUNTER {
+  color: #AAD372;
+}
+
+.c8 {
+  color: #3FC7EB;
+}
+
+.CharacterHeader--MAGE {
+  color: #3FC7EB;
+}
+
+.c10 {
+  color: #00FF98;
+}
+
+.CharacterHeader--MONK {
+  color: #00FF98;
+}
+
+.c2 {
+  color: #F48CBA;
+}
+
+.CharacterHeader--PALADIN {
+  color: #F48CBA;
+}
+
+.c5 {
+  color: #FFFFFF;
+}
+
+.CharacterHeader--PRIEST {
+  color: #FFFFFF;
+}
+
+.c4 {
+  color: #FFF468;
+}
+
+.CharacterHeader--ROGUE {
+  color: #FFF468;
+}
+
+.c7 {
+  color: #0070dd;
+}
+
+.CharacterHeader--SHAMAN {
+  color: #0070dd;
+}
+
+.c9 {
+  color: #8788EE;
+}
+
+.CharacterHeader--WARLOCK {
+  color: #8788EE;
+}
+
+.c1 {
+  color: #C69B6D;
+}
+
+.CharacterHeader--WARRIOR {
+  color: #C69B6D;
 }

@@ -1,7 +1,6 @@
 import { useEffect } from "react"
 
 export default function Talents(props) {
-  console.log(props.talents);
   let none = "Talents";
   if (props.display === 'none') {
     none = 'none-talents';

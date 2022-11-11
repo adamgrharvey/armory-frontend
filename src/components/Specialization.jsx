@@ -45,18 +45,18 @@ export default function Specialization(props) {
 
   return (
     <button onClick={() => changeHighlight()}
-      className={`SpecBox BG-${props.wowClass.replace(/\s/g, '')}-${specData.spec} ${props.selected}`}
+      className={`SpecBox BG-${props.wowClass.replace(/\s/g, '')}-${specData.spec} ${props.selected} CharacterHeader--${props.wowClass}`}
     >
-      <div>
-        <div className={`Spec Spec-${props.wowClass.replace(/\s/g, '')}-${specData.spec}`}>
-        </div>
-
-        <div className="SpecNameCount">
-          <div>
-            {specData.spec}
-          </div>
-          <div>
-            {`${specData.tree1} / ${specData.tree2} / ${specData.tree3}`}
+      <div className="SpecNameCount">
+        <div className={`SpecIconandName`}>
+          <div className={`Spec Spec-${props.wowClass.replace(/\s/g, '')}-${specData.spec}`} />
+          <div className="SpecNameCount">
+            <div>
+              {specData.spec}
+            </div>
+            <div>
+              {`${specData.tree1} / ${specData.tree2} / ${specData.tree3}`}
+            </div>
           </div>
         </div>
       </div>
