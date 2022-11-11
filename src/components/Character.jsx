@@ -3,7 +3,7 @@ import { useParams, Route, Routes, Link } from "react-router-dom";
 import { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import MoonLoader from 'react-spinners/MoonLoader';
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet';
 import CharacterHeader from './CharacterHeader';
 import ItemSection from './ItemSection';
 import Tooltip from './Tooltip';
@@ -24,6 +24,7 @@ import Achievements from './Achievements/Achievements';
 import getCharacterData from '../helpers/backend/getCharacterData';
 import Talents from './Talents';
 import Specialization from './Specialization';
+import SpecializationSection from './SpecializationSection';
 
 export default function Character(props) {
   const { accessToken, setAccessToken } = useContext(AccessTokenContext);
@@ -38,6 +39,15 @@ export default function Character(props) {
       selected: "Character",
       charHighlight: "IsSelected",
       achHighlight: ""
+
+    });
+  const [specSelected, setSpecSelected] = useState(
+
+    {
+      selected: "Primary",
+      talentString: "",
+      primaryHighlight: "IsSelected",
+      secondaryHighlight: "none"
 
     });
 
@@ -110,10 +120,11 @@ export default function Character(props) {
 
         if (!character.characterData && results[0] && results[0].character_string) {
           console.log(results);
-          characterStringSplitter(results[0].character_string, setCharacter, setCharacterExists, setLoading)
+          characterStringSplitter(results[0].character_string, setCharacter, setCharacterExists, setLoading, setSpecSelected)
         } else {
           setLoading(false);
           setCharacterExists(false);
+
         }
       })
 
@@ -173,7 +184,7 @@ export default function Character(props) {
                 selected: "Character", charHighlight: "IsSelected",
                 achHighlight: ""
               })
-            }} className={`CharacterNav-item ${navItem.charHighlight}`}>Character</button>
+            }} className={`CharacterNav-item ${navItem.charHighlight}`}>CHARACTER</button>
             <button onClick={() => {
               setNavItem({
                 selected: "Achievements", charHighlight: "",
@@ -187,20 +198,15 @@ export default function Character(props) {
           {navItem.selected === "Character" && (
             <div className='CompletePaperdoll'>
               {show && <Tooltip locationData={locationData} item={item} />}
-              <Helmet>
-                <script>{`const whTooltips = {colorLinks: true, iconizeLinks: true, renameLinks: true }`}</script>
-                <script src="https://wow.zamimg.com/js/tooltips.js"></script>
-              </Helmet>
               <ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />
               <div className='Divider' />
-              <Specialization wowClass={character.characterData.miscInfo.wowClass} spec={character.characterData.secondarySpecString}/>
-              <Talents wowClass={`${character.characterData.miscInfo.wowClass.charAt(0).toLowerCase() + character.characterData.miscInfo.wowClass.substring(1).toLowerCase()}`} talents={character.characterData.secondarySpecString} />
+              <SpecializationSection character={character} specSelected={specSelected} setSpecSelected={setSpecSelected}/>
             </div>
           )}
 
           {navItem.selected === "Achievements" && (<Achievements />)}
 
-          
+
 
         </div>)}
     </div>

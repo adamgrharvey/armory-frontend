@@ -3,10 +3,51 @@ import { useState } from "react";
 
 export default function Specialization(props) {
 
+  let selectionData = {};
+
+  const changeHighlight = function() {
+    if (props.position === 'Primary') {
+      setPrimaryHighlight();
+    } else {
+      setSecondaryHighlight();
+    }
+  }
+
+  const setSecondaryHighlight = function () {
+
+    props.setSpecSelected((prev) => ({
+      ...prev, 
+      talentString: props.characterData.secondarySpecString,
+      primaryHighlight: "none",
+      secondaryHighlight: "IsSelected"
+    }))
+
+  }
+
+  const setPrimaryHighlight = function () {
+
+    props.setSpecSelected((prev) => ({
+      ...prev, 
+      talentString: props.characterData.primarySpecString,
+      primaryHighlight: "IsSelected",
+      secondaryHighlight: "none"
+    }))
+
+  }
+
+  if (props.position === "Primary") {
+    selectionData = { primaryHighlight: "IsSelected", secondaryHighlight: "none" }
+  } else {
+    selectionData = { primaryHighlight: "none", secondaryHighlight: "IsSelected" }
+  }
+
   const [specData, setSpecData] = useState(getSpecData(props.spec, props.wowClass))
 
   return (
-    <div className={`SpecBox BG-${props.wowClass.replace(/\s/g, '')}-${specData.spec} Selected`}>
+    <button onClick={() => changeHighlight()}
+      className={`SpecBox BG-${props.wowClass.replace(/\s/g, '')}-${specData.spec} ${props.selected}`}
+
+    >
       <div className={`Spec Spec-${props.wowClass.replace(/\s/g, '')}-${specData.spec}`}>
       </div>
       <div className="SpecNameCount">
@@ -18,6 +59,6 @@ export default function Specialization(props) {
         </div>
       </div>
 
-    </div>
+    </button >
   )
 }

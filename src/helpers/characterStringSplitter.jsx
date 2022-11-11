@@ -7,11 +7,27 @@ import formatCharStats from "./formatCharStats";
 import getFactionFromRace from "./getFactionFromRace";
 import submitStatisticData from "./backend/submitStatisticData";
 
-export default function characterStringSplitter(characterString, setCharacter, setCharacterExists, setLoading) {
+export default function characterStringSplitter(characterString, setCharacter, setCharacterExists, setLoading, setSpecSelected) {
   let [itemString, miscString, primarySpecString, secondarySpecString, activeSpec, statisticString] = characterString.split("!");
   let miscArray = miscString.split(".");
   if (setCharacterExists) {
     setCharacterExists(true);
+  }
+
+  if (activeSpec === "2") {
+    setSpecSelected({
+      selected: "Secondary",
+      talentString: secondarySpecString,
+      primaryHighlight: "none",
+      secondaryHighlight: "IsSelected"
+    })
+  } else {
+    setSpecSelected({
+      selected: "Primary",
+      talentString: primarySpecString,
+      primaryHighlight: "IsSelected",
+      secondaryHighlight: "none"
+    })
   }
   
   let charStats = statisticStringSplitter(statisticString);

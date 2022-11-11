@@ -6,8 +6,19 @@
   border-radius: 5px;
   font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
   font-size: larger;
-  color: rgb(247, 166, 26);
+  font-weight: 700;
+  color: #f8b700;
+  margin: 15px;
 
+}
+
+.SpecTree {
+  display: flex;
+  flex-direction: row;
+}
+
+.none-talents {
+  display: none;
 }
 
 .SpecNameCount {
@@ -24,7 +35,7 @@
   margin: 10px;
 }
 
-.Selected {
+.IsSelected {
   border: 2px solid rgb(247, 166, 26);
 }
 
