@@ -5,7 +5,7 @@ export default function Specialization(props) {
 
   let selectionData = {};
 
-  const changeHighlight = function() {
+  const changeHighlight = function () {
     if (props.position === 'Primary') {
       setPrimaryHighlight();
     } else {
@@ -16,7 +16,7 @@ export default function Specialization(props) {
   const setSecondaryHighlight = function () {
 
     props.setSpecSelected((prev) => ({
-      ...prev, 
+      ...prev,
       talentString: props.characterData.secondarySpecString,
       primaryHighlight: "none",
       secondaryHighlight: "IsSelected"
@@ -27,7 +27,7 @@ export default function Specialization(props) {
   const setPrimaryHighlight = function () {
 
     props.setSpecSelected((prev) => ({
-      ...prev, 
+      ...prev,
       talentString: props.characterData.primarySpecString,
       primaryHighlight: "IsSelected",
       secondaryHighlight: "none"
@@ -46,19 +46,20 @@ export default function Specialization(props) {
   return (
     <button onClick={() => changeHighlight()}
       className={`SpecBox BG-${props.wowClass.replace(/\s/g, '')}-${specData.spec} ${props.selected}`}
-
     >
-      <div className={`Spec Spec-${props.wowClass.replace(/\s/g, '')}-${specData.spec}`}>
-      </div>
-      <div className="SpecNameCount">
-        <div>
-          {specData.spec}
+      <div>
+        <div className={`Spec Spec-${props.wowClass.replace(/\s/g, '')}-${specData.spec}`}>
         </div>
-        <div>
-          {`${specData.tree1} / ${specData.tree2} / ${specData.tree3}`}
-        </div>
-      </div>
 
+        <div className="SpecNameCount">
+          <div>
+            {specData.spec}
+          </div>
+          <div>
+            {`${specData.tree1} / ${specData.tree2} / ${specData.tree3}`}
+          </div>
+        </div>
+      </div>
     </button >
   )
 }

@@ -2,13 +2,13 @@ import { useEffect } from "react"
 
 export default function Talents(props) {
   console.log(props.talents);
-  let none = "";
+  let none = "Talents";
   if (props.display === 'none') {
     none = 'none-talents';
   }
 
   return (
-    <div className={`${none}`}>
+    <div className={`${none} ctc-tree-header`}>
       <a href={`https://www.wowhead.com/wotlk/talent-calc/embed/${props.wowClass}/${props.talents}`}></a>
     </div>
 

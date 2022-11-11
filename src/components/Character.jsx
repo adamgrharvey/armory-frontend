@@ -202,6 +202,7 @@ export default function Character(props) {
               <div className='Divider' />
               <SpecializationSection character={character} specSelected={specSelected} setSpecSelected={setSpecSelected}/>
             </div>
+            
           )}
 
           {navItem.selected === "Achievements" && (<Achievements />)}

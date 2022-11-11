@@ -9,22 +9,42 @@
   font-weight: 700;
   color: #f8b700;
   margin: 15px;
+  
 
 }
 
 .SpecTree {
   display: flex;
-  flex-direction: row;
-}
-
-.none-talents {
-  display: none;
+  justify-content: center;
 }
 
 .SpecNameCount {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
+}
+
+.ctc-tree-header {
+  align-items: center;
+    color: #ccc;
+    display: flex;
+    gap: 10px;
+    padding: 5px 10px;
+    position: relative;
+}
+
+.Talents {
+  display: block;
+  height: auto;
+  width: 100%;
+  min-width: 744px;
+}
+
+.none-talents {
+  display: none;
+  height: auto;
+  width: 100%;
+  min-width: 744px;
 }
 
 .Spec {
