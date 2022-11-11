@@ -5,164 +5,325 @@
   height: 130px;
   border-radius: 5px;
   font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  font-size: larger;
+  color: rgb(247, 166, 26);
 
 }
 
 .SpecNameCount {
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
+}
+
+.Spec {
+  height: 32px;
+  width: 32px;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  margin: 10px;
 }
 
 .Selected {
   border: 2px solid rgb(247, 166, 26);
 }
 
-.DEATHKNIGHT-Blood {
+.BG-DEATHKNIGHT-Blood {
   background-position: center;
   background-image: url(../images/Specs/DeathKnightBlood-TopLeft.png);
 }
 
-.DEATHKNIGHT-Frost {
+.BG-DEATHKNIGHT-Frost {
   background-position: center;
   background-image: url(../images/Specs/DeathKnightFrost-TopLeft.png);
 }
 
-.DEATHKNIGHT-Unholy {
+.BG-DEATHKNIGHT-Unholy {
   background-position: center;
   background-image: url(../images/Specs/DeathKnightUnholy-TopLeft.png);
 }
 
-.DRUID-Feral {
+.BG-DRUID-Feral {
   background-position: center;
   background-image: url(../images/Specs/DruidFeralCombat-TopLeft.png);
 }
 
-.DRUID-Restoration {
+.BG-DRUID-Restoration {
   background-position: center;
   background-image: url(../images/Specs/DruidRestoration-TopLeft.png);
 }
 
-.DRUID-Balance {
+.BG-DRUID-Balance {
   background-position: center;
   background-image: url(../images/Specs/DruidBalance-TopLeft.png);
 }
 
-.HUNTER-Marksmanship {
+.BG-HUNTER-Marksmanship {
   background-position: center;
   background-image: url(../images/Specs/HunterMarksmanship-TopLeft.png);
 }
 
-.HUNTER-BeastMastery {
+.BG-HUNTER-BeastMastery {
   background-position: center;
   background-image: url(../images/Specs/HunterBeastMastery-TopLeft.png);
 }
 
-.HUNTER-Survival {
+.BG-HUNTER-Survival {
   background-position: center;
   background-image: url(../images/Specs/HunterSurvival-TopLeft.png);
 }
 
-.MAGE-Arcane {
+.BG-MAGE-Arcane {
   background-position: center;
   background-image: url(../images/Specs/MageArcane-TopLeft.png);
 }
 
-.MAGE-Fire {
+.BG-MAGE-Fire {
   background-position: center;
   background-image: url(../images/Specs/MageFire-TopLeft.png);
 }
 
-.MAGE-Frost {
+.BG-MAGE-Frost {
   background-position: center;
   background-image: url(../images/Specs/MageFrost-TopLeft.png);
 }
 
-.PALADIN-Retribution {
+.BG-PALADIN-Retribution {
   background-position: center;
   background-image: url(../images/Specs/PALADINCOMBAT-TOPLEFT.png);
 }
 
-.PALADIN-Holy {
+.BG-PALADIN-Holy {
   background-position: center;
   background-image: url(../images/Specs/PALADINHOLY-TOPLEFT.png);
 }
 
-.PALADIN-Protection {
+.BG-PALADIN-Protection {
   background-position: center;
   background-image: url(../images/Specs/PALADINPROTECTION-TOPLEFT.png);
 }
 
-.PRIEST-Discipline {
+.BG-PRIEST-Discipline {
   background-position: center;
   background-image: url(../images/Specs/PriestDiscipline-TopLeft.png);
 }
 
-.PRIEST-Holy {
+.BG-PRIEST-Holy {
   background-position: center;
   background-image: url(../images/Specs/PriestHoly-TopLeft.png);
 }
 
-.PRIEST-Shadow {
+.BG-PRIEST-Shadow {
   background-position: center;
   background-image: url(../images/Specs/PriestShadow-TopLeft.png);
 }
 
-.ROGUE-Assassination {
+.BG-ROGUE-Assassination {
   background-position: center;
   background-image: url(../images/Specs/RogueAssassination-TopLeft.png);
 }
 
-.ROGUE-Combat {
+.BG-ROGUE-Combat {
   background-position: center;
   background-image: url(../images/Specs/RogueCombat-TopLeft.png);
 }
 
-.ROGUE-Subtlety {
+.BG-ROGUE-Subtlety {
   background-position: center;
   background-image: url(../images/Specs/RogueSubtlety-TopLeft.png);
 }
 
-.SHAMAN-Elemental {
+.BG-SHAMAN-Elemental {
   background-position: center;
   background-image: url(../images/Specs/ShamanElementalCombat-TopLeft.png);
 }
 
-.SHAMAN-Enhancement {
+.BG-SHAMAN-Enhancement {
   background-position: center;
   background-image: url(../images/Specs/ShamanEnhancement-TopLeft.png);
 }
 
-.SHAMAN-Restoration {
+.BG-SHAMAN-Restoration {
   background-position: center;
   background-image: url(../images/Specs/ShamanRestoration-TopLeft.png);
 }
 
-.WARLOCK-Affliction {
+.BG-WARLOCK-Affliction {
   background-position: center;
   background-image: url(../images/Specs/WarlockCurses-TopLeft.png);
 }
 
-.WARLOCK-Demonology {
+.BG-WARLOCK-Demonology {
   background-position: center;
   background-image: url(../images/Specs/WarlockSummoning-TopLeft.png);
 }
 
-.WARLOCK-Destruction {
+.BG-WARLOCK-Destruction {
   background-position: center;
   background-image: url(../images/Specs/WarlockDestruction-TopLeft.png);
 }
 
-.WARRIOR-Arms {
+.BG-WARRIOR-Arms {
   background-position: center;
   background-image: url(../images/Specs/WarriorArm-TopLeft.png);
 }
 
-.WARRIOR-Fury {
+.BG-WARRIOR-Fury {
   background-position: center;
   background-image: url(../images/Specs/WarriorFury-TopLeft.png);
 }
 
-.WARRIOR-Protection {
+.BG-WARRIOR-Protection {
   background-position: center;
   background-image: url(../images/Specs/WarriorProtection-TopLeft.png);
+}
+
+.Spec-DEATHKNIGHT-Blood {
+  background-position: center;
+  background-image: url(../images/Specs/Blood.jpg);
+}
+
+.Spec-DEATHKNIGHT-Frost {
+  background-position: center;
+  background-image: url(../images/Specs/FrostDK.jpg);
+}
+
+.Spec-DEATHKNIGHT-Unholy {
+  background-position: center;
+  background-image: url(../images/Specs/Unholy.jpg);
+}
+
+.Spec-DRUID-Feral {
+  background-position: center;
+  background-image: url(../images/Specs/Feral.jpg);
+}
+
+.Spec-DRUID-Restoration {
+  background-position: center;
+  background-image: url(../images/Specs/RestoDruid.jpg);
+}
+
+.Spec-DRUID-Balance {
+  background-position: center;
+  background-image: url(../images/Specs/Balance.jpg);
+}
+
+.Spec-HUNTER-Marksmanship {
+  background-position: center;
+  background-image: url(../images/Specs/Marksmanship.jpg);
+}
+
+.Spec-HUNTER-BeastMastery {
+  background-position: center;
+  background-image: url(../images/Specs/BeastMastery.jpg);
+}
+
+.Spec-HUNTER-Survival {
+  background-position: center;
+  background-image: url(../images/Specs/Survival.jpg);
+}
+
+.Spec-MAGE-Arcane {
+  background-position: center;
+  background-image: url(../images/Specs/Arcane.jpg);
+}
+
+.Spec-MAGE-Fire {
+  background-position: center;
+  background-image: url(../images/Specs/Fire.jpg);
+}
+
+.Spec-MAGE-Frost {
+  background-position: center;
+  background-image: url(../images/Specs/FrostMage.jpg);
+}
+
+.Spec-PALADIN-Retribution {
+  background-position: center;
+  background-image: url(../images/Specs/Ret.jpg);
+}
+
+.Spec-PALADIN-Holy {
+  background-position: center;
+  background-image: url(../images/Specs/HolyPally.jpg);
+}
+
+.Spec-PALADIN-Protection {
+  background-position: center;
+  background-image: url(../images/Specs/ProtPally.jpg);
+}
+
+.Spec-PRIEST-Discipline {
+  background-position: center;
+  background-image: url(../images/Specs/Discipline.jpg);
+}
+
+.Spec-PRIEST-Holy {
+  background-position: center;
+  background-image: url(../images/Specs/HolyPriest.jpg);
+}
+
+.Spec-PRIEST-Shadow {
+  background-position: center;
+  background-image: url(../images/Specs/Shadow.jpg);
+}
+
+.Spec-ROGUE-Assassination {
+  background-position: center;
+  background-image: url(../images/Specs/Assassination.jpg);
+}
+
+.Spec-ROGUE-Combat {
+  background-position: center;
+  background-image: url(../images/Specs/Combat.jpg);
+}
+
+.Spec-ROGUE-Subtlety {
+  background-position: center;
+  background-image: url(../images/Specs/Subtlety.jpg);
+}
+
+.Spec-SHAMAN-Elemental {
+  background-position: center;
+  background-image: url(../images/Specs/Elemental.jpg);
+}
+
+.Spec-SHAMAN-Enhancement {
+  background-position: center;
+  background-image: url(../images/Specs/Enhancement.jpg);
+}
+
+.Spec-SHAMAN-Restoration {
+  background-position: center;
+  background-image: url(../images/Specs/RestoShaman.jpg);
+}
+
+.Spec-WARLOCK-Affliction {
+  background-position: center;
+  background-image: url(../images/Specs/Affliction.jpg);
+}
+
+.Spec-WARLOCK-Demonology {
+  background-position: center;
+  background-image: url(../images/Specs/Demonology.jpg);
+}
+
+.Spec-WARLOCK-Destruction {
+  background-position: center;
+  background-image: url(../images/Specs/Destruction.jpg);
+}
+
+.Spec-WARRIOR-Arms {
+  background-position: center;
+  background-image: url(../images/Specs/Arms.jpg);
+}
+
+.Spec-WARRIOR-Fury {
+  background-position: center;
+  background-image: url(../images/Specs/Fury.jpg);
+}
+
+.Spec-WARRIOR-Protection {
+  background-position: center;
+  background-image: url(../images/Specs/ProtectionWarrior.jpg);
 }

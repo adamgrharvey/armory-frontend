@@ -6,9 +6,8 @@ export default function Specialization(props) {
   const [specData, setSpecData] = useState(getSpecData(props.spec, props.wowClass))
 
   return (
-    <div className={`SpecBox ${props.wowClass}-${specData.spec} Selected`}>
-      <div>
-        {"img"}
+    <div className={`SpecBox BG-${props.wowClass.replace(/\s/g, '')}-${specData.spec} Selected`}>
+      <div className={`Spec Spec-${props.wowClass.replace(/\s/g, '')}-${specData.spec}`}>
       </div>
       <div className="SpecNameCount">
         <div>
