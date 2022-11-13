@@ -9,6 +9,7 @@ import submitStatisticData from "./backend/submitStatisticData";
 
 export default function characterStringSplitter(characterString, setCharacter, setCharacterExists, setLoading, setSpecSelected) {
   let [itemString, miscString, primarySpecString, secondarySpecString, activeSpec, statisticString] = characterString.split("!");
+  console.log(characterString.split("!"));
   let miscArray = miscString.split(".");
   if (setCharacterExists) {
     setCharacterExists(true);

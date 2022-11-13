@@ -25,6 +25,9 @@ export default function Submit(props) {
       level: characterData.miscInfo.level
     }
 
+    console.log('submissionData:', submissionData);
+    console.log('characterData:', characterData);
+
 
     submitCharacterString(submissionData)
       .then((res) => {

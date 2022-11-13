@@ -6,7 +6,7 @@ import getFactionFromRace from "../getFactionFromRace";
 import standardizeRealmName from "./standardizeRealmName";
 
 export default function characterStringSplitter(characterString) {
-  let [itemString, miscString, statisticString] = characterString.split("!");
+  let [itemString, miscString, primarySpecString, secondarySpecString, activeSpec, statisticString] = characterString.split("!");
   let miscArray = miscString.split(".");
   let charStats = statisticStringSplitter(statisticString);
 
