@@ -1,7 +1,7 @@
 
 export default function formatSpecGlyphs(specString) {
   let [string, glyph1, glyph2, glyph3, glyph4, glyph5, glyph6] = specString.split(".");
-  
+
 
   glyph1 = glyph1.split(":");
   glyph2 = glyph2.split(":");
