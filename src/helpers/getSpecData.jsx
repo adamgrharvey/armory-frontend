@@ -1,6 +1,10 @@
 export default function getSpecData(specString, wowClass) {
 
   let [tree1, tree2, tree3] = specString.split("-");
+  let [spec1, glyph1] = tree1.split("_")
+  let [spec2, glyph2] = tree2.split("_")
+  let [spec3, glyph3] = tree3.split("_")
+
   let talents = [0, 0, 0];
   let classes =
   {
@@ -19,9 +23,9 @@ export default function getSpecData(specString, wowClass) {
   
   let spec;
 
-  talents[0] = countTalents(tree1);
-  talents[1] = countTalents(tree2);
-  talents[2] = countTalents(tree3);
+  talents[0] = countTalents(spec1);
+  talents[1] = countTalents(spec2);
+  talents[2] = countTalents(spec3);
 
   if (talents[0] >= talents[1] && talents[0] >= talents[2]) {
     spec = classes[wowClass][0];

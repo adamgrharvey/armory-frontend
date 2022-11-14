@@ -6,10 +6,11 @@ import classIDtoName from "./classIDtoName";
 import formatCharStats from "./formatCharStats";
 import getFactionFromRace from "./getFactionFromRace";
 import submitStatisticData from "./backend/submitStatisticData";
+import formatSpecGlyphs from "./backend/formatSpecGlyphs";
 
 export default function characterStringSplitter(characterString, setCharacter, setCharacterExists, setLoading, setSpecSelected) {
   let [itemString, miscString, primarySpecString, secondarySpecString, activeSpec, statisticString] = characterString.split("!");
-  console.log(characterString.split("!"));
+  //console.log(characterString.split("!"));
   let miscArray = miscString.split(".");
   if (setCharacterExists) {
     setCharacterExists(true);
@@ -18,14 +19,14 @@ export default function characterStringSplitter(characterString, setCharacter, s
   if (activeSpec === "2") {
     setSpecSelected({
       selected: "Secondary",
-      talentString: secondarySpecString,
+      talentString: formatSpecGlyphs(secondarySpecString),
       primaryHighlight: "none",
       secondaryHighlight: "IsSelected"
     })
   } else {
     setSpecSelected({
       selected: "Primary",
-      talentString: primarySpecString,
+      talentString: formatSpecGlyphs(primarySpecString),
       primaryHighlight: "IsSelected",
       secondaryHighlight: "none"
     })
@@ -52,8 +53,8 @@ export default function characterStringSplitter(characterString, setCharacter, s
   let characterData = {
     name: miscInfo.name[0].toUpperCase() + miscInfo.name.substring(1).toLowerCase(),
     characterString: characterString,
-    primarySpecString: primarySpecString,
-    secondarySpecString: secondarySpecString,
+    primarySpecString: formatSpecGlyphs(primarySpecString),
+    secondarySpecString: formatSpecGlyphs(secondarySpecString),
     activeSpec: activeSpec,
     itemString: itemString,
     miscInfo: miscInfo,
