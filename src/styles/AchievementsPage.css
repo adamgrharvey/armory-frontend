@@ -1,6 +1,6 @@
 .Achievements {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   max-height: calc(100vh - 252px);
 }
 

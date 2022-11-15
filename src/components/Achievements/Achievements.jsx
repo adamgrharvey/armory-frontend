@@ -17,6 +17,7 @@ export default function Achievements(props) {
   const [achLoading, setAchLoading] = useState(true);
   const [category, setCategory] = useState("");
   const [subCategory, setSubCategory] = useState(null);
+  const [showSubCategory, setShowSubCategory] = useState(false);
   const [characterExists, setCharacterExists] = useState(false);
   const [character, setCharacter] = useState({
     inventory: {}
@@ -46,23 +47,23 @@ export default function Achievements(props) {
     <div>
       <div className='Achievements'>
         <div>
-          <CategoryButton label={"Summary"} setCategory={setCategory} setSubCategory={setSubCategory}/>
-          <CategoryButton label={"General"} setCategory={setCategory} setSubCategory={setSubCategory}/>
-          <CategoryButton label={"Quests"} setCategory={setCategory} setSubCategory={setSubCategory}/>
-          <SubCategoryButton selected={category} category={"quests"} setSubCategory={setSubCategory} />
-          <CategoryButton label={"Exploration"} setCategory={setCategory} setSubCategory={setSubCategory}/>
-          <SubCategoryButton selected={category} category={"exploration"} setSubCategory={setSubCategory} />
-          <CategoryButton label={"Player vs. Player"} setCategory={setCategory} setSubCategory={setSubCategory}/>
-          <SubCategoryButton selected={category} category={"player-vs-player"} setSubCategory={setSubCategory} />
-          <CategoryButton label={"Dungeons & Raids"} setCategory={setCategory} setSubCategory={setSubCategory}/>
-          <SubCategoryButton selected={category} category={"dungeons-&-raids"} setSubCategory={setSubCategory} />
-          <CategoryButton label={"Professions"} setCategory={setCategory} setSubCategory={setSubCategory}/>
-          <SubCategoryButton selected={category} category={"professions"} setSubCategory={setSubCategory} />
-          <CategoryButton label={"Reputation"} setCategory={setCategory} setSubCategory={setSubCategory}/>
-          <SubCategoryButton selected={category} category={"reputation"} setSubCategory={setSubCategory} />
-          <CategoryButton label={"World Events"} setCategory={setCategory} setSubCategory={setSubCategory}/>
-          <SubCategoryButton selected={category} category={"world-events"} setSubCategory={setSubCategory} />
-          <CategoryButton label={"Feats of Strength"} setCategory={setCategory} setSubCategory={setSubCategory}/>
+          <CategoryButton category={category} subCategory={subCategory} label={"Summary"} setCategory={setCategory} setSubCategory={setSubCategory}/>
+          <CategoryButton category={category} subCategory={subCategory} label={"General"} setCategory={setCategory} setSubCategory={setSubCategory}/>
+          <CategoryButton category={category} subCategory={subCategory} label={"Quests"} setCategory={setCategory} showSubCategory={showSubCategory} setShowSubCategory={setShowSubCategory} setSubCategory={setSubCategory}/>
+          <SubCategoryButton showSubCategory={showSubCategory} selected={category} category={"quests"} setSubCategory={setSubCategory} />
+          <CategoryButton category={category} subCategory={subCategory} label={"Exploration"} setCategory={setCategory} showSubCategory={showSubCategory} setShowSubCategory={setShowSubCategory} setSubCategory={setSubCategory}/>
+          <SubCategoryButton showSubCategory={showSubCategory} selected={category} category={"exploration"} setSubCategory={setSubCategory} />
+          <CategoryButton category={category} subCategory={subCategory} label={"Player vs. Player"} setCategory={setCategory} showSubCategory={showSubCategory} setShowSubCategory={setShowSubCategory} setSubCategory={setSubCategory}/>
+          <SubCategoryButton showSubCategory={showSubCategory} selected={category} category={"player-vs-player"} setSubCategory={setSubCategory} />
+          <CategoryButton category={category} subCategory={subCategory} label={"Dungeons & Raids"} setCategory={setCategory} showSubCategory={showSubCategory} setShowSubCategory={setShowSubCategory} setSubCategory={setSubCategory}/>
+          <SubCategoryButton showSubCategory={showSubCategory} selected={category} category={"dungeons-&-raids"} setSubCategory={setSubCategory} />
+          <CategoryButton category={category} subCategory={subCategory} label={"Professions"} setCategory={setCategory} showSubCategory={showSubCategory} setShowSubCategory={setShowSubCategory} setSubCategory={setSubCategory}/>
+          <SubCategoryButton showSubCategory={showSubCategory} selected={category} category={"professions"} setSubCategory={setSubCategory} />
+          <CategoryButton category={category} subCategory={subCategory} label={"Reputation"} setCategory={setCategory} showSubCategory={showSubCategory} setShowSubCategory={setShowSubCategory} setSubCategory={setSubCategory}/>
+          <SubCategoryButton showSubCategory={showSubCategory} selected={category} category={"reputation"} setSubCategory={setSubCategory} />
+          <CategoryButton category={category} subCategory={subCategory} label={"World Events"} setCategory={setCategory} showSubCategory={showSubCategory} setShowSubCategory={setShowSubCategory} setSubCategory={setSubCategory}/>
+          <SubCategoryButton showSubCategory={showSubCategory} selected={category} category={"world-events"} setSubCategory={setSubCategory} />
+          <CategoryButton category={category} subCategory={subCategory} label={"Feats of Strength"} setCategory={setCategory} setSubCategory={setSubCategory}/>
         </div>
         {achLoading ?
           <div className='Loader'>

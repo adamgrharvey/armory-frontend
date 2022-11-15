@@ -37,6 +37,11 @@ export default function CategoryButton(props) {
     <div>
       <button
         onClick={() => {
+          if (props.category === legend[label] && props.showSubCategory === true && props.subCategory === null) {
+            props.setShowSubCategory(false);
+          } else {
+            props.setShowSubCategory(true);
+          }
           props.setCategory(legend[label])
           props.setSubCategory(null)
         }}>

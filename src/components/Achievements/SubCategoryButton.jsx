@@ -23,7 +23,7 @@ export default function SubCategoryButton(props) {
     "quests": ["Classic", "The Burning Crusade", "Wrath of the Lich King"],
     "exploration": ["Eastern Kingdoms", "Kalimdor", "Outland", "Northrend"],
     "player-vs-player": ["Arena", "Alterac Valley", "Arathi Basin", "Eye of the Storm", "Warsong Gulch", "Strand of the Ancients", "Wintergrasp", "Isle of Conquest"],
-    "dungeons-&-raids": ["Classic", "The Burning Crusade", "Lich King Dungeon", "Lich King Heroic", "Lich King 10-player Raid", "Lich King 25-player Raid", "Secrets of Ulduar 10-player Raid", "Secrets of Ulduar 25-player Raid", "Call of the Crusade 10-player Raid", "Call of the Crusade 25-player Raid", "Fall of the Lich King 10-player Raid", "Fall of the Lich King 25-player Raid"],
+    "dungeons-&-raids": ["Classic", "The Burning Crusade", "Lich King Dungeon", "Lich King Heroic", "Lich King 10-Player Raid", "Lich King 25-Player Raid", "Secrets of Ulduar 10-Player Raid", "Secrets of Ulduar 25-Player Raid", "Call of the Crusade 10-Player Raid", "Call of the Crusade 25-Player Raid", "Fall of the Lich King 10-Player Raid", "Fall of the Lich King 25-Player Raid"],
     "professions": ["Cooking", "Fishing", "First Aid"],
     "reputation": ["Classic", "The Burning Crusade", "Wrath of the Lich King"],
     "world-events": ["Lunar Festival", "Love is in the Air", "Noblegarden", "Children's Week", "Midsummer", "Brewfest", "Hallow's End", "Pilgrim's Bounty", "Winter Veil", "Argent Tournament"],
@@ -31,7 +31,7 @@ export default function SubCategoryButton(props) {
 
   }
 
-  if (props.category === props.selected) {
+  if (props.category === props.selected && props.showSubCategory) {
     return (
       <div className='SubCategoryButton'>
         {
