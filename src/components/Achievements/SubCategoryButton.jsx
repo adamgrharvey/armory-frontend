@@ -33,7 +33,7 @@ export default function SubCategoryButton(props) {
 
   if (props.category === props.selected) {
     return (
-      <div>
+      <div className='SubCategoryButton'>
         {
           subCategories[props.category].map((i) =>
           (<div>

@@ -10,9 +10,15 @@ export default function Achievement(props) {
   }
 
   let ach = props.achievement;
+  let category = formatCategory(props.achievement.category);
+  let date = "";
+  if (ach.date_completed) {
+    date = formatAchievementDate(ach.date_completed);
+  }
+  
 
   return (
-    (props.achievement.category && formatCategory(props.achievement.category) == props.category && props.achievement.sub_category == props.subCategory &&
+    (props.category === "" || (category == props.category && props.achievement.sub_category == props.subCategory) &&
     // is this complete?
     (ach && !ach.is_statistic && ach.date_completed) ?
       <div id={`${ach.id}`} className='Achievement'>
@@ -64,7 +70,7 @@ export default function Achievement(props) {
                     <div>
                       <img src={require(`../../images/Achievement/Achievement_feat_icon.webp`)} />
                       <div className='Date feat'>
-                        {formatAchievementDate(ach.date_completed)}
+                        {date}
                       </div>
                     </div>
                     :
@@ -74,7 +80,7 @@ export default function Achievement(props) {
                         {ach.points}
                       </div>
                       <div className='Date'>
-                        {formatAchievementDate(ach.date_completed)}
+                        {date}
                       </div>
                     </div>
                 }
@@ -85,7 +91,7 @@ export default function Achievement(props) {
       </div>
       // not complete
       
-      : (props.achievement.category && formatCategory(props.achievement.category) == props.category && props.achievement.sub_category == props.subCategory && ach && !ach.is_statistic && !ach.date_completed && !ach.name.includes("Realm First") && ach.points !== 0) ?
+      : (props.achievement.category && category == props.category && props.achievement.sub_category == props.subCategory && ach && !ach.is_statistic && !ach.date_completed && !ach.name.includes("Realm First") && ach.points !== 0) ?
         <div id={`${ach.id}`} className='Achievement notEarned'>
 
           <div className='AchievementBackgroundNotEarned'>
