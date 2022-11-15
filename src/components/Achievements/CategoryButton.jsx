@@ -17,6 +17,20 @@ export default function CategoryButton(props) {
     "Feats of Strength": "feats-of-strength"
   }
 
+  let subCategories = {
+    "Summary": [],
+    "General": [],
+    "Quests": ["Classic", "The Burning Crusade", "Wrath of the Lich King"],
+    "Exploration": ["Eastern Kingdoms", "Kalimdor", "Outland", "Northrend"],
+    "Player vs. Player": ["Arena", "Alterac Valley", "Arathi Basin", "Eye of the Storm", "Warsong Gulch", "Strand of the Ancients", "Wintergrasp", "Isle of Conquest"],
+    "Dungeons & Raids": ["Classic", "The Burning Crusade", "Lich King Dungeon", "Lich King Heroic", "Lich King 10-player Raid", "Lich King 25-player Raid", "Secrets of Ulduar 10-player Raid", "Secrets of Ulduar 25-player Raid", "Call of the Crusade 10-player Raid", "Call of the Crusade 25-player Raid", "Fall of the Lich King 10-player Raid", "Fall of the Lich King 25-player Raid"],
+    "Professions": ["Cooking", "Fishing", "First Aid"],
+    "Reputation": ["Classic", "The Burning Crusade", "Wrath of the Lich King"],
+    "World Events": ["Lunar Festival", "Love is in the Air", "Noblegarden", "Children's Week", "Midsummer", "Brewfest", "Hallow's End", "Pilgrim's Bounty", "Winter Veil", "Argent Tournament"],
+    "Feats of Strength": []
+
+  }
+
   const [label, setLabel] = useState(props.label)
 
   return (
@@ -24,6 +38,7 @@ export default function CategoryButton(props) {
       <button
         onClick={() => {
           props.setCategory(legend[label])
+          props.setSubCategory("")
         }}>
 
         {label}

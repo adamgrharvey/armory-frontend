@@ -200,7 +200,7 @@ export default function Character(props) {
               {show && <Tooltip locationData={locationData} item={item} />}
               <ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />
               <div className='Divider' />
-              <SpecializationSection character={character} specSelected={specSelected} setSpecSelected={setSpecSelected}/>
+              
             </div>
             
           )}
@@ -217,3 +217,4 @@ export default function Character(props) {
 }
 
 //<Achievements character={character}/>
+// <SpecializationSection character={character} specSelected={specSelected} setSpecSelected={setSpecSelected}/>
