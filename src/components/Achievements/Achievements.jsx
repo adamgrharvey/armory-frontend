@@ -16,7 +16,7 @@ export default function Achievements(props) {
   const [charLoading, setCharLoading] = useState(true);
   const [achLoading, setAchLoading] = useState(true);
   const [category, setCategory] = useState("");
-  const [subCategory, setSubCategory] = useState("");
+  const [subCategory, setSubCategory] = useState(null);
   const [characterExists, setCharacterExists] = useState(false);
   const [character, setCharacter] = useState({
     inventory: {}
@@ -71,7 +71,7 @@ export default function Achievements(props) {
           :
           <div className='AchievementList'>
             {achievements.map((i) =>
-              <Achievement achievement={i} key={i.id} />
+              <Achievement category={category} subCategory={subCategory} achievement={i} key={i.id} />
             )}
           </div>}
       </div>

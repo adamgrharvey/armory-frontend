@@ -38,7 +38,7 @@ export default function CategoryButton(props) {
       <button
         onClick={() => {
           props.setCategory(legend[label])
-          props.setSubCategory("")
+          props.setSubCategory(null)
         }}>
 
         {label}

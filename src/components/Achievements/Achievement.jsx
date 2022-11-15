@@ -4,12 +4,18 @@ import formatAchievementDate from '../../helpers/formatAchievementDate';
 
 export default function Achievement(props) {
 
+  const formatCategory = function(category) {
+    category = category.replace(/\s+/g, '-').toLowerCase();
+    return category;
+  }
+
   let ach = props.achievement;
 
   return (
+    (props.achievement.category && formatCategory(props.achievement.category) == props.category && props.achievement.sub_category == props.subCategory &&
     // is this complete?
     (ach && !ach.is_statistic && ach.date_completed) ?
-      <div className='Achievement'>
+      <div id={`${ach.id}`} className='Achievement'>
 
         <div className='AchievementBackground'>
           <div className='AchTitleBackground'>
@@ -78,8 +84,9 @@ export default function Achievement(props) {
         </div>
       </div>
       // not complete
-      : (ach && !ach.is_statistic && !ach.date_completed && !ach.name.includes("Realm First") && ach.points !== 0) ?
-        <div className='Achievement notEarned'>
+      
+      : (props.achievement.category && formatCategory(props.achievement.category) == props.category && props.achievement.sub_category == props.subCategory && ach && !ach.is_statistic && !ach.date_completed && !ach.name.includes("Realm First") && ach.points !== 0) ?
+        <div id={`${ach.id}`} className='Achievement notEarned'>
 
           <div className='AchievementBackgroundNotEarned'>
             <div className='AchTitleBackground NotEarned'>
@@ -140,7 +147,7 @@ export default function Achievement(props) {
         <div>
 
         </div>
-  )
+  ))
 }
 
 /*
