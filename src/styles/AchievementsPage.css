@@ -1,15 +1,22 @@
 .Achievements {
   display: flex;
   position: relative;
-  justify-content: space-between;
+  justify-content: center;
   max-height: calc(100vh - 252px);
   margin-top: 10px;
-  width: 94%;
+}
+
+.AchievementList {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: fit-content;
+  margin-left: 20px;
 }
 
 .Categories {
   margin-top: 10px;
-  margin-left: 50px;
+  margin-left: 10%;
+  width: 200px;
 }
 
 .SubCategoryButton {

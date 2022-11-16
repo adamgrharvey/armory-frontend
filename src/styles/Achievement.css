@@ -17,12 +17,7 @@
   margin: 3px;
 }
 
-.AchievementList {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  width: fit-content;
-  
-}
+
 
 /* Let's get this party started */
 ::-webkit-scrollbar {
