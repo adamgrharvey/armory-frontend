@@ -4,6 +4,15 @@ import { useState } from 'react';
 
 export default function CategoryButton(props) {
 
+  const formatCategory = function (category) {
+    category = category.replace(/\s+/g, '-').toLowerCase();
+    category = category.replace('.', '');
+    if (category === 'summary') {
+      return "";
+    }
+    return category;
+  }
+
   let legend = {
     "Summary": "",
     "General": "general",
@@ -34,8 +43,8 @@ export default function CategoryButton(props) {
   const [label, setLabel] = useState(props.label)
 
   return (
-    <div>
-      <button
+    <div className='Category'>
+      <button className='CategoryButtonBG AllCategoryText CategoryTextColor'
         onClick={() => {
           if (props.category === legend[label] && props.showSubCategory === true && props.subCategory === null) {
             props.setShowSubCategory(false);
@@ -45,8 +54,13 @@ export default function CategoryButton(props) {
           props.setCategory(legend[label])
           props.setSubCategory(null)
         }}>
+        <div className={props.category === formatCategory(props.label) ? 'Highlight hover' : "hover"}>
+        </div>
+        <div className='Absolute'>
+          {label}
+        </div>
 
-        {label}
+
       </button>
     </div>
   )

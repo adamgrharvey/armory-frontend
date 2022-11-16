@@ -4,7 +4,7 @@ import formatAchievementDate from '../../helpers/formatAchievementDate';
 
 export default function Achievement(props) {
 
-  const formatCategory = function(category) {
+  const formatCategory = function (category) {
     category = category.replace(/\s+/g, '-').toLowerCase();
     return category;
   }
@@ -15,17 +15,16 @@ export default function Achievement(props) {
   if (ach.date_completed) {
     date = formatAchievementDate(ach.date_completed);
   }
-  
+
 
   return (
     (props.category === "" || (category == props.category && props.achievement.sub_category == props.subCategory) &&
-    // is this complete?
-    (ach && !ach.is_statistic && ach.date_completed) ?
+      // is this complete?
+      (ach && !ach.is_statistic && ach.date_completed) ?
       <div id={`${ach.id}`} className='Achievement'>
 
         <div className='AchievementBackground'>
           <div className='AchTitleBackground'>
-            <img src={require(`../../images/Achievement/UI-Achievement-Title.png`)} />
           </div>
           <div className='TsunamiTop'>
             <img src={require(`../../images/Achievement/UI-Achievement-Tsunami-Horizontal.png`)} />
@@ -90,7 +89,7 @@ export default function Achievement(props) {
         </div>
       </div>
       // not complete
-      
+
       : (props.achievement.category && category == props.category && props.achievement.sub_category == props.subCategory && ach && !ach.is_statistic && !ach.date_completed && !ach.name.includes("Realm First") && ach.points !== 0) ?
         <div id={`${ach.id}`} className='Achievement notEarned'>
 
@@ -153,7 +152,7 @@ export default function Achievement(props) {
         <div>
 
         </div>
-  ))
+    ))
 }
 
 /*

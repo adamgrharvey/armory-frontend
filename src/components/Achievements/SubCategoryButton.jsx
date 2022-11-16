@@ -4,6 +4,11 @@ import { useState } from 'react';
 
 export default function SubCategoryButton(props) {
 
+  const formatCategory = function (category) {
+    category = category.replace(/\s+/g, '-').toLowerCase();
+    return category;
+  }
+
   let legend = {
     "Summary": "",
     "General": "general",
@@ -33,16 +38,20 @@ export default function SubCategoryButton(props) {
 
   if (props.category === props.selected && props.showSubCategory) {
     return (
-      <div className='SubCategoryButton'>
+      <div>
         {
           subCategories[props.category].map((i) =>
-          (<div>
-            <button
+          (<div className='SubCategory'>
+            <button className='SubCategoryButtonBG AllCategoryText SubcategoryTextColor'
               onClick={() => {
                 props.setSubCategory(i)
               }}>
+              <div className={props.subCategory === i ? 'Highlight' : ""}>
+              </div>
+              <div className='Absolute'>
+                {i}
+              </div>
 
-              {i}
             </button>
           </div>)
           )}
