@@ -1,8 +1,15 @@
 .Achievements {
   display: flex;
+  position: relative;
   justify-content: space-between;
   max-height: calc(100vh - 252px);
   margin-top: 10px;
+  width: 94%;
+}
+
+.Categories {
+  margin-top: 10px;
+  margin-left: 50px;
 }
 
 .SubCategoryButton {
@@ -53,9 +60,7 @@
   color: white;
 }
 
-.Categories {
-  margin-top: 10px;
-}
+
 
 .AllCategoryText {
   position: relative;
