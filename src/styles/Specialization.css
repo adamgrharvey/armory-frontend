@@ -47,15 +47,16 @@
 .Talents {
   display: block;
   height: auto;
-  width: 100%;
+  width: 50%;
   min-width: 744px;
   margin: 5px;
+  margin-left: 40px;
 }
 
 .none-talents {
   display: none;
   height: auto;
-  width: 100%;
+  width: 50%;
   
 }
 
