@@ -1,29 +1,17 @@
 import React from 'react';
 import { useParams, Route, Routes, Link } from "react-router-dom";
 import { useEffect, useState, useContext } from 'react';
-import axios from 'axios';
 import MoonLoader from 'react-spinners/MoonLoader';
-import { Helmet } from 'react-helmet';
 import CharacterHeader from './CharacterHeader';
-import ItemSection from './ItemSection';
 import Tooltip from './Tooltip';
 import ItemSections from './ItemSections';
 
 import getAccessToken from '../helpers/blizzardAPI/getAccessToken';
-import getItemData from '../helpers/blizzardAPI/getItemData';
-import readItemString from '../helpers/readItemString';
 import { AccessTokenContext } from '../helpers/Context';
-import classIDtoName from '../helpers/classIDtoName';
 import characterStringSplitter from '../helpers/characterStringSplitter';
 import itemStringToObject from '../helpers/itemStringToObject';
-import getStatisticsData from '../helpers/backend/getStatisticsData';
-import submitStatisticData from '../helpers/backend/submitStatisticData';
-import getCharacterStatistics from '../helpers/backend/getCharacterStatistics';
-import getAchievementMedia from '../helpers/blizzardAPI/getAchievementMedia';
 import Achievements from './Achievements/Achievements';
 import getCharacterData from '../helpers/backend/getCharacterData';
-import Talents from './Talents';
-import Specialization from './Specialization';
 import SpecializationSection from './SpecializationSection';
 
 export default function Character(props) {
@@ -50,7 +38,6 @@ export default function Character(props) {
       secondaryHighlight: "none"
 
     });
-
 
   const { region, server, characterName } = useParams();
   const [charLoading, setCharLoading] = useState({
@@ -88,11 +75,7 @@ export default function Character(props) {
 
   const [windowSize, setWindowSize] = useState(getWindowSize());
 
-
-
   useEffect(() => {
-
-
 
     function handleWindowResize() {
       setWindowSize(getWindowSize());
@@ -106,13 +89,10 @@ export default function Character(props) {
 
   }, []);
 
-
   function getWindowSize() {
     const { innerWidth, innerHeight } = window;
     return { innerWidth, innerHeight };
   }
-
-
 
   useEffect(() => {
     if (loading && !characterExists) {
@@ -138,7 +118,6 @@ export default function Character(props) {
     }
   }, [charLoading])
 
-
   useEffect(() => {
     if (accessToken === "") {
       getAccessToken(BNET_ID, BNET_SECRET, setAccessToken)
@@ -150,16 +129,12 @@ export default function Character(props) {
     }
   }, [accessToken, loading, characterExists])
 
-
   useEffect(() => {
     if (!loading && character.inventory[0]) {
       console.log(character);
 
     }
   }, [loading])
-
-
-
 
   const locationData = {
     mouseX: mouseX,
@@ -194,26 +169,21 @@ export default function Character(props) {
           </div>
           <div className='Divider' />
 
+          {show && <Tooltip locationData={locationData} item={item} />}
 
           {navItem.selected === "Character" && (
             <div className='CompletePaperdoll'>
-              {show && <Tooltip locationData={locationData} item={item} />}
               <ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />
               <div className='Divider' />
               <SpecializationSection character={character} specSelected={specSelected} setSpecSelected={setSpecSelected} />
             </div>
-
           )}
 
           {navItem.selected === "Achievements" && (<Achievements />)}
 
-
-
         </div>)}
     </div>
-
 
   )
 }
 
-//<Achievements character={character}/>
