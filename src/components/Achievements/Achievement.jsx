@@ -25,6 +25,7 @@ export default function Achievement(props) {
 
         <div className='AchievementBackground'>
           <div className='AchTitleBackground'>
+            <img src={require(`../../images/Achievement/UI-Achievement-Title.png`)} />
           </div>
           <div className='TsunamiTop'>
             <img src={require(`../../images/Achievement/UI-Achievement-Tsunami-Horizontal.png`)} />
