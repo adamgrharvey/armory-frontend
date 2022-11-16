@@ -43,8 +43,11 @@ export default function CategoryButton(props) {
   const [label, setLabel] = useState(props.label)
 
   return (
-    <div className='Category'>
+    <div className='Category'
+      onMouseEnter={() => {props.onMouseEvent(legend[label])}}
+      onMouseLeave={() => {props.onMouseEvent(null)}}>
       <button className='CategoryButtonBG AllCategoryText CategoryTextColor'
+
         onClick={() => {
           if (props.category === legend[label] && props.showSubCategory === true && props.subCategory === null) {
             props.setShowSubCategory(false);
@@ -54,7 +57,7 @@ export default function CategoryButton(props) {
           props.setCategory(legend[label])
           props.setSubCategory(null)
         }}>
-        <div className={props.category === formatCategory(props.label) ? 'Highlight hover' : "hover"}>
+        <div className={(props.hover === formatCategory(props.label)) || props.category === formatCategory(props.label) && props.subCategory === null ? 'Highlight' : ""}>
         </div>
         <div className='Absolute'>
           {label}

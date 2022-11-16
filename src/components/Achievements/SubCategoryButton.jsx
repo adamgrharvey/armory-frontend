@@ -41,12 +41,14 @@ export default function SubCategoryButton(props) {
       <div>
         {
           subCategories[props.category].map((i) =>
-          (<div className='SubCategory'>
+          (<div onMouseEnter={() => { props.onMouseEvent(i) }}
+            onMouseLeave={() => { props.onMouseEvent(null) }} className='SubCategory'
+          >
             <button className='SubCategoryButtonBG AllCategoryText SubcategoryTextColor'
               onClick={() => {
                 props.setSubCategory(i)
               }}>
-              <div className={props.subCategory === i ? 'Highlight' : ""}>
+              <div className={props.hover === i || props.subCategory === i ? 'Highlight' : ""}>
               </div>
               <div className='Absolute'>
                 {i}

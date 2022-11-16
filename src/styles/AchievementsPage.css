@@ -92,10 +92,11 @@
 }
 
 
+.hover {
+  width: 148px;
+  height: 13px;
+}
 .hover:hover {
-  position: absolute;
-  left: 3px;
-  top: 2px;
   background-position: center;
   background-repeat: repeat;
   background-position: -8px -5px;

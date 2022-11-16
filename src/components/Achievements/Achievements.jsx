@@ -17,6 +17,7 @@ export default function Achievements(props) {
   const [achLoading, setAchLoading] = useState(true);
   const [category, setCategory] = useState("");
   const [subCategory, setSubCategory] = useState(null);
+  const [hover, setHover] = useState(null);
   const [showSubCategory, setShowSubCategory] = useState(false);
   const [characterExists, setCharacterExists] = useState(false);
   const [character, setCharacter] = useState({
@@ -47,32 +48,32 @@ export default function Achievements(props) {
     <div>
       <div className='Achievements'>
         <div className='Categories'>
-          <CategoryButton label={"Summary"} category={category} subCategory={subCategory}  setCategory={setCategory} setSubCategory={setSubCategory} setShowSubCategory={setShowSubCategory}/>
+          <CategoryButton label={"Summary"} onMouseEvent={setHover} hover={hover} category={category} subCategory={subCategory}  setCategory={setCategory} setSubCategory={setSubCategory} setShowSubCategory={setShowSubCategory}/>
 
-          <CategoryButton label={"General"} category={category} subCategory={subCategory}  setCategory={setCategory} setSubCategory={setSubCategory} setShowSubCategory={setShowSubCategory}/>
+          <CategoryButton label={"General"} onMouseEvent={setHover} hover={hover} category={category} subCategory={subCategory}  setCategory={setCategory} setSubCategory={setSubCategory} setShowSubCategory={setShowSubCategory}/>
 
-          <CategoryButton label={"Quests"} category={category} subCategory={subCategory}  setCategory={setCategory} showSubCategory={showSubCategory} setShowSubCategory={setShowSubCategory} setSubCategory={setSubCategory} />
-          <SubCategoryButton category={"quests"} showSubCategory={showSubCategory} selected={category} subCategory={subCategory} setSubCategory={setSubCategory} />
+          <CategoryButton label={"Quests"} onMouseEvent={setHover} hover={hover} category={category} subCategory={subCategory}  setCategory={setCategory} showSubCategory={showSubCategory} setShowSubCategory={setShowSubCategory} setSubCategory={setSubCategory} />
+          <SubCategoryButton category={"quests"} onMouseEvent={setHover} hover={hover} showSubCategory={showSubCategory} selected={category} subCategory={subCategory} setSubCategory={setSubCategory} />
 
-          <CategoryButton label={"Exploration"} category={category} subCategory={subCategory}  setCategory={setCategory} showSubCategory={showSubCategory} setShowSubCategory={setShowSubCategory} setSubCategory={setSubCategory} />
-          <SubCategoryButton category={"exploration"} showSubCategory={showSubCategory} selected={category} subCategory={subCategory} setSubCategory={setSubCategory} />
+          <CategoryButton label={"Exploration"} onMouseEvent={setHover} hover={hover} category={category} subCategory={subCategory}  setCategory={setCategory} showSubCategory={showSubCategory} setShowSubCategory={setShowSubCategory} setSubCategory={setSubCategory} />
+          <SubCategoryButton category={"exploration"} onMouseEvent={setHover} hover={hover} showSubCategory={showSubCategory} selected={category} subCategory={subCategory} setSubCategory={setSubCategory} />
 
-          <CategoryButton label={"Player vs. Player"}category={category} subCategory={subCategory}  setCategory={setCategory} showSubCategory={showSubCategory} setShowSubCategory={setShowSubCategory} setSubCategory={setSubCategory} />
-          <SubCategoryButton category={"player-vs-player"} showSubCategory={showSubCategory} selected={category} subCategory={subCategory} setSubCategory={setSubCategory} />
+          <CategoryButton label={"Player vs. Player"} onMouseEvent={setHover} hover={hover} category={category} subCategory={subCategory}  setCategory={setCategory} showSubCategory={showSubCategory} setShowSubCategory={setShowSubCategory} setSubCategory={setSubCategory} />
+          <SubCategoryButton category={"player-vs-player"} onMouseEvent={setHover} hover={hover} showSubCategory={showSubCategory} selected={category} subCategory={subCategory} setSubCategory={setSubCategory} />
 
-          <CategoryButton label={"Dungeons & Raids"} category={category} subCategory={subCategory}  setCategory={setCategory} showSubCategory={showSubCategory} setShowSubCategory={setShowSubCategory} setSubCategory={setSubCategory} />
-          <SubCategoryButton category={"dungeons-&-raids"} showSubCategory={showSubCategory} selected={category} subCategory={subCategory} setSubCategory={setSubCategory} />
+          <CategoryButton label={"Dungeons & Raids"} onMouseEvent={setHover} hover={hover} category={category} subCategory={subCategory}  setCategory={setCategory} showSubCategory={showSubCategory} setShowSubCategory={setShowSubCategory} setSubCategory={setSubCategory} />
+          <SubCategoryButton category={"dungeons-&-raids"} onMouseEvent={setHover} hover={hover} showSubCategory={showSubCategory} selected={category} subCategory={subCategory} setSubCategory={setSubCategory} />
 
-          <CategoryButton label={"Professions"} category={category} subCategory={subCategory} setCategory={setCategory} showSubCategory={showSubCategory} setShowSubCategory={setShowSubCategory} setSubCategory={setSubCategory} />
-          <SubCategoryButton category={"professions"} showSubCategory={showSubCategory} selected={category} subCategory={subCategory} setSubCategory={setSubCategory} />
+          <CategoryButton label={"Professions"} onMouseEvent={setHover} hover={hover} category={category} subCategory={subCategory} setCategory={setCategory} showSubCategory={showSubCategory} setShowSubCategory={setShowSubCategory} setSubCategory={setSubCategory} />
+          <SubCategoryButton category={"professions"} onMouseEvent={setHover} hover={hover} showSubCategory={showSubCategory} selected={category} subCategory={subCategory} setSubCategory={setSubCategory} />
 
-          <CategoryButton label={"Reputation"} category={category} subCategory={subCategory} setCategory={setCategory} showSubCategory={showSubCategory} setShowSubCategory={setShowSubCategory} setSubCategory={setSubCategory} />
-          <SubCategoryButton category={"reputation"} showSubCategory={showSubCategory} selected={category} subCategory={subCategory} setSubCategory={setSubCategory} />
+          <CategoryButton label={"Reputation"} onMouseEvent={setHover} hover={hover} category={category} subCategory={subCategory} setCategory={setCategory} showSubCategory={showSubCategory} setShowSubCategory={setShowSubCategory} setSubCategory={setSubCategory} />
+          <SubCategoryButton category={"reputation"} onMouseEvent={setHover} hover={hover} showSubCategory={showSubCategory} selected={category} subCategory={subCategory} setSubCategory={setSubCategory} />
 
-          <CategoryButton label={"World Events"} category={category} subCategory={subCategory} setCategory={setCategory} showSubCategory={showSubCategory} setShowSubCategory={setShowSubCategory} setSubCategory={setSubCategory} />
-          <SubCategoryButton category={"world-events"} showSubCategory={showSubCategory} selected={category} subCategory={subCategory} setSubCategory={setSubCategory} />
+          <CategoryButton label={"World Events"} onMouseEvent={setHover} hover={hover} category={category} subCategory={subCategory} setCategory={setCategory} showSubCategory={showSubCategory} setShowSubCategory={setShowSubCategory} setSubCategory={setSubCategory} />
+          <SubCategoryButton category={"world-events"} onMouseEvent={setHover} hover={hover} showSubCategory={showSubCategory} selected={category} subCategory={subCategory} setSubCategory={setSubCategory} />
 
-          <CategoryButton label={"Feats of Strength"} category={category} subCategory={subCategory} setCategory={setCategory} setSubCategory={setSubCategory} setShowSubCategory={setShowSubCategory}/>
+          <CategoryButton label={"Feats of Strength"} onMouseEvent={setHover} hover={hover} category={category} subCategory={subCategory} setCategory={setCategory} setSubCategory={setSubCategory} setShowSubCategory={setShowSubCategory}/>
         </div>
         {achLoading ?
           <div className='Loader'>
