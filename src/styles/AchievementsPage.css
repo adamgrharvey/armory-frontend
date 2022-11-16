@@ -15,7 +15,7 @@
 .CategoryButtonBG {
   background-position: left;
   background-repeat: no-repeat;
-  background-position: -7px -6px;
+  background-position: -7px -5.5px;
   scale: 120%;
   background-image: url(../images/Achievement/UI-Achievement-Category-Background.png);
   border-radius: 5px;
@@ -26,7 +26,7 @@
 .SubCategoryButtonBG {
   background-position: left;
   background-repeat: no-repeat;
-  background-position: -7px -6px;
+  background-position: -7px -5.5px;
   scale: 120%;
   background-image: url(../images/Achievement/UI-Achievement-Category-Background.png);
   border-radius: 5px;
