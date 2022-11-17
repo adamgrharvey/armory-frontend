@@ -10,6 +10,66 @@
   display: flex;
 }
 
+.Progressbar-progress {
+  background-color: #01b2f1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.Progressbar--high>.Progressbar-progress, .Progressbar--levelColor>.Progressbar-progress[data-progressLevel=high] {
+  background: #1b9601;
+  background: -webkit-gradient(linear,left top,right top,from(#0d4a00),to(#1b9601));
+  background: linear-gradient(90deg,#0d4a00 0,#1b9601);
+}
+
+.Progressbar--levelColor>.Progressbar-progress[data-progressLevel=medium], .Progressbar--medium>.Progressbar-progress {
+  background: #c76700;
+  background: -webkit-gradient(linear,left top,right top,from(#7b3f00),to(#c76700));
+  background: linear-gradient(90deg,#7b3f00 0,#c76700);
+}
+
+.Progressbar--levelColor>.Progressbar-progress[data-progressLevel=low], .Progressbar--low>.Progressbar-progress {
+  background: #99755c;
+  background: -webkit-gradient(linear,left top,right top,from(#69503f),to(#99755c));
+  background: linear-gradient(90deg,#69503f 0,#99755c);
+}
+
+.Progressbar {
+  background-color: #181818;
+  -webkit-box-shadow: inset 0 0 16px #000;
+  box-shadow: inset 0 0 16px #000;
+  color: #000;
+  position: relative;
+  min-height: 28px;
+}
+
+.Progressbar-content {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: Semplicita Pro,Open Sans,Arial,Helvetica,sans-serif;
+  color: #fff;
+  text-shadow: 0 0 1px transparent, 0 1px 2px rgb(0 0 0 / 80%);
+  font-weight: 700;
+  position: relative;
+  text-align: center;
+  padding: 5px;
+  min-height: 1.5em;
+}
+
+.Progressbar-border {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px solid hsla(0,0%,100%,.2);
+  background: transparent;
+  z-index: 1;
+}
+
 .VoAImgSmall {
   padding-top: 33.3333%;
   background-repeat: no-repeat;
