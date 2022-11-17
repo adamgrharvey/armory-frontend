@@ -13,6 +13,7 @@ import itemStringToObject from '../helpers/itemStringToObject';
 import Achievements from './Achievements/Achievements';
 import getCharacterData from '../helpers/backend/getCharacterData';
 import SpecializationSection from './SpecializationSection';
+import Raids from './Achievements/PvE/Raids';
 
 export default function Character(props) {
   const { accessToken, setAccessToken } = useContext(AccessTokenContext);
@@ -175,8 +176,10 @@ export default function Character(props) {
             <div className='CompletePaperdoll'>
               <ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />
               <div className='Divider' />
-              <SpecializationSection character={character} specSelected={specSelected} setSpecSelected={setSpecSelected} />
+              <Raids />
               <div className='Divider' />
+              <SpecializationSection character={character} specSelected={specSelected} setSpecSelected={setSpecSelected} />
+              
             </div>
           )}
 

@@ -1,0 +1,142 @@
+.Raid {
+  display: flex;
+  flex-direction: column;
+  height: 700px;
+  width: 350px;
+
+}
+
+.Raids {
+  display: flex;
+}
+
+.VoAImgSmall {
+  padding-top: 33.3333%;
+  background-repeat: no-repeat;
+  background-image: url(../images/PvE/WotLK-Raid/vault-of-archavon-small.jpg);
+  background-position: 50%;
+  background-size: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  max-width: 100%;
+  height: auto;
+
+}
+
+.NaxxImgSmall {
+  padding-top: 33.3333%;
+  background-repeat: no-repeat;
+  background-image: url(../images/PvE/WotLK-Raid/naxxramas-small.jpg);
+  background-position: 50%;
+  background-size: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  max-width: 100%;
+  height: auto;
+
+}
+
+.EyeImgSmall {
+  padding-top: 33.3333%;
+  background-repeat: no-repeat;
+  background-image: url(../images/PvE/WotLK-Raid/the-eye-of-eternity-small.jpg);
+  background-position: 50%;
+  background-size: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  max-width: 100%;
+  height: auto;
+
+}
+
+.OSImgSmall {
+  padding-top: 33.3333%;
+  background-repeat: no-repeat;
+  background-image: url(../images/PvE/WotLK-Raid/the-obsidian-sanctum-small.jpg);
+  background-position: 50%;
+  background-size: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  max-width: 100%;
+  height: auto;
+
+}
+
+.UlduarImgSmall {
+  padding-top: 33.3333%;
+  background-repeat: no-repeat;
+  background-image: url(../images/PvE/WotLK-Raid/ulduar-small.jpg);
+  background-position: 50%;
+  background-size: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  max-width: 100%;
+  height: auto;
+
+}
+
+.TotCImgSmall {
+  padding-top: 33.3333%;
+  background-repeat: no-repeat;
+  background-image: url(../images/PvE/WotLK-Raid/trial-of-the-crusader-small.jpg);
+  background-position: 50%;
+  background-size: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  max-width: 100%;
+  height: auto;
+
+}
+
+.ICCImgSmall {
+  padding-top: 33.3333%;
+  background-repeat: no-repeat;
+  background-image: url(../images/PvE/WotLK-Raid/icecrown-citadel-small.jpg);
+  background-position: 50%;
+  background-size: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  max-width: 100%;
+  height: auto;
+
+}
+
+.RSImgSmall {
+  padding-top: 33.3333%;
+  background-repeat: no-repeat;
+  background-image: url(../images/PvE/WotLK-Raid/the-ruby-sanctum-small.jpg);
+  background-position: 50%;
+  background-size: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  max-width: 100%;
+  height: auto;
+
+}
+
+.OnyImgSmall {
+  padding-top: 33.3333%;
+  background-repeat: no-repeat;
+  background-image: url(../images/PvE/WotLK-Raid/onyxias-lair-small.jpg);
+  background-position: 50%;
+  background-size: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  max-width: 100%;
+  height: auto;
+
+}
+
+
+
+
+
