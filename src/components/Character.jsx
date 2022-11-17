@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Route, Routes, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect, useState, useContext } from 'react';
 import MoonLoader from 'react-spinners/MoonLoader';
 import CharacterHeader from './CharacterHeader';
@@ -16,7 +16,7 @@ import SpecializationSection from './SpecializationSection';
 
 export default function Character(props) {
   const { accessToken, setAccessToken } = useContext(AccessTokenContext);
-  let backendURL = "http://localhost:3000";
+ // let backendURL = "http://localhost:3000";
   const [show, setShow] = useState(false);
   const [item, setItem] = useState({});
   const [loading, setLoading] = useState(true);
@@ -109,14 +109,14 @@ export default function Character(props) {
       })
 
     }
-  }, [loading, character, characterExists])
+  }, [loading, character, characterExists, region, server, characterName])
 
   useEffect(() => {
     if (!Object.values(charLoading).includes(false) && charLoading) {
       setLoading(false);
       console.log(character);
     }
-  }, [charLoading])
+  }, [charLoading, character])
 
   useEffect(() => {
     if (accessToken === "") {
@@ -176,6 +176,7 @@ export default function Character(props) {
               <ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />
               <div className='Divider' />
               <SpecializationSection character={character} specSelected={specSelected} setSpecSelected={setSpecSelected} />
+              <div className='Divider' />
             </div>
           )}
 
@@ -186,4 +187,3 @@ export default function Character(props) {
 
   )
 }
-
