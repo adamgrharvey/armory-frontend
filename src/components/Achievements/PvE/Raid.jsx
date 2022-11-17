@@ -6,14 +6,23 @@ export default function Raid(props) {
       <div className='NaxxImgSmall' />
       <div className="instanceheader">
         <div className="instanceName">
-          Naxxramas
+          {props.instance.name}
         </div>
         <div className="instanceLvl">
-          Level 80
+          Level {props.instance.level}
         </div>
       </div>
       <div className="instanceprogress">
-        69/420
+        {props.instance.bosses.map((i, index) => {
+          return (
+            <div>
+              {`${i} ${props.stats[props.instance["25bossIDs"][index]].value}`}
+            </div>
+          )
+
+
+
+        })}
       </div>
     </div>
   )
