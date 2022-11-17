@@ -3,11 +3,13 @@
   flex-direction: column;
   height: 700px;
   width: 350px;
-
+  background-color: #7c7c7c;
+  margin: 10px;
 }
 
 .Raids {
   display: flex;
+  
 }
 
 .Progressbar-progress {
@@ -38,12 +40,18 @@
 }
 
 .Progressbar {
+  display: flex;
   background-color: #181818;
   -webkit-box-shadow: inset 0 0 16px #000;
   box-shadow: inset 0 0 16px #000;
   color: #000;
   position: relative;
   min-height: 28px;
+  width: 65%;
+}
+
+.none {
+  display: none;
 }
 
 .Progressbar-content {
