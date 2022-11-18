@@ -81,7 +81,7 @@ export default function Raid(props) {
                 return (
                   <div className="Statistic">
                     <div>
-                      {`${i} x ${props.stats[props.instance["10bossIDs"][index]].value}`}
+                    {`${props.stats[props.instance["10bossIDs"][index]].value} x` + '\xa0\xa0' + `${i}`}
                     </div>
                     <div>
                       rank
@@ -113,7 +113,7 @@ export default function Raid(props) {
                 return (
                   <div className="Statistic">
                     <div>
-                      {`${i} x ${props.stats[props.instance["25bossIDs"][index]].value}`}
+                      {`${props.stats[props.instance["25bossIDs"][index]].value} x` + '\xa0\xa0' + `${i}`}
                     </div>
                     <div>
                       rank

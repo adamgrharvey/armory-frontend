@@ -1,5 +1,5 @@
 .Raid {
-  height: auto;
+  height: fit-content;
   width: 350px;
   background-color: #1f1d1d;
   margin: 10px;
@@ -148,7 +148,7 @@
   justify-content: space-between;
   flex-direction: row;
   margin: 2px;
-  color: #1b9601;
+  color: #00FF00;
   font-size: 12px;
   font-weight: 100;
 }
