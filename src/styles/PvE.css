@@ -1,24 +1,55 @@
 .Raid {
-  display: flex;
-  flex-direction: column;
-  height: 700px;
+  height: auto;
   width: 350px;
   background-color: #7c7c7c;
   margin: 10px;
+  text-align: center;
+  
+}
+
+.Details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.InstanceProgress {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
 }
 
 .Raids {
   display: flex;
   
 }
-
+.tenman {
+  width: 100%;
+  margin:10px;
+}
+.twentyfiveman {
+  width: 100%;
+  margin:10px;
+}
+.Statistics {
+  text-align: left;
+  margin: 5px;
+}
+.Statistic {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 2px;
+}
 .Progressbar-progress {
   background-color: #01b2f1;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 85%;
 }
 
 .Progressbar--high>.Progressbar-progress, .Progressbar--levelColor>.Progressbar-progress[data-progressLevel=high] {
@@ -41,6 +72,8 @@
 
 .Progressbar {
   display: flex;
+  align-self: center;
+  justify-content: space-between;
   background-color: #181818;
   -webkit-box-shadow: inset 0 0 16px #000;
   box-shadow: inset 0 0 16px #000;
@@ -48,6 +81,17 @@
   position: relative;
   min-height: 28px;
   width: 65%;
+}
+
+.Difficulty {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+}
+
+.DifficultyText {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .none {

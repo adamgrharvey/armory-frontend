@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 
 export default function Raid(props) {
 
-  const [show1, setShow1] = useState(false);
-  const [show2, setShow2] = useState(false);
+  const [show10, setShow10] = useState(false);
+  const [show25, setShow25] = useState(false);
 
   const getRaidProgress = function (stats, difficulty, instance) {
     let count = 0;
@@ -30,58 +30,77 @@ export default function Raid(props) {
   return (
     <div className="Raid">
       <div className='NaxxImgSmall' />
-      <div className="instanceheader">
-        <div className="instanceName">
-          {props.instance.name}
-        </div>
-        <div className="instanceLvl">
-          Level {props.instance.level}
-        </div>
-      </div>
-      <div className="instanceprogress">
-        <div className="10man">
-          <div>
-            <div>
-              10man
-            </div>
-            <div onClick={() => {
-              setShow1(prev => !prev)
-            }} className="Progressbar Progressbar--leftText Progressbar--levelColor Progressbar--fraction" data-queryselectoralways-ignore="true">
-              <div className="Progressbar-progress" data-progresslevel={progressLevel10} style={{ width: `${progress10 / bossCount10 * 100}%` }}></div>
-              <div class="Progressbar-content"><div class="Progressbar-fraction">{`${progress10} / ${bossCount10}`}</div></div>
-            </div>
+      <div className="Details">
+        <div className="instanceheader">
+          <div className="instanceName">
+            {props.instance.name}
           </div>
-          <div className={`statistics${show1 ? "" : " none"}`}>
-            {props.instance.bosses.map((i, index) => {
-              return (
-                <div>
-                  {`${i} x ${props.stats[props.instance["10bossIDs"][index]].value}`}
+          <div className="instanceLvl">
+            Level {props.instance.level}
+          </div>
+        </div>
+        <div className="InstanceProgress">
+          <div className="tenman">
+            <div className="Difficulty">
+              <div className="DifficultyText">
+                10man
+              </div>
+              <div onClick={() => {
+                setShow10(prev => !prev)
+              }} className="Progressbar Progressbar--leftText Progressbar--levelColor Progressbar--fraction" data-queryselectoralways-ignore="true">
+                <div className="Progressbar-progress" data-progresslevel={progressLevel10} style={{ width: `${progress10 / bossCount10 * 100}%` }}></div>
+                <div class="Progressbar-content">
+                  <div class="Progressbar-fraction">
+                    {`${progress10} / ${bossCount10}`}
+                  </div>
                 </div>
-              )
-            })}
-          </div>
-
-        </div>
-        <div className="25man">
-          <div>
-            <div>
-              25man
+              </div>
             </div>
-            <div onClick={() => {
-              setShow2(prev => !prev)
-            }} className="Progressbar Progressbar--leftText Progressbar--levelColor Progressbar--fraction" data-queryselectoralways-ignore="true">
-              <div className="Progressbar-progress" data-progresslevel={progressLevel25} style={{ width: `${progress25 / bossCount25 * 100}%` }}></div>
-              <div class="Progressbar-content"><div class="Progressbar-fraction">{`${progress25} / ${bossCount25}`}</div></div>
+            <div className={`Statistics${show10 ? "" : " none"}`}>
+              {props.instance.bosses.map((i, index) => {
+                return (
+                  <div className="Statistic">
+                    <div>
+                      {`${i} x ${props.stats[props.instance["10bossIDs"][index]].value}`}
+                    </div>
+                    <div>
+                      rank
+                    </div>
+                  </div>
+                )
+              })}
             </div>
           </div>
-          <div className={`statistics${show2 ? "" : " none"}`}>
-            {props.instance.bosses.map((i, index) => {
-              return (
-                <div>
-                  {`${i} x ${props.stats[props.instance["25bossIDs"][index]].value}`}
+          <div className="twentyfiveman">
+            <div className="Difficulty">
+              <div className="DifficultyText">
+                25man
+              </div>
+              <div onClick={() => {
+                setShow25(prev => !prev)
+              }} className="Progressbar Progressbar--leftText Progressbar--levelColor Progressbar--fraction" data-queryselectoralways-ignore="true">
+                <div className="Progressbar-progress" data-progresslevel={progressLevel25} style={{ width: `${progress25 / bossCount25 * 100}%` }}></div>
+                <div class="Progressbar-content">
+                  <div class="Progressbar-fraction">
+                    {`${progress25} / ${bossCount25}`}
+                  </div>
                 </div>
-              )
-            })}
+              </div>
+            </div>
+            <div className={`Statistics${show25 ? "" : " none"}`}>
+              {props.instance.bosses.map((i, index) => {
+                return (
+                  <div className="Statistic">
+                    <div>
+                      {`${i} x ${props.stats[props.instance["25bossIDs"][index]].value}`}
+                    </div>
+                    <div>
+                      rank
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
           </div>
         </div>
       </div>
