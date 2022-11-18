@@ -68,9 +68,9 @@ export default function Raid(props) {
                 setShow10(prev => !prev)
               }} className="Progressbar Progressbar--leftText Progressbar--levelColor Progressbar--fraction" data-queryselectoralways-ignore="true">
                 <div className="Progressbar-progress" data-progresslevel={progressLevel10} style={{ width: `${progress10 / bossCount10 * 100}%` }}></div>
-                <div class="Progressbar-border" />
-                <div class="Progressbar-content">
-                  <div class="Progressbar-fraction">
+                <div className="Progressbar-border" />
+                <div className="Progressbar-content">
+                  <div className="Progressbar-fraction">
                     {`${progress10} / ${bossCount10}`}
                   </div>
                 </div>
@@ -100,9 +100,9 @@ export default function Raid(props) {
                 setShow25(prev => !prev)
               }} className="Progressbar Progressbar--leftText Progressbar--levelColor Progressbar--fraction" data-queryselectoralways-ignore="true">
                 <div className="Progressbar-progress" data-progresslevel={progressLevel25} style={{ width: `${progress25 / bossCount25 * 100}%` }}></div>
-                <div class="Progressbar-border" />
-                <div class="Progressbar-content">
-                  <div class="Progressbar-fraction">
+                <div className="Progressbar-border" />
+                <div className="Progressbar-content">
+                  <div className="Progressbar-fraction">
                     {`${progress25} / ${bossCount25}`}
                   </div>
                 </div>

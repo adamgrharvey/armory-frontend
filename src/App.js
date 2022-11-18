@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { render } from "react-dom";
 import { AccessTokenContext } from './helpers/Context';
+import { WCLTokenContext } from './helpers/WCLContext';
 import Character from './components/Character';
 import Submit from './components/Submit';
 import Achievements from './components/Achievements/Achievements';
@@ -39,16 +40,19 @@ import Achievements from './components/Achievements/Achievements';
 
 function App() {
   const [accessToken, setAccessToken] = useState("");
+  const [WCLToken, setWCLToken] = useState("");
   let frontendURL = "";
   return (
     <BrowserRouter>
       <AccessTokenContext.Provider value={{ accessToken, setAccessToken }}>
-        <div className="App">
-          <Routes>
-            <Route exact path={`${frontendURL}/character/:region/:server/:characterName/`} element={<Character />} />
-            <Route path={`${frontendURL}/submit`} element={<Submit />}/>
-          </Routes>
-        </div>
+        <WCLTokenContext.Provider value={{ WCLToken, setWCLToken }}>
+          <div className="App">
+            <Routes>
+              <Route exact path={`${frontendURL}/character/:region/:server/:characterName/`} element={<Character />} />
+              <Route path={`${frontendURL}/submit`} element={<Submit />} />
+            </Routes>
+          </div>
+          </WCLTokenContext.Provider >
       </AccessTokenContext.Provider >
     </BrowserRouter>
 

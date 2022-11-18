@@ -7,7 +7,9 @@ import Tooltip from './Tooltip';
 import ItemSections from './ItemSections';
 
 import getAccessToken from '../helpers/blizzardAPI/getAccessToken';
+import getWCLAccessToken from '../helpers/WCLAPI/getWCLAccessToken';
 import { AccessTokenContext } from '../helpers/Context';
+import { WCLTokenContext } from '../helpers/WCLContext';
 import characterStringSplitter from '../helpers/characterStringSplitter';
 import itemStringToObject from '../helpers/itemStringToObject';
 import Achievements from './Achievements/Achievements';
@@ -17,6 +19,7 @@ import Raids from './Achievements/PvE/Raids';
 
 export default function Character(props) {
   const { accessToken, setAccessToken } = useContext(AccessTokenContext);
+  const { WCLToken, setWCLToken } = useContext(WCLTokenContext);
  // let backendURL = "http://localhost:3000";
   const [show, setShow] = useState(false);
   const [item, setItem] = useState({});
@@ -48,8 +51,11 @@ export default function Character(props) {
     setShow(show);
     setItem(item);
   }
+
   let BNET_ID = "cbeac907587149f08732abd74d2b73f8"
   let BNET_SECRET = "UvGoljFYvvQNhQgOw37mQs0yzjXqIGzC"
+  let WCL_ClientID = '97c539a4-ea0a-43d0-b89e-dadbaffa74a0';
+  let WCL_ClientSecret = 'OUUsiLmGn2vItGsXKwi8sAMKNP2UAdVVKUkkuiQF';
 
   const [character, setCharacter] = useState({
     inventory: {}
@@ -136,6 +142,12 @@ export default function Character(props) {
 
     }
   }, [loading])
+
+  useEffect(() => {
+    if (!WCLToken) {
+      getWCLAccessToken(WCL_ClientID, WCL_ClientSecret, setWCLToken)
+    }
+  }, [WCLToken])
 
   const locationData = {
     mouseX: mouseX,
