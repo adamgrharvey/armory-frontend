@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { WCLTokenContext } from "../../helpers/WCLContext"
 import getWCLParseData from "../../helpers/WCLAPI/getWCLParseData";
+import getSpecData from "../../helpers/getSpecData";
 
 export default function Raid(props) {
   const { WCLToken, setWCLToken } = useContext(WCLTokenContext);
   const [show10, setShow10] = useState(false);
   const [show25, setShow25] = useState(false);
   const [rankings, setRankings] = useState({});
+  let spec = getSpecData(props.Spec, props.characterMisc.wowClass);
 
   const formatClassName = function (className) {
 
@@ -42,7 +44,7 @@ export default function Raid(props) {
 
   useEffect(() => {
     if (WCLToken !== "") {
-      getWCLParseData(props.characterMisc.name, props.characterMisc.server, props.characterMisc.region, WCLToken, props.instance.WCLZoneID, setRankings);
+      getWCLParseData(props.characterMisc.name, props.characterMisc.server, props.characterMisc.region, WCLToken, props.instance.WCLZoneID, setRankings, spec.spec);
     }
   }, [WCLToken])
 

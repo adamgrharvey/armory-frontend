@@ -88,9 +88,9 @@ export default function Raids(props) {
 
   return (
     <div className="Raids" >
-      <Raid instance={WotLKRaids["Naxxramas"]} characterMisc={props.characterMisc} stats={props.characterStats} />
-      <Raid instance={WotLKRaids["The Obsidian Sanctum"]} characterMisc={props.characterMisc} stats={props.characterStats} />
-      <Raid instance={WotLKRaids["The Eye of Eternity"]} characterMisc={props.characterMisc} stats={props.characterStats} />
+      <Raid Spec={props.Spec} instance={WotLKRaids["Naxxramas"]} characterMisc={props.characterMisc} stats={props.characterStats} />
+      <Raid Spec={props.Spec} instance={WotLKRaids["The Obsidian Sanctum"]} characterMisc={props.characterMisc} stats={props.characterStats} />
+      <Raid Spec={props.Spec} instance={WotLKRaids["The Eye of Eternity"]} characterMisc={props.characterMisc} stats={props.characterStats} />
     </div >
   )
 }

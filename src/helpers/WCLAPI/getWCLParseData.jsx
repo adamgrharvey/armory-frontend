@@ -1,15 +1,27 @@
 import axios from "axios";
 
-export default function getWCLParseData(characterName, serverName, region, accessToken, zoneID, setRankings) {
+export default function getWCLParseData(characterName, serverName, region, accessToken, zoneID, setRankings, spec) {
 
   let tenRanks = {};
   let twentyfiveRanks = {};
+  
+
+  const getRole = function(spec) {
+    if (spec === 'Holy' || spec === 'Restoration' || spec === 'Discipline') {
+      return 'Healer'
+    } else {
+      return 'DPS'
+    }
+  
+  }
+
+  let role = getRole(spec);
 
   let data10man = {
     query: `{
       characterData{
         character(name: "${characterName}", serverSlug: "${serverName}", serverRegion: "${region}") {
-          zoneRankings(zoneID: ${zoneID}, size: 10)
+          zoneRankings(zoneID: ${zoneID}, size: 10, role: ${role})
         }
       }
     }`
@@ -19,7 +31,7 @@ export default function getWCLParseData(characterName, serverName, region, acces
     query: `{
       characterData{
         character(name: "${characterName}", serverSlug: "${serverName}", serverRegion: "${region}") {
-          zoneRankings(zoneID: ${zoneID}, size: 25)
+          zoneRankings(zoneID: ${zoneID}, size: 25, role: ${role})
         }
       }
     }`
