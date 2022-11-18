@@ -65,8 +65,6 @@
   background: linear-gradient(90deg, #0d4a00 0, #1b9601);
 }
 
-
-
 .Progressbar--levelColor>.Progressbar-progress[data-progressLevel=medium],
 .Progressbar--medium>.Progressbar-progress {
   background: #c76700;
