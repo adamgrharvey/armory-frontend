@@ -7,8 +7,8 @@ export default function Raids(props) {
       name: "Vault of Archavon",
       WCLZoneID: 1016,
       level: 80,
-      "10bossIDs": [1722, 2870, 4074, 0],
-      "25bossIDs": [1721, 3236, 4075, 0],
+      "10bossIDs": [1753, 2870, 4074, 4074],
+      "25bossIDs": [1754, 3236, 4075, 4075],
       bosses: ["Archavon the Stone Watcher", "Emalon the Storm Watcher", "Koralon the Flame Watcher", "Toravon the Ice Watcher"]
     },
 

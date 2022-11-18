@@ -189,7 +189,7 @@ export default function Character(props) {
               <ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />
               <div className='Divider' />
               <div className='SectionHeader'>
-                Raid Progression
+                Raid Progression | Phase 1
               </div>
               <Raids Spec={specSelected.talentString} characterMisc={character.characterData.miscInfo} characterStats={character.characterData.statistics} />
               <div className='Divider' />

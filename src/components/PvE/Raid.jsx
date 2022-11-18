@@ -52,7 +52,7 @@ export default function Raid(props) {
     let count = 0;
     let progressLevel = "low"
     for (let i = 0; i < instance.bosses.length; i++) {
-      if (stats[instance[difficulty][i]].value !== "0") {
+      if (stats[instance[difficulty][i]] && stats[instance[difficulty][i]].value !== "0") {
         count++;
       }
     }
@@ -126,7 +126,7 @@ export default function Raid(props) {
                     <div>
                       {`${props.stats[props.instance["10bossIDs"][index]].value} x` + '\xa0\xa0' + `${i}`}
                     </div>
-                    {rankings.tenRanks ?
+                    {rankings.tenRanks && rankings.tenRanks.ranks[i] ?
                       <a className="WCLLink" href={`https://classic.warcraftlogs.com/character/${props.characterMisc.region}/${props.characterMisc.server}/${props.characterMisc.name}#boss=${rankings.tenRanks.ranks[i].encounter.id}&size=10`}>
                         <div className={`Rankings ${rankings.tenRanks ? rankColor(rankings.tenRanks.ranks[i].rankPercent) : ""}`}>
                           <div>
