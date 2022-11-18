@@ -19,6 +19,12 @@
   width: 100%;
 }
 
+.InstanceHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .InstanceProgress {
   display: flex;
   flex-direction: column;

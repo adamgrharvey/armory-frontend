@@ -35,3 +35,5 @@ export default function submitStatisticData(characterData) {
 }
 
 //curl POST http://localhost:3000/character-statistic -H 'Content-Type: application/json' -d '{"stats":[{"name": "ralphster", "server": "Faerlina", "region": "US","stat_id": 11, "value": "1", "date_completed": "082322"}]}' -v
+
+//rankings.twentyfiveRanks.rankings[index].rankPercent

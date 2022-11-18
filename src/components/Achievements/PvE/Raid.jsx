@@ -1,9 +1,19 @@
 import { useState, useEffect } from "react";
+import { useContext } from "react";
+import { WCLTokenContext } from "../../../helpers/WCLContext"
+import getWCLParseData from "../../../helpers/WCLAPI/getWCLParseData";
 
 export default function Raid(props) {
-
+  const { WCLToken, setWCLToken } = useContext(WCLTokenContext);
   const [show10, setShow10] = useState(false);
   const [show25, setShow25] = useState(false);
+  const [rankings, setRankings] = useState({});
+
+  useEffect(() => {
+    if (WCLToken !== "") {
+      getWCLParseData(props.characterMisc.name, props.characterMisc.server, props.characterMisc.region, WCLToken, props.instance.WCLZoneID, setRankings);
+    }
+  }, [WCLToken])
 
   const getRaidProgress = function (stats, difficulty, instance) {
     let count = 0;
@@ -24,7 +34,7 @@ export default function Raid(props) {
     return [count, instance.bosses.length, progressLevel];
   }
 
-  const getRaidSlug = function(instanceName) {
+  const getRaidSlug = function (instanceName) {
 
     switch (true) {
       case instanceName === "Naxxramas": return "Naxx";
@@ -38,7 +48,7 @@ export default function Raid(props) {
       case instanceName === "The Ruby Sanctum": return "RS";
       default: return "ERROR";
     }
-    
+
   }
 
   let instanceSlug = getRaidSlug(props.instance.name);
@@ -50,7 +60,7 @@ export default function Raid(props) {
     <div className="Raid">
       <div className={`${instanceSlug}ImgSmall`} />
       <div className="Details">
-        <div className="instanceheader">
+        <div className="InstanceHeader">
           <div className="InstanceName">
             {props.instance.name}
           </div>
@@ -59,14 +69,14 @@ export default function Raid(props) {
           </div>
         </div>
         <div className="InstanceProgress">
-          <div className="tenman">
+          <div onClick={() => {
+            setShow10(prev => !prev)
+          }} className="tenman">
             <div className="Difficulty">
               <div className="DifficultyText">
                 10-PLAYER
               </div>
-              <div onClick={() => {
-                setShow10(prev => !prev)
-              }} className="Progressbar Progressbar--leftText Progressbar--levelColor Progressbar--fraction" data-queryselectoralways-ignore="true">
+              <div className="Progressbar Progressbar--leftText Progressbar--levelColor Progressbar--fraction" data-queryselectoralways-ignore="true">
                 <div className="Progressbar-progress" data-progresslevel={progressLevel10} style={{ width: `${progress10 / bossCount10 * 100}%` }}></div>
                 <div className="Progressbar-border" />
                 <div className="Progressbar-content">
@@ -81,24 +91,24 @@ export default function Raid(props) {
                 return (
                   <div className="Statistic">
                     <div>
-                    {`${props.stats[props.instance["10bossIDs"][index]].value} x` + '\xa0\xa0' + `${i}`}
+                      {`${props.stats[props.instance["10bossIDs"][index]].value} x` + '\xa0\xa0' + `${i}`}
                     </div>
-                    <div>
-                      rank
+                    <div className="Rankings">
+                      {rankings.tenRanks && rankings.tenRanks.ranks[i].rankPercent ? rankings.tenRanks.ranks[i].rankPercent : ""}
                     </div>
                   </div>
                 )
               })}
             </div>
           </div>
-          <div className="twentyfiveman">
+          <div onClick={() => {
+            setShow25(prev => !prev)
+          }} className="twentyfiveman">
             <div className="Difficulty">
               <div className="DifficultyText">
                 25-PLAYER
               </div>
-              <div onClick={() => {
-                setShow25(prev => !prev)
-              }} className="Progressbar Progressbar--leftText Progressbar--levelColor Progressbar--fraction" data-queryselectoralways-ignore="true">
+              <div className="Progressbar Progressbar--leftText Progressbar--levelColor Progressbar--fraction" data-queryselectoralways-ignore="true">
                 <div className="Progressbar-progress" data-progresslevel={progressLevel25} style={{ width: `${progress25 / bossCount25 * 100}%` }}></div>
                 <div className="Progressbar-border" />
                 <div className="Progressbar-content">
@@ -115,8 +125,8 @@ export default function Raid(props) {
                     <div>
                       {`${props.stats[props.instance["25bossIDs"][index]].value} x` + '\xa0\xa0' + `${i}`}
                     </div>
-                    <div>
-                      rank
+                    <div className="Rankings">
+                      {rankings.twentyfiveRanks && rankings.twentyfiveRanks.ranks[i].rankPercent ? rankings.twentyfiveRanks.ranks[i].rankPercent : ""}
                     </div>
                   </div>
                 )

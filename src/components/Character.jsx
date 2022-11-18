@@ -188,7 +188,7 @@ export default function Character(props) {
             <div className='CompletePaperdoll'>
               <ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />
               <div className='Divider' />
-              <Raids characterStats={character.characterData.statistics} />
+              <Raids characterMisc={character.characterData.miscInfo} characterStats={character.characterData.statistics} />
               <div className='Divider' />
               <SpecializationSection character={character} specSelected={specSelected} setSpecSelected={setSpecSelected} />
               
