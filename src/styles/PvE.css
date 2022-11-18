@@ -1,10 +1,15 @@
 .Raid {
   height: auto;
   width: 350px;
-  background-color: #7c7c7c;
+  background-color: #1f1d1d;
   margin: 10px;
   text-align: center;
-  
+  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  text-shadow: 1.2px 1.2px #000000;
+  color: #f8b700;
+  font-size: 18px;
+  line-height: 1em;
+  font-weight: 700;
 }
 
 .Details {
@@ -23,6 +28,8 @@
 
 .Raids {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   
 }
 .tenman {
@@ -33,16 +40,7 @@
   width: 100%;
   margin:10px;
 }
-.Statistics {
-  text-align: left;
-  margin: 5px;
-}
-.Statistic {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  margin: 2px;
-}
+
 .Progressbar-progress {
   background-color: #01b2f1;
   position: absolute;
@@ -57,6 +55,8 @@
   background: -webkit-gradient(linear,left top,right top,from(#0d4a00),to(#1b9601));
   background: linear-gradient(90deg,#0d4a00 0,#1b9601);
 }
+
+
 
 .Progressbar--levelColor>.Progressbar-progress[data-progressLevel=medium], .Progressbar--medium>.Progressbar-progress {
   background: #c76700;
@@ -87,15 +87,31 @@
   display: flex;
   flex-direction: row;
   width: 95%;
+  transition: color 0.25s
+}
+.Difficulty:hover {
+  color: white
 }
 
 .DifficultyText {
+  margin-top: 5px;
   margin-left: 10px;
   margin-right: 10px;
+  text-align: center;
+  font-size: 13px;
 }
 
-.none {
+.HideDiffStats {
   display: none;
+}
+
+.InstanceName {
+  font-size: 20px;
+  margin-top: 7px;
+}
+
+.InstanceLvl {
+  font-size: 12px;
 }
 
 .Progressbar-content {
@@ -120,6 +136,21 @@
   border: 1px solid hsla(0,0%,100%,.2);
   background: transparent;
   z-index: 1;
+}
+
+.Statistics {
+  text-align: left;
+  margin: 5px;
+}
+
+.Statistic {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 2px;
+  color: #1b9601;
+  font-size: 12px;
+  font-weight: 100;
 }
 
 .VoAImgSmall {

@@ -4,6 +4,7 @@ export default function Raids(props) {
 
   let WotLKRaids = {
     "Vault of Archavon": {
+      name: "Vault of Archavon",
       level: 80,
       "10bossIDs": [1722, 2870, 4074, 0],
       "25bossIDs": [1721, 3236, 4075, 0],
@@ -19,24 +20,32 @@ export default function Raids(props) {
     },
 
     "The Obsidian Sanctum": {
-      "10bossIDs": [],
-      "25bossIDs": [],
+      level: 80,
+      name: "The Obsidian Sanctum",
+      "10bossIDs": [1392],
+      "25bossIDs": [1393],
       bosses: ["Sartharion"]
     },
 
     "The Eye of Eternity": {
-      "10bossIDs": [],
-      "25bossIDs": [],
+      level: 80,
+      name: "The Eye of Eternity",
+      "10bossIDs": [1391],
+      "25bossIDs": [1394],
       bosses: ["Malygos"]
     },
 
     "Ulduar": {
+      level: 80,
+      name: "Ulduar",
       "10bossIDs": [],
       "25bossIDs": [],
       bosses: ["Flame Leviathan", "Ignis the Furnace Master", "Razorscale", "XT-002 Deconstructor", "The Assembly of Iron", "Kologarn", "Auriaya", "Hodir", "Thorim", "Freya", "Mimiron", "General Vezax", "Yogg-Saron", "Algalon the Observer"]
     },
 
     "Trial of the Crusader": {
+      level: 80,
+      name: "Trial of the Crusader",
       "10bossIDs": [],
       "25bossIDs": [],
       "10HeroicBossIDs": [],
@@ -45,12 +54,16 @@ export default function Raids(props) {
     },
 
     "Onyxia's Lair": {
+      level: 80,
+      name: "Onyxia's Lair",
       "10bossIDs": [],
       "25bossIDs": [],
       bosses: ["Onyxia"]
     },
 
     "Icecrown Citadel": {
+      level: 80,
+      name: "Icecrown Citadel",
       "10bossIDs": [],
       "25bossIDs": [],
       "10HeroicBossIDs": [],
@@ -59,6 +72,8 @@ export default function Raids(props) {
     },
 
     "The Ruby Sanctum": {
+      level: 80,
+      name: "The Ruby Sanctum",
       "10bossIDs": [],
       "25bossIDs": [],
       "10HeroicBossIDs": [],
@@ -70,6 +85,8 @@ export default function Raids(props) {
   return (
     <div className="Raids" >
       <Raid instance={WotLKRaids["Naxxramas"]} stats={props.characterStats} />
+      <Raid instance={WotLKRaids["The Obsidian Sanctum"]} stats={props.characterStats} />
+      <Raid instance={WotLKRaids["The Eye of Eternity"]} stats={props.characterStats} />
     </div >
   )
 }

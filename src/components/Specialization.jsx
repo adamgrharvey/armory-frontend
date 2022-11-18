@@ -18,7 +18,7 @@ export default function Specialization(props) {
     props.setSpecSelected((prev) => ({
       ...prev,
       talentString: props.characterData.secondarySpecString,
-      primaryHighlight: "none",
+      primaryHighlight: "",
       secondaryHighlight: "IsSelected"
     }))
 
@@ -30,15 +30,15 @@ export default function Specialization(props) {
       ...prev,
       talentString: props.characterData.primarySpecString,
       primaryHighlight: "IsSelected",
-      secondaryHighlight: "none"
+      secondaryHighlight: ""
     }))
 
   }
 
   if (props.position === "Primary") {
-    selectionData = { primaryHighlight: "IsSelected", secondaryHighlight: "none" }
+    selectionData = { primaryHighlight: "IsSelected", secondaryHighlight: "" }
   } else {
-    selectionData = { primaryHighlight: "none", secondaryHighlight: "IsSelected" }
+    selectionData = { primaryHighlight: "", secondaryHighlight: "IsSelected" }
   }
 
   const [specData, setSpecData] = useState(getSpecData(props.spec, props.wowClass))

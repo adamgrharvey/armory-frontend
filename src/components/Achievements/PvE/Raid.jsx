@@ -24,18 +24,37 @@ export default function Raid(props) {
     return [count, instance.bosses.length, progressLevel];
   }
 
+  const getRaidSlug = function(instanceName) {
+
+    switch (true) {
+      case instanceName === "Naxxramas": return "Naxx";
+      case instanceName === "The Obsidian Sanctum": return "OS";
+      case instanceName === "The Eye of Eternity": return "Eye";
+      case instanceName === "Vault of Archavon": return "Naxx";
+      case instanceName === "Onyxia's Lair": return "Ony";
+      case instanceName === "Ulduar": return "Ulduar";
+      case instanceName === "Trial of the Crusader": return "TotC";
+      case instanceName === "Icecrown Citadel": return "ICC";
+      case instanceName === "The Ruby Sanctum": return "RS";
+      default: return "ERROR";
+    }
+    
+  }
+
+  let instanceSlug = getRaidSlug(props.instance.name);
+
   let [progress10, bossCount10, progressLevel10] = getRaidProgress(props.stats, "10bossIDs", props.instance);
   let [progress25, bossCount25, progressLevel25] = getRaidProgress(props.stats, "25bossIDs", props.instance);
 
   return (
     <div className="Raid">
-      <div className='NaxxImgSmall' />
+      <div className={`${instanceSlug}ImgSmall`} />
       <div className="Details">
         <div className="instanceheader">
-          <div className="instanceName">
+          <div className="InstanceName">
             {props.instance.name}
           </div>
-          <div className="instanceLvl">
+          <div className="InstanceLvl">
             Level {props.instance.level}
           </div>
         </div>
@@ -43,12 +62,13 @@ export default function Raid(props) {
           <div className="tenman">
             <div className="Difficulty">
               <div className="DifficultyText">
-                10man
+                10-PLAYER
               </div>
               <div onClick={() => {
                 setShow10(prev => !prev)
               }} className="Progressbar Progressbar--leftText Progressbar--levelColor Progressbar--fraction" data-queryselectoralways-ignore="true">
                 <div className="Progressbar-progress" data-progresslevel={progressLevel10} style={{ width: `${progress10 / bossCount10 * 100}%` }}></div>
+                <div class="Progressbar-border" />
                 <div class="Progressbar-content">
                   <div class="Progressbar-fraction">
                     {`${progress10} / ${bossCount10}`}
@@ -56,7 +76,7 @@ export default function Raid(props) {
                 </div>
               </div>
             </div>
-            <div className={`Statistics${show10 ? "" : " none"}`}>
+            <div className={`Statistics${show10 ? "" : " HideDiffStats"}`}>
               {props.instance.bosses.map((i, index) => {
                 return (
                   <div className="Statistic">
@@ -74,12 +94,13 @@ export default function Raid(props) {
           <div className="twentyfiveman">
             <div className="Difficulty">
               <div className="DifficultyText">
-                25man
+                25-PLAYER
               </div>
               <div onClick={() => {
                 setShow25(prev => !prev)
               }} className="Progressbar Progressbar--leftText Progressbar--levelColor Progressbar--fraction" data-queryselectoralways-ignore="true">
                 <div className="Progressbar-progress" data-progresslevel={progressLevel25} style={{ width: `${progress25 / bossCount25 * 100}%` }}></div>
+                <div class="Progressbar-border" />
                 <div class="Progressbar-content">
                   <div class="Progressbar-fraction">
                     {`${progress25} / ${bossCount25}`}
@@ -87,7 +108,7 @@ export default function Raid(props) {
                 </div>
               </div>
             </div>
-            <div className={`Statistics${show25 ? "" : " none"}`}>
+            <div className={`Statistics${show25 ? "" : " HideDiffStats"}`}>
               {props.instance.bosses.map((i, index) => {
                 return (
                   <div className="Statistic">
