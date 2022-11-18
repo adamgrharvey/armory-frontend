@@ -1,7 +1,5 @@
 import Raid from "./Raid"
 
-
-
 export default function Raids(props) {
 
   let WotLKRaids = {

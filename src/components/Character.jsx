@@ -15,7 +15,7 @@ import itemStringToObject from '../helpers/itemStringToObject';
 import Achievements from './Achievements/Achievements';
 import getCharacterData from '../helpers/backend/getCharacterData';
 import SpecializationSection from './SpecializationSection';
-import Raids from './Achievements/PvE/Raids';
+import Raids from './PvE/Raids';
 
 export default function Character(props) {
   const { accessToken, setAccessToken } = useContext(AccessTokenContext);

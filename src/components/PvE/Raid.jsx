@@ -1,13 +1,44 @@
 import { useState, useEffect } from "react";
 import { useContext } from "react";
-import { WCLTokenContext } from "../../../helpers/WCLContext"
-import getWCLParseData from "../../../helpers/WCLAPI/getWCLParseData";
+import { WCLTokenContext } from "../../helpers/WCLContext"
+import getWCLParseData from "../../helpers/WCLAPI/getWCLParseData";
 
 export default function Raid(props) {
   const { WCLToken, setWCLToken } = useContext(WCLTokenContext);
   const [show10, setShow10] = useState(false);
   const [show25, setShow25] = useState(false);
   const [rankings, setRankings] = useState({});
+
+  const formatClassName = function (className) {
+
+    return (className.charAt(0) + className.substring(1).toLowerCase());
+
+  }
+
+  const rankColor = function (percentile) {
+    if (percentile < 25) {
+      return "common";
+    }
+    if (percentile < 50) {
+      return "uncommon";
+    }
+    if (percentile < 75) {
+      return "rare";
+    }
+    if (percentile < 95) {
+      return 'epic';
+    }
+    if (percentile < 99) {
+      return 'legendary';
+    }
+    if (percentile < 100) {
+      return 'astounding';
+    }
+    if (percentile >= 100) {
+      return 'artifact';
+    }
+    return "";
+  }
 
   useEffect(() => {
     if (WCLToken !== "") {
@@ -93,9 +124,19 @@ export default function Raid(props) {
                     <div>
                       {`${props.stats[props.instance["10bossIDs"][index]].value} x` + '\xa0\xa0' + `${i}`}
                     </div>
-                    <div className="Rankings">
-                      {rankings.tenRanks && rankings.tenRanks.ranks[i].rankPercent ? rankings.tenRanks.ranks[i].rankPercent : ""}
-                    </div>
+                    {rankings.tenRanks ?
+                      <a className="WCLLink" href={`https://classic.warcraftlogs.com/character/${props.characterMisc.region}/${props.characterMisc.server}/${props.characterMisc.name}#boss=${rankings.tenRanks.ranks[i].encounter.id}&size=10`}>
+                        <div className={`Rankings ${rankings.tenRanks ? rankColor(rankings.tenRanks.ranks[i].rankPercent) : ""}`}>
+                          <div>
+                            {rankings.tenRanks && rankings.tenRanks.ranks[i].rankPercent ? rankings.tenRanks.ranks[i].rankPercent.toFixed(1) : ""}
+                          </div>
+                          <div className="specIcon">
+                            <img src={require(`../../images/PvE/specs.jpg`)} className={`tiny-icon sprite actor-sprite-${formatClassName(props.characterMisc.wowClass)}-${rankings.tenRanks && rankings.tenRanks.ranks[i].bestSpec ? rankings.tenRanks.ranks[i].bestSpec : ""}`}></img>
+                          </div>
+                        </div>
+                      </a>
+                      : <div />}
+
                   </div>
                 )
               })}
@@ -125,9 +166,18 @@ export default function Raid(props) {
                     <div>
                       {`${props.stats[props.instance["25bossIDs"][index]].value} x` + '\xa0\xa0' + `${i}`}
                     </div>
-                    <div className="Rankings">
-                      {rankings.twentyfiveRanks && rankings.twentyfiveRanks.ranks[i].rankPercent ? rankings.twentyfiveRanks.ranks[i].rankPercent : ""}
-                    </div>
+                    {rankings.twentyfiveRanks ?
+                      <a className="WCLLink" href={`https://classic.warcraftlogs.com/character/${props.characterMisc.region}/${props.characterMisc.server}/${props.characterMisc.name}#boss=${rankings.twentyfiveRanks.ranks[i].encounter.id}&size=25`}>
+                        <div className={`Rankings ${rankings.twentyfiveRanks ? rankColor(rankings.twentyfiveRanks.ranks[i].rankPercent) : ""}`}>
+                          <div>
+                            {rankings.twentyfiveRanks && rankings.twentyfiveRanks.ranks[i].rankPercent ? rankings.twentyfiveRanks.ranks[i].rankPercent.toFixed(1) : ""}
+                          </div>
+                          <div className="specIcon">
+                            <img src={require(`../../images/PvE/specs.jpg`)} className={`tiny-icon sprite actor-sprite-${formatClassName(props.characterMisc.wowClass)}-${rankings.twentyfiveRanks && rankings.twentyfiveRanks.ranks[i].bestSpec ? rankings.twentyfiveRanks.ranks[i].bestSpec : ""}`}></img>
+                          </div>
+                        </div>
+                      </a> : <div />}
+
                   </div>
                 )
               })}
