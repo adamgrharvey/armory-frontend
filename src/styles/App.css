@@ -77,6 +77,18 @@ html {
   flex-direction: column;
 }
 
+.SectionHeader {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  line-height: 1em;
+  text-align: left;
+  color: #f8b700;
+}
+
 .CharacterHeader-nameTitle {
   text-rendering: optimizeLegibility;
   display: flex;

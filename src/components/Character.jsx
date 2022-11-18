@@ -20,7 +20,7 @@ import Raids from './PvE/Raids';
 export default function Character(props) {
   const { accessToken, setAccessToken } = useContext(AccessTokenContext);
   const { WCLToken, setWCLToken } = useContext(WCLTokenContext);
- // let backendURL = "http://localhost:3000";
+  // let backendURL = "http://localhost:3000";
   const [show, setShow] = useState(false);
   const [item, setItem] = useState({});
   const [loading, setLoading] = useState(true);
@@ -188,10 +188,16 @@ export default function Character(props) {
             <div className='CompletePaperdoll'>
               <ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />
               <div className='Divider' />
+              <div className='SectionHeader'>
+                Raid Progression
+              </div>
               <Raids Spec={specSelected.talentString} characterMisc={character.characterData.miscInfo} characterStats={character.characterData.statistics} />
               <div className='Divider' />
+              <div className='SectionHeader'>
+                Specialization
+              </div>
               <SpecializationSection character={character} specSelected={specSelected} setSpecSelected={setSpecSelected} />
-              
+
             </div>
           )}
 
