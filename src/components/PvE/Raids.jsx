@@ -3,13 +3,22 @@ import Raid from "./Raid"
 export default function Raids(props) {
 
   let WotLKRaids = {
-    "Vault of Archavon": {
+    "Vault of Archavon P5": {
       name: "Vault of Archavon",
       WCLZoneID: 1016,
       level: 80,
       "10bossIDs": [1753, 2870, 4074, 4074],
       "25bossIDs": [1754, 3236, 4075, 4075],
       bosses: ["Archavon the Stone Watcher", "Emalon the Storm Watcher", "Koralon the Flame Watcher", "Toravon the Ice Watcher"]
+    },
+
+    "Vault of Archavon": {
+      name: "Vault of Archavon",
+      WCLZoneID: 1016,
+      level: 80,
+      "10bossIDs": [1753],
+      "25bossIDs": [1754],
+      bosses: ["Archavon the Stone Watcher"]
     },
 
     "Naxxramas": {
@@ -91,6 +100,7 @@ export default function Raids(props) {
       <Raid Spec={props.Spec} instance={WotLKRaids["Naxxramas"]} characterMisc={props.characterMisc} stats={props.characterStats} />
       <Raid Spec={props.Spec} instance={WotLKRaids["The Obsidian Sanctum"]} characterMisc={props.characterMisc} stats={props.characterStats} />
       <Raid Spec={props.Spec} instance={WotLKRaids["The Eye of Eternity"]} characterMisc={props.characterMisc} stats={props.characterStats} />
+      <Raid Spec={props.Spec} instance={WotLKRaids["Vault of Archavon"]} characterMisc={props.characterMisc} stats={props.characterStats} />
     </div >
   )
 }

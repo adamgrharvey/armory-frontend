@@ -73,7 +73,7 @@ export default function Raid(props) {
       case instanceName === "Naxxramas": return "Naxx";
       case instanceName === "The Obsidian Sanctum": return "OS";
       case instanceName === "The Eye of Eternity": return "Eye";
-      case instanceName === "Vault of Archavon": return "Naxx";
+      case instanceName === "Vault of Archavon": return "VoA";
       case instanceName === "Onyxia's Lair": return "Ony";
       case instanceName === "Ulduar": return "Ulduar";
       case instanceName === "Trial of the Crusader": return "TotC";
