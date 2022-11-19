@@ -35,7 +35,7 @@ My goal is to create a place where people can upload their characters and view t
 
 !['Character-view'](https://github.com/adamgrharvey/armory-frontend/blob/master/src/images/Project/Armory_example.png)
 
-https://user-images.githubusercontent.com/104089024/202286464-a3bb1f0b-9196-44d2-9dca-ef4633d9a9ee.mp4
+https://user-images.githubusercontent.com/104089024/202833311-885a5291-32c8-445b-9fef-6f4cb45eab95.mp4
 
 ## Getting Started
 
