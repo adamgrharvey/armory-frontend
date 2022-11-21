@@ -40,11 +40,11 @@
 
 .ctc-tree-header {
   align-items: center;
-    color: #ccc;
-    display: flex;
-    gap: 10px;
-    padding: 5px 10px;
-    position: relative;
+  color: #ccc;
+  display: flex;
+  gap: 10px;
+  padding: 5px 10px;
+  position: relative;
 }
 
 .Talents {
