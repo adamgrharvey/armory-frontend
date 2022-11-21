@@ -20,7 +20,7 @@ export default function characterStringSplitter(characterString, setCharacter, s
     setSpecSelected({
       selected: "Secondary",
       talentString: formatSpecGlyphs(secondarySpecString),
-      primaryHighlight: "none",
+      primaryHighlight: "",
       secondaryHighlight: "IsSelected"
     })
   } else {
@@ -28,7 +28,7 @@ export default function characterStringSplitter(characterString, setCharacter, s
       selected: "Primary",
       talentString: formatSpecGlyphs(primarySpecString),
       primaryHighlight: "IsSelected",
-      secondaryHighlight: "none"
+      secondaryHighlight: ""
     })
   }
   

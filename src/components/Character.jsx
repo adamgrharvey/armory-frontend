@@ -39,7 +39,7 @@ export default function Character(props) {
       selected: "Primary",
       talentString: "",
       primaryHighlight: "IsSelected",
-      secondaryHighlight: "none"
+      secondaryHighlight: ""
 
     });
 
@@ -189,14 +189,14 @@ export default function Character(props) {
               <ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />
               <div className='Divider' />
               <div className='SectionHeader'>
-                Raid Progression | Phase 1
-              </div>
-              <Raids Spec={specSelected.talentString} characterMisc={character.characterData.miscInfo} characterStats={character.characterData.statistics} />
-              <div className='Divider' />
-              <div className='SectionHeader'>
                 Specialization
               </div>
               <SpecializationSection character={character} specSelected={specSelected} setSpecSelected={setSpecSelected} />
+              <div className='Divider' />
+              <div className='SectionHeader'>
+                Raid Progression | Phase 1
+              </div>
+              <Raids Spec={specSelected.talentString} characterMisc={character.characterData.miscInfo} characterStats={character.characterData.statistics} />
 
             </div>
           )}
