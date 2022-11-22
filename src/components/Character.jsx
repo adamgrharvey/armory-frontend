@@ -16,6 +16,7 @@ import Achievements from './Achievements/Achievements';
 import getCharacterData from '../helpers/backend/getCharacterData';
 import SpecializationSection from './SpecializationSection';
 import Raids from './PvE/Raids';
+import PvP from './PvP/PvP';
 
 export default function Character(props) {
   const { accessToken, setAccessToken } = useContext(AccessTokenContext);
@@ -187,15 +188,8 @@ export default function Character(props) {
           {navItem.selected === "Character" && (
             <div className='CompletePaperdoll'>
               <ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />
-              <div className='Divider' />
-              <div className='SectionHeader'>
-                Specialization
-              </div>
+              <PvP />
               <SpecializationSection character={character} specSelected={specSelected} setSpecSelected={setSpecSelected} />
-              <div className='Divider' />
-              <div className='SectionHeader'>
-                Raid Progression | Phase 1
-              </div>
               <Raids Spec={specSelected.talentString} characterMisc={character.characterData.miscInfo} characterStats={character.characterData.statistics} />
 
             </div>

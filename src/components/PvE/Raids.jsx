@@ -96,11 +96,18 @@ export default function Raids(props) {
   }
 
   return (
-    <div className="Raids" >
-      <Raid Spec={props.Spec} instance={WotLKRaids["Naxxramas"]} characterMisc={props.characterMisc} stats={props.characterStats} />
-      <Raid Spec={props.Spec} instance={WotLKRaids["The Obsidian Sanctum"]} characterMisc={props.characterMisc} stats={props.characterStats} />
-      <Raid Spec={props.Spec} instance={WotLKRaids["The Eye of Eternity"]} characterMisc={props.characterMisc} stats={props.characterStats} />
-      <Raid Spec={props.Spec} instance={WotLKRaids["Vault of Archavon"]} characterMisc={props.characterMisc} stats={props.characterStats} />
-    </div >
+    <div>
+      <div className='Divider' />
+      <div className='SectionHeader'>
+        Raid Progression | Phase 1
+      </div>
+      <div className="Raids" >
+        <Raid Spec={props.Spec} instance={WotLKRaids["Naxxramas"]} characterMisc={props.characterMisc} stats={props.characterStats} />
+        <Raid Spec={props.Spec} instance={WotLKRaids["The Obsidian Sanctum"]} characterMisc={props.characterMisc} stats={props.characterStats} />
+        <Raid Spec={props.Spec} instance={WotLKRaids["The Eye of Eternity"]} characterMisc={props.characterMisc} stats={props.characterStats} />
+        <Raid Spec={props.Spec} instance={WotLKRaids["Vault of Archavon"]} characterMisc={props.characterMisc} stats={props.characterStats} />
+      </div >
+    </div>
+
   )
 }
