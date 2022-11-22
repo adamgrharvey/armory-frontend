@@ -1,0 +1,39 @@
+.HonorKills {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 250px;
+  height: 260px;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  color: #fff;
+  text-shadow: 0 0 1px transparent, 0 1px 2px rgb(0 0 0 / 80%);
+  font-weight: 700;
+  position: relative;
+  text-align: center;
+  min-height: 1.5em;
+}
+.Title {
+  font-size: 1.4rem;
+}
+
+.PVPLogo {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  overflow: hidden;
+  width: 100px;
+  height: 150px;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.PVPLogo-HORDE {
+  background-image: url(../images/Character/Logo-horde.2a80e0466e51d85c8cf60336e16fe8b8.png);
+}
+
+.PVPLogo-ALLIANCE {
+  background-image: url(../images/Character/Logo-alliance.bb36e70f5f690a5fc510ed03e80aa259.png);
+}

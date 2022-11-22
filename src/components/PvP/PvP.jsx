@@ -10,8 +10,8 @@ export default function PvP(props) {
       <div className='SectionHeader'>
         Player vs. Player
       </div>
-      <div>
-        <HonorKills />
+      <div className='PvP'>
+        <HonorKills faction={props.faction} characterStats={props.characterStats}/>
       </div>
     </div>
 
