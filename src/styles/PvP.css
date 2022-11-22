@@ -1,3 +1,9 @@
+.PvP {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .HonorKills {
   background-color: #1f1d1d;
   display: flex;
