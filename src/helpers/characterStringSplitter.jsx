@@ -9,7 +9,7 @@ import submitStatisticData from "./backend/submitStatisticData";
 import formatSpecGlyphs from "./backend/formatSpecGlyphs";
 
 export default function characterStringSplitter(characterString, setCharacter, setCharacterExists, setLoading, setSpecSelected) {
-  let [itemString, miscString, primarySpecString, secondarySpecString, activeSpec, statisticString] = characterString.split("!");
+  let [itemString, miscString, primarySpecString, secondarySpecString, activeSpec, PvPString, statisticString] = characterString.split("!");
   //console.log(characterString.split("!"));
   let miscArray = miscString.split(".");
   if (setCharacterExists) {
