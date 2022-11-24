@@ -10,6 +10,10 @@ export default function Bracket(props) {
   // unranked
   // no data
 
+  const arenaImage = function(ratingString) {
+    let rating = Number(ratingString);
+  }
+
   return (
     <div className='HonorKills'>
       <div className={`PVPLogo PVPLogo-HORDE`}/>

@@ -47,3 +47,23 @@
 .PVPLogo-ALLIANCE {
   background-image: url(../images/Character/Logo-alliance.bb36e70f5f690a5fc510ed03e80aa259.png);
 }
+
+.ArenaRank-Elite {
+  background-image: url(../images/PvP/Elite.png);
+}
+
+.ArenaRank-Duelist {
+  background-image: url(../images/PvP/Duelist.png);
+}
+
+.ArenaRank-Rival {
+  background-image: url(../images/PvP/Rival.png);
+}
+
+.ArenaRank-Challenger {
+  background-image: url(../images/PvP/Challenger.png);
+}
+
+.ArenaRank-Unranked {
+  background-image: url(../images/PvP/Unranked.png);
+}
