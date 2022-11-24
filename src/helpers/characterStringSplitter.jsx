@@ -3,9 +3,7 @@
 */
 
 import classIDtoName from "./classIDtoName";
-import formatCharStats from "./formatCharStats";
 import getFactionFromRace from "./getFactionFromRace";
-import submitStatisticData from "./backend/submitStatisticData";
 import formatSpecGlyphs from "./backend/formatSpecGlyphs";
 
 export default function characterStringSplitter(characterString, setCharacter, setCharacterExists, setLoading, setSpecSelected) {
