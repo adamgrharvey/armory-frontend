@@ -21,8 +21,9 @@
   position: relative;
   text-align: center;
   min-height: 1.5em;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .Title {
   font-size: 1.4rem;

@@ -12,6 +12,9 @@ export default function PvP(props) {
       </div>
       <div className='PvP'>
         <HonorKills faction={props.faction} characterStats={props.characterStats}/>
+        <Bracket label={"2v2"} PvP={props.PvP} />
+        <Bracket label={"3v3"} PvP={props.PvP} />
+        <Bracket label={"5v5"} PvP={props.PvP} />
       </div>
     </div>
 
