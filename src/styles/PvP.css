@@ -24,7 +24,42 @@
   margin: 20px;
   margin-left: 10px;
   margin-right: 10px;
+  border: 2px solid #252323;
 }
+
+.HonorKills:hover {
+  transition: border 0.2s;
+  border: 2px solid rgb(247, 166, 26);
+}
+
+.Bracket {
+  background-color: #1f1d1d;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 230px;
+  height: 260px;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  color: #fff;
+  text-shadow: 0 0 1px transparent, 0 1px 2px rgb(0 0 0 / 80%);
+  font-weight: 700;
+  position: relative;
+  text-align: center;
+  min-height: 1.5em;
+  margin: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 2px solid #252323;
+}
+
+.Bracket:hover {
+  transition: border 0.2s;
+  border: 2px solid rgb(247, 166, 26);
+}
+
 .Title {
   font-size: 1.4rem;
 }
@@ -66,4 +101,9 @@
 
 .ArenaRank-Unranked {
   background-image: url(../images/PvP/Unranked.png);
+}
+
+.ArenaRank-None {
+  background-image: url(../images/PvP/Unranked.png);
+  filter: saturate(40%);
 }
