@@ -56,6 +56,7 @@ export default function characterStringSplitter(characterString, setCharacter, s
     primarySpecString: formatSpecGlyphs(primarySpecString),
     secondarySpecString: formatSpecGlyphs(secondarySpecString),
     activeSpec: activeSpec,
+    PvP: PvPStringSplitter(PvPString),
     itemString: itemString,
     miscInfo: miscInfo,
     statisticString: statisticString,
@@ -71,6 +72,24 @@ export default function characterStringSplitter(characterString, setCharacter, s
   }
   
 
+}
+
+const PvPStringSplitter = function(PvPString) {
+  let PvPArr = PvPString.split(":");
+  let brackets = ["2v2", "3v3", "5v5"];
+  let PvP = {
+    "2v2": {},
+    "3v3": {},
+    "5v5": {}
+  };
+
+  for (let i = 0; i < PvPArr.length; i++) {
+    let [rating, seasonPlayed, seasonWon] = PvPArr[i].split(".");
+    PvP[brackets[i]] = {rating: hexToDecimal(rating), seasonPlayed: hexToDecimal(seasonPlayed), seasonWon: hexToDecimal(seasonWon)};
+  }
+
+  return PvP;
+  
 }
 
 const hexToDecimal = hex => parseInt(hex, 16);
