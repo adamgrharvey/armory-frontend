@@ -1,0 +1,17 @@
+.Splash {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  justify-content: center;
+  text-align: right;
+  color: #fff;
+  font-size: large;
+}
+
+.bla1 {
+  width: 430px;
+}
+
+.bla2 {
+  width: 580px;
+}
