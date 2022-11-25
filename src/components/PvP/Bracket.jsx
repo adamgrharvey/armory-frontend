@@ -10,12 +10,8 @@ export default function Bracket(props) {
   // unranked
   // no data
 
-  const getWinLossRatio = function(played, won) {
-
-
-    return won/played * 100;
-    
-    
+  const getWinLossRatio = function (played, won) {
+    return won / played * 100;
   }
 
   const getArenaImageData = function (rating) {
@@ -24,7 +20,7 @@ export default function Bracket(props) {
       return "None"
     }
     if (rating < 1400) {
-      return { "css": "Unranked", label: "Unranked" }
+      return { "css": "Unranked", label: "Combatant" }
     }
     if (rating < 1550) {
       return { "css": "Challenger", label: "Challenger I" }
@@ -50,13 +46,13 @@ export default function Bracket(props) {
     <div className='Bracket'>
       <div className={`PVPLogo ArenaRank-${arenaImageData.css}`} />
       <div className='Title'>{`${props.label}`}</div>
-      <div className='Title'>{`${arenaImageData.label}`}</div>
+      <div className='ArenaTitle'>{`${arenaImageData.label}`}</div>
       <div className='honorkillsdropdown'>
-        <div>
+        <div className='Rating'>
           {`Current Rating: ${props.PvP[props.label].rating}`}
         </div>
         <div>
-        {`${props.PvP[props.label].seasonWon} W | ${props.PvP[props.label].seasonPlayed - props.PvP[props.label].seasonWon} L (${Math.round(getWinLossRatio(props.PvP[props.label].seasonPlayed, props.PvP[props.label].seasonWon))}%)`}
+          {`${props.PvP[props.label].seasonWon} W | ${props.PvP[props.label].seasonPlayed - props.PvP[props.label].seasonWon} L (${Math.round(getWinLossRatio(props.PvP[props.label].seasonPlayed, props.PvP[props.label].seasonWon))}%)`}
         </div>
 
       </div>

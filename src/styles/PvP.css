@@ -10,7 +10,7 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  width: 230px;
+  width: 240px;
   height: 260px;
   font-size: 1rem;
   line-height: 1.5;
@@ -62,6 +62,15 @@
 
 .Title {
   font-size: 1.4rem;
+}
+
+.Rating {
+  font-size: 1.15rem;
+}
+
+.ArenaTitle {
+  font-size: 1.6rem;
+  line-height: 1.8;
 }
 
 .PVPLogo {
