@@ -25,8 +25,8 @@ export default function Raids(props) {
       level: 80,
       WCLZoneID: 1015,
       name: "Naxxramas",
-      "10bossIDs": [1361, 1362, 1363, 1365, 1369, 1370, 1374, 1366, 1375, 1364, 1371, 1372, 1373, 1376, 1377],
-      "25bossIDs": [1368, 1380, 1386, 1387, 1382, 1385, 1384, 1379, 1383, 1367, 1381, 1378, 1388, 1389, 1390],
+      "10bossIDs": [1364, 1371, 1372, 1373, 1365, 1369, 1370, 1361, 1362, 1363, 1374, 1366, 1375, 1376, 1377],
+      "25bossIDs": [1367, 1381, 1378, 1388, 1387, 1382, 1385, 1368, 1380, 1386, 1384, 1379, 1383, 1389, 1390],
       bosses: ["Patchwerk", "Grobbulus", "Gluth", "Thaddius", "Noth the Plaguebringer", "Heigan the Unclean", "Loatheb", "Anub'Rekhan", "Grand Widow Faerlina", "Maexxna", "Instructor Razuvious", "Gothik the Harvester", "The Four Horsemen", "Sapphiron", "Kel'Thuzad"],
     },
 
