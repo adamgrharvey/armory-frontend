@@ -73,6 +73,10 @@
   line-height: 1.8;
 }
 
+.ArenaTitle.None {
+  padding-bottom: 38.69px;
+}
+
 .PVPLogo {
   background-repeat: no-repeat;
   background-size: 100%;
@@ -114,5 +118,5 @@
 
 .ArenaRank-None {
   background-image: url(../images/PvP/Unranked.png);
-  filter: saturate(40%);
+  opacity: 0.45;
 }
