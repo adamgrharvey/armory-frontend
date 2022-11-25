@@ -10,8 +10,15 @@ export default function Bracket(props) {
   // unranked
   // no data
 
-  const getArenaImageData = function (ratingString) {
-    let rating = Number(ratingString);
+  const getWinLossRatio = function(played, won) {
+
+
+    return won/played * 100;
+    
+    
+  }
+
+  const getArenaImageData = function (rating) {
 
     if (!rating) {
       return "None"
@@ -49,7 +56,7 @@ export default function Bracket(props) {
           {`Current Rating: ${props.PvP[props.label].rating}`}
         </div>
         <div>
-
+        {`${props.PvP[props.label].seasonWon} W | ${props.PvP[props.label].seasonPlayed - props.PvP[props.label].seasonWon} L (${Math.round(getWinLossRatio(props.PvP[props.label].seasonPlayed, props.PvP[props.label].seasonWon))}%)`}
         </div>
 
       </div>

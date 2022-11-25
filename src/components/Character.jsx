@@ -188,9 +188,9 @@ export default function Character(props) {
           {navItem.selected === "Character" && (
             <div className='CompletePaperdoll'>
               <ItemSections loading={loading} setCharLoading={setCharLoading} setTooltip={setTooltip} character={character} />
-              <PvP faction={character.characterData.miscInfo.faction} PvP={character.characterData.PvP} characterStats={character.characterData.statistics}/>
               <SpecializationSection character={character} specSelected={specSelected} setSpecSelected={setSpecSelected} />
               <Raids Spec={specSelected.talentString} characterMisc={character.characterData.miscInfo} characterStats={character.characterData.statistics} />
+              <PvP faction={character.characterData.miscInfo.faction} PvP={character.characterData.PvP} characterStats={character.characterData.statistics} />
 
             </div>
           )}

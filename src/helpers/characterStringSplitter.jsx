@@ -78,7 +78,7 @@ const PvPStringSplitter = function(PvPString) {
 
   for (let i = 0; i < PvPArr.length; i++) {
     let [rating, seasonPlayed, seasonWon] = PvPArr[i].split(".");
-    PvP[brackets[i]] = {rating: hexToDecimal(rating), seasonPlayed: hexToDecimal(seasonPlayed), seasonWon: hexToDecimal(seasonWon)};
+    PvP[brackets[i]] = {rating: Number(hexToDecimal(rating)), seasonPlayed: Number(hexToDecimal(seasonPlayed)), seasonWon: Number(hexToDecimal(seasonWon))};
   }
 
   return PvP;
