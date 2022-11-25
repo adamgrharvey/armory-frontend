@@ -68,6 +68,10 @@
   font-size: 1.15rem;
 }
 
+.WinLoss {
+  font-weight: 200;
+}
+
 .ArenaTitle {
   font-size: 1.6rem;
   line-height: 1.8;
@@ -75,6 +79,7 @@
 
 .ArenaTitle.None {
   padding-bottom: 38.69px;
+  color: rgba(255, 255, 255, 0.603);
 }
 
 .PVPLogo {
@@ -94,6 +99,17 @@
 
 .PVPLogo-ALLIANCE {
   background-image: url(../images/Character/Logo-alliance.bb36e70f5f690a5fc510ed03e80aa259.png);
+}
+
+.ArenaRankLogo {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  overflow: hidden;
+  width: 100px;
+  height: 150px;
+  margin-left: 65px;
+  margin-right: 65px;
 }
 
 .ArenaRank-Elite {

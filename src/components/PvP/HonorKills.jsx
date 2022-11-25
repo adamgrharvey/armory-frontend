@@ -10,9 +10,9 @@ export default function HonorKills(props) {
   return (
     <div className='HonorKills'>
       <div className={`PVPLogo PVPLogo-${props.faction}`}/>
-      <div className='Title'>Honorable Kills</div>
+      <div className='ArenaTitle'>Honorable Kills</div>
       <div className='honorkillsdropdown'>
-        <div>
+        <div className='Rating'>
           {numberWithCommas(props.characterStats[588].value)}
         </div>
         <div>
