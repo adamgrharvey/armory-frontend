@@ -1,3 +1,52 @@
+.Homepage {
+  filter: saturate(45%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vmin;
+  width: 100vmax;
+  transition: 1s ease-in-out;
+}
+
+.BG-1 {
+  background-image: url(../images/Homepage/Lich_King_Key_Art\ \(1\).jpg);
+}
+
+.BG-2 {
+  background-image: url(../images/Homepage/WoW_WrathClassic_BoreanTundra_Coldarra_001.png);
+}
+
+.BG-3 {
+  background-image: url(../images/Homepage/WoW_WrathClassic_Dalaran_005.png);
+}
+
+.BG-4 {
+  background-image: url(../images/Homepage/WoW_WrathClassic_HowlingFjord_005.png);
+}
+
+.BG-5 {
+  background-image: url(../images/Homepage/WoW_WrathClassic_Icecrown_001.png);
+}
+
+.BG-6 {
+  background-image: url(../images/Homepage/WoW_WrathClassic_Icecrown_005.png);
+}
+
+.BG-7 {
+  background-image: url(../images/Homepage/WoW_WrathClassic_RubyDragonshrine_002.png);
+}
+
+.BG-8 {
+  background-image: url(../images/Homepage/WoW_WrathClassic_Ulduar_002.png);
+}
+
+.BG-9 {
+  background-image: url(../images/Homepage/WoW_WrathClassic_Ulduar_003.png);
+}
+
+.BG-10 {
+  background-image: url(../images/Homepage/WoW_WrathClassic_ZulDrak_Kolramas_003.png);
+}
+
 .Splash {
   display: flex;
   flex-direction: column;
