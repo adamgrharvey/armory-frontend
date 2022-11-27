@@ -7,6 +7,7 @@ export default function Homepage(props) {
   const [BG, setBG] = useState(1);
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(true);
+  const [searchString, setSearchString] = useState("");
 
   const nextBG = function (currentIndex) {
     let max = Backgrounds.length;
@@ -39,6 +40,15 @@ export default function Homepage(props) {
       <div className="Splash">
         <div className="ArmoryImg">
           <img src={require(`../images/Project/test.png`)} />
+        </div>
+        <div className="Search">
+          <input className="SearchBar"
+            value={searchString}
+            placeholder={"Enter a player name"}
+            onChange={(event) => {
+              setSearchString(event.target.value);
+            }}
+          />
         </div>
       </div>
     </div>

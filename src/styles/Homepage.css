@@ -22,26 +22,30 @@
   top: -100px;
 }
 
+.Search {
+  position: relative;
+  top: -150px;
+  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  font-weight: 900;
+}
+
+.SearchBar {
+  width: 400px;
+  height: 60px;
+  border-radius: 22px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: #fff;
+  outline: none;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .ArmoryImg {
   filter: saturate(200%);
   scale: 50%;
 }
-
-.testing {
-  position: relative;
-  top: -120px;
-}
-
-.bla1 {
-}
-
-.bla2 {
-}
-
-.bla3 {
-}
-
-
 
 .BG-1 {
   background-image: url(../images/Homepage/Lich_King_Key_Art\ \(1\).jpg);
