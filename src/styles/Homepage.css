@@ -1,11 +1,47 @@
 .Homepage {
-  filter: saturate(45%);
+  filter: saturate(50%);
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vmin;
   width: 100vmax;
-  transition: 1s ease-in-out;
+  transition: 2s ease;
 }
+
+.Splash {
+  filter: none;
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-size: 6rem;
+  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  top: -100px;
+}
+
+.ArmoryImg {
+  filter: saturate(200%);
+  scale: 50%;
+}
+
+.testing {
+  position: relative;
+  top: -120px;
+}
+
+.bla1 {
+}
+
+.bla2 {
+}
+
+.bla3 {
+}
+
+
 
 .BG-1 {
   background-image: url(../images/Homepage/Lich_King_Key_Art\ \(1\).jpg);
@@ -45,22 +81,4 @@
 
 .BG-10 {
   background-image: url(../images/Homepage/WoW_WrathClassic_ZulDrak_Kolramas_003.png);
-}
-
-.Splash {
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  justify-content: center;
-  text-align: right;
-  color: #fff;
-  font-size: large;
-}
-
-.bla1 {
-  width: 430px;
-}
-
-.bla2 {
-  width: 580px;
 }

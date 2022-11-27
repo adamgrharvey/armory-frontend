@@ -20,7 +20,7 @@ export default function Homepage(props) {
 
   useEffect(() => {
     let interval = null;
-    if (seconds === 20) {
+    if (seconds === 30) {
       setSeconds(0);
       nextBG(BG);
     }
@@ -37,14 +37,8 @@ export default function Homepage(props) {
   return (
     <div className={`Homepage BG-${BG}`}>
       <div className="Splash">
-        <div>
-          WELCOME
-        </div>
-        <div className="bla1">
-          TO
-        </div>
-        <div className="bla2">
-          CLASSIC ARMORY
+        <div className="ArmoryImg">
+          <img src={require(`../images/Project/test.png`)} />
         </div>
       </div>
     </div>
