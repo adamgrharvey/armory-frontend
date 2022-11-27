@@ -36,10 +36,16 @@ export default function Homepage(props) {
   }, [isActive, seconds]);
 
   return (
-    <div className={`Homepage BG-${BG}`}>
+    <div>
+      <div className={`HomepageBG BG-${BG}`} />
       <div className="Splash">
-        <div className="ArmoryImg">
-          <img src={require(`../images/Project/test.png`)} />
+        <div className="ArmoryLogo">
+          <div className="ArmoryImg">
+            <img src={require(`../images/Project/test.png`)} />
+          </div>
+          <div className="ArmoryImgClassic">
+            <img src={require(`../images/Project/CLASSIC.png`)} />
+          </div>
         </div>
         <div className="Search">
           <input className="SearchBar"
@@ -52,6 +58,7 @@ export default function Homepage(props) {
         </div>
       </div>
     </div>
+
 
 
   )

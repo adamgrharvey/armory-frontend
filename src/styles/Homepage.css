@@ -1,5 +1,6 @@
-.Homepage {
-  filter: saturate(50%);
+.HomepageBG {
+  position: absolute;
+  filter: saturate(45%);
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vmin;
@@ -11,8 +12,8 @@
   filter: none;
   display: flex;
   position: relative;
-  height: 100%;
-  width: 100%;
+  height: 100vmin;
+  width: 100vmax;
   flex-direction: column;
   align-items: center;
   color: #fff;
@@ -60,9 +61,22 @@
   outline: -webkit-focus-ring-color auto 0px;
 }
 
+.ArmoryLogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .ArmoryImg {
-  filter: saturate(200%) !important; 
-  scale: 50%;
+  position: relative;
+  scale: 55%;
+  background-size: auto;
+}
+.ArmoryImgClassic {
+  position: relative;
+  top: -31%;
+  scale: 95%;
+  background-size: auto;
 }
 
 .BG-1 {
