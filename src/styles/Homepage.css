@@ -30,16 +30,34 @@
 }
 
 .SearchBar {
+  background-color: rgb(66, 65, 65);
+  color: rgb(245, 244, 244);
   width: 400px;
   height: 60px;
   border-radius: 22px;
   padding-left: 30px;
   padding-right: 30px;
-  border: #fff;
-  outline: none;
+  border: solid 1px rgb(245, 244, 244);
   font-family: inherit;
   font-weight: 700;
   font-size: 1.5rem;
+}
+.SearchBar:hover {
+  transition: background-color 0.2s;
+  background-color: rgb(71, 70, 70);
+  color: rgb(250, 249, 249);
+  border: solid 1px rgb(250, 249, 249);
+
+  
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(131, 128, 128);
+  opacity: 1; /* Firefox */
+}
+
+:focus-visible {
+  outline: -webkit-focus-ring-color auto 0px;
 }
 
 .ArmoryImg {
