@@ -61,7 +61,7 @@
 }
 
 .ArmoryImg {
-  filter: saturate(200%);
+  filter: saturate(200%) !important; 
   scale: 50%;
 }
 
