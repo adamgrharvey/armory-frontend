@@ -38,12 +38,12 @@
   height: 60px;
   border-radius: 22px;
   padding-left: 30px;
-  padding-right: 30px;
+  padding-right: 60px;
   border: solid 1px rgb(245, 244, 244);
   font-family: inherit;
   font-weight: 700;
   font-size: 1.5rem;
-  left: -18px;
+  left: 10px;
 }
 .SearchBar:hover {
   transition: background-color 0.2s;
@@ -52,13 +52,44 @@
   border: solid 1px rgb(250, 249, 249);
 }
 
+.SearchButton {
+  position: relative;
+  top: 5px;
+  left: -40px;
+  background-image: url(../images/Homepage/search.png);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: contain;
+  border: none;
+  width: 20px;
+  height: 20px;
+  scale: 150%;
+}
+
 .SearchResults {
   top: -200px;
   position: relative;
   font-size: medium;
   max-height: 800px;
-  width: 440px;
-  background-color: black;
+  width: 460px;
+  
+
+}
+.Result.odd {
+  background-color: rgb(44, 44, 44);
+}
+
+.Result.even {
+  background-color: rgb(22, 22, 22);
+}
+
+.Result:hover {
+  transition: background-color 0.2s;
+  background-color: rgb(96, 154, 168);
+}
+
+.SearchResults a {
+  text-decoration: none;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */

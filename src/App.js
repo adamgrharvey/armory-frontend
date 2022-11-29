@@ -5,6 +5,7 @@ import './styles/Specialization.css';
 import './styles/PvE.css';
 import './styles/PvP.css';
 import './styles/Homepage.css';
+import './styles/Nav.css';
 
 
 import React from 'react';

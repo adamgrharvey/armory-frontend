@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useState } from 'react';
+import Nav from './Nav';
 import { Link, useNavigate } from 'react-router-dom';
 import parseSubmissionData from '../helpers/backend/parseSubmissionData';
 import submitStatisticData from '../helpers/backend/submitStatisticData';
@@ -84,6 +85,7 @@ export default function Submit(props) {
 
   return (
     <div>
+      <Nav />
       {loading ? (
         <div className='Submit'>
           <div className='Loader'>

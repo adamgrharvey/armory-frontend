@@ -1,0 +1,15 @@
+.Nav {
+  width: 100%;
+  height: 50px;
+  color: red;
+  background-color: grey;
+}
+
+.Nav-items {
+  display: flex;
+  width: 30%;
+  margin-left: 35%;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-around;
+}

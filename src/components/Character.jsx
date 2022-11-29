@@ -5,6 +5,7 @@ import MoonLoader from 'react-spinners/MoonLoader';
 import CharacterHeader from './CharacterHeader';
 import Tooltip from './Tooltip';
 import ItemSections from './ItemSections';
+import Nav from './Nav';
 
 import getAccessToken from '../helpers/blizzardAPI/getAccessToken';
 import getWCLAccessToken from '../helpers/WCLAPI/getWCLAccessToken';
@@ -159,6 +160,7 @@ export default function Character(props) {
 
   return (
     <div>
+      <Nav />
       {!characterExists && !loading && <div>Character does not exist</div>}
       {loading &&
         (<div className='Loader'>

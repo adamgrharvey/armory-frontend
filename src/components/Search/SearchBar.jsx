@@ -33,7 +33,7 @@ export default function SearchBar(props) {
           props.setSearchString(event.target.value);
         }}
       />
-      <button className='SubmissionButton'
+      <button className='SearchButton'
         onClick={() => {
           if (props.searchString != "") {
             submitSearchString(props.searchString, props.setSearchResults);

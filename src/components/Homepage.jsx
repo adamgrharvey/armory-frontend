@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import SearchBar from "./Search/SearchBar";
 import SearchResults from "./Search/SearchResults";
+import Nav from "./Nav";
 
 export default function Homepage(props) {
   let backendURL = "http://localhost:3000";
@@ -76,6 +77,7 @@ export default function Homepage(props) {
 
   return (
     <div>
+      <Nav />
       <div className={`HomepageBG BG-${BG}`} />
       <div className="Splash">
         <div className="ArmoryLogo">
