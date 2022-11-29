@@ -4,14 +4,14 @@ export default function SearchResults(props) {
   let backendURL = "http://localhost:3000";
   let frontendURL = "";
 
-  const evenOrOdd = function(number) {
+  const evenOrOdd = function (number) {
     console.log(number);
     if (number % 2 === 0) {
       return 'even'
     } else {
       return 'odd'
     }
-    
+
   }
 
   return (
@@ -19,7 +19,15 @@ export default function SearchResults(props) {
       {props.searchResults.map((i, index) =>
         <a href={`${frontendURL}/character/${i.region}/${decapitalizeString(i.server)}/${decapitalizeString(i.name)}/`}>
           <div className={`Result ${evenOrOdd(index)} c${i.class_id}`}>
-            {`${decapitalizeString(i.name)} ${decapitalizeString(i.server)} ${i.region}`}
+            <div className="ResultName">
+              {`${decapitalizeString(i.name)}`}
+            </div>
+            <div className="ResultServer">
+              {`${i.region} - ${decapitalizeString(i.server)}`}
+            </div>
+            <div className="ResultType">
+              {`Character`}
+            </div>
           </div>
         </a>
       )

@@ -71,9 +71,36 @@
   font-size: medium;
   max-height: 800px;
   width: 460px;
+  font-weight: 500;
+}
+
+.Result {
+  display: flex;
+  justify-content: space-between;
+  height: 25px;
+  line-height: 25px;
+  border: 1px solid transparent;
+}
+
+.ResultName {
+  margin-left: 6px;
+  width: 33.3%;
+}
+.ResultServer {
+  width: 33.3%;
+  text-align: center;
+  color: #fff
   
+}
+.ResultType {
+  width: 25.3%;
+  text-align: right;
+  margin-right: 6px;
+  font-weight: 400;
+  color: rgb(184, 180, 180)
 
 }
+
 .Result.odd {
   background-color: rgb(44, 44, 44);
 }
@@ -85,6 +112,7 @@
 .Result:hover {
   transition: background-color 0.2s;
   background-color: rgb(96, 154, 168);
+  border: 1px solid white;
 }
 
 .SearchResults a {
