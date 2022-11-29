@@ -1,13 +1,16 @@
 import React from "react";
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function Homepage(props) {
-
+  let backendURL = "http://localhost:3000";
+  let frontendURL = "";
   let Backgrounds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const [BG, setBG] = useState(1);
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(true);
   const [searchString, setSearchString] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
 
   const nextBG = function (currentIndex) {
     let max = Backgrounds.length;
@@ -18,6 +21,20 @@ export default function Homepage(props) {
       setBG(currentIndex + 1);
     }
   }
+
+  useEffect(() => {
+    if (searchString.length > 1) {
+      submitSearchString(searchString, setSearchResults);
+    }
+  }, [searchString])
+
+  useEffect(() => {
+    if (searchResults.length !== 0) {
+      console.log(searchResults);
+    }
+  }, [searchResults])
+
+
 
   useEffect(() => {
     let interval = null;
@@ -34,6 +51,24 @@ export default function Homepage(props) {
     }
     return () => clearInterval(interval);
   }, [isActive, seconds]);
+
+  function submitSearchString(searchString, setSearchResults) {
+    axios
+      .get(`${backendURL}/character-search/${searchString}`, {
+        headers: {
+          'content-type': 'application/json',
+        },
+      })
+      .then((res) => {
+        // if server returns 200 (success)
+        if (res.status === 200) {
+          setSearchResults(res.data);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   return (
     <div>
@@ -54,6 +89,15 @@ export default function Homepage(props) {
             onChange={(event) => {
               setSearchString(event.target.value);
             }}
+          />
+          <button className='SubmissionButton'
+            onClick={() => {
+              if (searchString != "") {
+                submitSearchString(searchString);
+              }
+
+            }}
+
           />
         </div>
       </div>
