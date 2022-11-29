@@ -8,12 +8,11 @@ export default function Nav(props) {
         <a href={`/`}>
           <div className="HomepageBtn" />
         </a>
-        <div>
-          Upload
-        </div>
-        <div>
-          Upload
-        </div>
+        <a href={`/submit`}>
+          <div>
+            Upload
+          </div>
+        </a>
       </div>
     </div>
   )
