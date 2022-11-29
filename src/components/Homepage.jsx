@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import SearchBar from "./Search/SearchBar";
+import SearchResults from "./Search/SearchResults";
 
 export default function Homepage(props) {
   let backendURL = "http://localhost:3000";
@@ -25,6 +27,8 @@ export default function Homepage(props) {
   useEffect(() => {
     if (searchString.length > 1) {
       submitSearchString(searchString, setSearchResults);
+    } else {
+      setSearchResults([]);
     }
   }, [searchString])
 
@@ -82,24 +86,8 @@ export default function Homepage(props) {
             <img src={require(`../images/Project/CLASSIC.png`)} />
           </div>
         </div>
-        <div className="Search">
-          <input className="SearchBar"
-            value={searchString}
-            placeholder={"Enter a player name"}
-            onChange={(event) => {
-              setSearchString(event.target.value);
-            }}
-          />
-          <button className='SubmissionButton'
-            onClick={() => {
-              if (searchString != "") {
-                submitSearchString(searchString);
-              }
-
-            }}
-
-          />
-        </div>
+        <SearchBar searchString={searchString} setSearchString={setSearchString} setSearchResults={setSearchResults}/>
+        <SearchResults searchResults={searchResults}/>
       </div>
     </div>
 

@@ -31,6 +31,7 @@
 }
 
 .SearchBar {
+  position: relative;
   background-color: rgb(66, 65, 65);
   color: rgb(245, 244, 244);
   width: 400px;
@@ -42,14 +43,22 @@
   font-family: inherit;
   font-weight: 700;
   font-size: 1.5rem;
+  left: -18px;
 }
 .SearchBar:hover {
   transition: background-color 0.2s;
   background-color: rgb(71, 70, 70);
   color: rgb(250, 249, 249);
   border: solid 1px rgb(250, 249, 249);
+}
 
-  
+.SearchResults {
+  top: -200px;
+  position: relative;
+  font-size: medium;
+  max-height: 800px;
+  width: 440px;
+  background-color: black;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
