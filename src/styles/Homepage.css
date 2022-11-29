@@ -12,7 +12,7 @@
   filter: none;
   display: flex;
   position: relative;
-  height: 100vmin;
+  height: 100%;
   width: 100vmax;
   flex-direction: column;
   align-items: center;
@@ -20,7 +20,6 @@
   font-size: 6rem;
   font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
   font-weight: 600;
-  top: -100px;
 }
 
 .Search {
@@ -102,21 +101,25 @@
 }
 
 .ArmoryLogo {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .ArmoryImg {
   position: relative;
   scale: 55%;
   background-size: auto;
+  
 }
 .ArmoryImgClassic {
   position: relative;
   top: -31%;
   scale: 95%;
   background-size: auto;
+  top: -150px;
 }
 
 .BG-1 {

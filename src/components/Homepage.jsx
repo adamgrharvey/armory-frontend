@@ -82,7 +82,7 @@ export default function Homepage(props) {
       <div className="Splash">
         <div className="ArmoryLogo">
           <div className="ArmoryImg">
-            <img src={require(`../images/Project/test.png`)} />
+            <img src={require(`../images/Project/test-crop.png`)} />
           </div>
           <div className="ArmoryImgClassic">
             <img src={require(`../images/Project/CLASSIC.png`)} />
