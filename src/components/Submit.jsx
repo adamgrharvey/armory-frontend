@@ -86,44 +86,57 @@ export default function Submit(props) {
   return (
     <div>
       <Nav />
-      {loading ? (
-        <div className='Submit'>
-          <div className='Loader'>
-            <MoonLoader color={'#5118a7'} width={'50%'} height={8} />
-          </div>
-          <div className='SubmissionText'>
-            Uploading your character...
+      <div className='SubmissionPage'>
+        <div className='HowTo'>
+          <div>
+            <body><span className='Step'>Step 1:</span> Download the Classic Armory Addon from ____</body>
+            <body><span className='Step'>Step 2:</span> Use the in-game chat command "/Armory" to prompt the window.</body>
+            <body><span className='Step'>Step 3:</span> Copy (Ctrl-C or Cmd-C) the Character string from the game, and paste (Ctrl-V or Cmd-V) in the input field here.</body>
+            <body><span className='Step'>Step 4:</span> Submit your character and allow a moment for it to be processed.</body>
           </div>
 
         </div>
-      )
-        :
-        <div className='Submit'>
-          <label className='SubmissionText'>
-            Character String
-          </label>
-          <div>
-            <input
-              value={characterString}
-              placeholder={"Armory Addon string goes here..."}
-              onChange={(event) => {
-                setCharacterString(event.target.value);
-              }}
-            />
-            <button className='SubmissionButton'
-              onClick={() => {
+        {loading ? (
+          <div className='Submit'>
+            <div className='Loader'>
+              <MoonLoader color={'#5118a7'} width={'50%'} height={8} />
+            </div>
+            <div className='SubmissionText'>
+              Uploading your character...
+            </div>
 
-                if (characterString != "") {
-                  setLoading(true);
-                  submitCharacterData(characterString);
-                }
+          </div>
+        )
+          :
+          <div className='Submit'>
+            <label className='SubmissionText'>
+              Character String
+            </label>
+            <div className='SubmitArea'>
+              <textarea
+                className='SubmissionInput'
+                value={characterString}
+                placeholder={"Paste your Character string here..."}
+                onChange={(event) => {
+                  setCharacterString(event.target.value);
+                }}
+              />
+              <button className='SubmissionButton'
+                onClick={() => {
 
-              }}
+                  if (characterString != "") {
+                    setLoading(true);
+                    submitCharacterData(characterString);
+                  }
 
-            /></div>
+                }}
+              >
+                Submit
+              </button></div>
 
-        </div>}
+          </div>}
 
+      </div>
     </div>
   )
 }

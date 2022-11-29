@@ -12,22 +12,6 @@ html {
   padding-top: 200px;
 }
 
-.SubmissionText {
-  display: flex;
-  color: white;
-}
-
-.SubmissionButton {
-  width: 18px;
-  height: 18px;
-  background-color: #1eff00;
-}
-
-.Submit {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
 .Tooltip {
   display: flex;

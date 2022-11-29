@@ -1,0 +1,64 @@
+.SubmissionText {
+  display: flex;
+  font-size: larger;
+  margin-right: 57px;
+}
+
+.SubmissionButton {
+  width: fit-content;
+  height: 18px;
+  border: none;
+  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  background-color: rgb(233,149,15);
+  margin: 10px;
+}
+
+.Submit {
+  position: relative;
+  top: 30px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Step {
+  font-size: x-large;
+  color: rgb(233,149,15);
+  text-decoration: underline;
+}
+
+.SubmissionPage {
+  color: rgb(233,149,15);
+  font-size: 15px;
+  line-height: 50px;
+  font-weight: 700;
+  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  text-shadow: rgb(0 0 0 / 0%) 0px 0px 1px, rgb(0 0 0 / 80%) 0px 1px 2px;
+  display: flex;
+  flex-direction: row;
+}
+
+.SubmissionInput {
+  resize: none;
+  padding: 5px;
+  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  height: 250px;
+  width: 100%;
+}
+
+.SubmitArea {
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+
+
+.HowTo {
+  position: relative;
+  margin: 25px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}

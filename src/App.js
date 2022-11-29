@@ -6,6 +6,7 @@ import './styles/PvE.css';
 import './styles/PvP.css';
 import './styles/Homepage.css';
 import './styles/Nav.css';
+import './styles/Submission.css';
 
 
 import React from 'react';
