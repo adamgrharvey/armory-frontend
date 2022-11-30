@@ -8,7 +8,7 @@ import submitStatisticData from '../helpers/backend/submitStatisticData';
 import MoonLoader from 'react-spinners/MoonLoader';
 export default function Submit(props) {
   const [loading, setLoading] = useState(false);
-  let backendURL = "http://production-env.eba-q3dkmdph.us-west-2.elasticbeanstalk.com";
+  let backendURL = "https://production-env.eba-q3dkmdph.us-west-2.elasticbeanstalk.com";
   let frontendURL = "";
   const [characterString, setCharacterString] = useState("");
   const navigate = useNavigate();

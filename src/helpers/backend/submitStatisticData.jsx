@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default function submitStatisticData(characterData) {
-  let backendURL = "http://production-env.eba-q3dkmdph.us-west-2.elasticbeanstalk.com";
+  let backendURL = "https://production-env.eba-q3dkmdph.us-west-2.elasticbeanstalk.com";
   let stats = [];
   let character = { name: characterData.miscInfo.name, server: characterData.miscInfo.server, region: characterData.miscInfo.region }
   let values = Object.values(characterData.statistics);
