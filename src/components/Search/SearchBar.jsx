@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useEffect, useState } from "react";
 
 export default function SearchBar(props) {
-  let backendURL = "http://localhost:3000";
+  let backendURL = "http://production-env.eba-q3dkmdph.us-west-2.elasticbeanstalk.com/";
   let frontendURL = "";
 
   function submitSearchString(searchString, setSearchResults) {
