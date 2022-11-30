@@ -1,5 +1,5 @@
 export default function Nav(props) {
-  let backendURL = "http://production-env.eba-q3dkmdph.us-west-2.elasticbeanstalk.com";
+  let backendURL = "production-env.eba-q3dkmdph.us-west-2.elasticbeanstalk.com";
   let frontendURL = "";
 
   return (
