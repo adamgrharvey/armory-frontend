@@ -1,7 +1,7 @@
 import decapitalizeString from "../../helpers/decapitalizeString"
 export default function SearchResults(props) {
 
-  let backendURL = "production-env.eba-q3dkmdph.us-west-2.elasticbeanstalk.com";
+  let backendURL = "http://production-env.eba-q3dkmdph.us-west-2.elasticbeanstalk.com";
   let frontendURL = "";
 
   const evenOrOdd = function (number) {
