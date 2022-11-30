@@ -1,5 +1,6 @@
 .Achievement {
-  width: 540px;
+  min-width: 540px;
+  max-width: 540px;
   height: 84px;
   position: relative;
   font-family: 'Friz Quadrata Std', sans-serif;

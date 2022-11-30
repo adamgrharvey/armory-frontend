@@ -11,6 +11,8 @@
   overflow-x: hidden;
   width: fit-content;
   margin-left: 20px;
+  min-width: 580px;
+  max-width: 580px;
 }
 
 .Categories {
