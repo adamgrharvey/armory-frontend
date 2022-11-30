@@ -14,6 +14,7 @@ export default function SearchBar(props) {
         },
       })
       .then((res) => {
+        console.log(res);
         // if server returns 200 (success)
         if (res.status === 200) {
           setSearchResults(res.data);
