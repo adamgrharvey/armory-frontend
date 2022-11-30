@@ -22,7 +22,7 @@ import PvP from './PvP/PvP';
 export default function Character(props) {
   const { accessToken, setAccessToken } = useContext(AccessTokenContext);
   const { WCLToken, setWCLToken } = useContext(WCLTokenContext);
-  // let backendURL = "https://production-env.eba-q3dkmdph.us-west-2.elasticbeanstalk.com";
+  // let backendURL = "http://production-env.eba-q3dkmdph.us-west-2.elasticbeanstalk.com";
   const [show, setShow] = useState(false);
   const [item, setItem] = useState({});
   const [loading, setLoading] = useState(true);
