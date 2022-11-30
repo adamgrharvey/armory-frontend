@@ -1,7 +1,13 @@
 .SubmissionText {
   display: flex;
-  font-size: larger;
+  font-size: 2rem;
   margin-right: 57px;
+}
+
+.SubmissionTextLoading {
+  display: flex;
+  font-size: 2rem;
+  margin-right: 10px;
 }
 
 .SubmissionButton {
@@ -14,6 +20,10 @@
   margin: 10px;
 }
 
+.SubmissionButton:hover {
+  color: rgb(50, 50, 50);
+}
+
 .Submit {
   position: relative;
   top: 30px;
@@ -23,15 +33,21 @@
   align-items: center;
 }
 
-.Step {
+.StepEntry {
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.StepText {
   font-size: x-large;
   color: rgb(233,149,15);
   text-decoration: underline;
+  font-weight: 700;
 }
 
 .SubmissionPage {
   color: rgb(233,149,15);
-  font-size: 15px;
+  font-size: 1.35rem;
   line-height: 50px;
   font-weight: 700;
   font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;

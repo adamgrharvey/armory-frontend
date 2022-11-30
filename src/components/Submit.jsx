@@ -81,18 +81,16 @@ export default function Submit(props) {
   }
 
 
-
-
   return (
     <div>
       <Nav />
       <div className='SubmissionPage'>
         <div className='HowTo'>
           <div>
-            <body><span className='Step'>Step 1:</span> Download the Classic Armory Addon from ____</body>
-            <body><span className='Step'>Step 2:</span> Use the in-game chat command "/Armory" to prompt the window.</body>
-            <body><span className='Step'>Step 3:</span> Copy (Ctrl-C or Cmd-C) the Character string from the game, and paste (Ctrl-V or Cmd-V) in the input field here.</body>
-            <body><span className='Step'>Step 4:</span> Submit your character and allow a moment for it to be processed.</body>
+            <body className='StepEntry'><span className='StepText'>Step 1:</span> Download the Classic Armory Addon from ____</body>
+            <body className='StepEntry'><span className='StepText'>Step 2:</span> Use the in-game chat command "/Armory" to prompt the window.</body>
+            <body className='StepEntry'><span className='StepText'>Step 3:</span> Copy (Ctrl-C or Cmd-C) the Character string from the game, and paste (Ctrl-V or Cmd-V) in the input field here.</body>
+            <body className='StepEntry'><span className='StepText'>Step 4:</span> Submit your character and allow a moment for it to be processed.</body>
           </div>
 
         </div>
@@ -101,7 +99,7 @@ export default function Submit(props) {
             <div className='Loader'>
               <MoonLoader color={'#5118a7'} width={'50%'} height={8} />
             </div>
-            <div className='SubmissionText'>
+            <div className='SubmissionTextLoading'>
               Uploading your character...
             </div>
 
