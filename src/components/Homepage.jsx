@@ -59,7 +59,7 @@ export default function Homepage(props) {
 
   function submitSearchString(searchString, setSearchResults) {
     axios
-      .get(`${backendURL}/character-search/${searchString}`, {
+      .get(`${backendURL}/character-search/${searchString}/`, {
         headers: {
           'content-type': 'application/json',
         },
