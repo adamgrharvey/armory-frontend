@@ -28,6 +28,7 @@ export default function Achievements(props) {
     setCharLoading(true);
     getCharacterStatistics(params.region, params.server, params.characterName, category)
       .then((res) => {
+        console.log(res);
         setAchievements(res);
         setAchLoading(false);
       })
