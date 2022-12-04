@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default function getStatisticsData() {
 
-  let backendURL = "http://production-env.eba-q3dkmdph.us-west-2.elasticbeanstalk.com";
+  let backendURL = "https://classicarmory-env.eba-q2pfjxpc.us-west-2.elasticbeanstalk.com";
     return new Promise((resolve, reject) => {
       axios
         .get(`${backendURL}/statistics/all`, {
