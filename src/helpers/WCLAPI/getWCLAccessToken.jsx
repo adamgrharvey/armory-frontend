@@ -14,10 +14,10 @@ export default function getWCLAccessToken(clientID, clientSecret, setWCLToken) {
     },
   })
     .then((res) => {
-      //console.log(res);
+      ////console.log(res);
       setWCLToken(res.data.access_token);
     })
     .catch((err) => {
-      console.log(err)
+      //console.log(err)
     })
 }

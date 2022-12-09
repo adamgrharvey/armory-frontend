@@ -13,12 +13,12 @@ export default function getItemNameFromID(itemID, accessToken) {
       .then((res) => {
         // if server returns 200 (success)
         if (res.status === 200) {
-          //console.log('itemData', res.data.preview_item);
+          ////console.log('itemData', res.data.preview_item);
           resolve(res.data.name);
         }
       })
       .catch((err) => {
-        console.log(err);
+        //console.log(err);
         reject(err);
       });
   });

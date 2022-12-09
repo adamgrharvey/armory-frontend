@@ -20,7 +20,7 @@ export default function getCharacterData(region, server, characterName) {
         }
       })
       .catch((err) => {
-        console.log(err);
+        //console.log(err);
         reject(err);
       });
   });

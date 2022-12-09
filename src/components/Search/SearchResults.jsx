@@ -5,7 +5,7 @@ export default function SearchResults(props) {
   let frontendURL = "";
 
   const evenOrOdd = function (number) {
-    console.log(number);
+    //console.log(number);
     if (number % 2 === 0) {
       return 'even'
     } else {

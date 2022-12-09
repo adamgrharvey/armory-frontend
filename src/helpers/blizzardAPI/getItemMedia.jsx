@@ -13,12 +13,12 @@ export default function getItemMedia(itemID, accessToken, setCharLoading, slotID
       .then((res) => {
         // if server returns 200 (success)
         if (res.status === 200) {
-          //console.log('item media', res.data.assets[0].value);
+          ////console.log('item media', res.data.assets[0].value);
           resolve(res.data.assets[0].value);
         }
       })
       .catch((err) => {
-        console.log(err);
+        //console.log(err);
         reject(err);
       });
   });

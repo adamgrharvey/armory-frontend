@@ -26,26 +26,26 @@ export default function Submit(props) {
       level: characterData.miscInfo.level
     }
 
-    console.log('submissionData:', submissionData);
-    console.log('characterData:', characterData);
+    //console.log('submissionData:', submissionData);
+    //console.log('characterData:', characterData);
 
 
     submitCharacterString(submissionData)
       .then((res) => {
-        console.log(res);
+        //console.log(res);
         if (res.status === 200)
           submitStatisticData(characterData)
             .then((res) => {
-              console.log(res);
+              //console.log(res);
               if (res.status === 200)
                 navigate(`${frontendURL}/character/${submissionData.region}/${submissionData.server}/${submissionData.name}`);
             })
             .catch(err => {
-              console.log(err);
+              //console.log(err);
             })
       })
       .catch(err => {
-        console.log(err);
+        //console.log(err);
       })
 
 
@@ -66,7 +66,7 @@ export default function Submit(props) {
           // if server returns 200 (success)
           if (res.status === 200) {
             resolve(res);
-            console.log(res);
+            //console.log(res);
             //
           } else {
             reject(res);
@@ -74,7 +74,7 @@ export default function Submit(props) {
 
         })
         .catch((err) => {
-          console.log(err);
+          //console.log(err);
           reject(err);
         });
     });
@@ -87,7 +87,7 @@ export default function Submit(props) {
       <div className='SubmissionPage'>
         <div className='HowTo'>
           <div>
-            <body className='StepEntry'><span className='StepText'>Step 1:</span> Download the Classic Armory Addon from ____</body>
+            <body className='StepEntry'><span className='StepText'>Step 1:</span> Download the Classic Armory Addon from <a>https://www.curseforge.com/wow/addons/wotlk-classic-armory</a></body>
             <body className='StepEntry'><span className='StepText'>Step 2:</span> Use the in-game chat command "/Armory" to prompt the window.</body>
             <body className='StepEntry'><span className='StepText'>Step 3:</span> Copy (Ctrl-C or Cmd-C) the Character string from the game, and paste (Ctrl-V or Cmd-V) in the input field here.</body>
             <body className='StepEntry'><span className='StepText'>Step 4:</span> Submit your character and allow a moment for it to be processed.</body>

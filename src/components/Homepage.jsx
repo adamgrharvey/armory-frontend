@@ -35,7 +35,7 @@ export default function Homepage(props) {
 
   useEffect(() => {
     if (searchResults.length !== 0) {
-      console.log(searchResults);
+      //console.log(searchResults);
     }
   }, [searchResults])
 
@@ -71,7 +71,7 @@ export default function Homepage(props) {
         }
       })
       .catch((err) => {
-        console.log(err);
+        //console.log(err);
       });
   }
 

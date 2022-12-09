@@ -19,12 +19,12 @@ export default function getItemData(itemID, accessToken, setCharLoading, item) {
             ({...prev, ...temp})
             
           );
-          //console.log('itemData', res.data.preview_item);
+          ////console.log('itemData', res.data.preview_item);
           resolve(res.data);
         }
       })
       .catch((err) => {
-        console.log(err);
+        //console.log(err);
         reject(err);
       });
   });

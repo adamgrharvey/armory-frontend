@@ -2,10 +2,10 @@ import axios from "axios";
 
 export default function getAchievementMedia(achievements, accessToken) {
 
-  console.log(achievements);
+  //console.log(achievements);
   return new Promise((resolve, reject) => {
     let tempArr = []
-    // console.log(achievements);
+    // //console.log(achievements);
     for (let i = 0; i < achievements.length; i++) {
       if (!achievements[i].is_statistic) {
         getRequest(achievements[i].id).then((res) => {
@@ -33,7 +33,7 @@ const getRequest = function (achievementID) {
       .then((res) => {
         // if server returns 200 (success)
         if (res.status === 200) {
-          //console.log('itemData', res.data.preview_item);
+          ////console.log('itemData', res.data.preview_item);
           resolve(res.data.assets[0].value)
         }
       })

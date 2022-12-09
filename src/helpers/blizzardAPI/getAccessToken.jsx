@@ -13,10 +13,10 @@ export default function getAccessToken(clientID, clientSecret, setAccessToken) {
     },
   })
     .then((res) => {
-      //console.log(res);
+      ////console.log(res);
       setAccessToken(res.data.access_token);
     })
     .catch((err) => {
-      console.log(err)
+      //console.log(err)
     })
 }

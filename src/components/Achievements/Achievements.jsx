@@ -28,7 +28,7 @@ export default function Achievements(props) {
     setCharLoading(true);
     getCharacterStatistics(params.region, params.server, params.characterName, category)
       .then((res) => {
-        //console.log(res);
+        ////console.log(res);
         setAchievements(res);
         setAchLoading(false);
       })
@@ -37,7 +37,7 @@ export default function Achievements(props) {
   useEffect(() => {
     if (achLoading) {
       getCharacterData(params.region, params.server, params.characterName).then((results) => {
-        console.log(results);
+        //console.log(results);
         characterStringSplitter(results.character_string, setCharacter)
       })
     }

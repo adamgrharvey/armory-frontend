@@ -2,7 +2,7 @@ export default function formatCharStats(charStats, allStats) {
 
   let newAllStats = {};
   let allStatsKeys = Object.keys(allStats);
-//console.log(charStats);
+////console.log(charStats);
 
   for (const key of allStatsKeys) {
     newAllStats[allStats[key].stat_id] = allStats[key];
@@ -17,7 +17,7 @@ export default function formatCharStats(charStats, allStats) {
     
     
   }
-  //console.log('newall', newAllStats);
+  ////console.log('newall', newAllStats);
 
   
 return newAllStats;

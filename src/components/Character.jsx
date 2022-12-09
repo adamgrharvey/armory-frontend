@@ -108,7 +108,7 @@ export default function Character(props) {
       Promise.all([getCharacterData(region, server, characterName)]).then((results) => {
 
         if (!character.characterData && results[0] && results[0].character_string) {
-          console.log(results);
+          //console.log(results);
           characterStringSplitter(results[0].character_string, setCharacter, setCharacterExists, setLoading, setSpecSelected)
         } else {
           setLoading(false);
@@ -123,7 +123,7 @@ export default function Character(props) {
   useEffect(() => {
     if (!Object.values(charLoading).includes(false) && charLoading) {
       setLoading(false);
-      console.log(character);
+      //console.log(character);
     }
   }, [charLoading, character])
 
@@ -140,7 +140,7 @@ export default function Character(props) {
 
   useEffect(() => {
     if (!loading && character.inventory[0]) {
-      console.log(character);
+      //console.log(character);
 
     }
   }, [loading])

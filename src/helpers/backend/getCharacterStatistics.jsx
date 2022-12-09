@@ -20,12 +20,12 @@ export default function getCharacterStatistics(region, server, name, category) {
             resolve(res.data);
             
           } else {
-            console.log(res);
+            //console.log(res);
             reject(res);
           }
         })
         .catch((err) => {
-          console.log(err);
+          //console.log(err);
           reject(err);
         });
     });

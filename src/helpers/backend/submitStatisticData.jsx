@@ -11,7 +11,7 @@ export default function submitStatisticData(characterData) {
       stats.push({ ...stat })
     }
   }
-  console.log({ character, stats });
+  //console.log({ character, stats });
 
 
   return new Promise((resolve, reject) => {
@@ -28,7 +28,7 @@ export default function submitStatisticData(characterData) {
         }
       })
       .catch((err) => {
-        console.log(err);
+        //console.log(err);
         reject(err);
       });
   });

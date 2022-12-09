@@ -12,7 +12,7 @@ export default function itemStringToObject(itemString, accessToken, setCharLoadi
           inventory[item - 1] = res;
         })
         .catch(err => {
-          console.log(err);
+          //console.log(err);
         });
     }
 

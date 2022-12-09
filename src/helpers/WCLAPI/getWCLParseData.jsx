@@ -47,7 +47,7 @@ export default function getWCLParseData(characterName, serverName, region, acces
 
     })
     .then((res) => {
-      //console.log(res.data.data.characterData.character.zoneRankings);
+      ////console.log(res.data.data.characterData.character.zoneRankings);
       tenRanks = (res.data.data.characterData.character.zoneRankings);
       tenRanks.ranks = {};
       let bossNames = [];
@@ -69,7 +69,7 @@ export default function getWCLParseData(characterName, serverName, region, acces
 
         })
         .then((res) => {
-          //console.log(res.data.data.characterData.character.zoneRankings);
+          ////console.log(res.data.data.characterData.character.zoneRankings);
           twentyfiveRanks = (res.data.data.characterData.character.zoneRankings);
           twentyfiveRanks.ranks = {};
           let bossNames = [];
@@ -84,11 +84,11 @@ export default function getWCLParseData(characterName, serverName, region, acces
           setRankings({tenRanks, twentyfiveRanks});
         })
         .catch((err) => {
-          console.log(err);
+          //console.log(err);
         });
     })
     .catch((err) => {
-      console.log(err);
+      //console.log(err);
     });
 
 
