@@ -87,7 +87,7 @@ export default function Submit(props) {
       <div className='SubmissionPage'>
         <div className='HowTo'>
           <div>
-            <body className='StepEntry'><span className='StepText'>Step 1:</span> Download the Classic Armory Addon from <a>https://www.curseforge.com/wow/addons/wotlk-classic-armory</a></body>
+            <body className='StepEntry'><span className='StepText'>Step 1:</span> Download the Classic Armory Addon from <a href='https://www.curseforge.com/wow/addons/wotlk-classic-armory'>CurseForge</a></body>
             <body className='StepEntry'><span className='StepText'>Step 2:</span> Use the in-game chat command "/Armory" to prompt the window.</body>
             <body className='StepEntry'><span className='StepText'>Step 3:</span> Copy (Ctrl-C or Cmd-C) the Character string from the game, and paste (Ctrl-V or Cmd-V) in the input field here.</body>
             <body className='StepEntry'><span className='StepText'>Step 4:</span> Submit your character and allow a moment for it to be processed.</body>
