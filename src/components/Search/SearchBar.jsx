@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useEffect, useState } from "react";
 
 export default function SearchBar(props) {
-  let backendURL = "https://classicarmory-env.eba-q2pfjxpc.us-west-2.elasticbeanstalk.com";
+  let backendURL = "https://api.armoryclassic.com/";
   let frontendURL = "";
 
   function submitSearchString(searchString, setSearchResults) {

@@ -6,7 +6,7 @@ export default function getCharacterStatistics(region, server, name, category) {
     category = "";
   }
 
-  let backendURL = "https://classicarmory-env.eba-q2pfjxpc.us-west-2.elasticbeanstalk.com";
+  let backendURL = "https://api.armoryclassic.com/";
     return new Promise((resolve, reject) => {
       axios
         .get(`${backendURL}/character/${region}/${server}/${name}/achievements/${category}`, {
