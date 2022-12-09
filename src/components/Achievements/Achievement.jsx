@@ -68,14 +68,14 @@ export default function Achievement(props) {
                 {
                   (!ach.is_statistic) && ach.points === 0 ?
                     <div>
-                      <img src={require(`../../images/Achievement/Achievement_feat_icon.webp`)} />
+                      <img src={require(`../../images/Achievement/Achievement_feat_icon.png`)} />
                       <div className='Date feat'>
                         {date}
                       </div>
                     </div>
                     :
                     <div>
-                      <img src={require(`../../images/Achievement/Achievement_icon.webp`)} />
+                      <img src={require(`../../images/Achievement/Achievement_icon.png`)} />
                       <div className='Points'>
                         {ach.points}
                       </div>
