@@ -19,9 +19,11 @@
 ## About The Project
 
 
-Classic Armory is a database for Characters that play World of Warcraft: Classic. It is a work in progress, and is currently in the alpha stage of development.
+Classic Armory is a database for Characters that play World of Warcraft: Classic. It is a work in progress, and is currently in the beta stage of development.
 
 My goal is to create a place where people can upload their characters and view that characters data and statistics, as well as everyone elses characters!
+
+You can view the hosted site here: https://www.armoryclassic.com/
 
 ### Built With
 
