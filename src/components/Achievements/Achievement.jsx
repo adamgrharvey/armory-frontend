@@ -136,9 +136,9 @@ export default function Achievement(props) {
             <div className='AchPointsDate'>
               <div>
                 <div className='AchShield NotEarned'>
-                  {(!ach.is_statistic) && ach.points === 0 ? <img src={require(`../../images/Achievement/Achievement_feat_icon.webp`)} /> :
+                  {(!ach.is_statistic) && ach.points === 0 ? <img src={require(`../../images/Achievement/Achievement_feat_icon.png`)} /> :
                     <div>
-                      <img src={require(`../../images/Achievement/Achievement_icon.webp`)} />
+                      <img src={require(`../../images/Achievement/Achievement_icon.png`)} />
                       <div className='Points'>
                         {ach.points}
                       </div>
@@ -186,7 +186,7 @@ export default function Achievement(props) {
         <div className='AchPointsDate'>
           <div className='AchShield'>
             <div>
-              {(!ach.is_statistic) && ach.points === 0 ? <img src={require(`../../images/Achievement/Achievement_feat_icon.webp`)} /> : <img src={require(`../../images/Achievement/Achievement_icon.webp`)} />
+              {(!ach.is_statistic) && ach.points === 0 ? <img src={require(`../../images/Achievement/Achievement_feat_icon.png`)} /> : <img src={require(`../../images/Achievement/Achievement_icon.png`)} />
               }
               <div className='Points'>
                 {ach.points}
