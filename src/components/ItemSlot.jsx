@@ -37,6 +37,24 @@ export default function ItemSlot(props) {
     19: "tabard"
   };
 
+  let whGems = "";
+  let whEnch = "";
+  if (props.item.itemDetails.enchantID !==0) {
+    whEnch = `&ench=${props.item.itemDetails.enchantID}`
+  }
+  if (props.item.itemDetails.gem1ID !==0) {
+    whGems = `&gems=${props.item.itemDetails.gem1ID}`
+  }
+  if (props.item.itemDetails.gem2ID !==0) {
+    whGems = whGems+`:${props.item.itemDetails.gem2ID}`
+  }
+  if (props.item.itemDetails.gem3ID !==0) {
+    whGems = whGems+`:${props.item.itemDetails.gem3ID}`
+  }
+  if (props.item.itemDetails.gem4ID !==0) {
+    whGems = whGems+`:${props.item.itemDetails.gem4ID}`
+  }
+
   //<a href={`https://www.wowhead.com/item=${props.item.id}`} data-wowhead="domain=classic"><img src={itemMedia} alt={props.slotID} className={`ItemSlotIcon ${props.item.preview_item.quality.name}`} /></a>
 
   //colorLinks: true, iconizeLinks: true, renameLinks: true 
@@ -46,9 +64,9 @@ export default function ItemSlot(props) {
 
       <div>
         <div className={`ItemSlot ${props.section}`}>
-          <a data-wh-rename-link="false" href={`https://www.wowhead.com/wotlk/item=${props.item.id}`}><img src={itemMedia} alt={props.slotID} className={`ItemSlotIcon ${props.item.preview_item.quality.name}`} /></a>
+          <a data-wh-rename-link="false" href={`https://www.wowhead.com/wotlk/item=${props.item.id}${whGems}${whEnch}`}><img src={itemMedia} alt={props.slotID} className={`ItemSlotIcon ${props.item.preview_item.quality.name}`} /></a>
           <div className='Apart'>
-            <a data-wh-rename-link="false" href={`https://www.wowhead.com/wotlk/item=${props.item.id}`}>
+            <a data-wh-rename-link="false" href={`https://www.wowhead.com/wotlk/item=${props.item.id}${whGems}${whEnch}`}>
               <div className={`ItemSlot ItemDetails ${props.item.preview_item.quality.name}`} >
                 {props.item.name}
 
