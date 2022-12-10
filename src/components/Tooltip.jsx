@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import statsArray from '../helpers/statsArray';
 import getPlayableClasses from '../helpers/getPlayableClasses';
 import formatSellPrice from '../helpers/formatSellPrice';
+import enchantDetailsfromSpellID from '../helpers/enchantDetailsFromSpellID';
 
 export default function Tooltip(props) {
 
@@ -57,6 +58,10 @@ export default function Tooltip(props) {
             {/*start of +xyz stats */}
             <div className='itemrow white statrow'>
               {props.item.preview_item.stats ? statsArray(props.item, false).map((stat, i) => <div key={i}>{stat}</div>) : ""}
+            </div>
+            {/*start of enchant */}
+            <div className='itemrow statrow equipstats'>
+              {props.item.itemDetails.enchantID !== 0 ? enchantDetailsfromSpellID(props.item.itemDetails.enchantID).slug : ""}
             </div>
             {/*start of durability */}
             <div className='itemrow white'>{props.item.preview_item.durability ? props.item.preview_item.durability.display_string : ""}</div>
