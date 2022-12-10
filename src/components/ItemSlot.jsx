@@ -46,12 +46,15 @@ export default function ItemSlot(props) {
 
       <div>
         <div className={`ItemSlot ${props.section}`}>
-          <img onMouseOver={() => { props.onMouseEvent(true, props.item) }} onMouseLeave={() => { props.onMouseEvent(false, props.item) }} src={itemMedia} alt={props.slotID} className={`ItemSlotIcon ${props.item.preview_item.quality.name}`} />
+          <a data-wh-rename-link="false" href={`https://www.wowhead.com/wotlk/item=${props.item.id}`}><img src={itemMedia} alt={props.slotID} className={`ItemSlotIcon ${props.item.preview_item.quality.name}`} /></a>
           <div className='Apart'>
-            <div onMouseOver={() => { props.onMouseEvent(true, props.item) }} onMouseLeave={() => { props.onMouseEvent(false, props.item) }} className={`ItemSlot ItemDetails ${props.item.preview_item.quality.name}`} >
-              {props.item.name}
-            </div>
-            <Gems section={props.section} itemDetails={props.item.itemDetails}/>
+            <a data-wh-rename-link="false" href={`https://www.wowhead.com/wotlk/item=${props.item.id}`}>
+              <div className={`ItemSlot ItemDetails ${props.item.preview_item.quality.name}`} >
+                {props.item.name}
+
+              </div>
+            </a>
+            <Gems section={props.section} itemDetails={props.item.itemDetails} />
             <div className={`Enchant-${props.section}`}>{props.item.itemDetails.enchantID !== 0 ? (<a data-wh-rename-link="false" className={`Enchant-${props.section} q2`} href={`https://www.wowhead.com/wotlk/spell=${enchantDetailsfromSpellID(props.item.itemDetails.enchantID).id}`}>{`${enchantDetailsfromSpellID(props.item.itemDetails.enchantID).name}`}</a>) : ""}</div>
           </div>
 

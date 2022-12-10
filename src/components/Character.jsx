@@ -159,10 +159,11 @@ export default function Character(props) {
     innerHeight: windowSize.innerHeight
   };
 
+  //{show && <Tooltip locationData={locationData} item={item} />}
   return (
     <div>
       <Nav />
-      {show && <Tooltip locationData={locationData} item={item} />}
+      
       {!characterExists && !loading && <div>Character does not exist</div>}
       {loading &&
         (<div className='Loader'>
