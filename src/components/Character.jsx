@@ -162,6 +162,7 @@ export default function Character(props) {
   return (
     <div>
       <Nav />
+      {show && <Tooltip locationData={locationData} item={item} />}
       {!characterExists && !loading && <div>Character does not exist</div>}
       {loading &&
         (<div className='Loader'>
@@ -186,7 +187,7 @@ export default function Character(props) {
           </div>
           <div className='Divider' />
 
-          {show && <Tooltip locationData={locationData} item={item} />}
+          
 
           {navItem.selected === "Character" && (
             <div className='CompletePaperdoll'>

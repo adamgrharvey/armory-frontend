@@ -15,6 +15,7 @@ html {
 
 .Tooltip {
   display: flex;
+  z-index: 1;
   justify-content: flex-start;
   flex-direction: column;
   float: left;
@@ -363,13 +364,14 @@ html {
 }
 
 .Enchant {
-  margin-right: 12px;
+  margin-right: 7px;
+  margin-left: 4px;
   position: relative;
-  margin-left: 8px;
   height: 100%;
   font-weight: 200;
   font: 12px "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
-  color: #1eff00;
+  color: #1eff00 !important;
+  text-decoration: none;
 }
 
 .ItemSlot.ItemDetails {
