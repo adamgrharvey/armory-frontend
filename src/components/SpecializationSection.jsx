@@ -23,7 +23,7 @@ export default function SpecializationSection(props) {
 
         <div className='Talents'>
           <Helmet>
-            <script>{`const whTooltips = {colorLinks: false, iconizeLinks: true, renameLinks: true }`}</script>
+            <script>{`const whTooltips = {colorLinks: false, iconizeLinks: false, renameLinks: true }`}</script>
             <script src="https://wow.zamimg.com/js/tooltips.js"></script>
           </Helmet>
 
