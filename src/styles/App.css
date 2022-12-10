@@ -257,7 +257,6 @@ html {
 }
 
 
-
 .ItemSection.left {
   display: flex;
   flex-direction: column;
@@ -343,7 +342,7 @@ html {
 
 .ItemSlot.right {
   flex-direction: row-reverse;
-  text-align: left;
+  text-align: right;
 }
 
 .ItemSlot.bottomLeft {
