@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default function getStatisticsData() {
 
-  let backendURL = "https://api.armoryclassic.com";
+  let backendURL = "https://api.armoryclassic.com/";
     return new Promise((resolve, reject) => {
       axios
         .get(`${backendURL}/statistics/all`, {
