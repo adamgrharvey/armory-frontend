@@ -12,7 +12,7 @@ export default function Tooltip(props) {
 
     right: `${props.locationData.mouseX + 8 < props.locationData.innerWidth - 320 ? "" : (props.locationData.innerWidth - props.locationData.mouseX + 8) + 'px'}`,
 
-    top: `${props.locationData.mouseY - 100 > 10 ? props.locationData.mouseY - 100 + 'px' : 10 + 'px'}`,
+    top: `${props.locationData.mouseY + window.scrollY - 100 > 10 ? props.locationData.mouseY + window.scrollY - 100 + 'px' : 10 + 'px'}`,
 
     bottom: ""
   }
