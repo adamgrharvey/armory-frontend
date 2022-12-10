@@ -2,6 +2,13 @@ import axios from "axios";
 
 export default function getItemMedia(itemID, accessToken, setCharLoading, slotID) {
 
+  if (itemID === 0) {
+    return new Promise((resolve, reject) => {
+      resolve(null);
+    })
+  }
+
+
 
   return new Promise((resolve, reject) => {
     axios

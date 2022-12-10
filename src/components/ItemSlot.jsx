@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import getItemMedia from '../helpers/blizzardAPI/getItemMedia';
 import enchantDetailsfromSpellID from '../helpers/enchantDetailsFromSpellID';
+import Gems from './Gems';
 
 import { AccessTokenContext } from '../helpers/Context';
 import { useContext } from 'react';
@@ -42,7 +43,7 @@ export default function ItemSlot(props) {
 
   return (
     props.item ?
-    
+
       <div >
         <div className={`ItemSlot ${props.section}`}>
           <img onMouseOver={() => { props.onMouseEvent(true, props.item) }} onMouseLeave={() => { props.onMouseEvent(false, props.item) }} src={itemMedia} alt={props.slotID} className={`ItemSlotIcon ${props.item.preview_item.quality.name}`} />
@@ -50,10 +51,8 @@ export default function ItemSlot(props) {
             <div onMouseOver={() => { props.onMouseEvent(true, props.item) }} onMouseLeave={() => { props.onMouseEvent(false, props.item) }} className={`ItemSlot ItemDetails ${props.item.preview_item.quality.name}`} >
               {props.item.name}
             </div>
-            <div>
-              gem
-            </div>
-            <div className='Enchant'>{props.item.itemDetails.enchantID !== 0 ? (<a data-wh-rename-link="false" className='Enchant q2' href={`https://www.wowhead.com/wotlk/spell=${enchantDetailsfromSpellID(props.item.itemDetails.enchantID).id}`}>{`${enchantDetailsfromSpellID(props.item.itemDetails.enchantID).name}`}</a>): ""}</div>
+            <Gems itemDetails={props.item.itemDetails}/>
+            <div className='Enchant'>{props.item.itemDetails.enchantID !== 0 ? (<a data-wh-rename-link="false" className='Enchant q2' href={`https://www.wowhead.com/wotlk/spell=${enchantDetailsfromSpellID(props.item.itemDetails.enchantID).id}`}>{`${enchantDetailsfromSpellID(props.item.itemDetails.enchantID).name}`}</a>) : ""}</div>
           </div>
 
         </div>
