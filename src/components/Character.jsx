@@ -6,6 +6,7 @@ import CharacterHeader from './CharacterHeader';
 import Tooltip from './Tooltip';
 import ItemSections from './ItemSections';
 import Nav from './Nav';
+import { Helmet } from 'react-helmet';
 
 import getAccessToken from '../helpers/blizzardAPI/getAccessToken';
 import getWCLAccessToken from '../helpers/WCLAPI/getWCLAccessToken';
@@ -130,7 +131,7 @@ export default function Character(props) {
   useEffect(() => {
     if (accessToken === "") {
       getAccessToken(BNET_ID, BNET_SECRET, setAccessToken)
-      
+
     }
     if (accessToken !== "" && Object.values(charLoading).includes(false)) {
       if (characterExists) {
@@ -161,9 +162,9 @@ export default function Character(props) {
 
   //{show && <Tooltip locationData={locationData} item={item} />}
   return (
+
     <div>
       <Nav />
-      
       {!characterExists && !loading && <div>Character does not exist</div>}
       {loading &&
         (<div className='Loader'>
@@ -188,7 +189,7 @@ export default function Character(props) {
           </div>
           <div className='Divider' />
 
-          
+
 
           {navItem.selected === "Character" && (
             <div className='CompletePaperdoll'>
