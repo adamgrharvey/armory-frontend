@@ -131,7 +131,7 @@ export default function Raid(props) {
                       ) :
                       <div />
                     }
-                    {rankings.tenRanks && rankings.tenRanks.ranks[i] ?
+                    {rankings.tenRanks && rankings.tenRanks.ranks[i].rankPercent ?
                       <a className="WCLLink" href={`https://classic.warcraftlogs.com/character/${props.characterMisc.region}/${props.characterMisc.server}/${props.characterMisc.name}#boss=${rankings.tenRanks.ranks[i].encounter.id}&size=10`}>
                         <div className={`Rankings ${rankings.tenRanks ? rankColor(rankings.tenRanks.ranks[i].rankPercent) : ""}`}>
                           <div>
@@ -178,7 +178,7 @@ export default function Raid(props) {
                       ) :
                       <div />
                     }
-                    {rankings.twentyfiveRanks ?
+                    {rankings.twentyfiveRanks && rankings.twentyfiveRanks.ranks[i].rankPercent ?
                       <a className="WCLLink" href={`https://classic.warcraftlogs.com/character/${props.characterMisc.region}/${props.characterMisc.server}/${props.characterMisc.name}#boss=${rankings.twentyfiveRanks.ranks[i].encounter.id}&size=25`}>
                         <div className={`Rankings ${rankings.twentyfiveRanks ? rankColor(rankings.twentyfiveRanks.ranks[i].rankPercent) : ""}`}>
                           <div>
