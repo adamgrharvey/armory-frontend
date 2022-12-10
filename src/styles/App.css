@@ -298,10 +298,10 @@ html {
 }
 
 .CharacterNav {
-  
+
   display: flex;
   position: relative;
-  top:10px;
+  top: 10px;
   justify-content: center;
 
 }
@@ -309,6 +309,7 @@ html {
 a:hover {
   text-decoration: none;
 }
+
 a:link {
   text-decoration: none;
 }
@@ -325,7 +326,7 @@ a:link {
   padding: 6.66666667px 10px;
   background-color: transparent;
   background-repeat: no-repeat;
-  text-decoration:none;
+  text-decoration: none;
   border: none;
   cursor: pointer;
   overflow: hidden;
@@ -333,6 +334,7 @@ a:link {
   -webkit-transition: all .2s cubic-bezier(.23, 1, .32, 1) 0s;
   transition: all .2s cubic-bezier(.23, 1, .32, 1) 0s;
 }
+
 .CharacterNav-item:hover {
   background-color: #f8b700;
   color: #211510;
@@ -375,40 +377,43 @@ a:link {
   margin-left: 4px;
   position: relative;
   text-align: left;
-  height: 100%;
+  height: 45%;
   font-weight: 200;
   font: 12px "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   color: #1eff00 !important;
   text-decoration: none;
 }
+
 .Enchant-bottomRight {
   margin-right: 7px;
   margin-left: 4px;
   position: relative;
   text-align: left;
-  height: 100%;
+  height: 45%;
   font-weight: 200;
   font: 12px "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   color: #1eff00 !important;
   text-decoration: none;
 }
+
 .Enchant-right {
   margin-right: 7px;
   margin-left: 4px;
   position: relative;
   text-align: right;
-  height: 100%;
+  height: 45%;
   font-weight: 200;
   font: 12px "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   color: #1eff00 !important;
   text-decoration: none;
 }
+
 .Enchant-bottomLeft {
   margin-right: 7px;
   margin-left: 4px;
   position: relative;
   text-align: right;
-  height: 100%;
+  height: 45%;
   font-weight: 200;
   font: 12px "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   color: #1eff00 !important;
@@ -426,7 +431,19 @@ a:link {
   flex-direction: row;
   height: 17px;
   width: 68px;
+  top: 4px;
 }
+
+.GemSection-bottomRight {
+  position: relative;
+  padding-left: 2px;
+  display: flex;
+  flex-direction: row;
+  height: 17px;
+  width: 68px;
+  top: 4px;
+}
+
 .GemSection-right {
   position: relative;
   padding-left: 2px;
@@ -434,6 +451,17 @@ a:link {
   flex-direction: row-reverse;
   height: 17px;
   right: 18px;
+  top: 4px;
+}
+
+.GemSection-bottomLeft {
+  position: relative;
+  padding-left: 2px;
+  display: flex;
+  flex-direction: row-reverse;
+  height: 17px;
+  right: 18px;
+  top: 4px;
 }
 
 .Gem-left {
@@ -443,8 +471,8 @@ a:link {
   bottom: 12px;
   width: 17px;
   height: 17px;
-
 }
+
 .Gem-bottomRight {
   scale: 30%;
   position: relative;
@@ -453,6 +481,7 @@ a:link {
   width: 17px;
   height: 17px;
 }
+
 .Gem-right {
   scale: 30%;
   position: relative;
