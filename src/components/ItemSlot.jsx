@@ -40,8 +40,8 @@ export default function ItemSlot(props) {
   return (
     props.item ?
     <div >
-      <div onMouseOver={() => {props.onMouseEvent(true, props.item)}} onMouseLeave={() => {props.onMouseEvent(false, props.item)}} className={`ItemSlot ${props.section}`}>
-        <img src={itemMedia} alt={props.slotID} className={`ItemSlotIcon ${props.item.preview_item.quality.name}`} />
+      <div className={`ItemSlot ${props.section}`}>
+        <img onMouseOver={() => {props.onMouseEvent(true, props.item)}} onMouseLeave={() => {props.onMouseEvent(false, props.item)}} src={itemMedia} alt={props.slotID} className={`ItemSlotIcon ${props.item.preview_item.quality.name}`} />
         <div onMouseOver={() => {props.onMouseEvent(true, props.item)}} onMouseLeave={() => {props.onMouseEvent(false, props.item)}} className={`ItemSlot ItemDetails ${props.item.preview_item.quality.name}`} >
           {props.item.name}
         </div>
