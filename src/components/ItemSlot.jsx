@@ -38,8 +38,11 @@ export default function ItemSlot(props) {
 
   //<a href={`https://www.wowhead.com/item=${props.item.id}`} data-wowhead="domain=classic"><img src={itemMedia} alt={props.slotID} className={`ItemSlotIcon ${props.item.preview_item.quality.name}`} /></a>
 
+  //colorLinks: true, iconizeLinks: true, renameLinks: true 
+
   return (
     props.item ?
+    
       <div >
         <div className={`ItemSlot ${props.section}`}>
           <img onMouseOver={() => { props.onMouseEvent(true, props.item) }} onMouseLeave={() => { props.onMouseEvent(false, props.item) }} src={itemMedia} alt={props.slotID} className={`ItemSlotIcon ${props.item.preview_item.quality.name}`} />
@@ -47,7 +50,7 @@ export default function ItemSlot(props) {
             <div onMouseOver={() => { props.onMouseEvent(true, props.item) }} onMouseLeave={() => { props.onMouseEvent(false, props.item) }} className={`ItemSlot ItemDetails ${props.item.preview_item.quality.name}`} >
               {props.item.name}
             </div>
-            <div className='Enchant'>{props.item.itemDetails.enchantID !== 0 ? (<a className='Enchant' href={`https://www.wowhead.com/wotlk/spell=${enchantDetailsfromSpellID(props.item.itemDetails.enchantID).id}`}>{`${enchantDetailsfromSpellID(props.item.itemDetails.enchantID).name}`}</a>): ""}</div>
+            <div className='Enchant'>{props.item.itemDetails.enchantID !== 0 ? (<a data-wh-rename-link="false" className='Enchant q2' href={`https://www.wowhead.com/wotlk/spell=${enchantDetailsfromSpellID(props.item.itemDetails.enchantID).id}`}>{`${enchantDetailsfromSpellID(props.item.itemDetails.enchantID).name}`}</a>): ""}</div>
           </div>
 
         </div>
