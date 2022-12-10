@@ -123,7 +123,7 @@ export default function enchantDetailsfromSpellID(spellID) {
     3729: { name: "Socket Belt", id: 3729, slug: "Socket Belt" },
     3599: { name: "Personal Electromagnetic Pulse Generator", id: 3599, slug: "Personal Electromagnetic Pulse Generator" },
     3601: { name: "Frag Belt", id: 3601, slug: "Frag Belt" },
-    3601: { name: "Earthen Leg Armor", id: 3853, slug: "+40 Resilience Rating and +28 Stamina" },
+    3853: { name: "Earthen Leg Armor", id: 3853, slug: "+40 Resilience Rating and +28 Stamina" },
     3822: { name: "Frosthide Leg Armor", id: 3822, slug: "+55 Stamina and +22 Agility" },
     3823: { name: "Icescale Leg Armor", id: 3823, slug: "+75 Attack Power and +22 Critical Strike Rating" },
     3325: { name: "Jormungar Leg Armor", id: 3325, slug: "+45 Stamina and +15 Agility" },
@@ -155,7 +155,7 @@ export default function enchantDetailsfromSpellID(spellID) {
 
   let enchantDetails = {name: "", id: null, slug: ""};
 
-  if (keys.includes(spellID)) {
+  if (keys.includes(String(spellID))) {
     enchantDetails = enchantDB[spellID];
   }
 

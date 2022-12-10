@@ -293,6 +293,7 @@ html {
   color: #9d9d9d;
   font: 14px "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 600;
+  height: 98%;
 }
 
 .CharacterNav {
@@ -354,10 +355,28 @@ html {
   text-align: left;
 }
 
+.Apart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.Enchant {
+  margin-right: 12px;
+  position: relative;
+  margin-left: 8px;
+  height: 100%;
+  font-weight: 200;
+  font: 12px "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #1eff00;
+}
+
 .ItemSlot.ItemDetails {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-right: 12px;
   font: 14px "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 600;
   flex-wrap: wrap;
