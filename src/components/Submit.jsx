@@ -91,6 +91,8 @@ export default function Submit(props) {
             <body className='StepEntry'><span className='StepText'>Step 2:</span> Use the in-game chat command "/Armory" to prompt the window.</body>
             <body className='StepEntry'><span className='StepText'>Step 3:</span> Copy (Ctrl-C or Cmd-C) the Character string from the game, and paste (Ctrl-V or Cmd-V) in the input field here.</body>
             <body className='StepEntry'><span className='StepText'>Step 4:</span> Submit your character and allow a moment for it to be processed.</body>
+
+            <body>There are potential bugs with the site, and I am trying to fix them all! If you experience an issue, reach out to me on discord at Ralph#6011</body>
           </div>
 
         </div>
