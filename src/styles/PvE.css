@@ -352,31 +352,31 @@
 
 }
 
-.actor-sprite-DeathKnight-Blood {
+.actor-sprite-Deathknight-Blood {
   object-position: calc(-1px*var(--size)) 0px
 }
 
-.actor-sprite-DeathKnight-Frost {
+.actor-sprite-Deathknight-Frost {
   object-position: calc(-2px*var(--size)) 0px
 }
 
-.actor-sprite-DeathKnight-Lichborne {
+.actor-sprite-Deathknight-Lichborne {
   object-position: calc(-3px*var(--size)) 0px
 }
 
-.actor-sprite-DeathKnight-Melee {
+.actor-sprite-Deathknight-Melee {
   object-position: calc(-4px*var(--size)) 0px
 }
 
-.actor-sprite-DeathKnight-Runeblade {
+.actor-sprite-Deathknight-Runeblade {
   object-position: calc(-5px*var(--size)) 0px
 }
 
-.actor-sprite-DeathKnight-Unholy {
+.actor-sprite-Deathknight-Unholy {
   object-position: calc(-6px*var(--size)) 0px
 }
 
-.actor-sprite-DeathKnight {
+.actor-sprite-Deathknight {
   object-position: calc(-7px*var(--size)) 0px
 }
 

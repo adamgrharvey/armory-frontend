@@ -15,7 +15,9 @@ export default function getWCLParseData(characterName, serverName, region, acces
   
   }
 
+  console.log(spec);
   let role = getRole(spec);
+  console.log(role);
 
   let data10man = {
     query: `{
