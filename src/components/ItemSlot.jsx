@@ -51,8 +51,8 @@ export default function ItemSlot(props) {
             <div onMouseOver={() => { props.onMouseEvent(true, props.item) }} onMouseLeave={() => { props.onMouseEvent(false, props.item) }} className={`ItemSlot ItemDetails ${props.item.preview_item.quality.name}`} >
               {props.item.name}
             </div>
-            <Gems itemDetails={props.item.itemDetails}/>
-            <div className='Enchant'>{props.item.itemDetails.enchantID !== 0 ? (<a data-wh-rename-link="false" className='Enchant q2' href={`https://www.wowhead.com/wotlk/spell=${enchantDetailsfromSpellID(props.item.itemDetails.enchantID).id}`}>{`${enchantDetailsfromSpellID(props.item.itemDetails.enchantID).name}`}</a>) : ""}</div>
+            <Gems section={props.section} itemDetails={props.item.itemDetails}/>
+            <div className={`Enchant-${props.section}`}>{props.item.itemDetails.enchantID !== 0 ? (<a data-wh-rename-link="false" className={`Enchant-${props.section} q2`} href={`https://www.wowhead.com/wotlk/spell=${enchantDetailsfromSpellID(props.item.itemDetails.enchantID).id}`}>{`${enchantDetailsfromSpellID(props.item.itemDetails.enchantID).name}`}</a>) : ""}</div>
           </div>
 
         </div>

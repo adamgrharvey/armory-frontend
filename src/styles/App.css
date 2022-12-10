@@ -343,7 +343,7 @@ html {
 
 .ItemSlot.right {
   flex-direction: row-reverse;
-  text-align: right;
+  text-align: left;
 }
 
 .ItemSlot.bottomLeft {
@@ -363,15 +363,105 @@ html {
   height: 100%;
 }
 
-.Enchant {
+.Enchant-left {
   margin-right: 7px;
   margin-left: 4px;
   position: relative;
+  text-align: left;
   height: 100%;
   font-weight: 200;
   font: 12px "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   color: #1eff00 !important;
   text-decoration: none;
+}
+.Enchant-bottomRight {
+  margin-right: 7px;
+  margin-left: 4px;
+  position: relative;
+  text-align: left;
+  height: 100%;
+  font-weight: 200;
+  font: 12px "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #1eff00 !important;
+  text-decoration: none;
+}
+.Enchant-right {
+  margin-right: 7px;
+  margin-left: 4px;
+  position: relative;
+  text-align: right;
+  height: 100%;
+  font-weight: 200;
+  font: 12px "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #1eff00 !important;
+  text-decoration: none;
+}
+.Enchant-bottomLeft {
+  margin-right: 7px;
+  margin-left: 4px;
+  position: relative;
+  text-align: right;
+  height: 100%;
+  font-weight: 200;
+  font: 12px "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #1eff00 !important;
+  text-decoration: none;
+}
+
+.Gem-img {
+  border-radius: 17px;
+}
+
+.GemSection-left {
+  position: relative;
+  padding-left: 2px;
+  display: flex;
+  flex-direction: row;
+  height: 17px;
+  width: 68px;
+}
+.GemSection-right {
+  position: relative;
+  padding-left: 2px;
+  display: flex;
+  flex-direction: row-reverse;
+  height: 17px;
+  right: 18px;
+}
+
+.Gem-left {
+  scale: 30%;
+  position: relative;
+  margin-bottom: 15px;
+  bottom: 12px;
+  width: 17px;
+  height: 17px;
+
+}
+.Gem-bottomRight {
+  scale: 30%;
+  position: relative;
+  margin-bottom: 15px;
+  bottom: 12px;
+  width: 17px;
+  height: 17px;
+}
+.Gem-right {
+  scale: 30%;
+  position: relative;
+  margin-bottom: 15px;
+  bottom: 12px;
+  width: 17px;
+  height: 17px;
+}
+
+.Gem-bottomLeft {
+  scale: 30%;
+  position: relative;
+  margin-bottom: 15px;
+  bottom: 8px;
+  width: 17px;
+  height: 17px;
 }
 
 .ItemSlot.ItemDetails {
