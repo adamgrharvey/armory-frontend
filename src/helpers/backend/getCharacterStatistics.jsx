@@ -6,7 +6,7 @@ export default function getCharacterStatistics(region, server, name, category) {
     category = "";
   }
 
-  let backendURL = "https://api.armoryclassic.com/";
+  let backendURL = "https://api.armoryclassic.com";
     return new Promise((resolve, reject) => {
       axios
         .get(`${backendURL}/character/${region}/${server}/${name}/achievements/${category}`, {

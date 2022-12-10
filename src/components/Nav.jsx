@@ -1,5 +1,5 @@
 export default function Nav(props) {
-  let backendURL = "https://api.armoryclassic.com/";
+  let backendURL = "https://api.armoryclassic.com";
   let frontendURL = "";
 
   return (

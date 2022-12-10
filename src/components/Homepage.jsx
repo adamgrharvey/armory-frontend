@@ -6,7 +6,7 @@ import SearchResults from "./Search/SearchResults";
 import Nav from "./Nav";
 
 export default function Homepage(props) {
-  let backendURL = "https://api.armoryclassic.com/";
+  let backendURL = "https://api.armoryclassic.com";
   let frontendURL = "";
   let Backgrounds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const [BG, setBG] = useState(1);
