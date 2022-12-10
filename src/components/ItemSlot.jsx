@@ -39,21 +39,24 @@ export default function ItemSlot(props) {
 
   let whGems = "";
   let whEnch = "";
-  if (props.item.itemDetails.enchantID !==0) {
-    whEnch = `&ench=${props.item.itemDetails.enchantID}`
+  if (props.item && props.item.itemDetails) {
+    if (props.item.itemDetails.enchantID !== 0) {
+      whEnch = `&ench=${props.item.itemDetails.enchantID}`
+    }
+    if (props.item.itemDetails.gem1ID !== 0) {
+      whGems = `&gems=${props.item.itemDetails.gem1ID}`
+    }
+    if (props.item.itemDetails.gem2ID !== 0) {
+      whGems = whGems + `:${props.item.itemDetails.gem2ID}`
+    }
+    if (props.item.itemDetails.gem3ID !== 0) {
+      whGems = whGems + `:${props.item.itemDetails.gem3ID}`
+    }
+    if (props.item.itemDetails.gem4ID !== 0) {
+      whGems = whGems + `:${props.item.itemDetails.gem4ID}`
+    }
   }
-  if (props.item.itemDetails.gem1ID !==0) {
-    whGems = `&gems=${props.item.itemDetails.gem1ID}`
-  }
-  if (props.item.itemDetails.gem2ID !==0) {
-    whGems = whGems+`:${props.item.itemDetails.gem2ID}`
-  }
-  if (props.item.itemDetails.gem3ID !==0) {
-    whGems = whGems+`:${props.item.itemDetails.gem3ID}`
-  }
-  if (props.item.itemDetails.gem4ID !==0) {
-    whGems = whGems+`:${props.item.itemDetails.gem4ID}`
-  }
+
 
   //<a href={`https://www.wowhead.com/item=${props.item.id}`} data-wowhead="domain=classic"><img src={itemMedia} alt={props.slotID} className={`ItemSlotIcon ${props.item.preview_item.quality.name}`} /></a>
 
