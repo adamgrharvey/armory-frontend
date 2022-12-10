@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default function getCharacterData(region, server, characterName) {
 
-  let backendURL = "https://api.armoryclassic.com/";
+  let backendURL = "https://api.armoryclassic.com";
   return new Promise((resolve, reject) => {
     axios
       .get(`${backendURL}/character/${region}/${server}/${characterName}`, {
