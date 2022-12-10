@@ -130,6 +130,7 @@ export default function Character(props) {
   useEffect(() => {
     if (accessToken === "") {
       getAccessToken(BNET_ID, BNET_SECRET, setAccessToken)
+      
     }
     if (accessToken !== "" && Object.values(charLoading).includes(false)) {
       if (characterExists) {

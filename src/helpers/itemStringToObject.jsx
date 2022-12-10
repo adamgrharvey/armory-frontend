@@ -10,6 +10,7 @@ export default function itemStringToObject(itemString, accessToken, setCharLoadi
       getItemData(charac[item].item.itemID, accessToken, setCharLoading, item)
         .then(res => {
           inventory[item - 1] = res;
+          inventory[item - 1].itemDetails = charac[item].item;
         })
         .catch(err => {
           //console.log(err);
