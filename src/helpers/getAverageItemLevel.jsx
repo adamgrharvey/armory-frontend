@@ -6,13 +6,18 @@ export default function getAverageItemLevel(character) {
 
   for (const key of keys) {
     if (key !== '3' && key !== '18') {
+      
       if (key === '15' && character[key].inventory_type.name === 'Two-Hand') {
         sum += character[key].level;
+      }
+      // if wearing 2 two handers, undo the extra math done previous. i.e Fury Warr
+      if (key === '16' && character[key].inventory_type.name === 'Two-Hand') {
+        sum -= character['15'].level;
       }
       sum += character[key].level;
       itemCount++;
     }
 
   }
-  return Math.round(sum / itemCount);
+  return Math.floor(sum / itemCount);
 }
