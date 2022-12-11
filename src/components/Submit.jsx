@@ -90,7 +90,7 @@ export default function Submit(props) {
             <body className='StepEntry'><span className='StepText'>Step 1:</span> Download and install the Classic Armory Addon from <a href='https://drive.google.com/file/d/17rUnduR_uBaf3uRO9WNQ85DBIV0faRG9/view?usp=sharing'>Google Drive.</a> Hoping to be on CurseForge soon!</body>
             <body className='StepEntry'><span className='StepText'>Step 2:</span> Use the in-game chat command "/Armory" to prompt the window.</body>
             <body className='StepEntry'><span className='StepText'>Step 3:</span> Copy (Ctrl-C or Cmd-C) the Character string from the game, and paste (Ctrl-V or Cmd-V) in the input field here.</body>
-            <body className='StepEntry'><span className='StepText'>Step 4:</span> Submit your character and allow a moment for it to be processed.</body>
+            <body className='StepEntry'><span className='StepText'>Step 4:</span> Submit your character and allow a moment for it to be processed. You will be redirected to your Character page once it finishes.</body>
             <br></br>
             <body>There are potential bugs with the site, and I am trying to fix them all! If you experience an issue, please reach out to me on discord at Ralph#6011.</body>
           </div>
