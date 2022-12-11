@@ -265,9 +265,6 @@ let glyphConversion = {
     "1p4n",
   // -Glyph of Windfury Weapon: Increases the chance per swing for Windfury Weapon to trigger by $55445s1%.
 
-  0:
-    "1pc9",
-  // -Glpyh of Shadow: While in Shadowform: your non-per
 
   251:
     "1pbv",
@@ -315,7 +312,7 @@ let glyphConversion = {
 
   262:
   "1pc9",
-// -Glyph of Shadow: While in Shadowform, your non-periodic spell critical strikes increase your spell power by 30% of your Spirit for 10sec.
+  // -Glyph of Shadow: While in Shadowform, your non-periodic spell critical strikes increase your spell power by 30% of your Spirit for 10sec.
 
   263:
     "1pbr",
