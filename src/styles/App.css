@@ -547,6 +547,13 @@ a:link {
 .ItemSlot.ItemDetails.Uncommon:hover {
   color: #fff;
 }
+.ItemSlot.ItemDetails.Heirloom {
+  color: #0cf;
+}
+
+.ItemSlot.ItemDetails.Heirloom:hover {
+  color: #fff;
+}
 
 .ItemSlot.ItemDetails.Common {
   color: #fff;
@@ -595,6 +602,14 @@ a:link {
 
 .ItemSlotIcon:hover {
   box-shadow: 0 0 20px #9ecaed;
+}
+
+.ItemSlotIcon.Heirloom {
+  color: #0cf;
+}
+.ItemSlotIcon.Heirloom:hover {
+  box-shadow: 0 0 20px #0cf;
+  transition: box-shadow 0.15s ease;
 }
 
 .ItemSlotIcon.Legendary {
