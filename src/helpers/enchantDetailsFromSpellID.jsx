@@ -1,6 +1,7 @@
 export default function enchantDetailsfromSpellID(spellID) {
 
   let enchantDB = {
+    2939: { name: "Cat's Swiftness", id: 34007, slug: "Minor Speed and +6 Agility" },
     1103: { name: "Exceptional Agility", id: 11111, slug: "+26 Agility" },
     3844: { name: "Exceptional Spirit", id: 44510, slug: "+45 Spirit" },
     3790: { name: "Black Magic", id: 59625, slug: "Black Magic" },
