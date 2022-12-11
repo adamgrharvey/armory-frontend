@@ -24,6 +24,10 @@
   color: rgb(50, 50, 50);
 }
 
+.hide {
+  display: none;
+}
+
 .Submit {
   position: relative;
   top: 30px;

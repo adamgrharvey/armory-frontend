@@ -43,9 +43,14 @@ export default function Specialization(props) {
 
   const [specData, setSpecData] = useState(getSpecData(props.spec, props.wowClass))
 
+  let hidden = "";
+  if (props.position === "Secondary" && specData.tree1 === 0 && specData.tree2 === 0 && specData.tree3 === 0) {
+    hidden = "hide"
+  }
+
   return (
     <button onClick={() => changeHighlight()}
-      className={`SpecBox BG-${props.wowClass.replace(/\s/g, '')}-${specData.spec} ${props.selected} CharacterHeader--${props.wowClass}`}
+      className={`SpecBox ${hidden} BG-${props.wowClass.replace(/\s/g, '')}-${specData.spec} ${props.selected} CharacterHeader--${props.wowClass}`}
     >
       <div className="SpecNameCount">
         <div className={`SpecIconandName`}>
