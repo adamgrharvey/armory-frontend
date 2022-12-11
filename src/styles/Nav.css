@@ -13,12 +13,16 @@
   font-size: 15px;
   text-transform: uppercase;
   height: 100%;
-  width: 18%;
+  width: 300px;
   line-height: 50px;
   font-weight: 700;
   flex-direction: row;
   text-align: center;
   justify-content: space-around;
+}
+
+.Nav-item {
+  margin-right: 20px;
 }
 
 .Nav-items a {

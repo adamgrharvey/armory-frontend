@@ -9,12 +9,12 @@ export default function Nav(props) {
           <div className="HomepageBtn" />
         </a>
         <a href={`/`}>
-          <div>
+          <div className="Nav-item">
             Home
           </div>
         </a>
         <a href={`/submit`}>
-          <div>
+          <div className="Nav-item">
             Upload
           </div>
         </a>
