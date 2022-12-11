@@ -93,6 +93,8 @@ export default function Submit(props) {
             <body className='StepEntry'><span className='StepText'>Step 4:</span> Submit your character and allow a moment for it to be processed. You will be redirected to your Character page once it finishes.</body>
             <br></br>
             <body>There are potential bugs with the site, and I am trying to fix them all! If you experience an issue, please reach out to me on discord at Ralph#6011.</body>
+            <br></br>
+            <body>A known bug is PvP data not being captured. Open and close your Arena UI pane before using the "/Armory" command to work around this for now.</body>
           </div>
 
         </div>
