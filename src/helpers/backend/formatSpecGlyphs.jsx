@@ -313,6 +313,10 @@ let glyphConversion = {
     "1pc1",
   // -Glyph of Shadow Word: Pain: The periodic damage ticks of your Shadow Word: Pain spell restore $s1% of your base mana.
 
+  262:
+  "1pc9",
+// -Glyph of Shadow: While in Shadowform, your non-periodic spell critical strikes increase your spell power by 30% of your Spirit for 10sec.
+
   263:
     "1pbr",
   // -Glyph of Power Word: Shield: Your Power Word: Shield also heals the target for $55672s1% of the absorption amount.
