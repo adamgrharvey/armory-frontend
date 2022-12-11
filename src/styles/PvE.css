@@ -59,10 +59,18 @@
 }
 
 .Progressbar--high>.Progressbar-progress,
-.Progressbar--levelColor>.Progressbar-progress[data-progressLevel=high] {
+.Progressbar--levelColor>.Progressbar-progress {
   background: #1b9601;
   background: -webkit-gradient(linear, left top, right top, from(#0d4a00), to(#1b9601));
   background: linear-gradient(90deg, #0d4a00 0, #1b9601);
+}
+
+.Progressbar--high>.Progressbar-progress,
+.Progressbar--levelColor:hover>.Progressbar-progress {
+  background: #1a9402;
+  background: -webkit-gradient(linear, left top, right top, from(#198002), to(#1a9402));
+  background: linear-gradient(90deg, #198002 0, #1a9402);
+  transition: background 0.25s;
 }
 
 .Progressbar--levelColor>.Progressbar-progress[data-progressLevel=medium],
@@ -72,11 +80,25 @@
   background: linear-gradient(90deg, #7b3f00 0, #c76700);
 }
 
+.Progressbar--levelColor:hover>.Progressbar-progress[data-progressLevel=medium],
+.Progressbar--medium>.Progressbar-progress {
+  background: #cf6b00;
+  background: -webkit-gradient(linear, left top, right top, from(#834401), to(#cf6b00));
+  background: linear-gradient(90deg, #834401 0, #cf6b00);
+}
+
 .Progressbar--levelColor>.Progressbar-progress[data-progressLevel=low],
 .Progressbar--low>.Progressbar-progress {
   background: #99755c;
   background: -webkit-gradient(linear, left top, right top, from(#69503f), to(#99755c));
   background: linear-gradient(90deg, #69503f 0, #99755c);
+}
+
+.Progressbar--levelColor:hover>.Progressbar-progress[data-progressLevel=low],
+.Progressbar--low>.Progressbar-progress {
+  background: #a57f63;
+  background: -webkit-gradient(linear, left top, right top, from(#705543), to(#a57f63));
+  background: linear-gradient(90deg, #705543 0, #a57f63);
 }
 
 .Progressbar {
