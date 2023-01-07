@@ -23,6 +23,11 @@ Classic Armory is a database for Characters that play World of Warcraft: Classic
 
 My goal is to create a place where people can upload their characters and view that characters data and statistics, as well as everyone elses characters!
 
+Armory is split into 3 core components:
+- Frontend | Display data in a cohesive and interesting way. Search for, and view, character profiles. Send and receive data to and from Backend.
+- Backend | Store and provide all character data, as well as thousands of achievement datapoints. RESTful API processes and imports thousands of datapoints at a time, and supplies data to frontend upon request. 
+- In-Game Data Collection App | Parse all character data and export as an encoded string. User copies this string and pastes it into the import page.
+
 ### Built With
 
 * [![React][React.js]][React-url]
