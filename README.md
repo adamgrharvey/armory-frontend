@@ -23,8 +23,6 @@ Classic Armory is a database for Characters that play World of Warcraft: Classic
 
 My goal is to create a place where people can upload their characters and view that characters data and statistics, as well as everyone elses characters!
 
-You can view the hosted site here: https://www.armoryclassic.com/
-
 ### Built With
 
 * [![React][React.js]][React-url]
