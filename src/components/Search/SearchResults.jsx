@@ -1,7 +1,7 @@
 import decapitalizeString from "../../helpers/decapitalizeString"
 export default function SearchResults(props) {
 
-  let backendURL = "https://api.armoryclassic.com";
+  let backendURL = "http://localhost:3000";
   let frontendURL = "";
 
   const evenOrOdd = function (number) {

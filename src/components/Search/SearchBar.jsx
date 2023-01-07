@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useEffect, useState } from "react";
 
 export default function SearchBar(props) {
-  let backendURL = "https://api.armoryclassic.com";
+  let backendURL = "http://localhost:3000";
   let frontendURL = "";
 
   function submitSearchString(searchString, setSearchResults) {

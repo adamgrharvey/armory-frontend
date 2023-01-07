@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default function submitStatisticData(characterData) {
-  let backendURL = "https://api.armoryclassic.com";
+  let backendURL = "http://localhost:3000";
   let stats = [];
   let character = { name: characterData.miscInfo.name, server: characterData.miscInfo.server, region: characterData.miscInfo.region }
   let values = Object.values(characterData.statistics);

@@ -8,7 +8,7 @@ import submitStatisticData from '../helpers/backend/submitStatisticData';
 import MoonLoader from 'react-spinners/MoonLoader';
 export default function Submit(props) {
   const [loading, setLoading] = useState(false);
-  let backendURL = "https://api.armoryclassic.com";
+  let backendURL = "http://localhost:3000";
   let frontendURL = "";
   const [characterString, setCharacterString] = useState("");
   const navigate = useNavigate();

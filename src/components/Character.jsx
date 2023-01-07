@@ -23,7 +23,7 @@ import PvP from './PvP/PvP';
 export default function Character(props) {
   const { accessToken, setAccessToken } = useContext(AccessTokenContext);
   const { WCLToken, setWCLToken } = useContext(WCLTokenContext);
-  // let backendURL = "https://api.armoryclassic.com";
+  // let backendURL = "http://localhost:3000";
   const [show, setShow] = useState(false);
   const [item, setItem] = useState({});
   const [loading, setLoading] = useState(true);
