@@ -40,7 +40,9 @@ Armory is split into 3 core components:
 
 !['Character-view'](https://github.com/adamgrharvey/armory-frontend/blob/master/src/images/Project/Armory_example.png)
 
-https://user-images.githubusercontent.com/104089024/202833311-885a5291-32c8-445b-9fef-6f4cb45eab95.mp4
+
+https://user-images.githubusercontent.com/104089024/219135352-1ff81fa2-8339-49b6-9860-2d994fec9cc0.mp4
+
 
 ## Getting Started
 
