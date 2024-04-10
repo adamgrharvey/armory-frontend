@@ -66,11 +66,6 @@ export default function Character(props) {
     setItem(item)
   }
 
-  let BNET_ID = 'cbeac907587149f08732abd74d2b73f8'
-  let BNET_SECRET = 'UvGoljFYvvQNhQgOw37mQs0yzjXqIGzC'
-  let WCL_ClientID = '97c539a4-ea0a-43d0-b89e-dadbaffa74a0'
-  let WCL_ClientSecret = 'OUUsiLmGn2vItGsXKwi8sAMKNP2UAdVVKUkkuiQF'
-
   const [character, setCharacter] = useState({
     inventory: {},
   })
@@ -138,8 +133,8 @@ export default function Character(props) {
   }, [charLoading, character])
 
   useEffect(() => {
-    if (accessToken === '') {
-      getAccessToken(BNET_ID, BNET_SECRET, setAccessToken)
+    if (accessToken === "") {
+      getAccessToken(process.env.REACT_APP_BNET_ID, process.env.REACT_APP_BNET_SECRET, setAccessToken)
     }
     if (accessToken !== '' && Object.values(charLoading).includes(false)) {
       if (characterExists) {
@@ -161,7 +156,7 @@ export default function Character(props) {
 
   useEffect(() => {
     if (!WCLToken) {
-      getWCLAccessToken(WCL_ClientID, WCL_ClientSecret, setWCLToken)
+      getWCLAccessToken(process.env.REACT_APP_WCL_ClientID, process.env.REACT_APP_WCL_ClientSecret, setWCLToken)
     }
   }, [WCLToken])
 
