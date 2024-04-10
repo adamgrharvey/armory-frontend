@@ -1,10 +1,10 @@
-import React from 'react';
-import axios from 'axios';
-import { useEffect, useState } from "react";
+import React from 'react'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 
 export default function SearchBar(props) {
-  let backendURL = "http://localhost:3000";
-  let frontendURL = "";
+  let backendURL = 'http://localhost:3000'
+  let frontendURL = ''
 
   function submitSearchString(searchString, setSearchResults) {
     axios
@@ -16,31 +16,31 @@ export default function SearchBar(props) {
       .then((res) => {
         // if server returns 200 (success)
         if (res.status === 200) {
-          setSearchResults(res.data);
+          setSearchResults(res.data)
         }
       })
       .catch((err) => {
-        console.log(err);
-      });
+        console.log(err)
+      })
   }
 
   return (
     <div className="Search">
-      <input className="SearchBar"
+      <input
+        className="SearchBar"
         value={props.searchString}
-        placeholder={"Enter a player name"}
+        placeholder={'Enter a player name'}
         onChange={(event) => {
-          props.setSearchString(event.target.value);
+          props.setSearchString(event.target.value)
         }}
       />
-      <button className='SearchButton'
+      <button
+        className="SearchButton"
         onClick={() => {
-          if (props.searchString != "") {
-            submitSearchString(props.searchString, props.setSearchResults);
+          if (props.searchString != '') {
+            submitSearchString(props.searchString, props.setSearchResults)
           }
-
         }}
-
       />
     </div>
   )

@@ -18,14 +18,24 @@
   align-items: center;
   color: #fff;
   font-size: 6rem;
-  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  font-family:
+    Semplicita Pro,
+    Open Sans,
+    Arial,
+    Helvetica,
+    sans-serif;
   font-weight: 600;
 }
 
 .Search {
   position: relative;
   top: -200px;
-  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  font-family:
+    Semplicita Pro,
+    Open Sans,
+    Arial,
+    Helvetica,
+    sans-serif;
   font-weight: 900;
 }
 
@@ -89,16 +99,14 @@
 .ResultServer {
   width: 33.3%;
   text-align: center;
-  color: #fff
-  
+  color: #fff;
 }
 .ResultType {
   width: 25.3%;
   text-align: right;
   margin-right: 6px;
   font-weight: 400;
-  color: rgb(184, 180, 180)
-
+  color: rgb(184, 180, 180);
 }
 
 .Result.odd {
@@ -119,7 +127,8 @@
   text-decoration: none;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: rgb(131, 128, 128);
   opacity: 1; /* Firefox */
 }
@@ -140,7 +149,6 @@
   position: relative;
   scale: 55%;
   background-size: auto;
-  
 }
 .ArmoryImgClassic {
   position: relative;

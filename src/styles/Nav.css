@@ -1,15 +1,22 @@
 .Nav {
   width: 100%;
   height: 50px;
-  color: rgb(233,149,15);
-  text-shadow: rgb(0 0 0 / 0%) 0px 0px 1px, rgb(0 0 0 / 80%) 0px 1px 2px;
+  color: rgb(233, 149, 15);
+  text-shadow:
+    rgb(0 0 0 / 0%) 0px 0px 1px,
+    rgb(0 0 0 / 80%) 0px 1px 2px;
   background-color: rgb(30, 30, 30);
-  border-bottom: 2px solid hsla(0, 0%, 100%, .2);
+  border-bottom: 2px solid hsla(0, 0%, 100%, 0.2);
 }
 
 .Nav-items {
   display: flex;
-  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  font-family:
+    Semplicita Pro,
+    Open Sans,
+    Arial,
+    Helvetica,
+    sans-serif;
   font-size: 15px;
   text-transform: uppercase;
   height: 100%;
@@ -23,7 +30,7 @@
 
 .Nav-items a {
   text-decoration: none;
-  color: rgb(233,149,15);
+  color: rgb(233, 149, 15);
 }
 
 .HomepageBtn {

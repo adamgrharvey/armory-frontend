@@ -25,7 +25,6 @@
   position: relative;
   top: -8px;
   margin-left: 20px;
-  
 }
 
 .CategoryButtonBG {
@@ -37,7 +36,6 @@
   border-radius: 5px;
   width: 158px;
   height: 22px;
-  
 }
 
 .SubCategoryButtonBG {
@@ -49,9 +47,7 @@
   border-radius: 5px;
   width: 158px;
   height: 22px;
-  
 }
-
 
 .Category {
   margin-top: 5px;
@@ -67,17 +63,15 @@
   color: yellow;
 }
 
-.SubcategoryTextColor{
+.SubcategoryTextColor {
   color: white;
 }
-
-
 
 .AllCategoryText {
   position: relative;
   top: -13px;
   text-overflow: ellipsis;
-  overflow:hidden; 
+  overflow: hidden;
   white-space: nowrap;
   text-align: left;
   margin-left: 3px;
@@ -91,7 +85,6 @@
 .Absolute {
   position: absolute;
   top: 1px;
-  
 }
 
 .Highlight {
@@ -108,7 +101,6 @@
   height: 13px;
 }
 
-
 .hover {
   width: 148px;
   height: 13px;
@@ -123,6 +115,3 @@
   width: 148px;
   height: 13px;
 }
-
-
-

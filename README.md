@@ -1,4 +1,3 @@
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -15,34 +14,31 @@
 </div>
 </details>
 
-
 ## About The Project
-
 
 Classic Armory is a database for Characters that play World of Warcraft: Classic. It is a work in progress, and is currently in the beta stage of development.
 
 My goal is to create a place where people can upload their characters and view that characters data and statistics, as well as everyone elses characters!
 
 Armory is split into 3 core components:
+
 - Frontend | Display data in a cohesive and interesting way. Search for, and view, character profiles. Send and receive data to and from Backend.
-- Backend | Store and provide all character data, as well as thousands of achievement datapoints. RESTful API processes and imports thousands of datapoints at a time, and supplies data to frontend upon request. 
+- Backend | Store and provide all character data, as well as thousands of achievement datapoints. RESTful API processes and imports thousands of datapoints at a time, and supplies data to frontend upon request.
 - In-Game Data Collection App | Parse all character data and export as an encoded string. User copies this string and pastes it into the import page.
 
 ### Built With
 
-* [![React][React.js]][React-url]
-* ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-* ![Rails](https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
-* ![SQLite3](https://img.shields.io/badge/sqlite3-%230F80CC.svg?style=for-the-badge&logo=sqlite&logoColor=white)
-* ![Axios](https://img.shields.io/static/v1?style=for-the-badge&message=Axios&color=5A29E4&logo=Axios&logoColor=FFFFFF&label=)
+- [![React][React.js]][React-url]
+- ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+- ![Rails](https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
+- ![SQLite3](https://img.shields.io/badge/sqlite3-%230F80CC.svg?style=for-the-badge&logo=sqlite&logoColor=white)
+- ![Axios](https://img.shields.io/static/v1?style=for-the-badge&message=Axios&color=5A29E4&logo=Axios&logoColor=FFFFFF&label=)
 
 ## Examples
 
 !['Character-view'](https://github.com/adamgrharvey/armory-frontend/blob/master/src/images/Project/Armory_example.png)
 
-
 https://user-images.githubusercontent.com/104089024/219136427-19c2c505-a9d3-4468-b928-c69d3316cd0d.mp4
-
 
 ## Getting Started
 
@@ -67,16 +63,15 @@ To get a local copy up and running follow these simple example steps.
    ```sh
     cd Armory
     bundle install
-    ```
+   ```
 5. Create database and start server
-    ```sh
-      rails db:setup
-      rails server
-    ```
+   ```sh
+     rails db:setup
+     rails server
+   ```
 6. Open `localhost:3001` in your browser
 
-7. *Optional*: Install the ClassicArmory WoW Addon [https://github.com/adamgrharvey/ClassicArmory] to export your character data, and submit it to the site! 
-
+7. _Optional_: Install the ClassicArmory WoW Addon [https://github.com/adamgrharvey/ClassicArmory] to export your character data, and submit it to the site!
 
 ## Contributing
 
@@ -91,18 +86,9 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
-
-
-
-
-

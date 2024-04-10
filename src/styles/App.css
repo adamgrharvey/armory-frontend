@@ -12,7 +12,6 @@ html {
   padding-top: 200px;
 }
 
-
 .Tooltip {
   display: flex;
   justify-content: flex-start;
@@ -20,12 +19,11 @@ html {
   float: left;
   width: 310px;
   visibility: visible;
-  font-family: Verdana, "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: Verdana, 'Open Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 12px;
   line-height: 17px;
   justify-content: space-between;
 }
-
 
 .Logo {
   background-repeat: no-repeat;
@@ -64,7 +62,12 @@ html {
 .SectionHeader {
   margin-top: 20px;
   margin-bottom: 5px;
-  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  font-family:
+    Semplicita Pro,
+    Open Sans,
+    Arial,
+    Helvetica,
+    sans-serif;
   font-weight: 600;
   font-size: 1.8rem;
   line-height: 1.5;
@@ -78,8 +81,7 @@ html {
   display: flex;
   padding-right: 20px;
   margin-right: 20px;
-  border-right: 1px solid hsla(0, 0%, 100%, .2);
-
+  border-right: 1px solid hsla(0, 0%, 100%, 0.2);
 }
 
 .CharacterHeader-info {
@@ -102,7 +104,7 @@ html {
 .CharacterHeader-info-chardetails {
   display: flex;
   flex-direction: row;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 1.1rem;
   text-align: top;
   margin-right: 10px;
@@ -118,7 +120,6 @@ html {
   text-align: center;
 }
 
-
 .CharacterHeader-ilvl {
   margin-left: 2px;
 }
@@ -130,7 +131,12 @@ html {
 }
 
 .CharacterHeader-name {
-  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  font-family:
+    Semplicita Pro,
+    Open Sans,
+    Arial,
+    Helvetica,
+    sans-serif;
   font-weight: 700;
   font-size: 2.2395rem;
   line-height: 1.5;
@@ -138,26 +144,31 @@ html {
   text-align: left;
 }
 
-
 .CharacterHeader-name.CharacterHeader--ROGUE {
   color: rgb(255, 244, 98);
 }
 
 .Divider {
   margin-top: 15px !important;
-  border-bottom: 1px solid hsla(0, 0%, 100%, .2);
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
   width: 100%;
   position: relative;
 }
 
-
 .CharacterHeader-title {
   color: rgb(232, 230, 227);
-  text-shadow: rgb(0 0 0 / 0%) 0px 0px 1px, rgb(0 0 0 / 80%) 0px 1px 2px;
+  text-shadow:
+    rgb(0 0 0 / 0%) 0px 0px 1px,
+    rgb(0 0 0 / 80%) 0px 1px 2px;
   font-size: 1.08rem;
   line-height: 1.5;
   text-align: left;
-  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  font-family:
+    Semplicita Pro,
+    Open Sans,
+    Arial,
+    Helvetica,
+    sans-serif;
   font-weight: 700;
   max-width: 350px;
 }
@@ -243,19 +254,16 @@ html {
   margin-right: 30%;
 }
 
-
 .Table {
   width: 100%;
   display: inline-table;
-  vertical-align: inherit
+  vertical-align: inherit;
 }
 
 .InlineTable {
   display: inline-table;
   vertical-align: inherit;
 }
-
-
 
 .ItemSection.left {
   display: flex;
@@ -285,27 +293,34 @@ html {
   text-align: left;
 }
 
-
 .ItemSlot {
   display: flex;
   align-items: flex-start;
   margin: 8px;
   color: #9d9d9d;
-  font: 14px "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font:
+    14px 'Open Sans',
+    Arial,
+    'Helvetica Neue',
+    Helvetica,
+    sans-serif;
   font-weight: 600;
 }
 
 .CharacterNav {
-  
   display: flex;
   position: relative;
-  top:10px;
+  top: 10px;
   justify-content: center;
-
 }
 
 .CharacterNav-item {
-  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  font-family:
+    Semplicita Pro,
+    Open Sans,
+    Arial,
+    Helvetica,
+    sans-serif;
   font-size: 15px;
   text-transform: uppercase;
   margin: 10px;
@@ -316,13 +331,13 @@ html {
   padding: 6.66666667px 10px;
   background-color: transparent;
   background-repeat: no-repeat;
-  text-decoration:none;
+  text-decoration: none;
   border: none;
   cursor: pointer;
   overflow: hidden;
   outline: none;
-  -webkit-transition: all .2s cubic-bezier(.23, 1, .32, 1) 0s;
-  transition: all .2s cubic-bezier(.23, 1, .32, 1) 0s;
+  -webkit-transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1) 0s;
+  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1) 0s;
 }
 .CharacterNav-item:hover {
   background-color: #f8b700;
@@ -358,11 +373,15 @@ html {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font: 14px "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font:
+    14px 'Open Sans',
+    Arial,
+    'Helvetica Neue',
+    Helvetica,
+    sans-serif;
   font-weight: 600;
   flex-wrap: wrap;
   margin-top: 0px;
-
 }
 
 .ItemSlot.ItemDetails:hover {
@@ -370,7 +389,7 @@ html {
 }
 
 .ItemSlot.ItemDetails.Legendary {
-  color: #ff8000
+  color: #ff8000;
 }
 
 .ItemSlot.ItemDetails.Legendary:hover {
@@ -414,7 +433,7 @@ html {
 }
 
 .itemrow.ItemDetails.Legendary {
-  color: #ff8000
+  color: #ff8000;
 }
 
 .itemrow.ItemDetails.Epic {
@@ -436,7 +455,6 @@ html {
 .itemrow.ItemDetails.Poor {
   color: #9d9d9d;
 }
-
 
 .ItemSlotIcon {
   height: 56px;
@@ -487,7 +505,7 @@ html {
 }
 
 .ItemSlotIcon.Common {
-  outline-color: #fff
+  outline-color: #fff;
 }
 
 .ItemSlotIcon.Common:hover {
@@ -550,85 +568,85 @@ html {
 }
 
 .c6 {
-  color: #C41E3A;
+  color: #c41e3a;
   justify-content: flex-start;
 }
 
 .CharacterHeader-name.CharacterHeader--DEATHKNIGHT {
-  color: #C41E3A;
+  color: #c41e3a;
 }
 
 .c12 {
-  color: #A330C9;
+  color: #a330c9;
   justify-content: flex-start;
 }
 
 .CharacterHeader-name.CharacterHeader--DEMONHUNTER {
-  color: #A330C9;
+  color: #a330c9;
 }
 
 .c11 {
-  color: #FF7C0A;
+  color: #ff7c0a;
 }
 
 .CharacterHeader-name.CharacterHeader--DRUID {
-  color: #FF7C0A;
+  color: #ff7c0a;
 }
 
 .c13 {
-  color: #33937F;
+  color: #33937f;
 }
 
 .CharacterHeader-name.CharacterHeader--EVOKER {
-  color: #33937F;
+  color: #33937f;
 }
 
 .c3 {
-  color: #AAD372;
+  color: #aad372;
 }
 
 .CharacterHeader-name.CharacterHeader--HUNTER {
-  color: #AAD372;
+  color: #aad372;
 }
 
 .c8 {
-  color: #3FC7EB;
+  color: #3fc7eb;
 }
 
 .CharacterHeader-name.CharacterHeader--MAGE {
-  color: #3FC7EB;
+  color: #3fc7eb;
 }
 
 .c10 {
-  color: #00FF98;
+  color: #00ff98;
 }
 
 .CharacterHeader-name.CharacterHeader--MONK {
-  color: #00FF98;
+  color: #00ff98;
 }
 
 .c2 {
-  color: #F48CBA;
+  color: #f48cba;
 }
 
 .CharacterHeader-name.CharacterHeader--PALADIN {
-  color: #F48CBA;
+  color: #f48cba;
 }
 
 .c5 {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .CharacterHeader-name.CharacterHeader--PRIEST {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .c4 {
-  color: #FFF468;
+  color: #fff468;
 }
 
 .CharacterHeader-name.CharacterHeader--ROGUE {
-  color: #FFF468;
+  color: #fff468;
 }
 
 .c7 {
@@ -640,26 +658,24 @@ html {
 }
 
 .c9 {
-  color: #8788EE;
+  color: #8788ee;
 }
 
 .CharacterHeader-name.CharacterHeader--WARLOCK {
-  color: #8788EE;
+  color: #8788ee;
 }
 
 .c1 {
-  color: #C69B6D;
+  color: #c69b6d;
 }
 
 .CharacterHeader-name.CharacterHeader--WARRIOR {
-  color: #C69B6D;
+  color: #c69b6d;
 }
-
 
 .itemrow.itemlevelORset {
   color: #ffd100;
 }
-
 
 .itemrow.statrow {
   flex-direction: column;

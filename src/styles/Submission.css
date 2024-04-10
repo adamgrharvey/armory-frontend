@@ -14,9 +14,14 @@
   width: fit-content;
   height: 18px;
   border: none;
-  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  font-family:
+    Semplicita Pro,
+    Open Sans,
+    Arial,
+    Helvetica,
+    sans-serif;
   font-weight: 700;
-  background-color: rgb(233,149,15);
+  background-color: rgb(233, 149, 15);
   margin: 10px;
 }
 
@@ -40,18 +45,25 @@
 
 .StepText {
   font-size: x-large;
-  color: rgb(233,149,15);
+  color: rgb(233, 149, 15);
   text-decoration: underline;
   font-weight: 700;
 }
 
 .SubmissionPage {
-  color: rgb(233,149,15);
+  color: rgb(233, 149, 15);
   font-size: 1.35rem;
   line-height: 50px;
   font-weight: 700;
-  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
-  text-shadow: rgb(0 0 0 / 0%) 0px 0px 1px, rgb(0 0 0 / 80%) 0px 1px 2px;
+  font-family:
+    Semplicita Pro,
+    Open Sans,
+    Arial,
+    Helvetica,
+    sans-serif;
+  text-shadow:
+    rgb(0 0 0 / 0%) 0px 0px 1px,
+    rgb(0 0 0 / 80%) 0px 1px 2px;
   display: flex;
   flex-direction: row;
 }
@@ -59,7 +71,12 @@
 .SubmissionInput {
   resize: none;
   padding: 5px;
-  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  font-family:
+    Semplicita Pro,
+    Open Sans,
+    Arial,
+    Helvetica,
+    sans-serif;
   height: 250px;
   width: 100%;
 }
@@ -69,7 +86,6 @@
   align-items: center;
   width: 70%;
 }
-
 
 .HowTo {
   position: relative;

@@ -1,12 +1,11 @@
-
- export default function isTitleAfter(title) {
+export default function isTitleAfter(title) {
   if (title === null) {
-    return false;
+    return false
   }
-  let isAfter = false;
-  if (title.slice(0,2) === 'of' || title.slice(0,3) === 'the' || title.slice(0,2) === ', ') {
-    isAfter = true;
+  let isAfter = false
+  if (title.slice(0, 2) === 'of' || title.slice(0, 3) === 'the' || title.slice(0, 2) === ', ') {
+    isAfter = true
   }
 
-  return isAfter;
- }
+  return isAfter
+}

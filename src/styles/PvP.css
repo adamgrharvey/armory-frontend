@@ -14,9 +14,16 @@
   height: 260px;
   font-size: 1rem;
   line-height: 1.5;
-  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  font-family:
+    Semplicita Pro,
+    Open Sans,
+    Arial,
+    Helvetica,
+    sans-serif;
   color: #fff;
-  text-shadow: 0 0 1px transparent, 0 1px 2px rgb(0 0 0 / 80%);
+  text-shadow:
+    0 0 1px transparent,
+    0 1px 2px rgb(0 0 0 / 80%);
   font-weight: 700;
   position: relative;
   text-align: center;
@@ -42,9 +49,16 @@
   height: 260px;
   font-size: 1rem;
   line-height: 1.5;
-  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  font-family:
+    Semplicita Pro,
+    Open Sans,
+    Arial,
+    Helvetica,
+    sans-serif;
   color: #fff;
-  text-shadow: 0 0 1px transparent, 0 1px 2px rgb(0 0 0 / 80%);
+  text-shadow:
+    0 0 1px transparent,
+    0 1px 2px rgb(0 0 0 / 80%);
   font-weight: 700;
   position: relative;
   text-align: center;

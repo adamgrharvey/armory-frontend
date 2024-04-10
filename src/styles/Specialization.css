@@ -4,7 +4,12 @@
   min-width: 100%;
   height: 150px;
   border-radius: 5px;
-  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  font-family:
+    Semplicita Pro,
+    Open Sans,
+    Arial,
+    Helvetica,
+    sans-serif;
   font-size: 18px;
   line-height: 1em;
   font-weight: 700;
@@ -28,7 +33,6 @@
   justify-content: space-between;
   width: 100%;
 }
-
 
 .SpecNameCount {
   display: flex;
@@ -375,85 +379,85 @@
 }
 
 .c6 {
-  color: #C41E3A;
+  color: #c41e3a;
   justify-content: flex-start;
 }
 
 .CharacterHeader--DEATHKNIGHT {
-  color: #C41E3A;
+  color: #c41e3a;
 }
 
 .c12 {
-  color: #A330C9;
+  color: #a330c9;
   justify-content: flex-start;
 }
 
 .CharacterHeader--DEMONHUNTER {
-  color: #A330C9;
+  color: #a330c9;
 }
 
 .c11 {
-  color: #FF7C0A;
+  color: #ff7c0a;
 }
 
 .CharacterHeader--DRUID {
-  color: #FF7C0A;
+  color: #ff7c0a;
 }
 
 .c13 {
-  color: #33937F;
+  color: #33937f;
 }
 
 .CharacterHeader--EVOKER {
-  color: #33937F;
+  color: #33937f;
 }
 
 .c3 {
-  color: #AAD372;
+  color: #aad372;
 }
 
 .CharacterHeader--HUNTER {
-  color: #AAD372;
+  color: #aad372;
 }
 
 .c8 {
-  color: #3FC7EB;
+  color: #3fc7eb;
 }
 
 .CharacterHeader--MAGE {
-  color: #3FC7EB;
+  color: #3fc7eb;
 }
 
 .c10 {
-  color: #00FF98;
+  color: #00ff98;
 }
 
 .CharacterHeader--MONK {
-  color: #00FF98;
+  color: #00ff98;
 }
 
 .c2 {
-  color: #F48CBA;
+  color: #f48cba;
 }
 
 .CharacterHeader--PALADIN {
-  color: #F48CBA;
+  color: #f48cba;
 }
 
 .c5 {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .CharacterHeader--PRIEST {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .c4 {
-  color: #FFF468;
+  color: #fff468;
 }
 
 .CharacterHeader--ROGUE {
-  color: #FFF468;
+  color: #fff468;
 }
 
 .c7 {
@@ -465,17 +469,17 @@
 }
 
 .c9 {
-  color: #8788EE;
+  color: #8788ee;
 }
 
 .CharacterHeader--WARLOCK {
-  color: #8788EE;
+  color: #8788ee;
 }
 
 .c1 {
-  color: #C69B6D;
+  color: #c69b6d;
 }
 
 .CharacterHeader--WARRIOR {
-  color: #C69B6D;
+  color: #c69b6d;
 }

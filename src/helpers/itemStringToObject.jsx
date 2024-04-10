@@ -1,5 +1,5 @@
-import readItemString from "./readItemString";
-import getItemData from "./blizzardAPI/getItemData";
+import readItemString from './readItemString'
+import getItemData from './blizzardAPI/getItemData'
 
 export default function itemStringToObject(itemString, accessToken, setCharLoading, setCharacter) {
   let inventory = {}
@@ -8,15 +8,14 @@ export default function itemStringToObject(itemString, accessToken, setCharLoadi
   for (const item of keys) {
     if (charac[item].item) {
       getItemData(charac[item].item.itemID, accessToken, setCharLoading, item)
-        .then(res => {
-          inventory[item - 1] = res;
+        .then((res) => {
+          inventory[item - 1] = res
         })
-        .catch(err => {
-          console.log(err);
-        });
+        .catch((err) => {
+          console.log(err)
+        })
     }
-
   }
-  setCharacter(prev => ({ ...prev, inventory }))
-  return;
+  setCharacter((prev) => ({ ...prev, inventory }))
+  return
 }

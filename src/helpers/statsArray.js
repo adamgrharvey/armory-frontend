@@ -1,7 +1,7 @@
-export default function statsArray (item, isOnEquipStat) {
-  let stats = item.preview_item.stats ? item.preview_item.stats : [];
-  let spells = item.preview_item.spells ? item.preview_item.spells : [];
-  let outArr = [];
+export default function statsArray(item, isOnEquipStat) {
+  let stats = item.preview_item.stats ? item.preview_item.stats : []
+  let spells = item.preview_item.spells ? item.preview_item.spells : []
+  let outArr = []
 
   if (!isOnEquipStat) {
     for (let i = 0; i < stats.length; i++) {
@@ -20,7 +20,6 @@ export default function statsArray (item, isOnEquipStat) {
       for (let i = 0; i < spells.length; i++) {
         outArr.push(spells[i].description)
       }
-
     }
     return outArr
   }

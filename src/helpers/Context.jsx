@@ -1,3 +1,3 @@
-import { createContext } from "react";
+import { createContext } from 'react'
 
-export const AccessTokenContext = createContext({});
+export const AccessTokenContext = createContext({})
