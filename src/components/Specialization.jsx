@@ -1,65 +1,57 @@
-import getSpecData from "../helpers/getSpecData"
-import { useState } from "react";
+import getSpecData from '../helpers/getSpecData'
+import { useState } from 'react'
 
 export default function Specialization(props) {
-
-  let selectionData = {};
+  let selectionData = {}
 
   const changeHighlight = function () {
     if (props.position === 'Primary') {
-      setPrimaryHighlight();
+      setPrimaryHighlight()
     } else {
-      setSecondaryHighlight();
+      setSecondaryHighlight()
     }
   }
 
   const setSecondaryHighlight = function () {
-
     props.setSpecSelected((prev) => ({
       ...prev,
       talentString: props.characterData.secondarySpecString,
-      primaryHighlight: "",
-      secondaryHighlight: "IsSelected"
+      primaryHighlight: '',
+      secondaryHighlight: 'IsSelected',
     }))
-
   }
 
   const setPrimaryHighlight = function () {
-
     props.setSpecSelected((prev) => ({
       ...prev,
       talentString: props.characterData.primarySpecString,
-      primaryHighlight: "IsSelected",
-      secondaryHighlight: ""
+      primaryHighlight: 'IsSelected',
+      secondaryHighlight: '',
     }))
-
   }
 
-  if (props.position === "Primary") {
-    selectionData = { primaryHighlight: "IsSelected", secondaryHighlight: "" }
+  if (props.position === 'Primary') {
+    selectionData = { primaryHighlight: 'IsSelected', secondaryHighlight: '' }
   } else {
-    selectionData = { primaryHighlight: "", secondaryHighlight: "IsSelected" }
+    selectionData = { primaryHighlight: '', secondaryHighlight: 'IsSelected' }
   }
 
   const [specData, setSpecData] = useState(getSpecData(props.spec, props.wowClass))
 
   return (
-    <button onClick={() => changeHighlight()}
+    <button
+      onClick={() => changeHighlight()}
       className={`SpecBox BG-${props.wowClass.replace(/\s/g, '')}-${specData.spec} ${props.selected} CharacterHeader--${props.wowClass}`}
     >
       <div className="SpecNameCount">
         <div className={`SpecIconandName`}>
           <div className={`Spec Spec-${props.wowClass.replace(/\s/g, '')}-${specData.spec}`} />
           <div className="SpecNameCount">
-            <div>
-              {specData.spec}
-            </div>
-            <div>
-              {`${specData.tree1} / ${specData.tree2} / ${specData.tree3}`}
-            </div>
+            <div>{specData.spec}</div>
+            <div>{`${specData.tree1} / ${specData.tree2} / ${specData.tree3}`}</div>
           </div>
         </div>
       </div>
-    </button >
+    </button>
   )
 }

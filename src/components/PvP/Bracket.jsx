@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export default function Bracket(props) {
   // elite 2375+
@@ -11,50 +11,52 @@ export default function Bracket(props) {
   // no data
 
   const getWinLossRatio = function (played, won) {
-    return won / played * 100;
+    return (won / played) * 100
   }
 
   const getArenaImageData = function (rating) {
-
     if (!rating) {
-      return { "css": "None", label: "No Rated Play Data" }
+      return { css: 'None', label: 'No Rated Play Data' }
     }
     if (rating < 1400) {
-      return { "css": "Unranked", label: "Combatant" }
+      return { css: 'Unranked', label: 'Combatant' }
     }
     if (rating < 1550) {
-      return { "css": "Challenger", label: "Challenger I" }
+      return { css: 'Challenger', label: 'Challenger I' }
     }
     if (rating < 1775) {
-      return { "css": "Challenger", label: "Challenger II" }
+      return { css: 'Challenger', label: 'Challenger II' }
     }
     if (rating < 1925) {
-      return { "css": "Rival", label: "Rival I" }
+      return { css: 'Rival', label: 'Rival I' }
     }
     if (rating < 2075) {
-      return { "css": "Rival", label: "Rival II" }
+      return { css: 'Rival', label: 'Rival II' }
     }
     if (rating < 2375) {
-      return { "css": "Duelist", label: "Duelist" }
+      return { css: 'Duelist', label: 'Duelist' }
     }
-    return { "css": "Elite", label: "Elite" }
+    return { css: 'Elite', label: 'Elite' }
   }
 
-  let arenaImageData = getArenaImageData(props.PvP[props.label].rating);
+  let arenaImageData = getArenaImageData(props.PvP[props.label].rating)
 
   return (
-    <div className='Bracket'>
+    <div className="Bracket">
       <div className={`ArenaRankLogo ArenaRank-${arenaImageData.css}`} />
-      <div className='Title'>{`${props.label}`}</div>
-      <div className={`ArenaTitle ${arenaImageData.css == "None" ? "None" : ""}`}>{`${arenaImageData.label}`}</div>
-      <div className='honorkillsdropdown'>
-        <div className='Rating'>
-          {props.PvP[props.label].seasonPlayed > 0 && `Current Rating: ${props.PvP[props.label].rating}`}
+      <div className="Title">{`${props.label}`}</div>
+      <div
+        className={`ArenaTitle ${arenaImageData.css == 'None' ? 'None' : ''}`}
+      >{`${arenaImageData.label}`}</div>
+      <div className="honorkillsdropdown">
+        <div className="Rating">
+          {props.PvP[props.label].seasonPlayed > 0 &&
+            `Current Rating: ${props.PvP[props.label].rating}`}
         </div>
-        <div className='WinLoss'>
-          {props.PvP[props.label].seasonPlayed > 0 && `${props.PvP[props.label].seasonWon} W | ${props.PvP[props.label].seasonPlayed - props.PvP[props.label].seasonWon} L (${Math.round(getWinLossRatio(props.PvP[props.label].seasonPlayed, props.PvP[props.label].seasonWon))}%)`}
+        <div className="WinLoss">
+          {props.PvP[props.label].seasonPlayed > 0 &&
+            `${props.PvP[props.label].seasonWon} W | ${props.PvP[props.label].seasonPlayed - props.PvP[props.label].seasonWon} L (${Math.round(getWinLossRatio(props.PvP[props.label].seasonPlayed, props.PvP[props.label].seasonWon))}%)`}
         </div>
-
       </div>
     </div>
   )

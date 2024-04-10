@@ -72,6 +72,7 @@
     "@storybook/testing-library": "^0.0.13",
     "babel-plugin-named-exports-order": "^0.0.2",
     "babel-preset-stage-0": "^6.24.1",
+    "prettier": "3.2.5",
     "prop-types": "^15.8.1",
     "webpack": "^5.74.0"
   }

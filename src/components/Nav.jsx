@@ -1,6 +1,6 @@
 export default function Nav(props) {
-  let backendURL = "http://localhost:3000";
-  let frontendURL = "";
+  let backendURL = 'http://localhost:3000'
+  let frontendURL = ''
 
   return (
     <div className="Nav">
@@ -9,9 +9,7 @@ export default function Nav(props) {
           <div className="HomepageBtn" />
         </a>
         <a href={`/submit`}>
-          <div>
-            Upload
-          </div>
+          <div>Upload</div>
         </a>
       </div>
     </div>
