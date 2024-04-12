@@ -14,8 +14,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { AccessTokenContext } from './helpers/Context'
 import { WCLTokenContext } from './helpers/WCLContext'
 import Character from './components/Character'
-import Submit from './components/Submit'
-import Homepage from './components/Homepage'
 
 function App() {
   const [accessToken, setAccessToken] = useState('')
