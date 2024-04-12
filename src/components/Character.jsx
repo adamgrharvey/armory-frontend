@@ -227,7 +227,7 @@ export default function Character(props) {
             </div>
           )}
 
-          {navItem.selected === 'Achievements' && <Achievements />}
+          {navItem.selected === 'Achievements' && <Achievements characterStats={character.characterData.statistics}/>}
         </div>
       )}
     </div>

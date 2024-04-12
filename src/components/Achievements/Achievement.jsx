@@ -11,8 +11,8 @@ export default function Achievement(props) {
   let ach = props.achievement
   let category = formatCategory(props.achievement.category)
   let date = ''
-  if (ach.date_completed) {
-    date = formatAchievementDate(ach.date_completed)
+  if (ach.dateCompleted) {
+    date = formatAchievementDate(ach.dateCompleted)
   }
 
   return props.category === '' ||
@@ -21,7 +21,7 @@ export default function Achievement(props) {
       // is this complete?
       ach &&
       !ach.is_statistic &&
-      ach.date_completed) ? (
+      ach.dateCompleted) ? (
     <div id={`${ach.id}`} className="Achievement">
       <div className="AchievementBackground">
         <div className="AchTitleBackground">
@@ -81,7 +81,7 @@ export default function Achievement(props) {
     props.achievement.sub_category == props.subCategory &&
     ach &&
     !ach.is_statistic &&
-    !ach.date_completed &&
+    !ach.dateCompleted &&
     !ach.name.includes('Realm First') &&
     ach.points !== 0 ? (
     <div id={`${ach.id}`} className="Achievement notEarned">
@@ -174,7 +174,7 @@ export default function Achievement(props) {
               </div>
             </div>
             <div>
-              {formatAchievementDate(ach.date_completed)}
+              {formatAchievementDate(ach.dateCompleted)}
             </div>
           </div>
         </div>

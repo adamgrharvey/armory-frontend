@@ -1,47 +1,32 @@
-import React, { Fragment } from 'react'
-import { useParams } from 'react-router-dom'
+import React from 'react'
 import Achievement from './Achievement'
-import getCharacterStatistics from '../../helpers/backend/getCharacterStatistics'
-import { useEffect, useState } from 'react'
-import MoonLoader from 'react-spinners/MoonLoader'
+import { useState } from 'react'
 import CategoryButton from './CategoryButton'
 import SubCategoryButton from './SubCategoryButton'
-import getCharacterData from '../../helpers/backend/getCharacterData'
-import characterStringSplitter from '../../helpers/backend/parseSubmissionData'
+import { getStatistics } from './Statistics'
 
 export default function Achievements(props) {
-  let params = useParams()
-  const [achievements, setAchievements] = useState([])
-  const [charLoading, setCharLoading] = useState(true)
-  const [achLoading, setAchLoading] = useState(true)
   const [category, setCategory] = useState('')
   const [subCategory, setSubCategory] = useState(null)
   const [hover, setHover] = useState(null)
   const [showSubCategory, setShowSubCategory] = useState(false)
-  const [characterExists, setCharacterExists] = useState(false)
-  const [character, setCharacter] = useState({
-    inventory: {},
-  })
 
-  useEffect(() => {
-    setCharLoading(true)
-    getCharacterStatistics(params.region, params.server, params.characterName, category).then(
-      (res) => {
-        console.log(res)
-        setAchievements(res)
-        setAchLoading(false)
-      }
-    )
-  }, [category])
+  let achievements = Object.values(getStatistics())
+  let complete = achievements.filter((ach) => ach.dateCompleted)
+  let incomplete = achievements.filter((ach) => !ach.dateCompleted)
+  complete.sort((a, b) => b.dateCompleted - a.dateCompleted)
 
-  useEffect(() => {
-    if (achLoading) {
-      getCharacterData(params.region, params.server, params.characterName).then((results) => {
-        console.log(results)
-        characterStringSplitter(results.character_string, setCharacter)
-      })
+  let display = [...complete, ...incomplete]
+
+  if (category !== '') {
+    complete = complete.filter((ach) => ach.category?.toLocaleLowerCase() === category)
+    if (subCategory) {
+      complete = complete.filter((ach) => ach.sub_category === subCategory)
     }
-  }, [])
+  } else {
+    display = complete.filter((ach) => ach.dateCompleted)
+    display = complete.slice(0, 20)
+  }
 
   return (
     <div>
@@ -227,22 +212,11 @@ export default function Achievements(props) {
             setShowSubCategory={setShowSubCategory}
           />
         </div>
-        {achLoading ? (
-          <div className="Loader">
-            <MoonLoader color={'#5118a7'} width={'50%'} height={8} />
-          </div>
-        ) : (
-          <div className="AchievementList">
-            {achievements.map((i) => (
-              <Achievement
-                category={category}
-                subCategory={subCategory}
-                achievement={i}
-                key={i.id}
-              />
-            ))}
-          </div>
-        )}
+        <div className="AchievementList">
+          {display.map((i) => (
+            <Achievement category={category} subCategory={subCategory} achievement={i} key={i.id} />
+          ))}
+        </div>
       </div>
     </div>
   )
