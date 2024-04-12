@@ -20,9 +20,7 @@ export default function getWCLParseData(
     }
   }
 
-  console.log(spec)
   let role = getRole(spec)
-  console.log(role)
 
   let data10man = {
     query: `{

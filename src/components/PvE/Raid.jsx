@@ -43,7 +43,7 @@ export default function Raid(props) {
   useEffect(() => {
     if (WCLToken !== '') {
       getWCLParseData(
-        props.characterMisc.name,
+        'Subspace',
         props.characterMisc.server,
         props.characterMisc.region,
         WCLToken,
@@ -146,7 +146,7 @@ export default function Raid(props) {
             <div className={`Statistics${show10 ? '' : ' HideDiffStats'}`}>
               {props.instance.bosses.map((i, index) => {
                 return (
-                  <div className="Statistic">
+                  <div key={`stat10` + index} className="Statistic">
                     {props.stats[props.instance['10bossIDs'][index]] ? (
                       <div>
                         {`${props.stats[props.instance['10bossIDs'][index]].value} x` +
@@ -211,7 +211,7 @@ export default function Raid(props) {
             <div className={`Statistics${show25 ? '' : ' HideDiffStats'}`}>
               {props.instance.bosses.map((i, index) => {
                 return (
-                  <div className="Statistic">
+                  <div key={`stat25` + index} className="Statistic">
                     {props.stats[props.instance['25bossIDs'][index]] ? (
                       <div>
                         {`${props.stats[props.instance['25bossIDs'][index]].value} x` +
