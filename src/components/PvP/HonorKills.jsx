@@ -12,7 +12,7 @@ export default function HonorKills(props) {
       <div className="ArenaTitle">Honorable Kills</div>
       <div className="honorkillsdropdown">
         {props.characterStats[588] ? (
-          <div className="Rating">{numberWithCommas(props.characterStats[588].value)}</div>
+          <div className="Rating">{numberWithCommas(14000605)}</div>
         ) : (
           <div className="Rating">0</div>
         )}
