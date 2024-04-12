@@ -27,13 +27,7 @@ function App() {
         <WCLTokenContext.Provider value={{ WCLToken, setWCLToken }}>
           <div className="App">
             <Routes>
-              <Route path={`${frontendURL}/`} element={<Homepage />} />
-              <Route path={`${frontendURL}/submit`} element={<Submit />} />
-              <Route
-                exact
-                path={`${frontendURL}/character/:region/:server/:characterName/`}
-                element={<Character />}
-              />
+              <Route path={`${frontendURL}/`} element={<Character />} />
             </Routes>
           </div>
         </WCLTokenContext.Provider>
