@@ -109,7 +109,6 @@ export default function Character(props) {
     if (loading && !characterExists) {
       Promise.all([getCharacterData(region, server, characterName)]).then((results) => {
         if (!character.characterData && results[0] && results[0].character_string) {
-          console.log(results)
           characterStringSplitter(
             results[0].character_string,
             setCharacter,
@@ -128,7 +127,6 @@ export default function Character(props) {
   useEffect(() => {
     if (!Object.values(charLoading).includes(false) && charLoading) {
       setLoading(false)
-      console.log(character)
     }
   }, [charLoading, character])
 
@@ -147,12 +145,6 @@ export default function Character(props) {
       }
     }
   }, [accessToken, loading, characterExists])
-
-  useEffect(() => {
-    if (!loading && character.inventory[0]) {
-      console.log(character)
-    }
-  }, [loading])
 
   useEffect(() => {
     if (!WCLToken) {
