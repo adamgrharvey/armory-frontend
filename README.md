@@ -14,7 +14,8 @@
 </div>
 </details>
 
-## About The Project
+
+# About The Project
 
 Classic Armory is a database for Characters that play World of Warcraft: Classic. It is a work in progress, and is currently in the beta stage of development.
 
@@ -22,9 +23,9 @@ My goal is to create a place where people can upload their characters and view t
 
 Armory is split into 3 core components:
 
-- Frontend | Display data in a cohesive and interesting way. Search for, and view, character profiles. Send and receive data to and from Backend.
-- Backend | Store and provide all character data, as well as thousands of achievement datapoints. RESTful API processes and imports thousands of datapoints at a time, and supplies data to frontend upon request.
-- In-Game Data Collection App | Parse all character data and export as an encoded string. User copies this string and pastes it into the import page.
+- **Frontend** | Display data in a cohesive and interesting way. Search for, and view, character profiles. Send and receive data to and from Backend. Sends and receieves data from Blizzard and WarcraftLogs APIs.
+- **Backend** | Store and provide all character data, as well as thousands of achievement datapoints. RESTful API processes and imports thousands of datapoints at a time, and supplies data to frontend upon request.
+- **In-Game Data Collection App** | Parse all character data and export as an encoded string. User copies this string and pastes it into the import page.
 
 ### Built With
 
@@ -34,19 +35,51 @@ Armory is split into 3 core components:
 - ![SQLite3](https://img.shields.io/badge/sqlite3-%230F80CC.svg?style=for-the-badge&logo=sqlite&logoColor=white)
 - ![Axios](https://img.shields.io/static/v1?style=for-the-badge&message=Axios&color=5A29E4&logo=Axios&logoColor=FFFFFF&label=)
 
+## Try it out
+Check out the <a href="https://armory-frontend-nine.vercel.app/">app demo</a> hosted on Vercel!
+
 ## Examples
 
 !['Character-view'](https://github.com/adamgrharvey/armory-frontend/blob/master/src/images/Project/Armory_example.png)
 
 https://user-images.githubusercontent.com/104089024/219136427-19c2c505-a9d3-4468-b928-c69d3316cd0d.mp4
 
-## Getting Started
+# Getting Started
 
-To get a local copy up and running follow these simple example steps.
+You have two options for running this locally; one simple, and one in depth.
+
+## Simple (recommended)
+This set of instructions is for running the frontend-only demo.
 
 ### Installation
 
-1. Clone the FRONTEND repo
+1. Clone the `demo` branch of the frontend repo
+   ```sh
+   git clone -b demo https://github.com/adamgrharvey/armory-frontend
+   ```
+
+2. Navigate to the `armory-frontend` and install packages.
+   ```sh
+   cd armory-frontend
+   npm install
+   ```
+   
+3. Change `.env.example` to `.env`, and get your own Blizzard and WarcraftLogs API keys and fill them in the `.env` file.
+   
+4. Run the app.
+   ```sh
+   npm start
+   ```
+5. Open https://localhost:3001 in your browser.
+
+## In Depth
+This set of instructions is for initializing and running the frontend, backend, and in-game addon to gather character data.
+
+To get a local copy up and running follow these steps.
+
+### Installation
+
+1. Clone the frontend repo
    ```sh
    git clone https://github.com/adamgrharvey/armory-frontend
    ```
@@ -55,23 +88,29 @@ To get a local copy up and running follow these simple example steps.
    npm install
    npm run start
    ```
-3. In a separate directory, Clone the BACKEND repo
+3. Change `.env.example` to `.env`, and get your own Blizzard and WarcraftLogs API keys and fill them in the `.env` file.
+
+4. In a separate directory, Clone the backend repo
    ```sh
    git clone https://github.com/adamgrharvey/Armory-backend
    ```
-4. Change into `Armory` directory and install Gems
+5. Change into `Armory` directory and install Gems. This requires Ruby 3.11.
    ```sh
     cd Armory
     bundle install
    ```
-5. Create database and start server
+6. Create database and start server. This includes seed data for statistics/achievements, but not any characters.
    ```sh
      rails db:setup
      rails server
    ```
-6. Open `localhost:3001` in your browser
+7. Open `localhost:3001` in your browser
 
-7. _Optional_: Install the ClassicArmory WoW Addon [https://github.com/adamgrharvey/ClassicArmory] to export your character data, and submit it to the site!
+8. Install the ClassicArmory WoW Addon [https://github.com/adamgrharvey/ClassicArmory] to export your character data. When in-game on Classic Wow: WotLK, type `/armory`. Copy the string on screen, and paste it on the submission page on the app.
+
+The app should scan, upload, and redirect to the character page!
+
+If you have any issues, please let me know! I'd love to help you get this working!
 
 ## Contributing
 
