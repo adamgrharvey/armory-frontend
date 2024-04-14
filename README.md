@@ -44,7 +44,7 @@ Check out the <a href="https://armory-frontend-nine.vercel.app/">app demo</a> ho
 
 https://user-images.githubusercontent.com/104089024/219136427-19c2c505-a9d3-4468-b928-c69d3316cd0d.mp4
 
-# Getting Started
+# Run project locally
 
 You have two options for running this locally; one simple, and one in depth.
 
